@@ -13,32 +13,33 @@ if (global_R.print_module_start_finish) console.log('timer.js -> module start');
 
 
 class Timer_C {
-    NAME: string = "timer_R";
-    isOk: string = "";
+    public NAME: string = "timer_R";
+    public isOk: string = "";
 
     // пустой тик выполняется не быстрее 5 мс, т.е. максимальный фпс выдаваемый браузером это 200
-    TICKS_PER_SECOND_02: number = 0.2;
-    TICKS_PER_SECOND_05: number = 0.5;
-    TICKS_PER_SECOND_1: number = 1;
-    TICKS_PER_SECOND_2: number = 2;
-    TICKS_PER_SECOND_3: number = 3;
-    TICKS_PER_SECOND_4: number = 4;
-    TICKS_PER_SECOND_5: number = 5;
-    TICKS_PER_SECOND_6: number = 6;
-    TICKS_PER_SECOND_7: number = 7;
-    TICKS_PER_SECOND_8: number = 8;
-    TICKS_PER_SECOND_9: number = 9;
-    TICKS_PER_SECOND_10: number = 10;
-    TICKS_PER_SECOND_20: number = 20;
-    TICKS_PER_SECOND_30: number = 30;
-    TICKS_PER_SECOND_40: number = 40;
-    TICKS_PER_SECOND_50: number = 50;
-    TICKS_PER_SECOND_60: number = 60;
-    TICKS_PER_SECOND_62: number = 62;
-    TICKS_PER_SECOND_70: number = 70;
+    public TICKS_PER_SECOND_02: number = 0.2;// 1 ticks per 5 sec
+    public TICKS_PER_SECOND_05: number = 0.5;// 1 ticks per 2 sec
+    public TICKS_PER_SECOND_1: number = 1;
+    public TICKS_PER_SECOND_2: number = 2;
+    public TICKS_PER_SECOND_3: number = 3;
+    public TICKS_PER_SECOND_4: number = 4;
+    public TICKS_PER_SECOND_5: number = 5;
+    public TICKS_PER_SECOND_6: number = 6;
+    public TICKS_PER_SECOND_7: number = 7;
+    public TICKS_PER_SECOND_8: number = 8;
+    public TICKS_PER_SECOND_9: number = 9;
+    public TICKS_PER_SECOND_10: number = 10;
+    public TICKS_PER_SECOND_15: number = 15;
+    public TICKS_PER_SECOND_20: number = 20;
+    public TICKS_PER_SECOND_30: number = 30;
+    public TICKS_PER_SECOND_40: number = 40;
+    public TICKS_PER_SECOND_50: number = 50;
+    public TICKS_PER_SECOND_60: number = 60;
+    public TICKS_PER_SECOND_62: number = 62;
+    public TICKS_PER_SECOND_70: number = 70;
 
     //timerId: number = 0;
-    ticksPerSecond: number = 0;
+    public ticksPerSecond: number = 0;
 
 
 
@@ -47,14 +48,14 @@ class Timer_C {
     // 30 кадров это 0,03(3) sek = 30,(3) millis
     // 25 кадров это 0,04 sek = 40 millis
     // 10 кадров это 0,1 sek = 100 millis
-    tick_timeOnAllMs: number = 0;// время отведенное на один тик
-    tick_timeStartMs: number = 0;// фиксируем время начала тика
-    tick_timeEndMs: number = 0;// фиксируем время конца тика
-    tick_timeEndMinusStartTickMs: number = 0;// время тика	в это время идет расчет и отрисовка игры
-    tick_timeThreadSleepGameMs: number = 0;// время бездействия потока игры. мы все сделали и оставшееся время бездействуем
+    public tick_timeOnAllMs: number = 0;// время отведенное на один тик
+    public tick_timeStartMs: number = 0;// фиксируем время начала тика
+    public tick_timeEndMs: number = 0;// фиксируем время конца тика
+    public tick_timeEndMinusStartTickMs: number = 0;// время тика	в это время идет расчет и отрисовка игры
+    public tick_timeThreadSleepGameMs: number = 0;// время бездействия потока игры. мы все сделали и оставшееся время бездействуем
 
-    tickOld_timeStartMs: number = 0;// время начала предыдущего тика нужно для вычисления времени полного круга цикла
-    tick_tickOld_timeStart_Minus_tick_timeStartMs: number = 0;// время прошедшее за полный круг цикла игры
+    public tickOld_timeStartMs: number = 0;// время начала предыдущего тика нужно для вычисления времени полного круга цикла
+    public tick_tickOld_timeStart_Minus_tick_timeStartMs: number = 0;// время прошедшее за полный круг цикла игры
 
     //=============================================================================
     constructor() {
@@ -179,7 +180,6 @@ class Timer_C {
 let timer_R = new Timer_C();
 
 timer_R.iniM();
-//Global.testLoading('timer_R.js');
 
 export { timer_R, Timer_C };
 

@@ -1,5 +1,5 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified  -15.08m.2024-
+// Last modified -15.08m.2024-
 
 /*
  НАЗНАЧЕНИЕ
@@ -9,27 +9,20 @@
 */
 import { global_R } from '../global/global.js';
 
-if (global_R.print_module_start_finish) console.log('game_go.js -> module start');
+if (global_R.print_module_start_finish) console.log('game_start.js -> module start');
 
 import { requestAnimationFrame_R } from '../render/request_animation.js';
-import { run_R } from '../moove/run.js';
-import { fight_R } from '../fight/fight.js';
-import { ai_R } from '../ai/ai.js';
-import { userInputKeyboard_R } from '../user_control/keyboard.js';
-import { mouse_R } from '../user_control/mouse.js';
-import { immortals_R } from '../user_avatars/immortals.js';
-import { background_R } from '../background/background.js';
 import { render_R } from '../render/render.js';
 
-class GameGo_C {
-  public NAME: string = "GameGo_C";
+class GameStart_C {
+  public NAME: string = "GameStart_C";
   public isOk: string = "";
 
   //=============================================================================
   constructor() {
   }
   //============================================================================= 
-
+  
   //=============================================================================
   iniM(): void {
     //console.log('this.ini->');
@@ -43,28 +36,22 @@ class GameGo_C {
   //============================================================================= 
   //=============================================================================
   tick(): void {
+ 
+    requestAnimationFrame(requestAnimationFrame_R.drawGameStart);
+    //render_R.drawGameStart();
 
-    userInputKeyboard_R.tick(immortals_R, background_R);
-    mouse_R.tick();
-
-    run_R.tick();
-    fight_R.tick();
-    ai_R.tick();
-
-    requestAnimationFrame(requestAnimationFrame_R.drowGoGame);
-    //render_R.drowGoGame();
   };
   //============================================================================= 
 
 
 }; //Game
 
-let gameGo_R = new GameGo_C();
+let gameStart_R = new GameStart_C();
 
-gameGo_R.iniM();
+gameStart_R.iniM();
 
-export { gameGo_R, GameGo_C };
+export { gameStart_R, GameStart_C };
 
-if (global_R.print_module_start_finish) console.log('game_go.js -> module finish');
+if (global_R.print_module_start_finish) console.log('game_start.js -> module finish');
 
-gameGo_R.isOk = "OK"; //
+gameStart_R.isOk = "OK"; //

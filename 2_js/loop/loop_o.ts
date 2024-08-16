@@ -27,7 +27,7 @@ import { buttons_R } from './buttons.js';
 interface Loop_I {
 
     NAME: string;
-    isOk:string;
+    isOk: string;
 
     // Внешние ссылки
     //-
@@ -35,35 +35,29 @@ interface Loop_I {
     timerCount: number;
     timerCountStop: number;
     delayMs: number;
+    isLoop: boolean;
 
-    //=============================================================================
     iniM(): void;
-    //=============================================================================
-
-    //=============================================================================
+ 
     startM(): void;
-    //=============================================================================
 
-    //=============================================================================
     //
     loop(): void;
-    //=============================================================================
 
 }; //
 
 
-let loop_R : Loop_I = {
-    NAME:"loop_R",
+let loop_R: Loop_I = {
+    NAME: "loop_R",
     isOk: "",
-
-    // Внешние ссылки
-    //-
 
     timerCount: -1,
 
     timerCountStop: 0,
 
     delayMs: 0,
+
+    isLoop: false,
 
     //=============================================================================
     iniM(): void {
@@ -82,61 +76,32 @@ let loop_R : Loop_I = {
     // setTimeout позволяет вызвать функцию один раз через определённый интервал времени
     loop(): void {
 
+        loop_R.isLoop = true;
         loop_R.timerCount = -1;
 
         //Задержка перед запуском в миллисекундах (1000 мс = 1 с). Значение по умолчанию – 0.
         loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
 
-
         loop_R.timerCount = setTimeout(function tick() {
 
-            //console.log("loop_R-> Out.timer_R.get_tick_timeThreadSleepGameMs() = " + Out.timer_R.get_tick_timeThreadSleepGameMs());
-            if (gameState_R.isStartGame()) {
-                timer_R.updateTimeBeforeTick(); //
-                gameState_R.tickStartGame();
-                timer_R.updateTimeAfterTick();
-                loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
+            timer_R.updateTimeBeforeTick(); //
+            gameState_R.tickGame();
+            timer_R.updateTimeAfterTick();
+            loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
 
+            if (!gameState_R.isEndGame()){ 
                 loop_R.timerCount = setTimeout(tick, loop_R.delayMs);
-                if ((loop_R.timerCount - loop_R.timerCountStop) > 500) {
-                    gameState_R.setEndGame();
-                    buttons_R.endButtonAttribute();
-                    console.log("loop_R-> if ((loop_R.timerCount - loop_R.timerCountStop) > 500)  ");
-                };
-                console.log("loop_R-> StartGame timerCount = " + loop_R.timerCount);
-            } else if (gameState_R.isGoGame()) {
-                timer_R.updateTimeBeforeTick(); //
-                gameState_R.tickGoGame();
-                timer_R.updateTimeAfterTick();
-                loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
+            }else{
+                loop_R.isLoop = false;
+            }
 
-                loop_R.timerCount = setTimeout(tick, loop_R.delayMs);
-                if ((loop_R.timerCount - loop_R.timerCountStop) > 10000) {
-                    gameState_R.setEndGame();
-                    buttons_R.endButtonAttribute();
-                };
-                // console.log("loop_R-> GoGame timerCount = " + loop_R.timerCount);
-            } else if (gameState_R.isPauseGame()) {
-                timer_R.updateTimeBeforeTick(); //
-                gameState_R.tickPauseGame();
-                timer_R.updateTimeAfterTick();
-                loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
-                // @ts-ignore
-                loop_R.timerCount = setTimeout(tick, loop_R.delayMs);
-                if ((loop_R.timerCount - loop_R.timerCountStop) > 500) {
-                    gameState_R.setEndGame();
-                    buttons_R.endButtonAttribute();
-                };
-                console.log("loop_R-> PauseGame timerCount = " + loop_R.timerCount);
-            } else if (gameState_R.isEndGame()) {
-                timer_R.updateTimeBeforeTick(); //           
-                gameState_R.tickEndGame();
-                timer_R.updateTimeAfterTick();
-                console.log("loop_R->EndGame timerCount = " + loop_R.timerCount);
-                loop_R.timerCountStop = loop_R.timerCount;
+            if ((loop_R.timerCount - loop_R.timerCountStop) > 10000) {
+                gameState_R.setEndGame();
+                buttons_R.endButtonAttribute();
             };
+
         }, loop_R.delayMs);
-        console.log("loop_R-> timerCount = " + loop_R.timerCount);
+        console.log("loop_R->loop() timerCount = " + loop_R.timerCount);
     }, //var loop = function() {
     //=============================================================================
 

@@ -28,7 +28,7 @@ import { imps_R } from '../creatures/creatures.js';
 import { fight_R } from '../fight/fight.js';
 
 //frames
-import { frames_R } from '../frames/frames.js';
+import { frames_R } from '../render/frames/frames.js';
 
 //game
 import { gameState_R, GameState_C } from '../game/game_state.js';
@@ -38,19 +38,19 @@ import { gameState_R, GameState_C } from '../game/game_state.js';
 
 
 //html5_canvas
-import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js';
-import { html5CanvasText_R } from '../html5_canvas/2_html5_canvas_text.js';
-import { html5CanvasPrimitive_R } from '../html5_canvas/3_html5_canvas_primitive.js';
-import { html5CanvasImage_R } from '../html5_canvas/4_html5_canvas_image.js';
-import { html5CanvasMouseEvent_R } from '../html5_canvas/5_html5_canvas_mouse_event.js';
-import { html5Canvas_R } from '../html5_canvas/6_html5_canvas_h.js';
+import { html5CanvasContext_R } from '../render/html5_canvas/1_html5_canvas_context.js';
+import { html5CanvasText_R } from '../render/html5_canvas/2_html5_canvas_text.js';
+import { html5CanvasPrimitive_R } from '../render/html5_canvas/3_html5_canvas_primitive.js';
+import { html5CanvasImage_R } from '../render/html5_canvas/4_html5_canvas_image.js';
+import { html5CanvasMouseEvent_R } from '../render/html5_canvas/5_html5_canvas_mouse_event.js';
+import { html5Canvas_R } from '../render/html5_canvas/6_html5_canvas_h.js';
 
 //html5_sprites
-import { html5SpritesCollection_R } from '../html5_sprites/html5_sprites_collection.js';
-import { html5SpritesImmortal_R } from '../html5_sprites/html5_sprites_immortal.js';
-import { html5Sprites_R } from '../html5_sprites/html5_sprites.js';
-import { Sprite_С, Sprite_С_isOk } from '../html5_sprites/sprite_c.js';
-import { Sprite_Imm_C, Sprite_I_C_isOk } from '../html5_sprites/sprite_i_c.js';
+import { html5SpritesCollection_R } from '../render/html5_sprites/html5_sprites_collection.js';
+import { html5SpritesImmortal_R } from '../render/html5_sprites/html5_sprites_immortal.js';
+import { html5Sprites_R } from '../render/html5_sprites/html5_sprites.js';
+import { Sprite_С, Sprite_С_isOk } from '../render/html5_sprites/sprite_c.js';
+import { Sprite_Imm_C, Sprite_I_C_isOk } from '../render/html5_sprites/sprite_i_c.js';
 
 //items
 //-
@@ -61,7 +61,7 @@ import { local_R } from '../local/local.js';
 //loop
 import { buttons_R, Buttons_C } from '../loop/buttons.js';
 import { loop_R } from '../loop/loop_o.js';
-import { requestAnimationFrame_R } from '../loop/request_animation.js';
+import { requestAnimationFrame_R } from '../render/request_animation.js';
 import { timer_R } from '../loop/timer.js';
 //import { startClient_R } from '../loop/start_client.js';
 
@@ -84,12 +84,9 @@ import { userInputKeyboard_R } from '../user_control/keyboard.js';
 import { mouse_R } from '../user_control/mouse.js';
 
 
-
 class StartClient_C {
-    NAME: string = "StartClient_C";
-    isOk: string = "";
-
-    // Внешние ссылки
+    public NAME: string = "StartClient_C";
+    public isOk: string = "";
 
     //=============================================================================
     constructor() {
@@ -106,7 +103,10 @@ class StartClient_C {
         test_R.test();
         startClient_R.startModules();
         gameState_R.setStartGame();
-        loop_R.loop();
+        if (!loop_R.isLoop){ 
+            console.log('StartClient_C->startGame->loop_R.loop()');
+            loop_R.loop();
+        }
     };
     //=============================================================================
 

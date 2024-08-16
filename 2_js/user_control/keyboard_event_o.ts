@@ -28,7 +28,7 @@ if (global_R.print_module_start_finish) console.log('keyboard.js -> module start
 
 //==============================================================================
 
-import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js';
+import { html5CanvasContext_R } from '../render/html5_canvas/1_html5_canvas_context.js';
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает

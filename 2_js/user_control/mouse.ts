@@ -11,9 +11,9 @@ import { global_R } from '../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('mouse.js -> module start');
 
-import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js';
+import { html5CanvasContext_R } from '../render/html5_canvas/1_html5_canvas_context.js';
 
-import { html5CanvasMouseEvent_R } from '../html5_canvas/5_html5_canvas_mouse_event.js';
+import { html5CanvasMouseEvent_R } from '../render/html5_canvas/5_html5_canvas_mouse_event.js';
 
 class Mouse_C {
     NAME: string = "Mouse_C";

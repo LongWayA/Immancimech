@@ -19,7 +19,7 @@
 
     <!-- дата в виде  The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" 
         where: YYYY indicates the year. MM indicates the month. DD indicates the day.-->
-    <h4 class="w"> Last update <time datetime="2024-08-04">04.08m.24</time> </h4>
+    <h4 class="w"> Last update <time datetime="2024-08-16">16.08m.24</time> </h4>
 
     <!--The game canvas-1600-800 -->
     <canvas id='game-canvas' width='1200' height='730'>
@@ -50,7 +50,7 @@
         //  console.log('Immancimech.html-> module start');
 
         import { startClient_R } from './2_js/loop/start_client.js';
-        import { gameState_R} from './2_js/game/game_state.js';
+        import { buttons_R} from './2_js/loop/buttons.js';
 
         //=============================================================================
         // загрузка всего документа(вместе с картинками, звуком и т.д.) закончена
@@ -62,25 +62,25 @@
 
         //=============================================================================
         window.startButton = function () {
-            gameState_R.startButton();
+            buttons_R.startButton();
         };
         //=============================================================================
 
         //=============================================================================
         window.pauseButton = function () {
-            gameState_R.pauseButton();
+            buttons_R.pauseButton();
         };
         //=============================================================================
 
         //=============================================================================
         window.endButton = function () {
-            gameState_R.endButton();
+            buttons_R.endButton();
         };
         //=============================================================================
 
         //=============================================================================
         window.testButton = function () {
-            gameState_R.testButton();
+            buttons_R.testButton();
         };
         //=============================================================================
 

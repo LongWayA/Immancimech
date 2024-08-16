@@ -10,13 +10,13 @@ import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('render.js -> module start');
 import { timer_R } from '../loop/timer.js';
-import { html5Canvas_R } from '../html5_canvas/6_html5_canvas_h.js';
+import { html5Canvas_R } from '../render/html5_canvas/6_html5_canvas_h.js';
 import { mouse_R } from '../user_control/mouse.js';
 import { userInputKeyboard_R } from '../user_control/keyboard.js';
-import { frames_R } from '../frames/frames.js';
+import { frames_R } from '../render/frames/frames.js';
 import { background_R } from '../background/background.js';
 import { immortals_R } from '../user_avatars/immortals.js';
-import { html5SpritesImmortal_R } from '../html5_sprites/html5_sprites_immortal.js';
+import { html5SpritesImmortal_R } from '../render/html5_sprites/html5_sprites_immortal.js';
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
@@ -66,7 +66,6 @@ class Render_C {
         // console.log('Render_C->drawGameStart()-> this.widthCanvas =' + this);
         //console.log('Render_C->drawGameStart()-> this.heightCanvas =' + this.heightCanvas);
         html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
-        background_R.drow();
         html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.BLACK, 0);
         html5Canvas_R.drawRect(left0, top0, this.widthCanvas - 20, this.heightCanvas - 20, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.GREEN, 0);
         this.drawNuberTick(left0, top0);
@@ -108,7 +107,7 @@ class Render_C {
     // 
     drowGoGame() {
         let left0 = 10;
-        let top0 = 10;
+        let top0 = 455;
         let left1 = 10;
         let top1 = 70;
         let width = 500;
@@ -129,6 +128,7 @@ class Render_C {
         mouse_R.drow();
         userInputKeyboard_R.drow();
         immortals_R.drow();
+        this.drawNuberTick(left0, top0);
     }
     ;
     //=============================================================================
@@ -147,7 +147,6 @@ class Render_C {
         let height0 = 92;
         //html5Canvas_R.clearRect(left0, top0, width0, height0);
         html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
-        background_R.drow();
         this.drawNuberTick(left1, top1);
         html5Canvas_R.drawRect(left0, top0, width, height, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.GREEN, 0);
         html5Canvas_R.drawText("Game End ", left0, top0, html5Canvas_R.ITALIC_30PT_ARIAL, html5Canvas_R.GREEN, 1);
@@ -161,7 +160,6 @@ class Render_C {
         let width = 500;
         let height = 35;
         html5Canvas_R.drawRect(left, top, width, height, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.GREEN, 0);
-        //@ts-ignore
         html5Canvas_R.drawText("Game.tick = " + this.out_Game.sprite, left, top, html5Canvas_R.ITALIC_30PT_ARIAL, html5Canvas_R.GREEN, 1);
     }
     ;

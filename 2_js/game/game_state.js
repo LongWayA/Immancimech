@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
 // Last modified -31.07.2022-18.03.2023-26.03.2023-09.07.2023-
-// -24.02m.2024-
+// -24.02m.2024-15.08m.2024-
 /*
  НАЗНАЧЕНИЕ
  Корневой модуль игры
@@ -9,31 +9,23 @@
 */
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
-    console.log('game.js -> module start');
+    console.log('game_state.js -> module start');
 import { timer_R } from '../loop/timer.js';
-import { userInputKeyboard_R } from '../user_control/keyboard.js';
-import { mouse_R } from '../user_control/mouse.js';
-import { immortals_R } from '../user_avatars/immortals.js';
-import { run_R } from '../moove/run.js';
-import { fight_R } from '../fight/fight.js';
-import { ai_R } from '../ai/ai.js';
-//import { render_R } from '../render/render.js';
-import { background_R } from '../background/background.js';
-import { requestAnimationFrame_R } from '../loop/request_animation.js';
-import { buttons_R } from '../loop/buttons.js';
-import { loop_R } from '../loop/loop_o.js';
+import { gameStart_R } from '../game/game_start.js';
+import { gameGo_R } from '../game/game_go.js';
+import { gamePause_R } from '../game/game_pause.js';
+import { gameEnd_R } from '../game/game_end.js';
+gameStart_R.NAME;
 class GameState_C {
-    NAME = "gameState_R";
+    NAME = "GameState_C";
     isOk = "";
-    // Внешние ссылки
-    //-
     START_GAME = 1;
     GO_GAME = 2;
     PAUSE_GAME = 3;
     END_GAME = 4;
-    MENU_GAME = 5;
-    // состояние игры. может быть стартовое меню, конец игры, пауза, игра
-    isGameState = 0;
+    // состояние игры. может быть старт игры, игра, пауза, конец игры.
+    setGameState = 0;
+    gameState = 0;
     sprite = 0;
     //=============================================================================
     constructor() {
@@ -54,7 +46,7 @@ class GameState_C {
     //============================================================================= 
     //=============================================================================
     setStartGame() {
-        this.isGameState = this.START_GAME;
+        this.setGameState = this.START_GAME;
         this.sprite = 0;
         timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_05);
     }
@@ -62,27 +54,27 @@ class GameState_C {
     //=============================================================================
     //=============================================================================
     setGoGame() {
-        this.isGameState = this.GO_GAME;
-        timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_30);
+        this.setGameState = this.GO_GAME;
+        timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_15);
     }
     ;
     //=============================================================================
     //=============================================================================
     setPauseGame() {
-        this.isGameState = this.PAUSE_GAME;
+        this.setGameState = this.PAUSE_GAME;
         timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_02);
     }
     ;
     //=============================================================================
     //=============================================================================
     setEndGame() {
-        this.isGameState = this.END_GAME;
+        this.setGameState = this.END_GAME;
     }
     ;
     //=============================================================================
     //=============================================================================
     isStartGame() {
-        if (this.isGameState == this.START_GAME)
+        if (this.gameState == this.START_GAME)
             return true;
         return false;
     }
@@ -90,7 +82,7 @@ class GameState_C {
     //=============================================================================
     //=============================================================================
     isGoGame() {
-        if (this.isGameState == this.GO_GAME)
+        if (this.gameState == this.GO_GAME)
             return true;
         return false;
     }
@@ -98,7 +90,7 @@ class GameState_C {
     //=============================================================================
     //=============================================================================
     isPauseGame() {
-        if (this.isGameState == this.PAUSE_GAME)
+        if (this.gameState == this.PAUSE_GAME)
             return true;
         return false;
     }
@@ -106,97 +98,69 @@ class GameState_C {
     //=============================================================================
     //=============================================================================
     isEndGame() {
-        if (this.isGameState == this.END_GAME)
+        if (this.gameState == this.END_GAME)
             return true;
         return false;
     }
     ;
     //=============================================================================
     //=============================================================================
-    tickStartGame() {
-        console.log('this.tickStartGame');
+    tickGame() {
         this.sprite = this.sprite + 1;
-        if (this.sprite > 1000) {
+        if (this.sprite > 10000) {
             this.sprite = 1;
         }
-        requestAnimationFrame(requestAnimationFrame_R.drawGameStart);
-        //render_R.drawGameStart();
+        //console.log('GameState_C->tickGame = ' + this.sprite);
+        if (this.gameState != this.setGameState) {
+            this.gameState = this.setGameState;
+        }
+        if (this.isStartGame()) {
+            this.tickStartGame();
+        }
+        else if (this.isGoGame()) {
+            this.tickGoGame();
+        }
+        else if (this.isPauseGame()) {
+            this.tickPauseGame();
+        }
+        else if (this.isEndGame()) {
+            this.tickEndGame();
+        }
+    }
+    ; //tick () {
+    //=============================================================================
+    //=============================================================================
+    tickStartGame() {
+        //console.log('GameState_C->tickStartGame = ' + this.sprite);
+        gameStart_R.tick();
     }
     ; //tick () {
     //=============================================================================
     //=============================================================================
     tickGoGame() {
-        // console.log('this.tickGoGame');
-        this.sprite = this.sprite + 1;
-        if (this.sprite > 1000) {
-            this.sprite = 1;
-        }
-        userInputKeyboard_R.tick(immortals_R, background_R);
-        mouse_R.tick();
-        run_R.tick();
-        fight_R.tick();
-        ai_R.tick();
-        requestAnimationFrame(requestAnimationFrame_R.drowGoGame);
+        //console.log('GameState_C->tickGoGame = ' + this.sprite);
+        gameGo_R.tick();
     }
     ; //tick () {
     //=============================================================================
     //=============================================================================
     tickPauseGame() {
-        //console.log('this.tickPauseGame');
-        this.sprite = this.sprite + 1;
-        if (this.sprite > 1000) {
-            this.sprite = 1;
-        }
-        requestAnimationFrame(requestAnimationFrame_R.drawGamePaused);
-        //render_R.drawGamePaused();
+        //console.log('GameState_C->tickPauseGame = ' + this.sprite);
+        gamePause_R.tick();
     }
     ; //tick () {
     //=============================================================================
     //=============================================================================
     tickEndGame() {
-        console.log('this.tickEndGame');
-        this.sprite = this.sprite + 1;
-        if (this.sprite > 1000) {
-            this.sprite = 1;
-        }
-        requestAnimationFrame(requestAnimationFrame_R.drawGameEnd);
-        //render_R.drawGameEnd();
+        //console.log('GameState_C->tickEndGame = ' + this.sprite);
+        gameEnd_R.tick();
     }
     ; //tick () {
-    //=============================================================================
-    //=============================================================================
-    startButton() {
-        buttons_R.startButtonAttribute();
-        gameState_R.setGoGame();
-        loop_R.loop();
-    }
-    ;
-    //=============================================================================
-    //=============================================================================
-    pauseButton() {
-        buttons_R.pauseButtonAttribute();
-        gameState_R.setPauseGame();
-    }
-    ;
-    //=============================================================================  
-    //=============================================================================
-    endButton() {
-        buttons_R.endButtonAttribute();
-        gameState_R.setEndGame();
-    }
-    ;
-    //=============================================================================
-    //=============================================================================
-    testButton() {
-        console.log('StartClient_C-> testButton');
-    }
-    ;
 }
-; //Game
+; //GameState_С
 let gameState_R = new GameState_C();
 gameState_R.iniM();
-//Global.testLoading('gameState_R.js');
 export { gameState_R, GameState_C };
 if (global_R.print_module_start_finish)
-    console.log('game.js -> module finish');
+    console.log('game_state.js -> module finish');
 gameState_R.isOk = "OK"; //

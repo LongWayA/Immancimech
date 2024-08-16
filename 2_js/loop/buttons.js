@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
 // Last modified -12.11.2023-
-// -24.02m.2024-
+// -24.02m.2024 -15.08m.2024-
 /*
    НАЗНАЧЕНИЕ
        
@@ -9,12 +9,12 @@
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('buttons.js ->module start');
+import { gameState_R } from '../game/game_state.js';
+import { loop_R } from '../loop/loop_o.js';
 //
 class Buttons_C {
     NAME = "buttons_R";
     isOk = "";
-    // Внешние ссылки
-    //-
     //buttonStart
     elementbuttonStart = document.getElementById("buttonStart");
     //buttonPause  HTMLElement | null
@@ -30,7 +30,7 @@ class Buttons_C {
     //=============================================================================
     //=============================================================================
     iniM() {
-        //console.log('TrueWayImmortals_client.ini');
+        //console.log('Buttons_C->iniM');
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
         //elementbuttonStart.accesskey = 's';
@@ -53,7 +53,7 @@ class Buttons_C {
     // методы установки состояния кнопок
     //=============================================================================
     startButtonAttribute() {
-        console.log('buttons_R-> startButtonAttribute');
+        console.log('Buttons_C->startButtonAttribute');
         this.elementbuttonStart.disabled = true;
         this.elementbuttonStart.setAttribute("class", "");
         this.elementbuttonPause.disabled = false;
@@ -65,7 +65,7 @@ class Buttons_C {
     //=============================================================================
     //=============================================================================
     pauseButtonAttribute() {
-        console.log('buttons_R-> pauseButtonAttribute');
+        console.log('Buttons_C->pauseButtonAttribute');
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
         this.elementbuttonStart.value = "Continue Game";
@@ -78,7 +78,7 @@ class Buttons_C {
     //=============================================================================    
     //=============================================================================
     endButtonAttribute() {
-        console.log('buttons_R-> endButtonAttribute');
+        console.log('Buttons_C->endButtonAttribute');
         this.elementbuttonStart.value = "Start Game!";
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
@@ -89,12 +89,42 @@ class Buttons_C {
     }
     ;
     //=============================================================================
+    //=============================================================================
+    startButton() {
+        buttons_R.startButtonAttribute();
+        gameState_R.setGoGame();
+        if (!loop_R.isLoop) {
+            console.log('Buttons_C->startButton->loop_R.loop()');
+            loop_R.loop();
+        }
+    }
+    ;
+    //=============================================================================
+    //=============================================================================
+    pauseButton() {
+        buttons_R.pauseButtonAttribute();
+        gameState_R.setPauseGame();
+    }
+    ;
+    //=============================================================================  
+    //=============================================================================
+    endButton() {
+        buttons_R.endButtonAttribute();
+        gameState_R.setEndGame();
+    }
+    ;
+    //=============================================================================
+    //=============================================================================
+    testButton() {
+        console.log('Buttons_C->testButton');
+    }
+    ;
+    //=============================================================================
     //-----------------------------------------------------------------------------
     // метод вызывается по событию. для эксперимента
     //=============================================================================
     click() {
-        console.log('buttons_R-> click  Event');
-        //console.log('TrueWayImmortals_client.test -> test');
+        console.log('Buttons_C->click  Event');
     }
     ;
 }
@@ -102,7 +132,6 @@ class Buttons_C {
 let buttons_R = new Buttons_C();
 buttons_R.iniM();
 buttons_R.elementbuttonTest.addEventListener("click", buttons_R.click, false); //click  input
-//buttons_R.Out_Global.testLoading('buttons_R.js');
 export { buttons_R, Buttons_C };
 if (global_R.print_module_start_finish)
     console.log('buttons.js ->module finish');

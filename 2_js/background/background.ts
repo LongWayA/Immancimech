@@ -11,8 +11,8 @@ import { global_R } from '../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('background.js -> module start');
 
-import { html5Canvas_R } from '../html5_canvas/6_html5_canvas_h.js';
-import { html5Sprites_R } from '../html5_sprites/html5_sprites.js';
+import { html5Canvas_R } from '../render/html5_canvas/6_html5_canvas_h.js';
+import { html5Sprites_R } from '../render/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from '../background/tile_for_background_c.js';
 
 // можно кодировать карту при записи продвинутой системой типа 16 ричной

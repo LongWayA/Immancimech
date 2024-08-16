@@ -13,8 +13,8 @@ class Timer_C {
     NAME = "timer_R";
     isOk = "";
     // пустой тик выполняется не быстрее 5 мс, т.е. максимальный фпс выдаваемый браузером это 200
-    TICKS_PER_SECOND_02 = 0.2;
-    TICKS_PER_SECOND_05 = 0.5;
+    TICKS_PER_SECOND_02 = 0.2; // 1 ticks per 5 sec
+    TICKS_PER_SECOND_05 = 0.5; // 1 ticks per 2 sec
     TICKS_PER_SECOND_1 = 1;
     TICKS_PER_SECOND_2 = 2;
     TICKS_PER_SECOND_3 = 3;
@@ -25,6 +25,7 @@ class Timer_C {
     TICKS_PER_SECOND_8 = 8;
     TICKS_PER_SECOND_9 = 9;
     TICKS_PER_SECOND_10 = 10;
+    TICKS_PER_SECOND_15 = 15;
     TICKS_PER_SECOND_20 = 20;
     TICKS_PER_SECOND_30 = 30;
     TICKS_PER_SECOND_40 = 40;
@@ -170,7 +171,6 @@ class Timer_C {
 ; //Timer
 let timer_R = new Timer_C();
 timer_R.iniM();
-//Global.testLoading('timer_R.js');
 export { timer_R, Timer_C };
 if (global_R.print_module_start_finish)
     console.log('timer.js -> module finish');

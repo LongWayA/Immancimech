@@ -9,20 +9,14 @@
 */
 import { global_R } from '../global/global.js';
 
-if (global_R.print_module_start_finish) console.log('game_go.js -> module start');
+if (global_R.print_module_start_finish) console.log('game_pause.js -> module start');
 
 import { requestAnimationFrame_R } from '../render/request_animation.js';
-import { run_R } from '../moove/run.js';
-import { fight_R } from '../fight/fight.js';
-import { ai_R } from '../ai/ai.js';
-import { userInputKeyboard_R } from '../user_control/keyboard.js';
-import { mouse_R } from '../user_control/mouse.js';
-import { immortals_R } from '../user_avatars/immortals.js';
-import { background_R } from '../background/background.js';
 import { render_R } from '../render/render.js';
 
-class GameGo_C {
-  public NAME: string = "GameGo_C";
+
+class GamePause_C {
+  public NAME: string = "GamePause_C";
   public isOk: string = "";
 
   //=============================================================================
@@ -44,27 +38,20 @@ class GameGo_C {
   //=============================================================================
   tick(): void {
 
-    userInputKeyboard_R.tick(immortals_R, background_R);
-    mouse_R.tick();
-
-    run_R.tick();
-    fight_R.tick();
-    ai_R.tick();
-
-    requestAnimationFrame(requestAnimationFrame_R.drowGoGame);
-    //render_R.drowGoGame();
+    requestAnimationFrame(requestAnimationFrame_R.drawGamePaused);
+    //render_R.drawGamePaused();
   };
   //============================================================================= 
 
 
 }; //Game
 
-let gameGo_R = new GameGo_C();
+let gamePause_R = new GamePause_C();
 
-gameGo_R.iniM();
+gamePause_R.iniM();
 
-export { gameGo_R, GameGo_C };
+export { gamePause_R, GamePause_C };
 
-if (global_R.print_module_start_finish) console.log('game_go.js -> module finish');
+if (global_R.print_module_start_finish) console.log('game_pause.js -> module finish');
 
-gameGo_R.isOk = "OK"; //
+gamePause_R.isOk = "OK"; //
