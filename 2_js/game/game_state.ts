@@ -4,9 +4,7 @@
 
 /*
  НАЗНАЧЕНИЕ
- Корневой модуль игры
  
-
 */
 import { global_R } from '../global/global.js';
 

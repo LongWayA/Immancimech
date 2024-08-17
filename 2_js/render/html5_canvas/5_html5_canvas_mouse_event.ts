@@ -14,32 +14,30 @@ if (global_R.print_module_start_finish) console.log('5_html5_canvas_mouse_event.
 import { html5CanvasContext_R } from './1_html5_canvas_context.js';
 
 class Html5CanvasMouseEvent_C {
-    NAME: string = "html5CanvasMouse_R";
-    isOk: string = "";
+    public NAME: string = "html5CanvasMouse_R";
+    public isOk: string = "";
 
-    mouseMoveIsChange: number = 0;
-    mouseMoveX: number = 0;
-    mouseMoveY: number = 0;
+    public mouseMoveIsChange: number = 0;
+    public mouseMoveX: number = 0;
+    public mouseMoveY: number = 0;
 
-    mouseDownIsChange: number = 0;
-    mouseDownX: number = 0;
-    mouseDownY: number = 0;
+    public mouseDownIsChange: number = 0;
+    public mouseDownX: number = 0;
+    public mouseDownY: number = 0;
 
-    mouseUpIsChange: number = 0;
-    mouseUpX: number = 0;
-    mouseUpY: number = 0;
+    public mouseUpIsChange: number = 0;
+    public mouseUpX: number = 0;
+    public mouseUpY: number = 0;
 
-    event: any = null;
+    public event: any = null;
 
     //=============================================================================
     constructor() {
-
     }
     //=============================================================================
 
     //=============================================================================
     iniM(): void {
-
 
         html5CanvasContext_R.idCanvas.addEventListener('mousemove', (event: any) => {
 
@@ -50,7 +48,6 @@ class Html5CanvasMouseEvent_C {
 
         });
 
-
         html5CanvasContext_R.idCanvas.addEventListener('mousedown', (event: any) => {
 
             this.event = event;
@@ -59,8 +56,6 @@ class Html5CanvasMouseEvent_C {
             this.mouseDownY = event.offsetY;
 
         });
-
-
 
         html5CanvasContext_R.idCanvas.addEventListener('mouseup', (event: any) => {
 

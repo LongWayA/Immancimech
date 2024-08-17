@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -4.09.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
 
@@ -43,7 +43,6 @@ class fight_C {
 ; //
 let fight_R = new fight_C();
 fight_R.iniM();
-//Global.testLoading('fight.js');
 export { fight_R, fight_C };
 if (global_R.print_module_start_finish)
     console.log('fight.js -> module finish');

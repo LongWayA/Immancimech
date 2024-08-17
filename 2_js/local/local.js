@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -4.09.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
 
@@ -8,7 +8,6 @@
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('local_c.js -> module start');
-; //
 class Local_C {
     NAME = "Local_C";
     isOk = "";
@@ -45,7 +44,6 @@ class Local_C {
 ; //
 let local_R = new Local_C();
 local_R.iniM();
-//Global.testLoading('ai.js');
 export { local_R, Local_C };
 if (global_R.print_module_start_finish)
     console.log('local_c.js -> module finish');

@@ -24,31 +24,31 @@ import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js'
 
 // 
 class Html5Canvas_C {
-    NAME: string = "html5Canvas_R";
-    isOk: string =  "";
-    width_OUT: number = 0;
-    height_OUT: number = 0;
+
+    public NAME: string = "html5Canvas_R";
+    public isOk: string = "";
+    public width_OUT: number = 0;
+    public height_OUT: number = 0;
     // Color
-    WHITE: string =   'white';
-    BLACK: string =   'black';
-    RED: string =   'red';
-    GREEN: string =   'green';
-    BLUE: string =   'blue';
+    public WHITE: string = 'white';
+    public BLACK: string = 'black';
+    public RED: string = 'red';
+    public GREEN: string = 'green';
+    public BLUE: string = 'blue';
     // 
-    ITALIC_20PX_SANS_SERIF: string =   html5CanvasText_R.ITALIC_20PX_SANS_SERIF;
-    ITALIC_15PT_ARIAL: string =   html5CanvasText_R.ITALIC_15PT_ARIAL;
-    ITALIC_30PT_ARIAL: string =   html5CanvasText_R.ITALIC_30PT_ARIAL;
-    BOLD_30PX_SANS_SERIF: string =   html5CanvasText_R.BOLD_30PX_SANS_SERIF;
-    LINE_WIDTH_1: number =  1;
-    LINE_WIDTH_2: number =  2;
-    LINE_WIDTH_3: number =  3;
-    LINE_WIDTH_4: number =  4;
+    public ITALIC_20PX_SANS_SERIF: string = html5CanvasText_R.ITALIC_20PX_SANS_SERIF;
+    public ITALIC_15PT_ARIAL: string = html5CanvasText_R.ITALIC_15PT_ARIAL;
+    public ITALIC_30PT_ARIAL: string = html5CanvasText_R.ITALIC_30PT_ARIAL;
+    public BOLD_30PX_SANS_SERIF: string = html5CanvasText_R.BOLD_30PX_SANS_SERIF;
+    public LINE_WIDTH_1: number = 1;
+    public LINE_WIDTH_2: number = 2;
+    public LINE_WIDTH_3: number = 3;
+    public LINE_WIDTH_4: number = 4;
 
-   //=============================================================================
-   constructor() {
-
-   }
-   //=============================================================================
+    //=============================================================================
+    constructor() {
+    }
+    //=============================================================================
 
     //=============================================================================
     iniM(): void {
@@ -57,7 +57,7 @@ class Html5Canvas_C {
     };
     //=============================================================================
     //=============================================================================
-    startM(): void  {
+    startM(): void {
     };
     //=============================================================================
     // TEXT
@@ -67,7 +67,7 @@ class Html5Canvas_C {
     // Задаваемые цвета WHITE: 'white', BLACK: 'black', RED: 'red', GREEN: 'green', BLUE: 'blue',
     // Пример задаем черный цвет
     // this.setColor(this.BLACK);
-    setColor(color: string): void  {
+    setColor(color: string): void {
         html5CanvasText_R.setColor(color);
     };
     //============================================================================
@@ -78,7 +78,7 @@ class Html5Canvas_C {
     // BOLD_30PX_SANS_SERIF: 'bold 30px sans-serif',
     // Пример задаем italic 15pt Arial
     // this.setFont(this.ITALIC_15PT_ARIAL);
-    setFont(font: string): void  {
+    setFont(font: string): void {
         html5CanvasText_R.setFont(font);
     };
     //============================================================================
@@ -96,7 +96,7 @@ class Html5Canvas_C {
     // Пример. Печатаем былым цветом и шрифтом италик предложение "Это тестовый вывод" по координатам х 100, у 200
     // this.drawText ("Это тестовый вывод", 100, 200, this.ITALIC_20PX_SANS_SERIF,
     // this.WHITE, 1);
-    drawText(text: string, left: number, top: number, font: string, color: string, fillYes: number): void  {
+    drawText(text: string, left: number, top: number, font: string, color: string, fillYes: number): void {
         html5CanvasText_R.drawText(text, left, top, font, color, fillYes);
     };
     //============================================================================
@@ -105,7 +105,7 @@ class Html5Canvas_C {
     // Очищаем заданную область экрана в виде прямоугольника
     // _left, _top - координаты левого верхнего угла прямоугольника
     // _width, _height - ширина и высота очищаемого прямоугольника
-    clearRect(left: number, top: number, width: number, height: number): void  {
+    clearRect(left: number, top: number, width: number, height: number): void {
         html5CanvasPrimitive_R.clearRect(left, top, width, height);
     };
     //============================================================================
@@ -117,7 +117,7 @@ class Html5Canvas_C {
     // _color - цвет прямоугольника. Задаваемые цвета WHITE, BLACK, RED, GREEN, BLUE
     // _fillYes - закрашиваем ли прямоугольник
     drawRect(left: number, top: number, width: number, height: number,
-        lineWidth: number, color: string, fillYes: number): void  {
+        lineWidth: number, color: string, fillYes: number): void {
         html5CanvasPrimitive_R.drawRect(left, top, width, height, lineWidth, color, fillYes);
     };
     //============================================================================   
@@ -129,19 +129,19 @@ class Html5Canvas_C {
     // _color - цвет прямоугольника. Задаваемые цвета WHITE, BLACK, RED, GREEN, BLUE
     // _fillYes - закрашиваем ли прямоугольник
     drawCircle(centerX: number, centerY: number, radius: number, sAngle: number,
-        eAngle: number, clockwise: boolean, lineWidth: number, color: string): void  {
+        eAngle: number, clockwise: boolean, lineWidth: number, color: string): void {
         //console.log("this.drawCircle -> _centerX = " + _centerX);
         html5CanvasPrimitive_R.drawCircle(centerX, centerY, radius, sAngle, eAngle, clockwise, lineWidth, color);
     };
     //============================================================================   
     //============================================================================
     drawCreaturesCircle(centerX: number, centerY: number, radius: number,
-        angle: number, lineWidth: number, color: string) : void {
+        angle: number, lineWidth: number, color: string): void {
         html5CanvasPrimitive_R.drawCreaturesCircle(centerX, centerY, radius, angle, lineWidth, color);
     };
     //============================================================================
     //============================================================================
-    drawSmile(): void  {
+    drawSmile(): void {
         //drawSmile();
     };
     //============================================================================ 
@@ -153,8 +153,8 @@ class Html5Canvas_C {
     // _mirror - следует ли отзеркалить картинку
     //============================================================================
     drawImage(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number,
-      width: number, height: number, mirror: boolean): void  {
-          html5CanvasImage_R.drawImage(image, left, top, width, height, mirror);
+        width: number, height: number, mirror: boolean): void {
+        html5CanvasImage_R.drawImage(image, left, top, width, height, mirror);
     };
     //============================================================================   
     //MOUSE
@@ -163,9 +163,8 @@ class Html5Canvas_C {
 let html5Canvas_R = new Html5Canvas_C();
 
 html5Canvas_R.iniM();
-//Global.testLoading('6_HTML5_Canvas_H.js');
 
-export { html5Canvas_R, Html5Canvas_C};
+export { html5Canvas_R, Html5Canvas_C };
 
 if (global_R.print_module_start_finish) console.log('6_html5_canvas_h.js -> module finish');
 

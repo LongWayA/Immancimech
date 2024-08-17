@@ -16,18 +16,16 @@ import { html5CanvasContext_R } from '../render/html5_canvas/1_html5_canvas_cont
 import { html5CanvasMouseEvent_R } from '../render/html5_canvas/5_html5_canvas_mouse_event.js';
 
 class Mouse_C {
-    NAME: string = "Mouse_C";
-    isOk: string = "";
+    public NAME: string = "Mouse_C";
+    public isOk: string = "";
 
     //=============================================================================
     constructor() {
-
     }
     //=============================================================================
 
     //=============================================================================
     iniM(): void {
-
     };
     //=============================================================================
     //=============================================================================
@@ -36,7 +34,6 @@ class Mouse_C {
     //=============================================================================
     //=============================================================================
     tick(): void  {
-
 
         if (html5CanvasMouseEvent_R.mouseMoveIsChange == 1) {
             html5CanvasMouseEvent_R.mouseMoveIsChange = 0;

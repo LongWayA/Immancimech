@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -12.11.2023-
-// -24.02m.2024 -15.08m.2024-
+// Last modified -24.02m.2024 -15.08m.2024-
+// 
 /*
    НАЗНАЧЕНИЕ
        
@@ -136,13 +136,3 @@ export { buttons_R, Buttons_C };
 if (global_R.print_module_start_finish)
     console.log('buttons.js ->module finish');
 buttons_R.isOk = "OK"; //
-/*
-
-<input type="text" autocomplete="on | off" />
-<input type="password" autocomplete="on | off" />
-<input type="email" autocomplete="on | off" />
-<input type="search" autocomplete="on | off" />
-<input type="url" autocomplete="on | off" />
-<input type="tel" autocomplete="on | off" />
-
-*/ 

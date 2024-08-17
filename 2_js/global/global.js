@@ -3,8 +3,7 @@
 //
 /*
  НАЗНАЧЕНИЕ
-     
-
+    
 */
 //let print_module_start_finish = true;
 let print_module_start_finish = false;
@@ -12,10 +11,11 @@ let print_module_start_finish = false;
 if (print_module_start_finish)
     console.log('global.js -> module start');
 class Global_C {
-    NAME = "global_R";
+    NAME = "Global_C";
     isOk = "";
     test_count = 1;
     print_module_start_finish = print_module_start_finish; //true
+    isTestLoading = false;
     //=============================================================================
     constructor() {
     }
@@ -33,16 +33,17 @@ class Global_C {
     //=============================================================================
     //============================================================================
     // сообщаем что модуль был прочитан до конца
-    testLoading(_nameScript) {
-        console.log(this.test_count + ' Script ' + _nameScript + ' ok');
-        this.test_count = this.test_count + 1; //
+    testLoading(nameScript) {
+        if (this.isTestLoading) {
+            console.log(this.test_count + ' Script ' + nameScript + ' ok');
+            this.test_count = this.test_count + 1; //
+        }
     }
     ;
 }
 ; //Global
 let global_R = new Global_C();
 global_R.iniM();
-//Global.testLoading('Global.js');
 export { global_R, Global_C };
 if (print_module_start_finish)
     console.log('global.js -> module finish');

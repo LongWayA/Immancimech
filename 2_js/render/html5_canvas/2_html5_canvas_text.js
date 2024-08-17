@@ -128,7 +128,6 @@ class Html5CanvasText_C {
 ; //HTML5_Canvas
 let html5CanvasText_R = new Html5CanvasText_C();
 html5CanvasText_R.iniM();
-//Global.testLoading('2_html5CanvasText_R.js');
 export { html5CanvasText_R, Html5CanvasText_C };
 if (global_R.print_module_start_finish)
     console.log('2_html5_canvas_text.js -> module finish');

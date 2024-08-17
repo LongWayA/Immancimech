@@ -15,7 +15,6 @@
 import { global_R } from '../../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('3_html5_canvas_primitive.js -> module start');
-// Внешние ссылки
 import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js';
 // 
 class Html5CanvasPrimitive_C {
@@ -123,7 +122,6 @@ class Html5CanvasPrimitive_C {
 ; //HTML5_Canvas_primitive
 let html5CanvasPrimitive_R = new Html5CanvasPrimitive_C();
 html5CanvasPrimitive_R.iniM();
-//Global.testLoading('3_html5CanvasPrimitive_R.js');
 export { html5CanvasPrimitive_R, Html5CanvasPrimitive_C };
 if (global_R.print_module_start_finish)
     console.log('3_html5_canvas_primitive.js -> module finish');

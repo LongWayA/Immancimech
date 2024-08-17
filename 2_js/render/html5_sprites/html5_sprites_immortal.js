@@ -143,7 +143,6 @@ class Html5SpritesImmortal_C {
 ; //SpritesMap_2D
 let html5SpritesImmortal_R = new Html5SpritesImmortal_C();
 html5SpritesImmortal_R.iniM();
-//Global.testLoading('html5SpritesImmortal_R.js');
 export { html5SpritesImmortal_R, Html5SpritesImmortal_C };
 if (global_R.print_module_start_finish)
     console.log('html5_sprites_immortal.js -> module finish');

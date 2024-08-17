@@ -18,8 +18,8 @@ if (global_R.print_module_start_finish) console.log('start_client.js -> module s
 import { ai_R } from '../ai/ai.js';
 
 //background
-import { background_R } from '../background/background.js';
-import { TileForBackground_C, TileForBackground_isOk } from '../background/tile_for_background_c.js';
+import { background_R } from '../local/background/background.js';
+import { TileForBackground_C, TileForBackground_isOk } from '../local/background/tile_for_background_c.js';
 
 //creatures
 import { imps_R } from '../creatures/creatures.js';
@@ -61,7 +61,7 @@ import { local_R } from '../local/local.js';
 //loop
 import { buttons_R, Buttons_C } from '../loop/buttons.js';
 import { loop_R } from '../loop/loop_o.js';
-import { requestAnimationFrame_R } from '../render/request_animation.js';
+import { requestAnimationFrame_R } from '../render/request_animation_o.js';
 import { timer_R } from '../loop/timer.js';
 //import { startClient_R } from '../loop/start_client.js';
 

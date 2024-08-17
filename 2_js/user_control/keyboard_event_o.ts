@@ -5,10 +5,6 @@
 /*
 НАЗНАЧЕНИЕ
 
-ИСПОЛЬЗУЕТ МОДУЛИ
-
-ВЫЗЫВАЕТСЯ В МОДУЛЯХ
-
 */
 
 
@@ -122,7 +118,6 @@ let userInputKeyboardEvent_R = {
 };//var UserInputKeyboard
 
 userInputKeyboardEvent_R.iniM();
-//Global.testLoading('keyboard.js');
 
 export { userInputKeyboardEvent_R };
 

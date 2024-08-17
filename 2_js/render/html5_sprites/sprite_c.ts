@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
-// -24.02m.2024-18.03m.2024-
+// Last modified -24.02m.2024-18.03m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
  
@@ -25,9 +25,11 @@ if (global_R.print_module_start_finish) console.log('sprite_c.js -> module start
 
 
 class Sprite_С {
-    Image: HTMLImageElement | HTMLCanvasElement | null; // содержит картинку 
-    PathToImage: string; //содержит путь по которому была загружена картинка
-    NameImage: string; //содержит название картинки
+
+    public Image: HTMLImageElement | HTMLCanvasElement | null; // содержит картинку 
+    public PathToImage: string; //содержит путь по которому была загружена картинка
+    public NameImage: string; //содержит название картинки
+
     constructor() {
         //
         this.Image = null;
@@ -37,9 +39,6 @@ class Sprite_С {
 
 
 }; //class Sprite_С
-
-
-//Global.testLoading('HTML5_SpritesCollection.js');
 
 let Sprite_С_isOk = "OK"; //
 

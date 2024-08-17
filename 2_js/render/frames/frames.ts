@@ -15,15 +15,15 @@ import { html5Canvas_R } from '../html5_canvas/6_html5_canvas_h.js';
 
 
 class Frames_C {
-    NAME: string = "frames_R";
-    isOk: string = "";
+    public NAME: string = "frames_R";
+    public isOk: string = "";
 
     // Внешние ссылки
     //-
 
     // рамки
     // Общая рамка экрана вывода графики
-    editorFrame = {
+    public editorFrame = {
         x0: 0,
         y0: 0,
         width: 0,
@@ -32,7 +32,7 @@ class Frames_C {
         Y_Max: 0, // максимальная координата по вертикали. Вправо вниз
     };
     // Область вывода карты
-    mapFrame = {
+    private mapFrame = {
         tile_SIZE_WIDTH: 50,
         tile_SIZE_HEIGHT: 50,
         HEIGHT_PX: 500,
@@ -44,7 +44,7 @@ class Frames_C {
         Y_Max: 0,
     };
     // Область вывода выбора элементов карты   
-    tilesPanelFrame = {
+    private tilesPanelFrame = {
         tile_SIZE_WIDTH: 50,
         tile_SIZE_HEIGHT: 50,
         HEIGHT_PX: 190,
@@ -66,7 +66,7 @@ class Frames_C {
         Monster_Y_Max: 0,
     };
     // Область печати сообщений редактора
-    printFrame = {
+    private printFrame = {
         height_px: 0,
         x0: 0,
         y0: 0,
@@ -78,7 +78,6 @@ class Frames_C {
 
    //=============================================================================
    constructor() {
-
    }
    //============================================================================= 
 
@@ -196,7 +195,6 @@ class Frames_C {
 let frames_R = new Frames_C();
 
 frames_R.iniM();
-//Global.testLoading('frames_R.js');
 
 export { frames_R, Frames_C };
 

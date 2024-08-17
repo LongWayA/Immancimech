@@ -1,20 +1,19 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -12.11.2023-
-// -02.03m.2024-
+// Last modified -12.11.2023-02.03m.2024-
+// 
 /*
    НАЗНАЧЕНИЕ
        
-
 */
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
-    console.log('test_start_scripts.js -> module start');
+    console.log('test.js -> module start');
 // Внешние ссылки
 //ai
 import { ai_R } from '../ai/ai.js';
 //background
-import { background_R } from '../background/background.js';
-import { TileForBackground_isOk } from '../background/tile_for_background_c.js';
+import { background_R } from '../local/background/background.js';
+import { TileForBackground_isOk } from '../local/background/tile_for_background_c.js';
 //creatures
 import { imps_R } from '../creatures/creatures.js';
 //fight
@@ -45,7 +44,7 @@ import { local_R } from '../local/local.js';
 //loop
 import { buttons_R } from '../loop/buttons.js';
 import { loop_R } from '../loop/loop_o.js';
-import { requestAnimationFrame_R } from '../render/request_animation.js';
+import { requestAnimationFrame_R } from '../render/request_animation_o.js';
 import { timer_R } from '../loop/timer.js';
 import { startClient_R } from '../loop/start_client.js';
 //moove
@@ -64,8 +63,6 @@ import { mouse_R } from '../user_control/mouse.js';
 class Test_C {
     NAME = "test_R";
     isOk = "";
-    // Внешние ссылки
-    //-
     //=============================================================================
     constructor() {
     }
@@ -170,8 +167,6 @@ class Test_C {
             console.log("test.js -> sprite_c.js NOT OK!");
         }
         ;
-        //items
-        //-
         //local
         if (local_R.isOk != "OK") {
             console.log("test.js ->local.js NOT OK!");
@@ -238,7 +233,6 @@ class Test_C {
 ; //
 let test_R = new Test_C();
 test_R.iniM();
-//Global.testLoading('test.js');
 export { test_R, Test_C };
 if (global_R.print_module_start_finish)
-    console.log('test_start_scripts.js -> module finish');
+    console.log('test.js -> module finish');

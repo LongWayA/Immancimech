@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -4.09.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
 
@@ -11,78 +11,37 @@ import { global_R } from '../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('immortal_c.js -> module start');
 
-interface Immortal_C_I {
 
-    number: number;// номер существа в списке
+class Immortal_C {
+
+    private number: number;// номер существа в списке
 
     // для отрисовки картинки существа
-    type: number;  // тип картинки
-    index: number; // порядковый номер картинки 
+    private type: number;  // тип картинки
+    private index: number; // порядковый номер картинки 
 
     // центральная точка картинки существа на экране
-    pointLeft: number; // позиция центра слева
-    pointTop: number; // позиция центра сверху
-    pointTargetRadius: number; //    
-    pointViewRadius: number; //
-    pointViewAngle: number; //
+    private pointLeft: number; // позиция центра слева
+    private pointTop: number; // позиция центра сверху
+    private pointTargetRadius: number; //    
+    private pointViewRadius: number; //
+    private pointViewAngle: number; //
     //  point_attack_radius; //
     //  point_attack_angle; //
 
 
     //
-    directionMovement: number;
-    velocity: number;
+    private directionMovement: number;
+    private velocity: number;
 
 
     // левый верхний угол и размеры квадратика картинки на экране
-    imageLeft: number; // 
-    imageTop: number; //
-    imageWidth: number; //
-    imageHeight: number; //
+    private imageLeft: number; // 
+    private imageTop: number; //
+    private imageWidth: number; //
+    private imageHeight: number; //
 
-    directionMovementAngle: number[];
-
-    // 0-стоим, 1-вверх, 2-движение вправо, 3-вниз, 4-влево
-    runSet(directionMovement: number): void
-    runUp(ground: any): void;
-    runDown(ground: any): void;
-    runLeft(ground: any): void;
-    runRight(ground: any): void;
-    run(ground: any): void;
-    print(): void;
-
-}
-
-class Immortal_C implements Immortal_C_I {
-
-    number: number;// номер существа в списке
-
-    // для отрисовки картинки существа
-    type: number;  // тип картинки
-    index: number; // порядковый номер картинки 
-
-    // центральная точка картинки существа на экране
-    pointLeft: number; // позиция центра слева
-    pointTop: number; // позиция центра сверху
-    pointTargetRadius: number; //    
-    pointViewRadius: number; //
-    pointViewAngle: number; //
-    //  point_attack_radius; //
-    //  point_attack_angle; //
-
-
-    //
-    directionMovement: number;
-    velocity: number;
-
-
-    // левый верхний угол и размеры квадратика картинки на экране
-    imageLeft: number; // 
-    imageTop: number; //
-    imageWidth: number; //
-    imageHeight: number; //
-
-    directionMovementAngle: number[];
+    private directionMovementAngle: number[];
 
     // constructor(_number, _type, _index, _point_left, _point_top, _image_width, _image_height,
     //     _point_view_radius, _point_view_angle, _directionMovement, _velocity) {

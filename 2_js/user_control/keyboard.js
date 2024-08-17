@@ -4,10 +4,6 @@
 /*
 НАЗНАЧЕНИЕ
 
-ИСПОЛЬЗУЕТ МОДУЛИ
-
-ВЫЗЫВАЕТСЯ В МОДУЛЯХ
-
 */
 /*
 Событие keydown происходит при нажатии клавиши, а keyup – при отпускании.
@@ -141,7 +137,6 @@ class UserInputKeyboard_C {
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
 let userInputKeyboard_R = new UserInputKeyboard_C();
 userInputKeyboard_R.iniM();
-//Global.testLoading('keyboard.js');
 export { userInputKeyboard_R, UserInputKeyboard_C };
 if (global_R.print_module_start_finish)
     console.log('keyboard.js -> module finish');

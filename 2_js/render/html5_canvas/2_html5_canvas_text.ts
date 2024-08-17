@@ -20,26 +20,26 @@ import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js'
 
 // 
 class Html5CanvasText_C {
-    NAME: string = "html5CanvasText_R";
-    isOk: string = "";
-    ITALIC_20PX_SANS_SERIF: string = 'italic 20px sans-serif';
-    ITALIC_15PT_ARIAL: string = 'italic 15pt Arial';
-    ITALIC_30PT_ARIAL: string = 'italic 30pt Arial';
-    BOLD_30PX_SANS_SERIF: string = 'bold 30px sans-serif';
-    WHITE: string = 'white';
-    BLACK: string = 'black';
-    RED: string = 'red';
-    GREEN: string = 'green';
-    BLUE: string = 'blue';
-    LINE_WIDTH_1: number = 1;
-    LINE_WIDTH_2: number = 2;
-    LINE_WIDTH_3: number = 3;
-    LINE_WIDTH_4: number = 4;
-    load: number = 0;
+
+    public NAME: string = "html5CanvasText_R";
+    public isOk: string = "";
+    public ITALIC_20PX_SANS_SERIF: string = 'italic 20px sans-serif';
+    public ITALIC_15PT_ARIAL: string = 'italic 15pt Arial';
+    public ITALIC_30PT_ARIAL: string = 'italic 30pt Arial';
+    public BOLD_30PX_SANS_SERIF: string = 'bold 30px sans-serif';
+    public WHITE: string = 'white';
+    public BLACK: string = 'black';
+    public RED: string = 'red';
+    public GREEN: string = 'green';
+    public BLUE: string = 'blue';
+    public LINE_WIDTH_1: number = 1;
+    public LINE_WIDTH_2: number = 2;
+    public LINE_WIDTH_3: number = 3;
+    public LINE_WIDTH_4: number = 4;
+    public load: number = 0;
 
     //=============================================================================
     constructor() {
-
     }
     //=============================================================================
 
@@ -129,9 +129,6 @@ class Html5CanvasText_C {
 let html5CanvasText_R = new Html5CanvasText_C();
 
 html5CanvasText_R.iniM();
-//Global.testLoading('2_html5CanvasText_R.js');
-
-
 
 export { html5CanvasText_R, Html5CanvasText_C };
 

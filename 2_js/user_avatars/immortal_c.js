@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -4.09.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
 

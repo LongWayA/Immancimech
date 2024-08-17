@@ -187,7 +187,6 @@ class Frames_C {
 ; //Frames
 let frames_R = new Frames_C();
 frames_R.iniM();
-//Global.testLoading('frames_R.js');
 export { frames_R, Frames_C };
 if (global_R.print_module_start_finish)
     console.log('frames.js -> module finish');

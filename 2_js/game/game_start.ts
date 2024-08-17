@@ -3,15 +3,13 @@
 
 /*
  НАЗНАЧЕНИЕ
- Корневой модуль игры
  
-
 */
 import { global_R } from '../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('game_start.js -> module start');
 
-import { requestAnimationFrame_R } from '../render/request_animation.js';
+import { requestAnimationFrame_R } from '../render/request_animation_o.js';
 import { render_R } from '../render/render.js';
 
 class GameStart_C {

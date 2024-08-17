@@ -29,22 +29,22 @@ import { Sprite_Imm_C } from '../html5_sprites/sprite_i_c.js';
 
 //
 class Html5SpritesImmortal_C {
-    NAME: string = "html5SpritesImmortal_R";
-    isOk: string = " ";
 
-    out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
+    public NAME: string = "html5SpritesImmortal_R";
+    public isOk: string = " ";
+
+    public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
 
 
-    PATH_TO_IMAGES: string = "4_resource/images/immortals_img/";
+    public PATH_TO_IMAGES: string = "4_resource/images/immortals_img/";
 
-    MAX_COUNT: number = 3;
+    public MAX_COUNT: number = 3;
 
     //
-    sprites: any[] = new Array(1);
+    public sprites: any[] = new Array(1);
 
     //=============================================================================
     constructor() {
-
     }
     //=============================================================================
 
@@ -164,7 +164,6 @@ class Html5SpritesImmortal_C {
 let html5SpritesImmortal_R = new Html5SpritesImmortal_C();
 
 html5SpritesImmortal_R.iniM();
-//Global.testLoading('html5SpritesImmortal_R.js');
 
 export { html5SpritesImmortal_R,Html5SpritesImmortal_C };
 

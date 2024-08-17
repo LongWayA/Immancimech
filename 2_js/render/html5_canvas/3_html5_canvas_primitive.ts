@@ -17,23 +17,20 @@ import { global_R } from '../../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('3_html5_canvas_primitive.js -> module start');
 
-// Внешние ссылки
-
 import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js';
 
 // 
 class Html5CanvasPrimitive_C {
-    NAME: string = "html5CanvasPrimitive_R";
-    isOk: string = "";
-    WHITE: string = 'white';
-    BLACK: string = 'black';
-    RED: string = 'red';
-    GREEN: string = 'green';
-    BLUE: string = 'blue';
+    public NAME: string = "html5CanvasPrimitive_R";
+    public isOk: string = "";
+    public WHITE: string = 'white';
+    public BLACK: string = 'black';
+    public RED: string = 'red';
+    public GREEN: string = 'green';
+    public BLUE: string = 'blue';
 
     //=============================================================================
     constructor() {
-
     }
     //=============================================================================
 
@@ -130,7 +127,6 @@ class Html5CanvasPrimitive_C {
 let html5CanvasPrimitive_R = new Html5CanvasPrimitive_C()
 
 html5CanvasPrimitive_R.iniM();
-//Global.testLoading('3_html5CanvasPrimitive_R.js');
 
 export { html5CanvasPrimitive_R, Html5CanvasPrimitive_C};
 

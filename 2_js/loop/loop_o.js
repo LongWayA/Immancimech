@@ -1,13 +1,9 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -12.11.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
    НАЗНАЧЕНИЕ
-       
-Вы можете подумать, что setTimeout вызовет myCat.logInfo(), которая запишет информацию об объекте myCat.
-Но метод отделяется от объекта, когда передаётся в качестве параметра: setTimout(myCat.logInfo), и через
-секунду происходит вызов функции. Когда logInfo вызывается как функция, this становится глобальным объектом или
-undefined (но не объектом myCat), поэтому информация об объекте выводится некорректно.
+    
 */
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
@@ -74,9 +70,4 @@ loop_R.isOk = "OK"; //
 undefined (но не объектом myCat), поэтому информация об объекте выводится некорректно.
 https://tproger.ru/translations/javascript-this-keyword
 
-
-let userName = prompt("Введите имя", "Алиса");
-let isTeaWanted = confirm("Вы хотите чаю?");
-alert( "Посетитель: " + userName ); // Алиса
-alert( "Чай: " + isTeaWanted ); // true
 */ 

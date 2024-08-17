@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -4.09.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
 
@@ -38,7 +38,6 @@ class Imps_C {
 ; //
 let imps_R = new Imps_C();
 imps_R.iniM();
-//Global.testLoading('Imps.js');
 export { imps_R, Imps_C };
 if (global_R.print_module_start_finish)
     console.log('creatures.js -> module finish');

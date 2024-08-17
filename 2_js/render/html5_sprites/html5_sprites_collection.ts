@@ -28,80 +28,79 @@ import { Sprite_С } from '../html5_sprites/sprite_c.js';
 
 //
 class Html5SpritesCollection_C {
-    NAME: string = "html5SpritesCollection_R";
-    isOk: string = " ";
-    PATH_TO_IMAGES: string = "4_resource/images";
+    public NAME: string = "html5SpritesCollection_R";
+    public isOk: string = " ";
+    public PATH_TO_IMAGES: string = "4_resource/images";
 
-    REZERV: number = 0;
-    ADVENTURES: number = 1;
-    GROUNDS: number = 2;
-    ITEMS: number = 3;
-    CREATURES: number = 4;
+    public REZERV: number = 0;
+    public ADVENTURES: number = 1;
+    public GROUNDS: number = 2;
+    public ITEMS: number = 3;
+    public CREATURES: number = 4;
 
-    REZERV_MAX_COUNT: number = 1;
-    ADVENTURES_MAX_COUNT: number = 25;
-    GROUNDS_MAX_COUNT: number = 8;
-    ITEMS_MAX_COUNT: number = 20;
-    CREATURES_MAX_COUNT: number = 15;
+    public REZERV_MAX_COUNT: number = 1;
+    public ADVENTURES_MAX_COUNT: number = 25;
+    public GROUNDS_MAX_COUNT: number = 8;
+    public ITEMS_MAX_COUNT: number = 20;
+    public CREATURES_MAX_COUNT: number = 15;
 
     //GROUNDS
     // так кодируются тайлы для слоя земли
-    GROUND_NOTHING: number = 0;      // пустая область
-    GROUND_STONE: number = 1;        // непробиваемый камень
-    GROUND_SEND: number = 2;         // копаемый песок
-    GROUND_FLOOR: number = 3;        // проходимый пол
-    GROUND_WALL: number = 4;         // стена подземелья
-    GROUND_WALL_FORTIFED: number = 5;// укрепленная стена подземелья
-    GROUND_VEIN_GOLD: number = 6;    // золотая жила
-    GROUND_VEIN_GEM: number = 7;     // драгоценный камень жила
+    public GROUND_NOTHING: number = 0;      // пустая область
+    public GROUND_STONE: number = 1;        // непробиваемый камень
+    public GROUND_SEND: number = 2;         // копаемый песок
+    public GROUND_FLOOR: number = 3;        // проходимый пол
+    public GROUND_WALL: number = 4;         // стена подземелья
+    public GROUND_WALL_FORTIFED: number = 5;// укрепленная стена подземелья
+    public GROUND_VEIN_GOLD: number = 6;    // золотая жила
+    public GROUND_VEIN_GEM: number = 7;     // драгоценный камень жила
 
     //ITEMS
     // так кодируются тайлы для слоя предметов
-    ITEMS_NOTHING: number = 0;
-    ITEMS_RING: number = 1;
-    ITEMS_SWORD_1: number = 2;
-    ITEMS_SWORD_2: number = 3;
-    ITEMS_SWORD_3: number = 4;
-    ITEMS_SHIELD: number = 5;
-    ITEMS_ARMOR_1: number = 6;
-    ITEMS_ARMOR_2: number = 7;
-    ITEMS_ARMOR_3: number = 8;
-    ITEMS_ARMOR_4: number = 9;
-    ITEMS_ARMOR_5: number = 10;
-    ITEMS_ARMOR_6: number = 11;
-    ITEMS_FLOWER_1: number = 12;
-    ITEMS_FLOWER_2: number = 13;
-    ITEMS_FLOWER_3: number = 14;
-    ITEMS_FLOWER_4: number = 15;
-    ITEMS_FLOWER_5: number = 16;
-    ITEMS_FLOWER_6: number = 17;
-    ITEMS_POTION: number = 18;
-    ITEMS_DOOR: number = 19;
+    public ITEMS_NOTHING: number = 0;
+    public ITEMS_RING: number = 1;
+    public ITEMS_SWORD_1: number = 2;
+    public ITEMS_SWORD_2: number = 3;
+    public ITEMS_SWORD_3: number = 4;
+    public ITEMS_SHIELD: number = 5;
+    public ITEMS_ARMOR_1: number = 6;
+    public ITEMS_ARMOR_2: number = 7;
+    public ITEMS_ARMOR_3: number = 8;
+    public ITEMS_ARMOR_4: number = 9;
+    public ITEMS_ARMOR_5: number = 10;
+    public ITEMS_ARMOR_6: number = 11;
+    public ITEMS_FLOWER_1: number = 12;
+    public ITEMS_FLOWER_2: number = 13;
+    public ITEMS_FLOWER_3: number = 14;
+    public ITEMS_FLOWER_4: number = 15;
+    public ITEMS_FLOWER_5: number = 16;
+    public ITEMS_FLOWER_6: number = 17;
+    public ITEMS_POTION: number = 18;
+    public ITEMS_DOOR: number = 19;
 
     //CREATURES
     // так кодируются тайлы для слоя монстров
-    CREATURES_NOTHING: number = 0;
-    CREATURES_GHOST: number = 1;
-    CREATURES_DRAGON: number = 2;
-    CREATURES_GOBLIN: number = 3;
-    CREATURES_HARPY: number = 4;
-    CREATURES_DRUID: number = 5;
-    CREATURES_VARNEY: number = 6;
-    CREATURES_LICH: number = 7;
-    CREATURES_MEDUSA: number = 8;
-    CREATURES_MINOTAUR: number = 9;
-    CREATURES_GENIE: number = 10;
-    CREATURES_FIGHTER: number = 11;
-    CREATURES_GARGOYLE: number = 12;
-    CREATURES_SKELETON: number = 13;
-    CREATURES_TITAN: number = 14;
+    public CREATURES_NOTHING: number = 0;
+    public CREATURES_GHOST: number = 1;
+    public CREATURES_DRAGON: number = 2;
+    public CREATURES_GOBLIN: number = 3;
+    public CREATURES_HARPY: number = 4;
+    public CREATURES_DRUID: number = 5;
+    public CREATURES_VARNEY: number = 6;
+    public CREATURES_LICH: number = 7;
+    public CREATURES_MEDUSA: number = 8;
+    public CREATURES_MINOTAUR: number = 9;
+    public CREATURES_GENIE: number = 10;
+    public CREATURES_FIGHTER: number = 11;
+    public CREATURES_GARGOYLE: number = 12;
+    public CREATURES_SKELETON: number = 13;
+    public CREATURES_TITAN: number = 14;
 
     //HTMLImageElement[] | HTMLCanvasElement[]
-    sprites: any[] = new Array(5);
+    public sprites: any[] = new Array(5);
 
     //=============================================================================
     constructor() {
-
     }
     //=============================================================================
 
@@ -264,7 +263,6 @@ let html5SpritesCollection_R = new Html5SpritesCollection_C();
 
 
 html5SpritesCollection_R.iniM();
-//Global.testLoading('html5SpritesCollection_R.js');
 
 export { html5SpritesCollection_R, Html5SpritesCollection_C };
 

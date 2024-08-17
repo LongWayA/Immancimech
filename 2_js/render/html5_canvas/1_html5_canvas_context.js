@@ -21,7 +21,7 @@ class Html5CanvasContext_C {
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
     //const idCanvas : HTMLElement = <HTMLElement>document.getElementById('game-canvas');
-    idCanvas = document.getElementById('game-canvas');
+    idCanvas = document.getElementById('game-canvas'); //private 
     contextCanvas = this.idCanvas.getContext('2d');
     //=============================================================================
     constructor() {
@@ -193,7 +193,6 @@ class Html5CanvasContext_C {
 ;
 let html5CanvasContext_R = new Html5CanvasContext_C();
 html5CanvasContext_R.iniM();
-//Global.testLoading('1_HTML5_Canvas_context.js');
 html5CanvasContext_R.isOk = "OK"; //
 export { html5CanvasContext_R, Html5CanvasContext_C };
 if (global_R.print_module_start_finish)

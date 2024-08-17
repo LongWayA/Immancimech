@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -4.09.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
 
@@ -17,14 +17,14 @@ import { Immortal_C } from '../user_avatars/immortal_c.js';
 
 
 class Immortals_C {
-    NAME: string = "immortals_R";
-    isOk: string = "";
+    public NAME: string = "immortals_R";
+    public isOk: string = "";
 
     // Внешние ссылки
-    out_html5Sprites_R: Html5Sprites_C = html5Sprites_R;
-    out_html5Canvas_R:  Html5Canvas_C = html5Canvas_R;
+    public out_html5Sprites_R: Html5Sprites_C = html5Sprites_R;
+    public out_html5Canvas_R:  Html5Canvas_C = html5Canvas_R;
 
-    List: any[] = new Array(3);
+    private List: any[] = new Array(3);
 
     //=============================================================================
     constructor() {
@@ -150,7 +150,6 @@ class Immortals_C {
 let immortals_R = new Immortals_C();
 
 immortals_R.iniM();
-//Global.testLoading('immortals_R.js');
 
 export { immortals_R, Immortals_C };
 

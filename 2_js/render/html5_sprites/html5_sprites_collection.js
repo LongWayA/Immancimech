@@ -246,7 +246,6 @@ class Html5SpritesCollection_C {
 ; //SpritesMap_2D
 let html5SpritesCollection_R = new Html5SpritesCollection_C();
 html5SpritesCollection_R.iniM();
-//Global.testLoading('html5SpritesCollection_R.js');
 export { html5SpritesCollection_R, Html5SpritesCollection_C };
 if (global_R.print_module_start_finish)
     console.log('html5_sprites_collection.js -> module finish');

@@ -1,8 +1,6 @@
-
-
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -4.09.2023-
-// -24.02m.2024-
+// Last modified -24.02m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
 
@@ -13,16 +11,16 @@ import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish) console.log('run.js -> module start');
 
 import { immortals_R } from '../user_avatars/immortals.js';
-import { background_R, Background_C } from '../background/background.js';
+import { background_R, Background_C } from '../local/background/background.js';
 
 class Run_C {
-    NAME: string = "run_R";
-    isOk: string = "";
+    public NAME: string = "run_R";
+    public isOk: string = "";
 
-    out_immortals_R = immortals_R;//, Immortals_C
+    public out_immortals_R = immortals_R;//, Immortals_C
 
 
-    out_background_R: Background_C = background_R;
+    public out_background_R: Background_C = background_R;
 
     //=============================================================================
     constructor() {
@@ -41,7 +39,6 @@ class Run_C {
     tick():void {
 
         this.out_immortals_R.update(run_R.out_background_R);
-
     };
     //=============================================================================   
     //=============================================================================
@@ -58,7 +55,6 @@ class Run_C {
 let run_R = new Run_C();
 
 run_R.iniM();
-//Global.testLoading('run.js');
 
 export { run_R };
 

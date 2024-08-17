@@ -3,9 +3,7 @@
 // -24.02m.2024-15.08m.2024-
 /*
  НАЗНАЧЕНИЕ
- Корневой модуль игры
  
-
 */
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)

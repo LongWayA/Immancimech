@@ -111,7 +111,6 @@ class Html5Sprites_C {
 ; //SpritesMap_2D
 let html5Sprites_R = new Html5Sprites_C;
 html5Sprites_R.iniM();
-//Global.testLoading('HTML5_html5Sprites_R.js');
 export { html5Sprites_R, Html5Sprites_C };
 if (global_R.print_module_start_finish)
     console.log('html5_sprites.js -> module finish');

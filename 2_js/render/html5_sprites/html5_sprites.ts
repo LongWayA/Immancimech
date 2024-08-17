@@ -28,77 +28,77 @@ import { html5SpritesCollection_R, Html5SpritesCollection_C } from './html5_spri
 
 //
 class Html5Sprites_C {
-  NAME: string = "html5Sprites_R";
-  isOk: string = " ";
+
+  public NAME: string = "html5Sprites_R";
+  public isOk: string = " ";
 
 
   // Внешние ссылки
-  out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
+  public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
 
-  out_html5SpritesCollection_R: Html5SpritesCollection_C = html5SpritesCollection_R;
+  public out_html5SpritesCollection_R: Html5SpritesCollection_C = html5SpritesCollection_R;
 
 
-  REZERV: number = html5SpritesCollection_R.REZERV;
-  ADVENTURES: number = html5SpritesCollection_R.ADVENTURES;
-  GROUNDS: number = html5SpritesCollection_R.GROUNDS;
-  ITEMS: number = html5SpritesCollection_R.ITEMS;
-  CREATURES: number = html5SpritesCollection_R.CREATURES;
+  public REZERV: number = html5SpritesCollection_R.REZERV;
+  public ADVENTURES: number = html5SpritesCollection_R.ADVENTURES;
+  public GROUNDS: number = html5SpritesCollection_R.GROUNDS;
+  public ITEMS: number = html5SpritesCollection_R.ITEMS;
+  public CREATURES: number = html5SpritesCollection_R.CREATURES;
 
   //GROUNDS
   // так кодируются тайлы для слоя земли
-  GROUND_NOTHING: number = html5SpritesCollection_R.GROUND_NOTHING;      // пустая область
-  GROUND_STONE: number = html5SpritesCollection_R.GROUND_STONE;        // непробиваемый камень
-  GROUND_SEND: number = html5SpritesCollection_R.GROUND_SEND;         // копаемый песок
-  GROUND_FLOOR: number = html5SpritesCollection_R.GROUND_FLOOR;        // проходимый пол
-  GROUND_WALL: number = html5SpritesCollection_R.GROUND_WALL;         // стена подземелья
-  GROUND_WALL_FORTIFED: number = html5SpritesCollection_R.GROUND_WALL_FORTIFED;// укрепленная стена подземелья
-  GROUND_VEIN_GOLD: number = html5SpritesCollection_R.GROUND_VEIN_GOLD;    // золотая жила
-  GROUND_VEIN_GEM: number = html5SpritesCollection_R.GROUND_VEIN_GEM;     // драгоценный камень жила
+  public GROUND_NOTHING: number = html5SpritesCollection_R.GROUND_NOTHING;      // пустая область
+  public GROUND_STONE: number = html5SpritesCollection_R.GROUND_STONE;        // непробиваемый камень
+  public GROUND_SEND: number = html5SpritesCollection_R.GROUND_SEND;         // копаемый песок
+  public GROUND_FLOOR: number = html5SpritesCollection_R.GROUND_FLOOR;        // проходимый пол
+  public GROUND_WALL: number = html5SpritesCollection_R.GROUND_WALL;         // стена подземелья
+  public GROUND_WALL_FORTIFED: number = html5SpritesCollection_R.GROUND_WALL_FORTIFED;// укрепленная стена подземелья
+  public GROUND_VEIN_GOLD: number = html5SpritesCollection_R.GROUND_VEIN_GOLD;    // золотая жила
+  public GROUND_VEIN_GEM: number = html5SpritesCollection_R.GROUND_VEIN_GEM;     // драгоценный камень жила
 
   //ITEMS
   // так кодируются тайлы для слоя предметов
-  ITEMS_NOTHING: number = html5SpritesCollection_R.ITEMS_NOTHING;
-  ITEMS_RING: number = html5SpritesCollection_R.ITEMS_RING;
-  ITEMS_SWORD_1: number = html5SpritesCollection_R.ITEMS_SWORD_1;
-  ITEMS_SWORD_2: number = html5SpritesCollection_R.ITEMS_SWORD_2;
-  ITEMS_SWORD_3: number = html5SpritesCollection_R.ITEMS_SWORD_3;
-  ITEMS_SHIELD: number = html5SpritesCollection_R.ITEMS_SHIELD;
-  ITEMS_ARMOR_1: number = html5SpritesCollection_R.ITEMS_ARMOR_1;
-  ITEMS_ARMOR_2: number = html5SpritesCollection_R.ITEMS_ARMOR_2;
-  ITEMS_ARMOR_3: number = html5SpritesCollection_R.ITEMS_ARMOR_3;
-  ITEMS_ARMOR_4: number = html5SpritesCollection_R.ITEMS_ARMOR_4;
-  ITEMS_ARMOR_5: number = html5SpritesCollection_R.ITEMS_ARMOR_5;
-  ITEMS_ARMOR_6: number = html5SpritesCollection_R.ITEMS_ARMOR_6;
-  ITEMS_FLOWER_1: number = html5SpritesCollection_R.ITEMS_FLOWER_1;
-  ITEMS_FLOWER_2: number = html5SpritesCollection_R.ITEMS_FLOWER_2;
-  ITEMS_FLOWER_3: number = html5SpritesCollection_R.ITEMS_FLOWER_3;
-  ITEMS_FLOWER_4: number = html5SpritesCollection_R.ITEMS_FLOWER_4;
-  ITEMS_FLOWER_5: number = html5SpritesCollection_R.ITEMS_FLOWER_5;
-  ITEMS_FLOWER_6: number = html5SpritesCollection_R.ITEMS_FLOWER_6;
-  ITEMS_POTION: number = html5SpritesCollection_R.ITEMS_POTION;
-  ITEMS_DOOR: number = html5SpritesCollection_R.ITEMS_DOOR;
+  public ITEMS_NOTHING: number = html5SpritesCollection_R.ITEMS_NOTHING;
+  public ITEMS_RING: number = html5SpritesCollection_R.ITEMS_RING;
+  public ITEMS_SWORD_1: number = html5SpritesCollection_R.ITEMS_SWORD_1;
+  public ITEMS_SWORD_2: number = html5SpritesCollection_R.ITEMS_SWORD_2;
+  public ITEMS_SWORD_3: number = html5SpritesCollection_R.ITEMS_SWORD_3;
+  public ITEMS_SHIELD: number = html5SpritesCollection_R.ITEMS_SHIELD;
+  public ITEMS_ARMOR_1: number = html5SpritesCollection_R.ITEMS_ARMOR_1;
+  public ITEMS_ARMOR_2: number = html5SpritesCollection_R.ITEMS_ARMOR_2;
+  public ITEMS_ARMOR_3: number = html5SpritesCollection_R.ITEMS_ARMOR_3;
+  public ITEMS_ARMOR_4: number = html5SpritesCollection_R.ITEMS_ARMOR_4;
+  public ITEMS_ARMOR_5: number = html5SpritesCollection_R.ITEMS_ARMOR_5;
+  public ITEMS_ARMOR_6: number = html5SpritesCollection_R.ITEMS_ARMOR_6;
+  public ITEMS_FLOWER_1: number = html5SpritesCollection_R.ITEMS_FLOWER_1;
+  public ITEMS_FLOWER_2: number = html5SpritesCollection_R.ITEMS_FLOWER_2;
+  public ITEMS_FLOWER_3: number = html5SpritesCollection_R.ITEMS_FLOWER_3;
+  public ITEMS_FLOWER_4: number = html5SpritesCollection_R.ITEMS_FLOWER_4;
+  public ITEMS_FLOWER_5: number = html5SpritesCollection_R.ITEMS_FLOWER_5;
+  public ITEMS_FLOWER_6: number = html5SpritesCollection_R.ITEMS_FLOWER_6;
+  public ITEMS_POTION: number = html5SpritesCollection_R.ITEMS_POTION;
+  public ITEMS_DOOR: number = html5SpritesCollection_R.ITEMS_DOOR;
 
   //CREATURES
   // так кодируются тайлы для слоя монстров
-  CREATURES_NOTHING: number = html5SpritesCollection_R.CREATURES_NOTHING;
-  CREATURES_GHOST: number = html5SpritesCollection_R.CREATURES_GHOST;
-  CREATURES_DRAGON: number = html5SpritesCollection_R.CREATURES_DRAGON;
-  CREATURES_GOBLIN: number = html5SpritesCollection_R.CREATURES_GOBLIN;
-  CREATURES_HARPY: number = html5SpritesCollection_R.CREATURES_HARPY;
-  CREATURES_DRUID: number = html5SpritesCollection_R.CREATURES_DRUID;
-  CREATURES_VARNEY: number = html5SpritesCollection_R.CREATURES_VARNEY;
-  CREATURES_LICH: number = html5SpritesCollection_R.CREATURES_LICH;
-  CREATURES_MEDUSA: number = html5SpritesCollection_R.CREATURES_MEDUSA;
-  CREATURES_MINOTAUR: number = html5SpritesCollection_R.CREATURES_MINOTAUR;
-  CREATURES_GENIE: number = html5SpritesCollection_R.CREATURES_GENIE;
-  CREATURES_FIGHTER: number = html5SpritesCollection_R.CREATURES_FIGHTER;
-  CREATURES_GARGOYLE: number = html5SpritesCollection_R.CREATURES_GARGOYLE;
-  CREATURES_SKELETON: number = html5SpritesCollection_R.CREATURES_SKELETON;
-  CREATURES_TITAN: number = html5SpritesCollection_R.CREATURES_TITAN;
+  public CREATURES_NOTHING: number = html5SpritesCollection_R.CREATURES_NOTHING;
+  public CREATURES_GHOST: number = html5SpritesCollection_R.CREATURES_GHOST;
+  public CREATURES_DRAGON: number = html5SpritesCollection_R.CREATURES_DRAGON;
+  public CREATURES_GOBLIN: number = html5SpritesCollection_R.CREATURES_GOBLIN;
+  public CREATURES_HARPY: number = html5SpritesCollection_R.CREATURES_HARPY;
+  public CREATURES_DRUID: number = html5SpritesCollection_R.CREATURES_DRUID;
+  public CREATURES_VARNEY: number = html5SpritesCollection_R.CREATURES_VARNEY;
+  public CREATURES_LICH: number = html5SpritesCollection_R.CREATURES_LICH;
+  public CREATURES_MEDUSA: number = html5SpritesCollection_R.CREATURES_MEDUSA;
+  public CREATURES_MINOTAUR: number = html5SpritesCollection_R.CREATURES_MINOTAUR;
+  public CREATURES_GENIE: number = html5SpritesCollection_R.CREATURES_GENIE;
+  public CREATURES_FIGHTER: number = html5SpritesCollection_R.CREATURES_FIGHTER;
+  public CREATURES_GARGOYLE: number = html5SpritesCollection_R.CREATURES_GARGOYLE;
+  public CREATURES_SKELETON: number = html5SpritesCollection_R.CREATURES_SKELETON;
+  public CREATURES_TITAN: number = html5SpritesCollection_R.CREATURES_TITAN;
 
    //=============================================================================
    constructor() {
-
    }
    //=============================================================================
 
@@ -131,7 +131,6 @@ class Html5Sprites_C {
 let html5Sprites_R = new Html5Sprites_C;
 
 html5Sprites_R.iniM();
-//Global.testLoading('HTML5_html5Sprites_R.js');
 
 export { html5Sprites_R, Html5Sprites_C };
 

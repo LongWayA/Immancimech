@@ -4,10 +4,6 @@
 /*
 НАЗНАЧЕНИЕ
 
-ИСПОЛЬЗУЕТ МОДУЛИ
-
-ВЫЗЫВАЕТСЯ В МОДУЛЯХ
-
 */
 /*
 Событие keydown происходит при нажатии клавиши, а keyup – при отпускании.
@@ -91,7 +87,6 @@ let userInputKeyboardEvent_R = {
     //==============================================================================
 }; //var UserInputKeyboard
 userInputKeyboardEvent_R.iniM();
-//Global.testLoading('keyboard.js');
 export { userInputKeyboardEvent_R };
 if (global_R.print_module_start_finish)
     console.log('keyboard.js -> module finish');

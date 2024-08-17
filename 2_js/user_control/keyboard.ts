@@ -5,10 +5,6 @@
 /*
 НАЗНАЧЕНИЕ
 
-ИСПОЛЬЗУЕТ МОДУЛИ
-
-ВЫЗЫВАЕТСЯ В МОДУЛЯХ
-
 */
 
 
@@ -37,10 +33,10 @@ import { userInputKeyboardEvent_R } from './keyboard_event_o.js';
 // this теряет контекст, когда метод используется в качестве обработчика события.
 class UserInputKeyboard_C {
 
-    NAME: string = "UserInputKeyboard_C";
-    isOk: string = "";
+    public NAME: string = "UserInputKeyboard_C";
+    public isOk: string = "";
 
-    command: string = "_"; //
+    public command: string = "_"; //
     //alert("!");
     //i : 0;
     //i2 : 0;
@@ -171,7 +167,6 @@ class UserInputKeyboard_C {
 let userInputKeyboard_R = new UserInputKeyboard_C();
 
 userInputKeyboard_R.iniM();
-//Global.testLoading('keyboard.js');
 
 export { userInputKeyboard_R, UserInputKeyboard_C };
 

@@ -22,15 +22,15 @@ import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js'
 
 // 
 class Html5CanvasImage_C {
-    NAME: string = "Html5CanvasImage_C";
-    isOk: string =  "";
-    DRAW_MIRROR: boolean = true;
 
-   //=============================================================================
-   constructor() {
+    public NAME: string = "Html5CanvasImage_C";
+    public isOk: string = "";
+    public DRAW_MIRROR: boolean = true;
 
-   }
-   //=============================================================================
+    //=============================================================================
+    constructor() {
+    }
+    //=============================================================================
 
     //=============================================================================
     iniM(): void {
@@ -79,8 +79,6 @@ class Html5CanvasImage_C {
 let html5CanvasImage_R = new Html5CanvasImage_C();
 
 html5CanvasImage_R.iniM();
-//
-//Global.testLoading('4_html5CanvasImage_R.js');
 
 export { html5CanvasImage_R, Html5CanvasImage_C };
 

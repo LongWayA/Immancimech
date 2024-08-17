@@ -22,19 +22,18 @@ if (global_R.print_module_start_finish) console.log('1_html5_canvas_context.js -
 
 class Html5CanvasContext_C {
 
-    NAME: string = "CanvasContext_C";
-    isOk: string = "";
+    public NAME: string = "CanvasContext_C";
+    public isOk: string = "";
 
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
     //const idCanvas : HTMLElement = <HTMLElement>document.getElementById('game-canvas');
-    idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');
+    public idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');//private 
 
-    contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');
+    private contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');
 
     //=============================================================================
     constructor() {
-
     }
     //============================================================================= 
 
@@ -206,11 +205,8 @@ let html5CanvasContext_R = new Html5CanvasContext_C();
 
 html5CanvasContext_R.iniM();
 
-//Global.testLoading('1_HTML5_Canvas_context.js');
-
 html5CanvasContext_R.isOk = "OK"; //
 
 export { html5CanvasContext_R, Html5CanvasContext_C };
-
 
 if (global_R.print_module_start_finish) console.log('1_html5_canvas_context.js -> module  finish');

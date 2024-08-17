@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
-// -24.02m.2024-18.03m.2024-
+// Last modified -24.02m.2024-18.03m.2024-
+// 
 /*
  НАЗНАЧЕНИЕ
  
@@ -33,7 +33,6 @@ class Sprite_С {
     } //constructor() {
 }
 ; //class Sprite_С
-//Global.testLoading('HTML5_SpritesCollection.js');
 let Sprite_С_isOk = "OK"; //
 export { Sprite_С, Sprite_С_isOk };
 if (global_R.print_module_start_finish)
