@@ -12,38 +12,69 @@ if (global_R.print_module_start_finish) console.log('game_start.js -> module sta
 import { requestAnimationFrame_R } from '../render/request_animation_o.js';
 import { render_R } from '../render/render.js';
 
+/**
+ * Description placeholder
+ *
+ * @class GameStart_C
+ * @typedef {GameStart_C}
+ */
 class GameStart_C {
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public NAME: string = "GameStart_C";
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public isOk: string = "";
 
   //=============================================================================
+  /**
+   * Creates an instance of GameStart_C.
+   *
+   * @constructor
+   */
   constructor() {
   }
   //============================================================================= 
   
   //=============================================================================
+  /** Description placeholder */
   iniM(): void {
     //console.log('this.ini->');
-  };
+  }
   //=============================================================================
   //=============================================================================
+  /** Description placeholder */
   startM(): void {
     //alert("!");
     //console.log('this.start->');
-  };
+  }
   //============================================================================= 
   //=============================================================================
+  /** Description placeholder */
   tick(): void {
  
     requestAnimationFrame(requestAnimationFrame_R.drawGameStart);
     //render_R.drawGameStart();
 
-  };
+  }
   //============================================================================= 
 
 
-}; //Game
+}
 
+/**
+ * Description placeholder
+ *
+ * @type {GameStart_C}
+ */
 let gameStart_R = new GameStart_C();
 
 gameStart_R.iniM();

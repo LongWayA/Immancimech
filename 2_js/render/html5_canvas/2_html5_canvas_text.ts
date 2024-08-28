@@ -16,51 +16,270 @@ import { global_R } from '../../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('2_html5_canvas_text.js -> module start');
 
-import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js';
 
 // 
+/**
+ * Description placeholder
+ *
+ * @class Html5CanvasText_C
+ * @typedef {Html5CanvasText_C}
+ */
 class Html5CanvasText_C {
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "html5CanvasText_R";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
+
+    // "2d" создаем объекта CanvasRenderingContext2D,
+    //  представляющий двумерный контекст.
+    //const idCanvas : HTMLElement = <HTMLElement>document.getElementById('game-canvas');
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {HTMLCanvasElement}
+     */
+    public idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');//private 
+
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {CanvasRenderingContext2D}
+     */
+    private contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');
+
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public ITALIC_20PX_SANS_SERIF: string = 'italic 20px sans-serif';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public ITALIC_15PT_ARIAL: string = 'italic 15pt Arial';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public ITALIC_30PT_ARIAL: string = 'italic 30pt Arial';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public BOLD_30PX_SANS_SERIF: string = 'bold 30px sans-serif';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public WHITE: string = 'white';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public BLACK: string = 'black';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public RED: string = 'red';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public GREEN: string = 'green';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public BLUE: string = 'blue';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {number}
+     */
     public LINE_WIDTH_1: number = 1;
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {number}
+     */
     public LINE_WIDTH_2: number = 2;
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {number}
+     */
     public LINE_WIDTH_3: number = 3;
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {number}
+     */
     public LINE_WIDTH_4: number = 4;
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {number}
+     */
     public load: number = 0;
 
     //=============================================================================
+    /**
+     * Creates an instance of Html5CanvasText_C.
+     *
+     * @constructor
+     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
         // определяем текст для тестового выода информации на экран, а также
         // когда надо напечатать до того как мы инициализровали текстовый объект
-        html5CanvasContext_R.set_fillStyle('#0000ff');
-        html5CanvasContext_R.set_strokeStyle('#0000ff');
+        this.set_fillStyle('#0000ff');
+        this.set_strokeStyle('#0000ff');
         //set_font(this.ITALIC_30PT_ARIAL);
-        html5CanvasContext_R.set_lineWidth(this.LINE_WIDTH_1);
+        this.set_lineWidth(this.LINE_WIDTH_1);
         // шрифт для тестовой печати на экране
-        html5CanvasContext_R.set_font(this.ITALIC_15PT_ARIAL);
+        this.set_font(this.ITALIC_15PT_ARIAL);
         //fillText ('LOAD REC', 10, 10);
-    };
+    }
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     startM(): void {
-    };
+    }
     //=============================================================================
+
+    /**
+     * Description placeholder
+     *
+     * @param {string} _color
+     */
+    set_fillStyle(_color: string): void {
+        this.contextCanvas.fillStyle = _color;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @returns {string}
+     */
+    get_fillStyle(): string {
+        return <string>this.contextCanvas.fillStyle;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {string} _color
+     */
+    set_strokeStyle(_color: string): void {
+        this.contextCanvas.strokeStyle = _color;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {number} _lineWidth
+     */
+    set_lineWidth(_lineWidth: number): void {
+        this.contextCanvas.lineWidth = _lineWidth;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {string} _font
+     */
+    set_font(_font: string): void {
+        this.contextCanvas.font = _font;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @returns {string}
+     */
+    get_font(): string {
+        return this.contextCanvas.font;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {CanvasTextBaseline} _textBaseline
+     */
+    set_textBaseline(_textBaseline: CanvasTextBaseline): void {
+        this.contextCanvas.textBaseline = _textBaseline;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {string} _text
+     * @param {number} _left
+     * @param {number} _top
+     */
+    fillText(_text: string, _left: number, _top: number): void {
+        this.contextCanvas.fillText(_text, _left, _top);
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {string} _text
+     * @param {number} _left
+     * @param {number} _top
+     */
+    strokeText(_text: string, _left: number, _top: number): void {
+        this.contextCanvas.strokeText(_text, _left, _top);
+    }
+
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {string} color
+     */
     setColor(color: string): void {
         let style = '#ffffff';
         switch (color) {
@@ -79,53 +298,70 @@ class Html5CanvasText_C {
             case this.BLUE:
                 style = '#0000ff';
                 break;
-        };
-        html5CanvasContext_R.set_fillStyle(style);
-        html5CanvasContext_R.set_strokeStyle(style);
-    };
+        }
+        this.set_fillStyle(style);
+        this.set_strokeStyle(style);
+    }
     //============================================================================
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {string} font
+     */
     setFont(font: string): void {
-        html5CanvasContext_R.set_textBaseline('top');
+        this.set_textBaseline('top');
         switch (font) {
             case this.ITALIC_20PX_SANS_SERIF:
-                html5CanvasContext_R.set_font(font);
+                this.set_font(font);
                 break;
             case this.ITALIC_30PT_ARIAL:
-                html5CanvasContext_R.set_font(font);
+                this.set_font(font);
                 break;
             case this.BOLD_30PX_SANS_SERIF:
-                html5CanvasContext_R.set_font(font);
+                this.set_font(font);
                 break;
         }
-        ;
-    };
+    }
     //============================================================================
     //============================================================================
     // возможно установить:
     // HTML5_Canvas_text_2.ITALIC_20PX_SANS_SERIF, HTML5_Canvas_text_2.ITALIC_30PT_ARIAL, HTML5_Canvas_text_2.BOLD_30PX_SANS_SERIF
     //HTML5_Canvas_text_2.WHITE, HTML5_Canvas_text_2.BLACK, HTML5_Canvas_text_2.RED, HTML5_Canvas_text_2.GREEN, HTML5_Canvas_text_2.BLUE
     // HTML5_Canvas_text_2.Text.drawText("text", 10, 5, HTML5_Canvas_text_2.ITALIC_30PT_ARIAL, HTML5_Canvas_text_2.GREEN, 1);
+    /**
+     * Description placeholder
+     *
+     * @param {string} text
+     * @param {number} left
+     * @param {number} top
+     * @param {string} font
+     * @param {string} color
+     * @param {number} fillYes
+     */
     drawText(text: string, left: number, top: number, font: string, color: string, fillYes: number): void {
-        let style_r = html5CanvasContext_R.get_fillStyle();
-        let font_r = html5CanvasContext_R.get_font();
+        let style_r = this.get_fillStyle();
+        let font_r = this.get_font();
         this.setColor(color);
         this.setFont(font);
         if (fillYes == 1) {
-            html5CanvasContext_R.fillText(text, left, top);
+            this.fillText(text, left, top);
+        } else {
+            this.strokeText(text, left, top);
         }
-        else {
-            html5CanvasContext_R.strokeText(text, left, top);
-        }
-        ;
         // restore
-        html5CanvasContext_R.set_fillStyle(style_r);
-        html5CanvasContext_R.set_strokeStyle(style_r);
-        html5CanvasContext_R.set_font(font_r);
-    };
+        this.set_fillStyle(style_r);
+        this.set_strokeStyle(style_r);
+        this.set_font(font_r);
+    }
     //============================================================================
-}; //HTML5_Canvas
+} //HTML5_Canvas
 
+/**
+ * Description placeholder
+ *
+ * @type {Html5CanvasText_C}
+ */
 let html5CanvasText_R = new Html5CanvasText_C();
 
 html5CanvasText_R.iniM();

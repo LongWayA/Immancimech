@@ -13,36 +13,68 @@ import { requestAnimationFrame_R } from '../render/request_animation_o.js';
 import { render_R } from '../render/render.js';
 
 
+/**
+ * Description placeholder
+ *
+ * @class GameEnd_C
+ * @typedef {GameEnd_C}
+ */
 class GameEnd_C {
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public NAME: string = "GameEnd_C";
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public isOk: string = "";
 
   //=============================================================================
+  /**
+   * Creates an instance of GameEnd_C.
+   *
+   * @constructor
+   */
   constructor() {
   }
   //============================================================================= 
 
   //=============================================================================
+  /** Description placeholder */
   iniM(): void {
     //console.log('this.ini->');
-  };
+  }/** Description placeholder */
+  ;
   //=============================================================================
   //=============================================================================
+  /** Description placeholder */
   startM(): void {
     //alert("!");
     //console.log('this.start->');
-  };
+  }
   //============================================================================= 
  //=============================================================================
+ /** Description placeholder */
  tick(): void {
   requestAnimationFrame(requestAnimationFrame_R.drawGameEnd);
   //render_R.drawGameEnd();
-};
+}
 //============================================================================= 
 
 
-}; //Game
+}
 
+/**
+ * Description placeholder
+ *
+ * @type {GameEnd_C}
+ */
 let gameEnd_R = new GameEnd_C();
 
 gameEnd_R.iniM();

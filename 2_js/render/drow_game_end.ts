@@ -19,30 +19,61 @@ import { drawTimerNumber_R } from '../render/drow_timer_number.js';
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @class DrawGameEnd_C
+ * @typedef {DrawGameEnd_C}
+ */
 class DrawGameEnd_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "DrawGameEnd_C";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
 
 
     //=============================================================================
+    /**
+     * Creates an instance of DrawGameEnd_C.
+     *
+     * @constructor
+     */
     constructor() {
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
 
         // console.log('Render_C->iniM()-> this.widthCanvas =' + this);
         //console.log('Render_C->iniM()-> this.heightCanvas =' + this.heightCanvas);
-    };
+    }
     //=============================================================================
     //=============================================================================
     //
+    /** Description placeholder */
     startM(): void {
-
-    };
+    }
     //=============================================================================
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {*} out_Game
+     * @param {number} widthCanvas
+     * @param {number} heightCanvas
+     */
     tick(out_Game: any, widthCanvas: number, heightCanvas: number): void {
         // console.log('Game.drawNuberTick');
         let left = 0;
@@ -57,21 +88,26 @@ class DrawGameEnd_C {
 
         html5Canvas_R.clearRect(left, top, widthCanvas, heightCanvas);
 
-        drawTimerNumber_R.drawNumberTick(left1, top1, out_Game);
+        drawTimerNumber_R.drawNumberTick(left1, top1);
         html5Canvas_R.drawRect(left0, top0, width, height, html5Canvas_R.LINE_WIDTH_1,
             html5Canvas_R.GREEN, 0);
         html5Canvas_R.drawText("Game End ", left0, top0, html5Canvas_R.ITALIC_30PT_ARIAL,
             html5Canvas_R.GREEN, 1);
 
         drawTimerNumber_R.drawTimerTick(10, 510);
-    };
+    }
     //=============================================================================
 
-}; //
+} //
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @type {DrawGameEnd_C}
+ */
 let drawGameEnd_R = new DrawGameEnd_C();
 
 drawGameEnd_R.iniM();

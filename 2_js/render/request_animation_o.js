@@ -14,6 +14,11 @@ if (global_R.print_module_start_finish)
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.(callback)
 // поэтому оставил объект без класса, но с интерфейсом
 // это прослойка для вызова с помощью requestAnimationFrame(requestAnimationFrame_R.drawGameEnd);
+/**
+ * Description placeholder
+ *
+ * @type {RequestAnimationFrame_I}
+ */
 let requestAnimationFrame_R = {
     NAME: "requestAnimationFrame_R",
     isOk: "",

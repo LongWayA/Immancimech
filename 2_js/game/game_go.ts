@@ -20,27 +20,53 @@ import { background_R } from '../local/background/background.js';
 import { render_R } from '../render/render.js';
 
 
+/**
+ * Description placeholder
+ *
+ * @class GameGo_C
+ * @typedef {GameGo_C}
+ */
 class GameGo_C {
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public NAME: string = "GameGo_C";
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public isOk: string = "";
 
   //=============================================================================
+  /**
+   * Creates an instance of GameGo_C.
+   *
+   * @constructor
+   */
   constructor() {
   }
   //============================================================================= 
 
   //=============================================================================
+  /** Description placeholder */
   iniM(): void {
     //console.log('this.ini->');
-  };
+  }
   //=============================================================================
   //=============================================================================
+  /** Description placeholder */
   startM(): void {
     //alert("!");
     //console.log('this.start->');
-  };
+  }
   //============================================================================= 
   //=============================================================================
+  /** Description placeholder */
   tick(): void {
 
     userInputKeyboard_R.tick(immortals_R, background_R);
@@ -52,12 +78,17 @@ class GameGo_C {
 
     requestAnimationFrame(requestAnimationFrame_R.drowGoGame);
     //render_R.drowGoGame();
-  };
+  }
   //============================================================================= 
 
 
-}; //Game
+}
 
+/**
+ * Description placeholder
+ *
+ * @type {GameGo_C}
+ */
 let gameGo_R = new GameGo_C();
 
 gameGo_R.iniM();

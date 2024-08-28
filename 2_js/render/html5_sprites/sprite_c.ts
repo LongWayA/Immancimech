@@ -24,12 +24,41 @@ import { global_R } from '../../global/global.js';
 if (global_R.print_module_start_finish) console.log('sprite_c.js -> module start');
 
 
+/**
+ * Description placeholder
+ *
+ * @class Sprite_С
+ * @typedef {Sprite_С}
+ */
 class Sprite_С {
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {(HTMLImageElement | HTMLCanvasElement | null)}
+     */
     public Image: HTMLImageElement | HTMLCanvasElement | null; // содержит картинку 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public PathToImage: string; //содержит путь по которому была загружена картинка
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NameImage: string; //содержит название картинки
 
+    /**
+     * Creates an instance of Sprite_С.
+     *
+     * @constructor
+     */
     constructor() {
         //
         this.Image = null;
@@ -38,8 +67,13 @@ class Sprite_С {
     } //constructor() {
 
 
-}; //class Sprite_С
+} //class Sprite_С
 
+/**
+ * Description placeholder
+ *
+ * @type {string}
+ */
 let Sprite_С_isOk = "OK"; //
 
 export { Sprite_С, Sprite_С_isOk };

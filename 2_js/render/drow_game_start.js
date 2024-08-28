@@ -15,28 +15,57 @@ import { drawTimerNumber_R } from '../render/drow_timer_number.js';
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @class DrawGameStart_C
+ * @typedef {DrawGameStart_C}
+ */
 class DrawGameStart_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     NAME = "DrawGameStart_C";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     isOk = "";
     //=============================================================================
+    /**
+     * Creates an instance of DrawGameStart_C.
+     *
+     * @constructor
+     */
     constructor() {
     }
-    ;
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     iniM() {
         // console.log('Render_C->iniM()-> this.widthCanvas =' + this);
         //console.log('Render_C->iniM()-> this.heightCanvas =' + this.heightCanvas);
     }
-    ;
     //=============================================================================
     //=============================================================================
     //
+    /** Description placeholder */
     startM() {
     }
-    ;
     //=============================================================================
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {*} out_Game
+     * @param {number} widthCanvas
+     * @param {number} heightCanvas
+     */
     tick(out_Game, widthCanvas, heightCanvas) {
         // console.log('Game.drawNuberTick');
         let left = 0;
@@ -48,7 +77,7 @@ class DrawGameStart_C {
         html5Canvas_R.clearRect(left, top, widthCanvas, heightCanvas);
         html5Canvas_R.drawRect(left, top, widthCanvas, heightCanvas, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.BLACK, 0);
         html5Canvas_R.drawRect(left0, top0, widthCanvas - 20, heightCanvas - 20, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.GREEN, 0);
-        drawTimerNumber_R.drawNumberTick(left0, top0, out_Game);
+        drawTimerNumber_R.drawNumberTick(left0, top0);
         html5Canvas_R.drawRect(100, 100, width, height, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.RED, 0);
         html5Canvas_R.drawText("Game Start ", 100, 100, html5Canvas_R.ITALIC_30PT_ARIAL, html5Canvas_R.GREEN, 1);
         const probaSaveLokal = localStorage.getItem("probaSaveLokal");
@@ -58,12 +87,15 @@ class DrawGameStart_C {
         drawTimerNumber_R.drawTimerTick(10, 510);
         html5SpritesImmortal_R.drowSprite(1, 400, 500);
     }
-    ;
-}
-; //
+} //
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @type {DrawGameStart_C}
+ */
 let drawGameStart_R = new DrawGameStart_C();
 drawGameStart_R.iniM();
 export { drawGameStart_R, DrawGameStart_C };

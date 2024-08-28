@@ -8,39 +8,66 @@
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('fight.js -> module start');
+/**
+ * Description placeholder
+ *
+ * @class fight_C
+ * @typedef {fight_C}
+ */
 class fight_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     NAME = "fight_R";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     isOk = "";
     //=============================================================================
+    /**
+     * Creates an instance of fight_C.
+     *
+     * @constructor
+     */
     constructor() {
     }
     //=============================================================================    
     //=============================================================================
+    /** Description placeholder */
     iniM() {
     }
-    ;
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     startM() {
     }
-    ;
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     tick() {
     }
-    ;
     //=============================================================================   
     //=============================================================================
+    /** Description placeholder */
     update() {
     }
-    ;
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     drow() {
     }
-    ; //drow () : void{
-}
-; //
+} //
+/**
+ * Description placeholder
+ *
+ * @type {fight_C}
+ */
 let fight_R = new fight_C();
 fight_R.iniM();
 export { fight_R, fight_C };

@@ -15,46 +15,81 @@ if (global_R.print_module_start_finish) console.log('drow_timer_number.js -> mod
 
 import { timer_R } from '../loop/timer.js';
 import { html5Canvas_R } from '../render/html5_canvas/6_html5_canvas_h.js';
-
+import { gameState_R, GameState_C } from '../game/game_state.js';
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @class DrawTimerNumber_C
+ * @typedef {DrawTimerNumber_C}
+ */
 class DrawTimerNumber_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "DrawTimerNumber_C";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
 
 
     //=============================================================================
+    /**
+     * Creates an instance of DrawTimerNumber_C.
+     *
+     * @constructor
+     */
     constructor() {
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
-
-    };
+    }
     //=============================================================================
     //=============================================================================
     //
+    /** Description placeholder */
     startM(): void {
-
-    };
+    }
     //=============================================================================
  
     //=============================================================================
-    drawNumberTick(left: number, top: number, out_Game: any): void {
+    /**
+     * Description placeholder
+     *
+     * @param {number} left
+     * @param {number} top
+     */
+    drawNumberTick(left: number, top: number): void {
         // console.log('Game.drawNuberTick');
         let width = 500;
         let height = 35;
 
         html5Canvas_R.drawRect(left, top, width, height, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.GREEN, 0);
 
-        html5Canvas_R.drawText("Game.tick = " + out_Game.sprite, left, top, html5Canvas_R.ITALIC_30PT_ARIAL, html5Canvas_R.GREEN, 1);
-    };
+        html5Canvas_R.drawText("Game.tick = " + gameState_R.sprite, left, top, html5Canvas_R.ITALIC_30PT_ARIAL, html5Canvas_R.GREEN, 1);
+    }
     //=============================================================================
 
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} left
+     * @param {number} top
+     */
     drawTimerTick(left: number, top: number): void {
         // console.log('Game.drawTimerTick');
 
@@ -94,15 +129,20 @@ class DrawTimerNumber_C {
             + timer_R.getTickTickOldTimeStartMinusTickTimeStartMs(),
             left, top6, html5Canvas_R.ITALIC_15PT_ARIAL, html5Canvas_R.GREEN, 1);
 
-    };
+    }
     //=============================================================================
 
 
-}; //
+} //
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @type {DrawTimerNumber_C}
+ */
 let drawTimerNumber_R = new DrawTimerNumber_C();
 
 drawTimerNumber_R.iniM();

@@ -9,31 +9,143 @@
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('immortal_c.js -> module start');
+/**
+ * Description placeholder
+ *
+ * @class Immortal_C
+ * @typedef {Immortal_C}
+ */
 class Immortal_C {
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     number; // номер существа в списке
     // для отрисовки картинки существа
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     type; // тип картинки
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     index; // порядковый номер картинки 
     // центральная точка картинки существа на экране
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     pointLeft; // позиция центра слева
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     pointTop; // позиция центра сверху
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     pointTargetRadius; //    
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     pointViewRadius; //
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     pointViewAngle; //
     //  point_attack_radius; //
     //  point_attack_angle; //
     //
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     directionMovement;
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     velocity;
     // левый верхний угол и размеры квадратика картинки на экране
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     imageLeft; // 
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     imageTop; //
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     imageWidth; //
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     imageHeight; //
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number[]}
+     */
     directionMovementAngle;
     // constructor(_number, _type, _index, _point_left, _point_top, _image_width, _image_height,
     //     _point_view_radius, _point_view_angle, _directionMovement, _velocity) {
     // Immortals.List[1] = new Immortal_C(1, type, index, 450, 150, 50, 50, 100, 100, 0, 2);//4
+    /**
+     * Creates an instance of Immortal_C.
+     *
+     * @constructor
+     * @param {number} number
+     * @param {number} type
+     * @param {number} index
+     * @param {number} imageLeft
+     * @param {number} imageTop
+     * @param {number} imageWidth
+     * @param {number} imageHeight
+     * @param {number} pointViewRadius
+     * @param {number} pointViewAngle
+     * @param {number} directionMovement
+     * @param {number} velocity
+     */
     constructor(number, type, index, imageLeft, imageTop, imageWidth, imageHeight, pointViewRadius, pointViewAngle, directionMovement, velocity) {
         this.number = number;
         this.type = type;
@@ -68,14 +180,22 @@ class Immortal_C {
         //    console.log(" class Immortal-> constructor this.pointViewAngle = " +  this.pointViewAngle );
         //    console.log(" class Immortal-> constructor this.pointTargetRadius = " +  this.pointTargetRadius );
         //    console.log(" class Immortal-> constructor this.directionMovement = " +  this.directionMovement );
-    }
-    ; //constructor() {
+    } //constructor() {
     // 0-стоим, 1-вверх, 2-движение вправо, 3-вниз, 4-влево
+    /**
+     * Description placeholder
+     *
+     * @param {number} directionMovement
+     */
     runSet(directionMovement) {
         this.directionMovement = directionMovement;
         this.pointViewAngle = this.directionMovementAngle[this.directionMovement];
     }
-    ;
+    /**
+     * Description placeholder
+     *
+     * @param {*} ground
+     */
     runUp(ground) {
         //  console.log(" class Immortal-> runUp this.imageLeft = " +  this.imageLeft );
         //  console.log(" class Immortal-> runUp this.imageTop = " +  this.imageTop );
@@ -87,7 +207,11 @@ class Immortal_C {
             this.imageTop = this.pointTop - (this.imageHeight / 2); //
         }
     }
-    ;
+    /**
+     * Description placeholder
+     *
+     * @param {*} ground
+     */
     runDown(ground) {
         //    console.log(" class Immortal-> runDown this.imageLeft = " +  this.imageLeft );
         //    console.log(" class Immortal-> runDown this.imageTop = " +  this.imageTop );
@@ -99,7 +223,11 @@ class Immortal_C {
             this.imageTop = this.pointTop - (this.imageHeight / 2); //
         }
     }
-    ;
+    /**
+     * Description placeholder
+     *
+     * @param {*} ground
+     */
     runLeft(ground) {
         //  console.log(" class Immortal-> runLeft this.imageLeft = " +  this.imageLeft );
         //  console.log(" class Immortal-> runLeft this.imageTop = " +  this.imageTop );
@@ -111,7 +239,11 @@ class Immortal_C {
             this.imageLeft = this.pointLeft - (this.imageWidth / 2); //
         }
     }
-    ;
+    /**
+     * Description placeholder
+     *
+     * @param {*} ground
+     */
     runRight(ground) {
         //  console.log(" class Immortal-> runRight this.imageLeft = " +  this.imageLeft );
         //  console.log(" class Immortal-> runRight this.imageTop = " +  this.imageTop );
@@ -123,7 +255,11 @@ class Immortal_C {
             this.imageLeft = this.pointLeft - (this.imageWidth / 2); //
         }
     }
-    ;
+    /**
+     * Description placeholder
+     *
+     * @param {*} ground
+     */
     run(ground) {
         // console.log(" Immortals.run()-> number = " +  this.number + " directionMovement =" + this.directionMovement );
         // 0-стоим, 1-вверх, 2-движение вправо, 3-вниз, 4-влево
@@ -143,11 +279,15 @@ class Immortal_C {
         }
         this.directionMovement = 0;
     }
+    /** Description placeholder */
     print() {
     }
-    ;
-}
-; //class Immortal
+} //class Immortal
+/**
+ * Description placeholder
+ *
+ * @type {string}
+ */
 let Immortal_C_isOk = "OK"; //
 export { Immortal_C, Immortal_C_isOk };
 if (global_R.print_module_start_finish)

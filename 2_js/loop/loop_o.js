@@ -12,6 +12,11 @@ import { gameState_R } from '../game/game_state.js';
 import { timer_R } from './timer.js';
 import { buttons_R } from './buttons.js';
 ; //
+/**
+ * Description placeholder
+ *
+ * @type {Loop_I}
+ */
 let loop_R = {
     NAME: "loop_R",
     isOk: "",
@@ -51,7 +56,6 @@ let loop_R = {
                 gameState_R.setEndGame();
                 buttons_R.endButtonAttribute();
             }
-            ;
         }, loop_R.delayMs);
         console.log("loop_R->loop() timerCount = " + loop_R.timerCount);
     }, //var loop = function() {

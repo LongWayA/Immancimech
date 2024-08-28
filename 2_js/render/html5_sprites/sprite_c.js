@@ -21,18 +21,51 @@
 import { global_R } from '../../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('sprite_c.js -> module start');
+/**
+ * Description placeholder
+ *
+ * @class Sprite_С
+ * @typedef {Sprite_С}
+ */
 class Sprite_С {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {(HTMLImageElement | HTMLCanvasElement | null)}
+     */
     Image; // содержит картинку 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     PathToImage; //содержит путь по которому была загружена картинка
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     NameImage; //содержит название картинки
+    /**
+     * Creates an instance of Sprite_С.
+     *
+     * @constructor
+     */
     constructor() {
         //
         this.Image = null;
         this.PathToImage = " ";
         this.NameImage = " ";
     } //constructor() {
-}
-; //class Sprite_С
+} //class Sprite_С
+/**
+ * Description placeholder
+ *
+ * @type {string}
+ */
 let Sprite_С_isOk = "OK"; //
 export { Sprite_С, Sprite_С_isOk };
 if (global_R.print_module_start_finish)

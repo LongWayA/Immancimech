@@ -13,37 +13,68 @@ import { requestAnimationFrame_R } from '../render/request_animation_o.js';
 import { render_R } from '../render/render.js';
 
 
+/**
+ * Description placeholder
+ *
+ * @class GamePause_C
+ * @typedef {GamePause_C}
+ */
 class GamePause_C {
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public NAME: string = "GamePause_C";
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public isOk: string = "";
 
   //=============================================================================
+  /**
+   * Creates an instance of GamePause_C.
+   *
+   * @constructor
+   */
   constructor() {
   }
   //============================================================================= 
 
   //=============================================================================
+  /** Description placeholder */
   iniM(): void {
     //console.log('this.ini->');
-  };
+  }
   //=============================================================================
   //=============================================================================
+  /** Description placeholder */
   startM(): void {
     //alert("!");
     //console.log('this.start->');
-  };
+  }
   //============================================================================= 
   //=============================================================================
+  /** Description placeholder */
   tick(): void {
 
     requestAnimationFrame(requestAnimationFrame_R.drawGamePaused);
     //render_R.drawGamePaused();
-  };
+  }
   //============================================================================= 
 
 
-}; //Game
+}
 
+/**
+ * Description placeholder
+ *
+ * @type {GamePause_C}
+ */
 let gamePause_R = new GamePause_C();
 
 gamePause_R.iniM();

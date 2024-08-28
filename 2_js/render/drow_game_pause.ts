@@ -19,30 +19,62 @@ import { drawTimerNumber_R } from '../render/drow_timer_number.js';
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @class DrawGamePause_C
+ * @typedef {DrawGamePause_C}
+ */
 class DrawGamePause_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "DrawGamePause_C";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
 
 
     //=============================================================================
+    /**
+     * Creates an instance of DrawGamePause_C.
+     *
+     * @constructor
+     */
     constructor() {
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
 
         // console.log('Render_C->iniM()-> this.widthCanvas =' + this);
         //console.log('Render_C->iniM()-> this.heightCanvas =' + this.heightCanvas);
-    };
+    }
     //=============================================================================
     //=============================================================================
     //
+    /** Description placeholder */
     startM(): void {
 
-    };
+    }
     //=============================================================================
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {*} out_Game
+     * @param {number} widthCanvas
+     * @param {number} heightCanvas
+     */
     tick(out_Game: any, widthCanvas: number, heightCanvas: number): void {
         // console.log('Game.drawNuberTick');
 
@@ -56,7 +88,7 @@ class DrawGamePause_C {
         let top1 = 200;
 
         html5Canvas_R.clearRect(left, top, widthCanvas, heightCanvas);
-        drawTimerNumber_R.drawNumberTick(left1, top1,out_Game);
+        drawTimerNumber_R.drawNumberTick(left1, top1);
         html5Canvas_R.drawRect(left0, top0, width, height, html5Canvas_R.LINE_WIDTH_1,
             html5Canvas_R.GREEN, 0);
         html5Canvas_R.drawText("Game Paused ", left0, top0, html5Canvas_R.ITALIC_30PT_ARIAL,
@@ -64,15 +96,20 @@ class DrawGamePause_C {
 
         drawTimerNumber_R.drawTimerTick(10, 510);
 
-    };
+    }
     //=============================================================================
 
 
-}; //
+} //
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @type {DrawGamePause_C}
+ */
 let drawGamePause_R = new DrawGamePause_C();
 
 drawGamePause_R.iniM();

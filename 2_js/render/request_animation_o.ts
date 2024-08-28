@@ -12,21 +12,43 @@ import { render_R } from './render.js';
 
 if (global_R.print_module_start_finish) console.log('request_animation.js -> module start');
 
+/**
+ * Description placeholder
+ *
+ * @interface RequestAnimationFrame_I
+ * @typedef {RequestAnimationFrame_I}
+ */
 interface RequestAnimationFrame_I {
 
+    /**
+     * Description placeholder
+     *
+     * @type {string}
+     */
     NAME: string;
+    /**
+     * Description placeholder
+     *
+     * @type {string}
+     */
     isOk: string;
 
+    /** Description placeholder */
     iniM(): void;
   
+    /** Description placeholder */
     startM(): void;
 
+    /** Description placeholder */
     drawGameStart(): void; 
  
+    /** Description placeholder */
     drowGoGame(): void;
 
+    /** Description placeholder */
     drawGamePaused(): void;
  
+    /** Description placeholder */
     drawGameEnd(): void; 
 
 }
@@ -37,6 +59,11 @@ interface RequestAnimationFrame_I {
 // поэтому оставил объект без класса, но с интерфейсом
 
 // это прослойка для вызова с помощью requestAnimationFrame(requestAnimationFrame_R.drawGameEnd);
+/**
+ * Description placeholder
+ *
+ * @type {RequestAnimationFrame_I}
+ */
 let requestAnimationFrame_R : RequestAnimationFrame_I = {
     NAME: "requestAnimationFrame_R",
     isOk: "",
@@ -74,7 +101,7 @@ let requestAnimationFrame_R : RequestAnimationFrame_I = {
     },
     //============================================================================= 
 
-}; //
+} //
 
 
 requestAnimationFrame_R.iniM();

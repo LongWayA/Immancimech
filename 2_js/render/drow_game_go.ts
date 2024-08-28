@@ -25,30 +25,60 @@ import { drawTimerNumber_R } from '../render/drow_timer_number.js';
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @class DrawGameGo_C
+ * @typedef {DrawGameGo_C}
+ */
 class DrawGameGo_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "DrawGameGo_C";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
 
 
     //=============================================================================
+    /**
+     * Creates an instance of DrawGameGo_C.
+     *
+     * @constructor
+     */
     constructor() {
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
 
         // console.log('Render_C->iniM()-> this.widthCanvas =' + this);
         //console.log('Render_C->iniM()-> this.heightCanvas =' + this.heightCanvas);
-    };
+    }
     //=============================================================================
     //=============================================================================
     //
+    /** Description placeholder */
     startM(): void {
 
-    };
+    }
     //=============================================================================
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {*} out_Game
+     */
     tick(out_Game: any): void {
         // console.log('Game.drawNuberTick');
 
@@ -77,16 +107,21 @@ class DrawGameGo_C {
         mouse_R.drow();
         userInputKeyboard_R.drow();
         immortals_R.drow();
-        drawTimerNumber_R.drawNumberTick(left0, top0, out_Game);
+        drawTimerNumber_R.drawNumberTick(left0, top0);
 
-    };
+    }
     //=============================================================================
 
-}; //
+} //
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @type {DrawGameGo_C}
+ */
 let drawGameGo_R = new DrawGameGo_C();
 
 drawGameGo_R.iniM();

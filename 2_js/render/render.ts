@@ -19,65 +19,122 @@ import { drawGameGo_R } from '../render/drow_game_go.js';
 import { drawGamePause_R } from '../render/drow_game_pause.js';
 import { drawGameEnd_R } from '../render/drow_game_end.js';
 
+
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @class Render_C
+ * @typedef {Render_C}
+ */
 class Render_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "render_R";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
 
     // Внешние ссылки
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {*}
+     */
     private out_Game: any = null;
 
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     private widthCanvas: number = 0;
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {number}
+     */
     private heightCanvas: number = 0;
 
     //=============================================================================
+    /**
+     * Creates an instance of Render_C.
+     *
+     * @constructor
+     */
     constructor() {
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
         this.widthCanvas = html5Canvas_R.width_OUT;
         this.heightCanvas = html5Canvas_R.height_OUT;
-    };
+    }
     //=============================================================================
     //=============================================================================
     //start (_HTML5_Canvas, _Sprites, _Frames, _AllMapObj, _Game) {
+    /**
+     * Description placeholder
+     *
+     * @param {*} Game
+     */
     startM(Game: any): void {
         this.out_Game = Game;
-    };
+    }
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     drawGameStart(): void {
         drawGameStart_R.tick(this.out_Game, this.widthCanvas, this.heightCanvas);
-    };
+    }
     //=============================================================================
     //=============================================================================
     // 
+    /** Description placeholder */
     drowGameGo(): void {
         drawGameGo_R.tick(this.out_Game);
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     drawGamePaused(): void {
         drawGamePause_R.tick(this.out_Game, this.widthCanvas, this.heightCanvas);
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     drawGameEnd(): void {
         drawGameEnd_R.tick(this.out_Game, this.widthCanvas, this.heightCanvas);
-    };
+    }
     //=============================================================================
 
-}; //
+} //
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @type {Render_C}
+ */
 let render_R = new Render_C();
 
 render_R.iniM();

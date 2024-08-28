@@ -14,8 +14,26 @@ if (global_R.print_module_start_finish) console.log('frames.js -> module start')
 import { html5Canvas_R } from '../html5_canvas/6_html5_canvas_h.js';
 
 
+/**
+ * Description placeholder
+ *
+ * @class Frames_C
+ * @typedef {Frames_C}
+ */
 class Frames_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "frames_R";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
 
     // Внешние ссылки
@@ -23,6 +41,12 @@ class Frames_C {
 
     // рамки
     // Общая рамка экрана вывода графики
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {{ x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; }}
+     */
     public editorFrame = {
         x0: 0,
         y0: 0,
@@ -30,8 +54,14 @@ class Frames_C {
         height: 0,
         X_Max: 0,
         Y_Max: 0, // максимальная координата по вертикали. Вправо вниз
-    };
+    }
     // Область вывода карты
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {{ tile_SIZE_WIDTH: number; tile_SIZE_HEIGHT: number; HEIGHT_PX: number; x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; }}
+     */
     private mapFrame = {
         tile_SIZE_WIDTH: 50,
         tile_SIZE_HEIGHT: 50,
@@ -42,8 +72,14 @@ class Frames_C {
         height: 0,
         X_Max: 0,
         Y_Max: 0,
-    };
+    }
     // Область вывода выбора элементов карты   
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {{ tile_SIZE_WIDTH: number; tile_SIZE_HEIGHT: number; HEIGHT_PX: number; x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; Ground_X0: number; Ground_Y0: number; Ground_Y_Max: number; ... 5 more ...; Monster_Y_Max: number; }}
+     */
     private tilesPanelFrame = {
         tile_SIZE_WIDTH: 50,
         tile_SIZE_HEIGHT: 50,
@@ -64,8 +100,14 @@ class Frames_C {
         Monster_X0: 0,
         Monster_Y0: 0,
         Monster_Y_Max: 0,
-    };
+    }
     // Область печати сообщений редактора
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {{ height_px: number; x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; }}
+     */
     private printFrame = {
         height_px: 0,
         x0: 0,
@@ -74,14 +116,20 @@ class Frames_C {
         height: 0,
         X_Max: 0,
         Y_Max: 0,
-    };
+    }
 
    //=============================================================================
+   /**
+    * Creates an instance of Frames_C.
+    *
+    * @constructor
+    */
    constructor() {
    }
    //============================================================================= 
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
         //------------------------------------------------------------------------
         // Общая рамка экрана вывода графики>>>>>>>>>>>>>>>>>>>>>>
@@ -156,42 +204,52 @@ class Frames_C {
         this.printFrame.Y_Max = this.printFrame.y0 + this.printFrame.height;
         // Область печати сообщений редактора<<<<<<<<<<<<<<<<<<<<<<
         //------------------------------------------------------------------------
-    };
+    }
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     startM(): void {
-    };
+    }
     //=============================================================================
     //=============================================================================
     // editorFrame
+    /** Description placeholder */
     drowEditorFrame(): void {
         html5Canvas_R.drawRect(this.editorFrame.x0, this.editorFrame.y0, this.editorFrame.width,
             this.editorFrame.height, 2, 'blue', 0);
-    };
+    }
     //=============================================================================
     //=============================================================================
     // MapFrame
+    /** Description placeholder */
     drowMapFrame(): void {
         html5Canvas_R.drawRect(this.mapFrame.x0, this.mapFrame.y0, this.mapFrame.width,
             this.mapFrame.height, 2, 'blue', 0);
-    };
+    }
     //=============================================================================  
     //=============================================================================
     // TilesPanelFrame
+    /** Description placeholder */
     drowTilesPanelFrame(): void {
         html5Canvas_R.drawRect(this.tilesPanelFrame.x0, this.tilesPanelFrame.y0,
             this.tilesPanelFrame.width, this.tilesPanelFrame.height, 2, 'blue', 0);
-    };
+    }
     //=============================================================================  
     //=============================================================================
     // PrintFrame
+    /** Description placeholder */
     drowPrintFrameFrame(): void {
         html5Canvas_R.drawRect(this.printFrame.x0, this.printFrame.y0, this.printFrame.width,
             this.printFrame.height, 2, 'blue', 0);
-    };
+    }
     //=============================================================================  
-}; //Frames
+} //Frames
 
+/**
+ * Description placeholder
+ *
+ * @type {Frames_C}
+ */
 let frames_R = new Frames_C();
 
 frames_R.iniM();

@@ -24,42 +24,80 @@ if (global_R.print_module_start_finish) console.log('keyboard.js -> module start
 
 //==============================================================================
 
-import {html5CanvasContext_R} from '../render/html5_canvas/1_html5_canvas_context.js';
+import { html5CanvasText_R } from '../render/html5_canvas/2_html5_canvas_text.js';
+import { html5CanvasPrimitive_R } from '../render/html5_canvas/3_html5_canvas_primitive.js';
 import { userInputKeyboardEvent_R } from './keyboard_event_o.js';
 
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
 // this теряет контекст, когда метод используется в качестве обработчика события.
+/**
+ * Description placeholder
+ *
+ * @class UserInputKeyboard_C
+ * @typedef {UserInputKeyboard_C}
+ */
 class UserInputKeyboard_C {
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "UserInputKeyboard_C";
+
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public command: string = "_"; //
     //alert("!");
     //i : 0;
     //i2 : 0;
 
     //=============================================================================
+    /**
+     * Creates an instance of UserInputKeyboard_C.
+     *
+     * @constructor
+     */
     constructor() {
-    };
+    }
     //=============================================================================
 
     //добавляем слушателей
     //==============================================================================
+    /** Description placeholder */
     iniM(): void {
-
         //console.log("V");
-    };
+    }
     //==============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     startM(): void {
-    };
+    }
     //=============================================================================
 
     //==============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {*} immortals
+     * @param {*} ground
+     */
     tick(immortals: any, ground: any): void {
 
         //this.eventCode = 0;
@@ -71,45 +109,42 @@ class UserInputKeyboard_C {
             //     console.log("keyboard.js ->tick  userInputKeyboardEvent_R.eventCode = " + userInputKeyboardEvent_R.eventCode);
             //     console.log("keyboard.js ->tick  userInputKeyboardEvent_R.eventKey = " + userInputKeyboardEvent_R.eventKey);
             // 0-стоим, 1-вверх, 2-движение вправо, 3-вниз, 4-влево
-            //движение влево
+            
             if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_LEFT) {
+                //движение влево
                 this.command = "go left";
                 //  console.log("keyboard.js ->tick  KEY_LEFT ");
                 // _immortals.List[1].runLeft(_ground);
                 immortals.List[1].runSet(4);
-            } else
+            } else if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_RIGHT) {
                 //движение вправо
-                if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_RIGHT) {
-                    this.command = "go right";
-                    //  console.log("keyboard.js ->tick  KEY_RIGHT ");
-                    //_immortals.List[1].runRight(_ground);
-                    immortals.List[1].runSet(2);
-                } else
-                    //движение вверх
-                    if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_UP) {
-                        this.command = "go up";
-                        //  console.log("keyboard.js ->tick  KEY_UP ");
-                        //_immortals.List[1].runUp(_ground);
-                        immortals.List[1].runSet(1);
-                    } else
-                        //движение вниз
-                        if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_DOWN) {
-                            this.command = "go down";
-                            //  console.log("keyboard.js ->tick  KEY_DOWN ");
-                            //_immortals.List[1].runDown(_ground);
-                            immortals.List[1].runSet(3);
-                        } else
-                            //бег 
-                            if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_RUN) {
-                                this.command = "run -";
+                this.command = "go right";
+                //  console.log("keyboard.js ->tick  KEY_RIGHT ");
+                //_immortals.List[1].runRight(_ground);
+                immortals.List[1].runSet(2);
+            } else if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_UP) {
+                //движение вверх
+                this.command = "go up";
+                //  console.log("keyboard.js ->tick  KEY_UP ");
+                //_immortals.List[1].runUp(_ground);
+                immortals.List[1].runSet(1);
+            } else if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_DOWN) {
+                //движение вниз
+                this.command = "go down";
+                //  console.log("keyboard.js ->tick  KEY_DOWN ");
+                //_immortals.List[1].runDown(_ground);
+                immortals.List[1].runSet(3);
+            } else if (userInputKeyboardEvent_R.eventCode == userInputKeyboardEvent_R.KEY_RUN) {
+                //бег 
+                this.command = "run -";
 
-                            }
+            }
         }
-
-    };
+    }
     //==============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     drow(): void {
 
         let X0 = 550;
@@ -144,26 +179,38 @@ class UserInputKeyboard_C {
             left_3, top_3, width_3, height_3, X0_3, Y0_3);
 
         //console.log("UserInputKeyboard_C->drow()->this.command = " + this.command);
-
-    };
+    }
     //=============================================================================
 
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {string} text
+     * @param {number} left
+     * @param {number} top
+     * @param {number} width
+     * @param {number} height
+     * @param {number} x0
+     * @param {number} y0
+     */
     printText(text: string, left: number, top: number,
         width: number, height: number, x0: number, y0: number): void {
         //  clearRect(_left, _top, _width, _height);
-        
-        html5CanvasContext_R.strokeRect(left, top, width, height);
-        
-        html5CanvasContext_R.strokeText(text, x0, y0);
-    };
+
+        html5CanvasPrimitive_R.strokeRect(left, top, width, height);
+
+        html5CanvasText_R.strokeText(text, x0, y0);
+    }
     //=============================================================================
 
-};//var UserInputKeyboard
+}
 
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-// this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
+/**
+ * Description placeholder
+ *
+ * @type {UserInputKeyboard_C}
+ */
 let userInputKeyboard_R = new UserInputKeyboard_C();
 
 userInputKeyboard_R.iniM();

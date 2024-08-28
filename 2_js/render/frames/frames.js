@@ -10,13 +10,37 @@ import { global_R } from '../../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('frames.js -> module start');
 import { html5Canvas_R } from '../html5_canvas/6_html5_canvas_h.js';
+/**
+ * Description placeholder
+ *
+ * @class Frames_C
+ * @typedef {Frames_C}
+ */
 class Frames_C {
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     NAME = "frames_R";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     isOk = "";
     // Внешние ссылки
     //-
     // рамки
     // Общая рамка экрана вывода графики
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {{ x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; }}
+     */
     editorFrame = {
         x0: 0,
         y0: 0,
@@ -26,6 +50,12 @@ class Frames_C {
         Y_Max: 0, // максимальная координата по вертикали. Вправо вниз
     };
     // Область вывода карты
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {{ tile_SIZE_WIDTH: number; tile_SIZE_HEIGHT: number; HEIGHT_PX: number; x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; }}
+     */
     mapFrame = {
         tile_SIZE_WIDTH: 50,
         tile_SIZE_HEIGHT: 50,
@@ -38,6 +68,12 @@ class Frames_C {
         Y_Max: 0,
     };
     // Область вывода выбора элементов карты   
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {{ tile_SIZE_WIDTH: number; tile_SIZE_HEIGHT: number; HEIGHT_PX: number; x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; Ground_X0: number; Ground_Y0: number; Ground_Y_Max: number; ... 5 more ...; Monster_Y_Max: number; }}
+     */
     tilesPanelFrame = {
         tile_SIZE_WIDTH: 50,
         tile_SIZE_HEIGHT: 50,
@@ -60,6 +96,12 @@ class Frames_C {
         Monster_Y_Max: 0,
     };
     // Область печати сообщений редактора
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {{ height_px: number; x0: number; y0: number; width: number; height: number; X_Max: number; Y_Max: number; }}
+     */
     printFrame = {
         height_px: 0,
         x0: 0,
@@ -70,10 +112,16 @@ class Frames_C {
         Y_Max: 0,
     };
     //=============================================================================
+    /**
+     * Creates an instance of Frames_C.
+     *
+     * @constructor
+     */
     constructor() {
     }
     //============================================================================= 
     //=============================================================================
+    /** Description placeholder */
     iniM() {
         //------------------------------------------------------------------------
         // Общая рамка экрана вывода графики>>>>>>>>>>>>>>>>>>>>>>
@@ -149,42 +197,45 @@ class Frames_C {
         // Область печати сообщений редактора<<<<<<<<<<<<<<<<<<<<<<
         //------------------------------------------------------------------------
     }
-    ;
     //=============================================================================
     //=============================================================================
+    /** Description placeholder */
     startM() {
     }
-    ;
     //=============================================================================
     //=============================================================================
     // editorFrame
+    /** Description placeholder */
     drowEditorFrame() {
         html5Canvas_R.drawRect(this.editorFrame.x0, this.editorFrame.y0, this.editorFrame.width, this.editorFrame.height, 2, 'blue', 0);
     }
-    ;
     //=============================================================================
     //=============================================================================
     // MapFrame
+    /** Description placeholder */
     drowMapFrame() {
         html5Canvas_R.drawRect(this.mapFrame.x0, this.mapFrame.y0, this.mapFrame.width, this.mapFrame.height, 2, 'blue', 0);
     }
-    ;
     //=============================================================================  
     //=============================================================================
     // TilesPanelFrame
+    /** Description placeholder */
     drowTilesPanelFrame() {
         html5Canvas_R.drawRect(this.tilesPanelFrame.x0, this.tilesPanelFrame.y0, this.tilesPanelFrame.width, this.tilesPanelFrame.height, 2, 'blue', 0);
     }
-    ;
     //=============================================================================  
     //=============================================================================
     // PrintFrame
+    /** Description placeholder */
     drowPrintFrameFrame() {
         html5Canvas_R.drawRect(this.printFrame.x0, this.printFrame.y0, this.printFrame.width, this.printFrame.height, 2, 'blue', 0);
     }
-    ;
-}
-; //Frames
+} //Frames
+/**
+ * Description placeholder
+ *
+ * @type {Frames_C}
+ */
 let frames_R = new Frames_C();
 frames_R.iniM();
 export { frames_R, Frames_C };

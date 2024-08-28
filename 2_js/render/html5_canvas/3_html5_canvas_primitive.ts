@@ -17,32 +17,279 @@ import { global_R } from '../../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('3_html5_canvas_primitive.js -> module start');
 
-import { html5CanvasContext_R } from '../html5_canvas/1_html5_canvas_context.js';
 
 // 
+/**
+ * Description placeholder
+ *
+ * @class Html5CanvasPrimitive_C
+ * @typedef {Html5CanvasPrimitive_C}
+ */
 class Html5CanvasPrimitive_C {
+
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "html5CanvasPrimitive_R";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = "";
+
+// "2d" создаем объекта CanvasRenderingContext2D,
+    //  представляющий двумерный контекст.
+    //const idCanvas : HTMLElement = <HTMLElement>document.getElementById('game-canvas');
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {HTMLCanvasElement}
+     */
+    public idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');//private 
+
+    /**
+     * Description placeholder
+     *
+     * @private
+     * @type {CanvasRenderingContext2D}
+     */
+    private contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');
+
+
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public WHITE: string = 'white';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public BLACK: string = 'black';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public RED: string = 'red';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public GREEN: string = 'green';
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public BLUE: string = 'blue';
 
     //=============================================================================
+    /**
+     * Creates an instance of Html5CanvasPrimitive_C.
+     *
+     * @constructor
+     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     iniM(): void {
     }
     //============================================================================
     //=============================================================================
+    /** Description placeholder */
     startM(): void {
     }
     //=============================================================================
+
+    /**
+     * Description placeholder
+     *
+     * @param {string} _color
+     */
+    set_fillStyle(_color: string): void {
+        this.contextCanvas.fillStyle = _color;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @returns {string}
+     */
+    get_fillStyle(): string {
+        return <string>this.contextCanvas.fillStyle;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {string} _color
+     */
+    set_strokeStyle(_color: string): void {
+        this.contextCanvas.strokeStyle = _color;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {number} _lineWidth
+     */
+    set_lineWidth(_lineWidth: number): void {
+        this.contextCanvas.lineWidth = _lineWidth;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @returns {number}
+     */
+    get_lineWidth(): number {
+        return this.contextCanvas.lineWidth;
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {number} _left
+     * @param {number} _top
+     * @param {number} _width
+     * @param {number} _height
+     */
+    clearRect_(_left: number, _top: number, _width: number, _height: number): void {
+        this.contextCanvas.clearRect(_left, _top, _width, _height);
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {number} _left
+     * @param {number} _top
+     * @param {number} _width
+     * @param {number} _height
+     */
+    fillRect(_left: number, _top: number, _width: number, _height: number): void {
+        this.contextCanvas.fillRect(_left, _top, _width, _height);
+    }
+    /**
+     * Description placeholder
+     *
+     * @param {number} _left
+     * @param {number} _top
+     * @param {number} _width
+     * @param {number} _height
+     */
+    strokeRect(_left: number, _top: number, _width: number, _height: number): void {
+        //console.log("strokeRect " + " _left = " + _left + " _top = " + _top + " _width = " + _width + " _height = " + _height);
+        this.contextCanvas.strokeRect(_left, _top, _width, _height);
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {number} _centerX
+     * @param {number} _centerY
+     * @param {number} _radius
+     * @param {number} _startAngle
+     * @param {number} _endAngle
+     * @param {boolean} _clockwise
+     */
+    circle(_centerX: number, _centerY: number, _radius: number, _startAngle: number
+        , _endAngle: number, _clockwise: boolean): void {
+        this.contextCanvas.beginPath();
+        this.contextCanvas.arc(_centerX, _centerY, _radius, _startAngle, _endAngle, _clockwise);
+        this.contextCanvas.closePath();
+        this.contextCanvas.stroke();
+    }
+
+    /**
+     * Description placeholder
+     *
+     * @param {number} _centerX
+     * @param {number} _centerY
+     * @param {number} _radius
+     * @param {number} _angle
+     */
+    drawCreaturesCircle_(_centerX: number, _centerY: number, _radius: number, _angle: number): void{
+        let p = 2;
+        let x = _radius * Math.cos(_angle) - 0 * Math.sin(_angle);
+        let y = _radius * Math.sin(_angle) + 0 * Math.cos(_angle);
+        x = x + _centerX;
+        y = y + _centerY;
+        //console.log("HTML5_Canvas_API_1.circle -> _centerX = " + _centerX + " _centerY = " + _centerY +
+        //" _radius = " + _radius + " _angle = " + _angle + " x = " + x + " y = " + y);
+        this.contextCanvas.strokeRect(_centerX, _centerY, p, p);
+        this.contextCanvas.strokeRect(x, y, p, p);
+        this.contextCanvas.beginPath();
+        this.contextCanvas.moveTo(x, y);
+        this.contextCanvas.lineTo(_centerX, _centerY);
+        this.contextCanvas.closePath();
+        this.contextCanvas.stroke();
+        this.contextCanvas.beginPath();
+        this.contextCanvas.arc(_centerX, _centerY, _radius, 0, 2 * Math.PI, true);
+        this.contextCanvas.closePath();
+        this.contextCanvas.stroke();
+    }
+
+    /** Description placeholder */
+    drawSmile(): void {
+        //-------------------------
+        this.contextCanvas.beginPath();
+        this.contextCanvas.fill();
+        this.contextCanvas.fillStyle = "yellow";
+        this.contextCanvas.beginPath();
+        this.contextCanvas.arc(160, 130, 100, 0, 2 * Math.PI);
+        this.contextCanvas.fill();
+        // рот
+        this.contextCanvas.beginPath();
+        this.contextCanvas.moveTo(100, 160);
+        this.contextCanvas.quadraticCurveTo(160, 250, 220, 160);
+        this.contextCanvas.closePath();
+        this.contextCanvas.fillStyle = "red";
+        this.contextCanvas.fill();
+        this.contextCanvas.lineWidth = 2;
+        this.contextCanvas.strokeStyle = "black";
+        this.contextCanvas.stroke();
+        // зубы
+        this.contextCanvas.fillStyle = "#FFFFFF";
+        this.contextCanvas.fillRect(140, 160, 15, 15);
+        this.contextCanvas.fillRect(170, 160, 15, 15);
+        //глаза
+        this.contextCanvas.beginPath();
+        this.contextCanvas.arc(130, 90, 20, 0, 2 * Math.PI);
+        this.contextCanvas.fillStyle = "#333333";
+        this.contextCanvas.fill();
+        this.contextCanvas.closePath();
+        this.contextCanvas.beginPath();
+        this.contextCanvas.arc(190, 90, 20, 0, 2 * Math.PI);
+        this.contextCanvas.fillStyle = "#333333";
+        this.contextCanvas.fill();
+        this.contextCanvas.closePath();
+        //---------------------------------
+    }
+
     //=============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {string} color
+     */
     setColor(color: string): void {
         let style = '#ffffff';
         switch (color) {
@@ -61,69 +308,114 @@ class Html5CanvasPrimitive_C {
             case this.BLUE:
                 style = '#0000ff';
                 break;
-        };
-        html5CanvasContext_R.set_fillStyle(style);
-        html5CanvasContext_R.set_strokeStyle(style);
-    };
+        }
+        this.set_fillStyle(style);
+        this.set_strokeStyle(style);
+    }
     //============================================================================
+    
     //------------------------------------------------------------------------------------------------------------------
     // geometric primitive (or prim)
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} left
+     * @param {number} top
+     * @param {number} width
+     * @param {number} height
+     */
     clearRect(left: number, top: number, width: number, height: number): void {
-        html5CanvasContext_R.clearRect(left, top, width, height);
-    };
+        this.clearRect_(left, top, width, height);
+    }
     //============================================================================
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} left
+     * @param {number} top
+     * @param {number} width
+     * @param {number} height
+     * @param {number} lineWidth
+     * @param {string} color
+     * @param {number} fillYes
+     */
     drawRect(left: number, top: number, width: number, height: number,
         lineWidth: number, color: string, fillYes: number): void {
-        let style_r = html5CanvasContext_R.get_fillStyle();
-        let lineWidth_r = html5CanvasContext_R.get_lineWidth();
-        html5CanvasContext_R.set_lineWidth(lineWidth);
+        let style_r = this.get_fillStyle();
+        let lineWidth_r = this.get_lineWidth();
+        this.set_lineWidth(lineWidth);
         this.setColor(color);
         if (fillYes == 1) {
-            html5CanvasContext_R.fillRect(left, top, width, height);
+            this.fillRect(left, top, width, height);
+        } else {
+            this.strokeRect(left, top, width, height);
         }
-        else {
-            html5CanvasContext_R.strokeRect(left, top, width, height);
-        }
-        ;
         // restore
-        html5CanvasContext_R.set_fillStyle(style_r);
-        html5CanvasContext_R.set_strokeStyle(style_r);
-        html5CanvasContext_R.set_lineWidth(lineWidth_r);
-    };
+        this.set_fillStyle(style_r);
+        this.set_strokeStyle(style_r);
+        this.set_lineWidth(lineWidth_r);
+    }
     //============================================================================
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} centerX
+     * @param {number} centerY
+     * @param {number} radius
+     * @param {number} sAngle
+     * @param {number} eAngle
+     * @param {boolean} clockwise
+     * @param {number} lineWidth
+     * @param {string} color
+     */
     drawCircle(centerX: number, centerY: number, radius: number, sAngle: number,
         eAngle: number, clockwise: boolean, lineWidth: number, color: string): void {
-        let style_r = html5CanvasContext_R.get_fillStyle();
-        let lineWidth_r = html5CanvasContext_R.get_lineWidth();
-        html5CanvasContext_R.set_lineWidth(lineWidth);
+        let style_r = this.get_fillStyle();
+        let lineWidth_r = this.get_lineWidth();
+        this.set_lineWidth(lineWidth);
         this.setColor(color);
-        html5CanvasContext_R.circle(centerX, centerY, radius, sAngle, eAngle, clockwise);
+        this.circle(centerX, centerY, radius, sAngle, eAngle, clockwise);
         // restore
-        html5CanvasContext_R.set_fillStyle(style_r);
-        html5CanvasContext_R.set_strokeStyle(style_r);
-        html5CanvasContext_R.set_lineWidth(lineWidth_r);
-    };
+        this.set_fillStyle(style_r);
+        this.set_strokeStyle(style_r);
+        this.set_lineWidth(lineWidth_r);
+    }
     //============================================================================
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} centerX
+     * @param {number} centerY
+     * @param {number} radius
+     * @param {number} angle
+     * @param {number} lineWidth
+     * @param {string} color
+     */
     drawCreaturesCircle(centerX: number, centerY: number, radius: number
         , angle: number, lineWidth: number, color: string): void {
 
-        let style_r = html5CanvasContext_R.get_fillStyle();
-        let lineWidth_r = html5CanvasContext_R.get_lineWidth();
-        html5CanvasContext_R.set_lineWidth(lineWidth);
+        let style_r = this.get_fillStyle();
+        let lineWidth_r = this.get_lineWidth();
+        this.set_lineWidth(lineWidth);
         this.setColor(color);
-        html5CanvasContext_R.drawCreaturesCircle(centerX, centerY, radius, angle);
+        this.drawCreaturesCircle_(centerX, centerY, radius, angle);
         // restore
-        html5CanvasContext_R.set_fillStyle(style_r);
-        html5CanvasContext_R.set_strokeStyle(style_r);
-        html5CanvasContext_R.set_lineWidth(lineWidth_r);
-    };
+        this.set_fillStyle(style_r);
+        this.set_strokeStyle(style_r);
+        this.set_lineWidth(lineWidth_r);
+    }
     //============================================================================
-}; //HTML5_Canvas_primitive
+} //HTML5_Canvas_primitive
 
+/**
+ * Description placeholder
+ *
+ * @type {Html5CanvasPrimitive_C}
+ */
 let html5CanvasPrimitive_R = new Html5CanvasPrimitive_C()
 
 html5CanvasPrimitive_R.iniM();

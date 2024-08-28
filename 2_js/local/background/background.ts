@@ -20,26 +20,77 @@ import { items_R } from '../items.js';
 // 0 до 9 и латинские буквы от A до F. Буквы A, B, C, D, E, F=15
 
 // 
+/**
+ * Description placeholder
+ *
+ * @class Background_C
+ * @typedef {Background_C}
+ */
 class Background_C {
 
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public NAME: string = "background_R";
+  /**
+   * Description placeholder
+   *
+   * @public
+   * @type {string}
+   */
   public isOk: string = "";
 
-  // Внешние ссылки
-  //-
-
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @type {number}
+   */
   private MAP_TILE_COUNT_WIDTH: number = 24;// считаем вместе с 0
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @type {number}
+   */
   private MAP_TILE_COUNT_HEIGHT: number = 9;
 
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @type {number}
+   */
   private TILE_WIDTH: number = 50;
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @type {number}
+   */
   private TILE_HEIGHT: number = 50;
 
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @type {TileForBackground_C[][]}
+   */
   private Map_2d: TileForBackground_C[][] = new Array(1);
 
   // кодировка тайла в виде буквы: 0 - не задано, 1 - конец карты, 
   //2 - пустое пространство, 3 - непроходимый камень, 4 - лестница
 
   //************************************************
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @type {string}
+   */
   private savedGround: string =
     `111111111111111111111111
 122222222222222222222221
@@ -53,22 +104,36 @@ class Background_C {
   //************************************************
 
   //=============================================================================
+  /**
+   * Creates an instance of Background_C.
+   *
+   * @constructor
+   */
   constructor() {
 
   }
   //=============================================================================
   //=============================================================================
+  /** Description placeholder */
   iniM(): void {
     this.iniMap_2d();
     this.loadMapFromScripts();
-  };
+  }
   //=============================================================================
   //=============================================================================
+  /** Description placeholder */
   startM(): void {
-  };
+  }
   //=============================================================================
 
   //=============================================================================
+  /**
+   * Description placeholder
+   *
+   * @param {number} x
+   * @param {number} y
+   * @returns {boolean}
+   */
   isMoove(x: number, y: number): boolean {
 
     x = Math.floor(x / this.TILE_WIDTH);// Math.ceil
@@ -85,11 +150,12 @@ class Background_C {
     } else {
       return true;
     }
-  };
+  }
   //=============================================================================
 
   //=============================================================================
   //
+  /** Description placeholder */
   iniMap_2d(): void {
 
     let height = this.TILE_HEIGHT; //
@@ -109,15 +175,23 @@ class Background_C {
         this.Map_2d[y][x] = new TileForBackground_C(this.numToChar(0), number, width, height, html5Sprites_R.GROUNDS);
       }
     }
-  };
+  }
   //=============================================================================
   //=============================================================================
   //
+  /**
+   * Description placeholder
+   *
+   * @param {number} x
+   * @param {number} y
+   * @returns {TileForBackground_C}
+   */
   getTileInMap_2d(x: number, y: number): TileForBackground_C {
     return this.Map_2d[y][x]; //
-  };
+  }
   //=============================================================================
   //=============================================================================
+  /** Description placeholder */
   print(): void {
     let line = "";
     for (let y = 0; y < this.Map_2d.length; y++) {
@@ -127,10 +201,11 @@ class Background_C {
       console.log("Sector-> " + line);
       line = "";
     }
-  };
+  }
   //=============================================================================
 
   //=============================================================================
+  /** Description placeholder */
   drow(): void {
     for (let y = 0; y < this.Map_2d.length; y++) {
       for (let x = 0; x < this.MAP_TILE_COUNT_WIDTH; x++) {
@@ -144,10 +219,11 @@ class Background_C {
           this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile, 1, html5Canvas_R.BLUE, 0);
       }
     }
-  };
+  }
   //=============================================================================
 
   //=============================================================================
+  /** Description placeholder */
   loadMapFromScripts(): void {
     let pozChar = 0;
     for (let y = 0; y < this.Map_2d.length; y++) {
@@ -157,10 +233,16 @@ class Background_C {
       }
       pozChar = pozChar + 1;
     }
-  };
+  }
   //=============================================================================
 
   //=============================================================================
+  /**
+   * Description placeholder
+   *
+   * @param {number} num
+   * @returns {string}
+   */
   numToChar(num: number): string {
 
     let numToCharA = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -169,10 +251,16 @@ class Background_C {
     let char = numToCharA[num];
 
     return char;
-  };
+  }
   //=============================================================================
 
   //=============================================================================
+  /**
+   * Description placeholder
+   *
+   * @param {string} char
+   * @returns {number}
+   */
   charToNum(char: string): number {
 
     // это тоже объект, только поля в виде строк. На само деле они всегда строки только неявно заданные
@@ -185,10 +273,15 @@ class Background_C {
     let num: number = charToNumS[char];
 
     return num;
-  };
+  }
   //=============================================================================
 }; //
 
+/**
+ * Description placeholder
+ *
+ * @type {Background_C}
+ */
 let background_R = new Background_C()
 
 background_R.iniM();

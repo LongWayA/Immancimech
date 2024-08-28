@@ -16,10 +16,16 @@ https://learn.javascript.ru/keyboard-events
 import { global_R } from '../global/global.js';
 if (global_R.print_module_start_finish)
     console.log('keyboard.js -> module start');
+//==============================================================================
 // здесь из за итераций внутри класса ссылаемся на созданный объект
 // изменение названия объекта все сломает
 // this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
 // this теряет контекст, когда метод используется в качестве обработчика события.
+/**
+ * Description placeholder
+ *
+ * @type {{ NAME: string; isOk: string; KEY_LEFT: string; KEY_RIGHT: string; KEY_UP: string; KEY_DOWN: string; KEY_RUN: string; isKeyDown: number; eventCode: string; eventCodeOld: string; eventCodeOneDown: number; ... 5 more ...; keyUpE(event: any): void; }}
+ */
 let userInputKeyboardEvent_R = {
     NAME: "userInputKeyboardEvent_R",
     isOk: "",
@@ -73,7 +79,6 @@ let userInputKeyboardEvent_R = {
             userInputKeyboardEvent_R.eventKey = event.key; //
             userInputKeyboardEvent_R.eventCodeOneDown = 1; //
         }
-        ;
     },
     //==============================================================================
     // во время отпускания клавиши вызывается эта функция
@@ -82,7 +87,6 @@ let userInputKeyboardEvent_R = {
         if (userInputKeyboardEvent_R.eventCodeOneDown == 1) {
             userInputKeyboardEvent_R.eventCodeOneDown = 0; //
         }
-        ;
     },
     //==============================================================================
 }; //var UserInputKeyboard

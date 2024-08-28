@@ -28,28 +28,76 @@ import { html5Canvas_R, Html5Canvas_C } from '../html5_canvas/6_html5_canvas_h.j
 import { Sprite_Imm_C } from '../html5_sprites/sprite_i_c.js';
 
 //
+/**
+ * Description placeholder
+ *
+ * @class Html5SpritesImmortal_C
+ * @typedef {Html5SpritesImmortal_C}
+ */
 class Html5SpritesImmortal_C {
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public NAME: string = "html5SpritesImmortal_R";
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public isOk: string = " ";
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {Html5Canvas_C}
+     */
     public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
 
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {string}
+     */
     public PATH_TO_IMAGES: string = "4_resource/images/immortals_img/";
 
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {number}
+     */
     public MAX_COUNT: number = 3;
 
     //
+    /**
+     * Description placeholder
+     *
+     * @public
+     * @type {any[]}
+     */
     public sprites: any[] = new Array(1);
 
     //=============================================================================
+    /**
+     * Creates an instance of Html5SpritesImmortal_C.
+     *
+     * @constructor
+     */
     constructor() {
     }
     //=============================================================================
 
     // ini
     //============================================================================
+    /** Description placeholder */
     iniM(): void {
 
         this.sprites = new Array(this.MAX_COUNT),
@@ -58,56 +106,93 @@ class Html5SpritesImmortal_C {
             this.iniSprite(this.PATH_TO_IMAGES);
 
         this.iniSpriteString();
-    };
+    }
     //============================================================================
 
     //=============================================================================
+    /** Description placeholder */
     startM(): void {
-    };
+    }
     //=============================================================================
 
     // get tile Sprite
     // this.getSprite(this.GROUNDS,2);
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} index
+     * @returns {(HTMLImageElement | HTMLCanvasElement)}
+     */
     getSprite(index: number): HTMLImageElement | HTMLCanvasElement {
         //
         return this.sprites[index].Image;
-    };
+    }
     //===========================================================================
 
     // get Sprite String
     // this.getTileString(this.GROUNDS,3);
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} index
+     * @returns {string}
+     */
     getSpriteString(index: number): string {
         return this.sprites[index].NameImage;
-    };
+    }
     //============================================================================
 
     // get Height Sprite
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} index
+     * @returns {number}
+     */
     getHeightSprite(index: number): number {
         return this.sprites[index].Image.height;
-    };
+    }
     //============================================================================
 
     // get Width Sprite
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} index
+     * @returns {number}
+     */
     getWidthSprite(index: number): number {
         return this.sprites[index].Image.width;
-    };
+    }
     //============================================================================
 
     // get Left Sprite
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {number} index
+     * @param {number} middle
+     * @returns {number}
+     */
     getLeftSprite(index: number, middle: number): number {
         let width = this.sprites[index].Image.width;
         let left = middle - width / 2;
         return left;
-    };
+    }
     //============================================================================
 
     // ini Image
     //============================================================================
+    /**
+     * Description placeholder
+     *
+     * @param {string} path
+     */
     iniSprite(path: string): void {
         /*
         класс
@@ -132,22 +217,32 @@ class Html5SpritesImmortal_C {
             this.sprites[i].PathToImage = path + i + ".png";
             this.sprites[i].NameImage = "Image str (картинка №) = " + i;
             //console.log(" OK " + _path + i + ".png");
-        };
-    };
+        }
+    }
     //============================================================================
 
     //инициализируем массивы с картинками
     //============================================================================
+    /** Description placeholder */
     iniSpriteString(): void {
         //
         this.sprites[0].NameImage = "nothing(пустая область)"; // пустая область
         this.sprites[1].NameImage = "ghost(привидение)"; //1_monster_ghost     привидение
         this.sprites[2].NameImage = "dragon(дракон)"; //2_monster_dragon    дракон
-    };
+    }
     //============================================================================
 
     //=============================================================================
     //
+    /**
+     * Description placeholder
+     *
+     * @param {number} index
+     * @param {number} imageLeft
+     * @param {number} imageTop
+     * @param {number} [imageWidth=0]
+     * @param {number} [imageHeight=0]
+     */
     drowSprite(index: number, imageLeft: number, imageTop: number,
         imageWidth: number = 0, imageHeight: number = 0): void {
 
@@ -155,12 +250,17 @@ class Html5SpritesImmortal_C {
 
         // (_image, _left, _top, _width, _height, _mirror)
         this.out_html5Canvas_R.drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
-    };
+    }
     //=============================================================================
 
 
-}; //SpritesMap_2D
+} //SpritesMap_2D
 
+/**
+ * Description placeholder
+ *
+ * @type {Html5SpritesImmortal_C}
+ */
 let html5SpritesImmortal_R = new Html5SpritesImmortal_C();
 
 html5SpritesImmortal_R.iniM();
