@@ -1,10 +1,11 @@
-// Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -24.02m.2024-07.07m.2024-
-// 
-/*
- НАЗНАЧЕНИЕ
-     
-
+// @ts-check
+/**
+ * @module tile_for_background_c
+ * @author ABr75
+ * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -24.02m.2024-07.07m.2024-
+/**
+* НАЗНАЧЕНИЕ
 */
 import { global_R } from '../../global/global.js';
 if (global_R.print_module_start_finish)

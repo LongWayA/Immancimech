@@ -1,18 +1,19 @@
-// Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -24.02m.2024-
-// 
-/*
- НАЗНАЧЕНИЕ
-
-
+// @ts-check
+/** 
+ * @module immortals
+ * @author ABr75
+ * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -24.02m.2024-
+/**
+* НАЗНАЧЕНИЕ
 */
 
 import { global_R } from '../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('immortals.js -> module start');
 
-import { html5Canvas_R, Html5Canvas_C } from '../render/html5_canvas/6_html5_canvas_h.js';
-import { html5Sprites_R, Html5Sprites_C } from '../render/html5_sprites/html5_sprites.js';
+import { html5Canvas_R, Html5Canvas_C } from '../2_render/html5_canvas/html5_canvas_h.js';
+import { html5Sprites_R, Html5Sprites_C } from '../2_render/html5_sprites/html5_sprites.js';
 import { Immortal_C } from '../user_avatars/immortal_c.js';
 
 
@@ -20,7 +21,6 @@ import { Immortal_C } from '../user_avatars/immortal_c.js';
  * Description placeholder
  *
  * @class Immortals_C
- * @typedef {Immortals_C}
  */
 class Immortals_C {
     /**
@@ -43,14 +43,12 @@ class Immortals_C {
      * Description placeholder
      *
      * @public
-     * @type {Html5Sprites_C}
      */
     public out_html5Sprites_R: Html5Sprites_C = html5Sprites_R;
     /**
      * Description placeholder
      *
      * @public
-     * @type {Html5Canvas_C}
      */
     public out_html5Canvas_R:  Html5Canvas_C = html5Canvas_R;
 

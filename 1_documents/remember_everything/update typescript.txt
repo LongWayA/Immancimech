@@ -1,0 +1,9 @@
+I had the same problem below procedure worked for me
+Update NPM
+npm install npm@latest -g
+Update typescript
+npm -g upgrade typescript
+or
+npm install typescript@latest -g
+now you should see
+tsc --version

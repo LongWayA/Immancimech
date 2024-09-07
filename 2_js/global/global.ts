@@ -1,9 +1,11 @@
-// Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -09.07.2023-24.02m.2024-
-//
-/*
- НАЗНАЧЕНИЕ
-    
+// @ts-check
+/** 
+ * @module global
+ * @author ABr75
+ * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -09.07.2023-24.02m.2024-
+/**
+* НАЗНАЧЕНИЕ
 */
 
 //let print_module_start_finish = true;
@@ -22,7 +24,6 @@ if (print_module_start_finish) console.log('global.js -> module start');
  * Description placeholder
  *
  * @class Global_C
- * @typedef {Global_C}
  */
 class Global_C {
     /**

@@ -1,9 +1,11 @@
-// Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -12.11.2023-02.03m.2024-
-// 
-/*
-   НАЗНАЧЕНИЕ
-       
+// @ts-check
+/** 
+ * @module test
+ * @author ABr75
+ * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -12.11.2023-02.03m.2024-
+/**
+* НАЗНАЧЕНИЕ
 */
 
 import { global_R } from '../global/global.js';
@@ -13,7 +15,7 @@ if (global_R.print_module_start_finish) console.log('test.js -> module start');
 // Внешние ссылки
 
 //ai
-import { ai_R } from '../ai/ai.js';
+import { ai_R } from '../5_ai_control/ai.js';
 
 //background
 import { background_R } from '../local/background/background.js';
@@ -26,28 +28,28 @@ import { imps_R } from '../creatures/creatures.js';
 import { fight_R } from '../fight/fight.js';
 
 //frames
-import { frames_R } from '../render/frames/frames.js';
+import { frames_R } from '../2_render/frames/frames.js';
 
 //game
-import { gameState_R } from '../game/game_state.js';
+import { gameState_R } from '../4_game_state/game_state.js';
 
 //global 
 // global_R перенес наверх ибо флаг использую
 
 
 //html5_canvas
-import { html5CanvasText_R } from '../render/html5_canvas/2_html5_canvas_text.js';
-import { html5CanvasPrimitive_R } from '../render/html5_canvas/3_html5_canvas_primitive.js';
-import { html5CanvasImage_R } from '../render/html5_canvas/4_html5_canvas_image.js';
-import { html5CanvasMouseEvent_R } from '../render/html5_canvas/5_html5_canvas_mouse_event.js';
-import { html5Canvas_R } from '../render/html5_canvas/6_html5_canvas_h.js';
+import { html5CanvasText_R } from '../2_render/html5_canvas/html5_canvas_text.js';
+import { html5CanvasPrimitive_R } from '../2_render/html5_canvas/html5_canvas_primitive.js';
+import { html5CanvasImage_R } from '../2_render/html5_canvas/html5_canvas_image.js';
+import { html5CanvasMouseEvent_R } from '../3_user_control/html5_canvas_mouse_event.js';
+import { html5Canvas_R } from '../2_render/html5_canvas/html5_canvas_h.js';
 
 //html5_sprites
-import { html5SpritesCollection_R } from '../render/html5_sprites/html5_sprites_collection.js';
-import { html5SpritesImmortal_R } from '../render/html5_sprites/html5_sprites_immortal.js';
-import { html5Sprites_R } from '../render/html5_sprites/html5_sprites.js';
-import { Sprite_С, Sprite_С_isOk } from '../render/html5_sprites/sprite_c.js';
-import { Sprite_Imm_C, Sprite_I_C_isOk } from '../render/html5_sprites/sprite_i_c.js';
+import { html5SpritesCollection_R } from '../2_render/html5_sprites/html5_sprites_collection.js';
+import { html5SpritesImmortal_R } from '../2_render/html5_sprites/html5_sprites_immortal.js';
+import { html5Sprites_R } from '../2_render/html5_sprites/html5_sprites.js';
+import { Sprite_С, Sprite_С_isOk } from '../2_render/html5_sprites/sprite_c.js';
+import { Sprite_Imm_C, Sprite_I_C_isOk } from '../2_render/html5_sprites/sprite_i_c.js';
 
 //items
 //-
@@ -56,17 +58,17 @@ import { Sprite_Imm_C, Sprite_I_C_isOk } from '../render/html5_sprites/sprite_i_
 import { local_R } from '../local/local.js';
 
 //loop
-import { buttons_R } from '../loop/buttons.js';
-import { loop_R } from '../loop/loop_o.js';
-import { requestAnimationFrame_R } from '../render/request_animation_o.js';
-import { timer_R } from '../loop/timer.js';
-import { startClient_R } from '../loop/start_client.js';
+import { buttons_R } from '../3_user_control/buttons.js';
+import { loop_R } from '../1_loop/loop_o.js';
+import { requestAnimationFrame_R } from '../2_render/request_animation_o.js';
+import { timer_R } from '../1_loop/timer.js';
+import { startClient_R } from '../1_loop/start_client.js';
 
 //moove
 import { run_R } from '../moove/run.js';
 
 //render
-import { render_R } from '../render/render.js';
+import { render_R } from '../2_render/render.js';
 
 //test 
 //import { test_R } from '../test/test.js';
@@ -76,9 +78,9 @@ import { Immortal_C, Immortal_C_isOk } from '../user_avatars/immortal_c.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 
 //user_control
-import { userInputKeyboardEvent_R } from '../user_control/keyboard_event_o.js';
-import { userInputKeyboard_R } from '../user_control/keyboard.js';
-import { mouse_R } from '../user_control/mouse.js';
+import { userInputKeyboardEvent_R } from '../3_user_control/keyboard_event_o.js';
+import { userInputKeyboard_R } from '../3_user_control/keyboard.js';
+import { mouse_R } from '../3_user_control/mouse.js';
 
 
 
@@ -86,7 +88,6 @@ import { mouse_R } from '../user_control/mouse.js';
  * Description placeholder
  *
  * @class Test_C
- * @typedef {Test_C}
  */
 class Test_C {
     /**

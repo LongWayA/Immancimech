@@ -1,18 +1,20 @@
-// Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -12.09.2023-
-// -24.02m.2024-07.07m.2024-
-/*
- НАЗНАЧЕНИЕ
-     
-
+// @ts-check
+/** 
+ * @module background
+ * @author ABr75
+ * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -12.09.2023-
+ * @version Last_modified -24.02m.2024-07.07m.2024-
+/**
+* НАЗНАЧЕНИЕ
 */
 
 import { global_R } from '../../global/global.js';
 
 if (global_R.print_module_start_finish) console.log('background.js -> module start');
 
-import { html5Canvas_R } from '../../render/html5_canvas/6_html5_canvas_h.js';
-import { html5Sprites_R } from '../../render/html5_sprites/html5_sprites.js';
+import { html5Canvas_R } from '../../2_render/html5_canvas/html5_canvas_h.js';
+import { html5Sprites_R } from '../../2_render/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
 import { items_R } from '../items.js';
 
@@ -24,7 +26,6 @@ import { items_R } from '../items.js';
  * Description placeholder
  *
  * @class Background_C
- * @typedef {Background_C}
  */
 class Background_C {
 

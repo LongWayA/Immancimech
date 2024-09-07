@@ -1,7 +1,13 @@
 <?php
+/** 
+ * @author ABr75
+ * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -10.03m.2024-
+ */
 
-// Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// -100324-
+/**
+* НАЗНАЧЕНИЕ
+*/
 
 date_default_timezone_set("America/New_York");
 header("Cache-Control: no-store");

@@ -1,9 +1,11 @@
-// Copyright (c) 2024, Brenkman Andrey and/or its affiliates. All rights reserved.
-// Last modified -24.02m.2024-
-// 
-/*
- НАЗНАЧЕНИЕ
-
+// @ts-check
+/** 
+ * @module run
+ * @author ABr75
+ * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -24.02m.2024-
+/**
+* НАЗНАЧЕНИЕ
 */
 
 import { global_R } from '../global/global.js';
@@ -17,7 +19,6 @@ import { background_R, Background_C } from '../local/background/background.js';
  * Description placeholder
  *
  * @class Run_C
- * @typedef {Run_C}
  */
 class Run_C {
     /**
@@ -39,7 +40,6 @@ class Run_C {
      * Description placeholder
      *
      * @public
-     * @type {*}
      */
     public out_immortals_R = immortals_R;//, Immortals_C
 
@@ -48,7 +48,6 @@ class Run_C {
      * Description placeholder
      *
      * @public
-     * @type {Background_C}
      */
     public out_background_R: Background_C = background_R;
 
