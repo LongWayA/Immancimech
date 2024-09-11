@@ -1,5 +1,6 @@
 // @ts-check
 /**
+ * 1_loop
  * @module loop_o
  * @author ABr75
  * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
@@ -48,12 +49,10 @@ let loop_R = {
             gameState_R.tickGame();
             timer_R.updateTimeAfterTick();
             loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
-            if (!gameState_R.isEndGame()) {
-                loop_R.timerCount = setTimeout(tick, loop_R.delayMs);
-            }
-            else {
+            if (gameState_R.isEndGame())
                 loop_R.isLoop = false;
-            }
+            if (loop_R.isLoop)
+                loop_R.timerCount = setTimeout(tick, loop_R.delayMs);
             if ((loop_R.timerCount - loop_R.timerCountStop) > 10000) {
                 gameState_R.setEndGame();
                 buttons_R.endButtonAttribute();

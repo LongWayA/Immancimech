@@ -1,5 +1,6 @@
 // @ts-check
 /**
+ * 1_loop
  * @module timer
  * @author ABr75
  * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
