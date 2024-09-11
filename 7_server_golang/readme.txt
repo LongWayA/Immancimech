@@ -1,8 +1,7 @@
-Сервер на языке голанг для игры Immancimech.
-Папка должна находиться по следующему пути:
+РќР°РїРёСЃР°РЅРЅС‹Р№ РЅР° СЏР·С‹РєРµ РіРѕР»Р°РЅРі СЃРµСЂРІРµСЂ РґР»СЏ РёРіСЂС‹ Immancimech.
+РџР°РїРєР° РґРѕР»Р¶РЅР° РЅР°С…РѕРґРёС‚СЊСЃСЏ РїРѕ СЃР»РµРґСѓСЋС‰РµРјСѓ РїСѓС‚Рё:
 G:/1_2_Andrey_programming_All/localhost/3_Immancimech/
 
-
-Golang server for the game Immancimech.
+Written in golang language server for the game Immancimech.
 The folder should be located at the following path:
 G:/1_2_Andrey_programming_All/localhost/3_Immancimech/
