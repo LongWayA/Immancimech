@@ -2,7 +2,7 @@
 /** 
  * @module render
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -09.07.2023-24.02m.2024-17.08m.2024-
  */
 
@@ -10,7 +10,7 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('render.js -> module start');
 
@@ -20,104 +20,54 @@ import { drawGameContinue_R } from './drow_game_continue.js';
 import { drawGamePause_R } from '../2_render/drow_game_pause.js';
 import { drawGameEnd_R } from '../2_render/drow_game_end.js';
 
-
-
-/**
- * 
- *
- * @class Render_C
- */
 class Render_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+ 
     public NAME: string = "render_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+
     public isOk: string = "";
 
-    // Внешние ссылки
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {*}
-     */
     private out_Game: any = null;
 
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {number}
-     */
     private widthCanvas: number = 0;
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {number}
-     */
+ 
     private heightCanvas: number = 0;
 
     //=============================================================================
-    /**
-     * Creates an instance of Render_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     iniM(): void {
         this.widthCanvas = html5Canvas_R.width_OUT;
         this.heightCanvas = html5Canvas_R.height_OUT;
     }
     //=============================================================================
     //=============================================================================
-    //start (_HTML5_Canvas, _Sprites, _Frames, _AllMapObj, _Game) {
-    /**
-     * Description placeholder
-     *
-     * @param {*} Game
-     */
+    //
     startM(Game: any): void {
         this.out_Game = Game;
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     drawGameStart(): void {
         drawGameStart_R.tick(this.out_Game, this.widthCanvas, this.heightCanvas);
     }
     //=============================================================================
     //=============================================================================
     // 
-    /** Description placeholder */
     drowGameGo(): void {
         drawGameContinue_R.tick(this.out_Game);
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     drawGamePaused(): void {
         drawGamePause_R.tick(this.out_Game, this.widthCanvas, this.heightCanvas);
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     drawGameEnd(): void {
         drawGameEnd_R.tick(this.out_Game, this.widthCanvas, this.heightCanvas);
     }
@@ -125,12 +75,6 @@ class Render_C {
 
 } //
 
-
-/**
- *
- *
- * @type {Render_C}
- */
 let render_R = new Render_C();
 
 render_R.iniM();

@@ -2,7 +2,7 @@
 /** 
  * @module html5_canvas_primitive
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -21.08.2021-31.07.2022-18.02.2023-08.03.2023-18.03.2023-26.03.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
@@ -16,238 +16,105 @@
 *  Из Википедии https://ru.wikipedia.org/wiki/Canvas_(HTML)
 */
 
-import { global_R } from '../../global/global.js';
+import { global_R } from '../../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('3_html5_canvas_primitive.js -> module start');
 
 
 // 
-/**
- * Description placeholder
- *
- * @class Html5CanvasPrimitive_C
- */
 class Html5CanvasPrimitive_C {
 
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public NAME: string = "html5CanvasPrimitive_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = "";
 
 // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
     //const idCanvas : HTMLElement = <HTMLElement>document.getElementById('game-canvas');
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {HTMLCanvasElement}
-     */
     // @ts-ignore
     public idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');//private 
 
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {CanvasRenderingContext2D}
-     */
     // @ts-ignore
     private contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');
 
-
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public WHITE: string = 'white';
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public BLACK: string = 'black';
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public RED: string = 'red';
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public GREEN: string = 'green';
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public BLUE: string = 'blue';
 
     //=============================================================================
-    /**
-     * Creates an instance of Html5CanvasPrimitive_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     iniM(): void {
     }
     //============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM(): void {
     }
     //=============================================================================
 
-    /**
-     * Description placeholder
-     *
-     * @param {string} _color
-     */
-    set_fillStyle(_color: string): void {
-        this.contextCanvas.fillStyle = _color;
+    set_fillStyle(color: string): void {
+        this.contextCanvas.fillStyle = color;
     }
 
-    /**
-     * Description placeholder
-     *
-     * @returns {string}
-     */
     get_fillStyle(): string {
         // @ts-ignore
         return <string>this.contextCanvas.fillStyle;
     }
 
-    /**
-     * Description placeholder
-     *
-     * @param {string} _color
-     */
     set_strokeStyle(_color: string): void {
         this.contextCanvas.strokeStyle = _color;
     }
 
-    /**
-     * Description placeholder
-     *
-     * @param {number} _lineWidth
-     */
     set_lineWidth(_lineWidth: number): void {
         this.contextCanvas.lineWidth = _lineWidth;
     }
 
-    /**
-     * Description placeholder
-     *
-     * @returns {number}
-     */
     get_lineWidth(): number {
         return this.contextCanvas.lineWidth;
     }
 
-    /**
-     * Description placeholder
-     *
-     * @param {number} _left
-     * @param {number} _top
-     * @param {number} _width
-     * @param {number} _height
-     */
-    clearRect_(_left: number, _top: number, _width: number, _height: number): void {
-        this.contextCanvas.clearRect(_left, _top, _width, _height);
+    clearRect_(left: number, top: number, width: number, height: number): void {
+        this.contextCanvas.clearRect(left, top, width, height);
     }
 
-    /**
-     * Description placeholder
-     *
-     * @param {number} _left
-     * @param {number} _top
-     * @param {number} _width
-     * @param {number} _height
-     */
-    fillRect(_left: number, _top: number, _width: number, _height: number): void {
-        this.contextCanvas.fillRect(_left, _top, _width, _height);
+    fillRect(left: number, top: number, width: number, height: number): void {
+        this.contextCanvas.fillRect(left, top, width, height);
     }
-    /**
-     * Description placeholder
-     *
-     * @param {number} _left
-     * @param {number} _top
-     * @param {number} _width
-     * @param {number} _height
-     */
-    strokeRect(_left: number, _top: number, _width: number, _height: number): void {
+
+    strokeRect(left: number, top: number, width: number, height: number): void {
         //console.log("strokeRect " + " _left = " + _left + " _top = " + _top + " _width = " + _width + " _height = " + _height);
-        this.contextCanvas.strokeRect(_left, _top, _width, _height);
+        this.contextCanvas.strokeRect(left, top, width, height);
     }
 
-    /**
-     * Description placeholder
-     *
-     * @param {number} _centerX
-     * @param {number} _centerY
-     * @param {number} _radius
-     * @param {number} _startAngle
-     * @param {number} _endAngle
-     * @param {boolean} _clockwise
-     */
-    circle(_centerX: number, _centerY: number, _radius: number, _startAngle: number
-        , _endAngle: number, _clockwise: boolean): void {
+    circle(centerX: number, centerY: number, radius: number, startAngle: number
+        , endAngle: number, clockwise: boolean): void {
         this.contextCanvas.beginPath();
-        this.contextCanvas.arc(_centerX, _centerY, _radius, _startAngle, _endAngle, _clockwise);
+        this.contextCanvas.arc(centerX, centerY, radius, startAngle, endAngle, clockwise);
         this.contextCanvas.closePath();
         this.contextCanvas.stroke();
     }
 
-    /**
-     * Description placeholder
-     *
-     * @param {number} _centerX
-     * @param {number} _centerY
-     * @param {number} _radius
-     * @param {number} _angle
-     */
-    drawCreaturesCircle_(_centerX: number, _centerY: number, _radius: number, _angle: number): void{
+    drawCreaturesCircle_(centerX: number, centerY: number, radius: number, angle: number): void{
         let p = 2;
-        let x = _radius * Math.cos(_angle) - 0 * Math.sin(_angle);
-        let y = _radius * Math.sin(_angle) + 0 * Math.cos(_angle);
-        x = x + _centerX;
-        y = y + _centerY;
+        let x = radius * Math.cos(angle) - 0 * Math.sin(angle);
+        let y = radius * Math.sin(angle) + 0 * Math.cos(angle);
+        x = x + centerX;
+        y = y + centerY;
         //console.log("HTML5_Canvas_API_1.circle -> _centerX = " + _centerX + " _centerY = " + _centerY +
         //" _radius = " + _radius + " _angle = " + _angle + " x = " + x + " y = " + y);
-        this.contextCanvas.strokeRect(_centerX, _centerY, p, p);
+        this.contextCanvas.strokeRect(centerX, centerY, p, p);
         this.contextCanvas.strokeRect(x, y, p, p);
         this.contextCanvas.beginPath();
         this.contextCanvas.moveTo(x, y);
-        this.contextCanvas.lineTo(_centerX, _centerY);
+        this.contextCanvas.lineTo(centerX, centerY);
         this.contextCanvas.closePath();
         this.contextCanvas.stroke();
         this.contextCanvas.beginPath();
-        this.contextCanvas.arc(_centerX, _centerY, _radius, 0, 2 * Math.PI, true);
+        this.contextCanvas.arc(centerX, centerY, radius, 0, 2 * Math.PI, true);
         this.contextCanvas.closePath();
         this.contextCanvas.stroke();
     }
@@ -290,11 +157,6 @@ class Html5CanvasPrimitive_C {
     }
 
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {string} color
-     */
     setColor(color: string): void {
         let style = '#ffffff';
         switch (color) {
@@ -322,30 +184,11 @@ class Html5CanvasPrimitive_C {
     //------------------------------------------------------------------------------------------------------------------
     // geometric primitive (or prim)
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} left
-     * @param {number} top
-     * @param {number} width
-     * @param {number} height
-     */
     clearRect(left: number, top: number, width: number, height: number): void {
         this.clearRect_(left, top, width, height);
     }
     //============================================================================
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} left
-     * @param {number} top
-     * @param {number} width
-     * @param {number} height
-     * @param {number} lineWidth
-     * @param {string} color
-     * @param {number} fillYes
-     */
     drawRect(left: number, top: number, width: number, height: number,
         lineWidth: number, color: string, fillYes: number): void {
         let style_r = this.get_fillStyle();
@@ -364,18 +207,6 @@ class Html5CanvasPrimitive_C {
     }
     //============================================================================
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} centerX
-     * @param {number} centerY
-     * @param {number} radius
-     * @param {number} sAngle
-     * @param {number} eAngle
-     * @param {boolean} clockwise
-     * @param {number} lineWidth
-     * @param {string} color
-     */
     drawCircle(centerX: number, centerY: number, radius: number, sAngle: number,
         eAngle: number, clockwise: boolean, lineWidth: number, color: string): void {
         let style_r = this.get_fillStyle();
@@ -390,16 +221,6 @@ class Html5CanvasPrimitive_C {
     }
     //============================================================================
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} centerX
-     * @param {number} centerY
-     * @param {number} radius
-     * @param {number} angle
-     * @param {number} lineWidth
-     * @param {string} color
-     */
     drawCreaturesCircle(centerX: number, centerY: number, radius: number
         , angle: number, lineWidth: number, color: string): void {
 
@@ -416,11 +237,6 @@ class Html5CanvasPrimitive_C {
     //============================================================================
 } //HTML5_Canvas_primitive
 
-/**
- * Description placeholder
- *
- * @type {Html5CanvasPrimitive_C}
- */
 let html5CanvasPrimitive_R = new Html5CanvasPrimitive_C()
 
 html5CanvasPrimitive_R.iniM();

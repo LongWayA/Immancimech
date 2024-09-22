@@ -1,73 +1,51 @@
 // @ts-check
 /** 
- * @module items
+ * @module creatures
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -24.02m.2024-
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -24.02m.2024
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../../1_loop/global.js';
 
-if (global_R.print_module_start_finish) console.log('items.js -> module start');
+if (global_R.print_module_start_finish) console.log('creatures.js -> module start');
 
+class Imps_C {
 
-/**
- * Description placeholder
- *
- * @class Items_C
- */
-class Items_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public NAME: string = "imps_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = "";
 
     //=============================================================================
-    /** Description placeholder */
+    constructor() {
+    }
+    //=============================================================================
+    //=============================================================================
     iniM(): void {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM(): void {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     update(): void {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     drow(): void {
     }
     //=============================================================================
     //=============================================================================
-}
+}; //
 
-/**
- * Description placeholder
- *
- * @type {Items_C}
- */
-let items_R = new Items_C();
+let imps_R = new Imps_C();
 
-items_R.iniM();
+imps_R.iniM();
 
-export { items_R, Items_C };
+export { imps_R, Imps_C };
 
-if (global_R.print_module_start_finish) console.log('items.js -> module finish');
+if (global_R.print_module_start_finish) console.log('creatures.js -> module finish');
 
-items_R.isOk = "OK"; //
+imps_R.isOk = "OK"; //

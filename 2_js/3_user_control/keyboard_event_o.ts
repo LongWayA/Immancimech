@@ -2,7 +2,7 @@
 /** 
  * @module keyboard_event_o
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified 15.07.2018 - 18.03.2019 - 30.05.2019
  * @version Last_modified - 18.11.2019 - 01.04.2024 -
  */
@@ -18,7 +18,7 @@
 
 //alert("keyboard.js module start");
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('keyboard.js -> module start');
 
@@ -26,6 +26,7 @@ if (global_R.print_module_start_finish) console.log('keyboard.js -> module start
 
 
 /**
+ * тут объект а не клас потому что:
  * this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
  * this теряет контекст, когда метод используется в качестве обработчика события.
  *

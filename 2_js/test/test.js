@@ -2,22 +2,21 @@
 /**
  * @module test
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -12.11.2023-02.03m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 if (global_R.print_module_start_finish)
     console.log('test.js -> module start');
-// Внешние ссылки
 //ai
 import { ai_R } from '../5_ai_control/ai.js';
 //background
 import { background_R } from '../local/background/background.js';
 import { TileForBackground_isOk } from '../local/background/tile_for_background_c.js';
 //creatures
-import { imps_R } from '../creatures/creatures.js';
+import { imps_R } from '../local/creatures/creatures.js';
 //fight
 import { fight_R } from '../fight/fight.js';
 //frames
@@ -61,48 +60,23 @@ import { immortals_R } from '../user_avatars/immortals.js';
 import { userInputKeyboardEvent_R } from '../3_user_control/keyboard_event_o.js';
 import { userInputKeyboard_R } from '../3_user_control/keyboard.js';
 import { mouse_R } from '../3_user_control/mouse.js';
-/**
- * Description placeholder
- *
- * @class Test_C
- */
 class Test_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     NAME = "test_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     isOk = "";
     //=============================================================================
-    /**
-     * Creates an instance of Test_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     iniM() {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM() {
     }
     //=============================================================================
     //=============================================================================
     // 
-    /** Description placeholder */
     test() {
         //ai
         if (ai_R.isOk != "OK") {
@@ -217,11 +191,6 @@ class Test_C {
         }
     }
 }
-/**
- * Description placeholder
- *
- * @type {Test_C}
- */
 let test_R = new Test_C();
 test_R.iniM();
 export { test_R, Test_C };

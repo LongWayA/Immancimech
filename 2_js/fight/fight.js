@@ -2,73 +2,41 @@
 /**
  * @module fight
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024
 /**
 * НАЗНАЧЕНИЕ
 */
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 if (global_R.print_module_start_finish)
     console.log('fight.js -> module start');
-/**
- * Description placeholder
- *
- * @class fight_C
- */
 class fight_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     NAME = "fight_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     isOk = "";
     //=============================================================================
-    /**
-     * Creates an instance of fight_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================    
     //=============================================================================
-    /** Description placeholder */
     iniM() {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM() {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     tick() {
     }
     //=============================================================================   
     //=============================================================================
-    /** Description placeholder */
     update() {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     drow() {
     }
 } //
-/**
- * Description placeholder
- *
- * @type {fight_C}
- */
 let fight_R = new fight_C();
 fight_R.iniM();
 export { fight_R, fight_C };

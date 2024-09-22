@@ -1,45 +1,47 @@
 // @ts-check
-/**
- * @module local
+/** 
+ * @module items
  * @author ABr75
  * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
-import { global_R } from '../1_loop/global.js';
-if (global_R.print_module_start_finish)
-    console.log('local_c.js -> module start');
-class Local_C {
-    NAME = "Local_C";
-    isOk = "";
+
+import { global_R } from '../../1_loop/global.js';
+
+if (global_R.print_module_start_finish) console.log('items.js -> module start');
+
+class Items_C {
+ 
+    public NAME: string = "imps_R";
+    public isOk: string = "";
+
     //=============================================================================
-    constructor() {
+    iniM(): void {
     }
     //=============================================================================
     //=============================================================================
-    iniM() {
+    startM(): void {
     }
     //=============================================================================
     //=============================================================================
-    startM() {
+    update(): void {
     }
     //=============================================================================
     //=============================================================================
-    tick() {
-    }
-    //=============================================================================   
-    //=============================================================================
-    update() {
+    drow(): void {
     }
     //=============================================================================
     //=============================================================================
-    drow() {
-    }
-} //
-let local_R = new Local_C();
-local_R.iniM();
-export { local_R, Local_C };
-if (global_R.print_module_start_finish)
-    console.log('local_c.js -> module finish');
-local_R.isOk = "OK"; //
+}
+
+let items_R = new Items_C();
+
+items_R.iniM();
+
+export { items_R, Items_C };
+
+if (global_R.print_module_start_finish) console.log('items.js -> module finish');
+
+items_R.isOk = "OK"; //

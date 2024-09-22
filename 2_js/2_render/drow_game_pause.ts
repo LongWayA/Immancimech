@@ -2,7 +2,7 @@
 /** 
  * @module drow_game_pause
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
 
@@ -10,50 +10,25 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('drow_game_pause.js -> module start');
 
 import { html5Canvas_R } from './html5_canvas/html5_canvas_h.js';
 import { drawTimerNumber_R } from '../2_render/drow_timer_number.js';
 
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-// this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
-/**
- * Description placeholder
- *
- * @class DrawGamePause_C
- */
 class DrawGamePause_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+ 
     public NAME: string = "DrawGamePause_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = "";
 
 
     //=============================================================================
-    /**
-     * Creates an instance of DrawGamePause_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     iniM(): void {
 
         // console.log('Render_C->iniM()-> this.widthCanvas =' + this);
@@ -62,19 +37,10 @@ class DrawGamePause_C {
     //=============================================================================
     //=============================================================================
     //
-    /** Description placeholder */
     startM(): void {
-
     }
     //=============================================================================
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {*} out_Game
-     * @param {number} widthCanvas
-     * @param {number} heightCanvas
-     */
     tick(out_Game: any, widthCanvas: number, heightCanvas: number): void {
         // console.log('Game.drawNuberTick');
 
@@ -102,14 +68,6 @@ class DrawGamePause_C {
 
 } //
 
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-// this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
-/**
- * Description placeholder
- *
- * @type {DrawGamePause_C}
- */
 let drawGamePause_R = new DrawGamePause_C();
 
 drawGamePause_R.iniM();

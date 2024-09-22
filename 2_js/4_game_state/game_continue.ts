@@ -2,14 +2,14 @@
 /** 
  * @module game_continue
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -15.08m.2024-
 
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('game_go.js -> module start');
 
@@ -23,53 +23,28 @@ import { immortals_R } from '../user_avatars/immortals.js';
 import { background_R } from '../local/background/background.js';
 import { render_R } from '../2_render/render.js';
 
-
-/**
- * Description placeholder
- *
- * @class GameContinue_C
- */
 class GameContinue_C {
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {string}
-   */
+ 
   public NAME: string = "GameContinue_C";
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {string}
-   */
   public isOk: string = "";
 
   //=============================================================================
-  /**
-   * Creates an instance of GameContinue_C.
-   *
-   * @constructor
-   */
   constructor() {
   }
   //============================================================================= 
 
   //=============================================================================
-  /** Description placeholder */
   iniM(): void {
     //console.log('this.ini->');
   }
   //=============================================================================
   //=============================================================================
-  /** Description placeholder */
   startM(): void {
     //alert("!");
     //console.log('this.start->');
   }
   //============================================================================= 
   //=============================================================================
-  /** Description placeholder */
   tick(): void {
 
     userInputKeyboard_R.tick(immortals_R, background_R);
@@ -87,11 +62,6 @@ class GameContinue_C {
 
 }
 
-/**
- * Description placeholder
- *
- * @type {GameContinue_C}
- */
 let gameContinue_R = new GameContinue_C();
 
 gameContinue_R.iniM();

@@ -2,7 +2,7 @@
 /** 
  * @module mouse
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -10.09.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
@@ -16,7 +16,7 @@
 *https://learn.javascript.ru/keyboard-events
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('mouse.js -> module start');
 
@@ -25,50 +25,26 @@ import { html5CanvasPrimitive_R } from '../2_render/html5_canvas/html5_canvas_pr
 
 import { html5CanvasMouseEvent_R } from '../3_user_control/html5_canvas_mouse_event.js';
 
-/**
- * Description placeholder
- *
- * @class Mouse_C
- */
 class Mouse_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+
     public NAME: string = "Mouse_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = "";
 
     //=============================================================================
-    /**
-     * Creates an instance of Mouse_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     iniM(): void {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM(): void  {
         html5CanvasMouseEvent_R.startM();
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     tick(): void  {
 
         if (html5CanvasMouseEvent_R.mouseMoveIsChange == 1) {
@@ -95,7 +71,6 @@ class Mouse_C {
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     drow(): void  {
 
         let X0 = 550;
@@ -134,19 +109,6 @@ class Mouse_C {
     //=============================================================================
 
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {string} textEvent
-     * @param {number} offsetX
-     * @param {number} offsetY
-     * @param {number} left
-     * @param {number} top
-     * @param {number} width
-     * @param {number} height
-     * @param {number} X0
-     * @param {number} Y0
-     */
     printText(textEvent: string, offsetX: number, offsetY: number,
         left: number, top: number, width: number, height: number, X0: number, Y0: number): void  {
 
@@ -160,11 +122,6 @@ class Mouse_C {
     //=============================================================================
 }
 
-/**
- * Description placeholder
- *
- * @type {Mouse_C}
- */
 let mouse_R = new Mouse_C();
 
 mouse_R.iniM();

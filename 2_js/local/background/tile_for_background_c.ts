@@ -2,108 +2,41 @@
 /** 
  * @module tile_for_background_c
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024-07.07m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../../global/global.js';
+import { global_R } from '../../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('tile_for_background_c.js -> module start');
 
 // можно кодировать карту при записи продвинутой системой типа 16 ричной
 // 0 до 9 и латинские буквы от A до F. Буквы A, B, C, D, E, F=15
 
-/**
- * Description placeholder
- *
- * @class TileForBackground_C
- * @typedef {TileForBackground_C}
- */
 class TileForBackground_C {
 
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {*}
-   */
   private charToIndex: any;
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {string}
-   */
+ 
   public char: string;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
+
   private number: number;
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {number}
-   */
+
   public type: number;
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {number}
-   */
+
   public index: number;
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {number}
-   */
+
   public heightTile: number;
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {number}
-   */
+ 
   public widthTile: number;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
+
   private immortals: number;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
+
   private creatures: number;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
+ 
   private items: number;
 
-  /**
-   * Creates an instance of TileForBackground_C.
-   *
-   * @constructor
-   * @param {string} char
-   * @param {number} number
-   * @param {number} widthTile
-   * @param {number} heightTile
-   * @param {number} type
-   */
   constructor(char: string, number: number, widthTile: number,
     heightTile: number, type: number) {
 
@@ -121,15 +54,8 @@ class TileForBackground_C {
     this.immortals = -1; // номер аватара игрока в списке аватаров
     this.creatures = -1; // номер существа в списке существ
     this.items = -1; // номер предмета в списке предметов
-
   } //constructor() {
 
-  /**
-   * Description placeholder
-   *
-   * @param {string} char
-   * @param {number} type
-   */
   setCharTypeIndex(char: string, type: number): void {
     this.char = char;
     this.type = type; //
@@ -139,12 +65,6 @@ class TileForBackground_C {
   }
 }
 
-//Global.testLoading('Ground.js');
-/**
- * Description placeholder
- *
- * @type {string}
- */
 let TileForBackground_isOk = "OK"; //
 
 export { TileForBackground_C, TileForBackground_isOk };

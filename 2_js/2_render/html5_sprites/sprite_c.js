@@ -2,7 +2,7 @@
 /**
  * @module sprite_c
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024-18.03m.2024-
  */
 /**
@@ -20,41 +20,13 @@
 * html5SpritesCollection_R.sprites[_type, _index].Image;
 * _type = html5SpritesCollection_R.GROUNDS , _index = html5SpritesCollection_R.GroundsMapChars.get(html5SpritesCollection_R.GROUND_FLOOR)
 */
-import { global_R } from '../../global/global.js';
+import { global_R } from '../../1_loop/global.js';
 if (global_R.print_module_start_finish)
     console.log('sprite_c.js -> module start');
-/**
- * Description placeholder
- *
- * @class Sprite_С
- */
 class Sprite_С {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {(HTMLImageElement | HTMLCanvasElement | null)}
-     */
     Image; // содержит картинку 
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     PathToImage; //содержит путь по которому была загружена картинка
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     NameImage; //содержит название картинки
-    /**
-     * Creates an instance of Sprite_С.
-     *
-     * @constructor
-     */
     constructor() {
         //
         this.Image = null;
@@ -62,11 +34,6 @@ class Sprite_С {
         this.NameImage = " ";
     } //constructor() {
 } //class Sprite_С
-/**
- * Description placeholder
- *
- * @type {string}
- */
 let Sprite_С_isOk = "OK"; //
 export { Sprite_С, Sprite_С_isOk };
 if (global_R.print_module_start_finish)

@@ -2,13 +2,13 @@
 /**
  * @module game_continue
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -15.08m.2024-
 
 /**
 * НАЗНАЧЕНИЕ
 */
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_go.js -> module start');
 import { requestAnimationFrame_R } from '../2_render/request_animation_o.js';
@@ -19,50 +19,25 @@ import { userInputKeyboard_R } from '../3_user_control/keyboard.js';
 import { mouse_R } from '../3_user_control/mouse.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 import { background_R } from '../local/background/background.js';
-/**
- * Description placeholder
- *
- * @class GameContinue_C
- */
 class GameContinue_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     NAME = "GameContinue_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     isOk = "";
     //=============================================================================
-    /**
-     * Creates an instance of GameContinue_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //============================================================================= 
     //=============================================================================
-    /** Description placeholder */
     iniM() {
         //console.log('this.ini->');
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM() {
         //alert("!");
         //console.log('this.start->');
     }
     //============================================================================= 
     //=============================================================================
-    /** Description placeholder */
     tick() {
         userInputKeyboard_R.tick(immortals_R, background_R);
         mouse_R.tick();
@@ -73,11 +48,6 @@ class GameContinue_C {
         //render_R.drowGoGame();
     }
 }
-/**
- * Description placeholder
- *
- * @type {GameContinue_C}
- */
 let gameContinue_R = new GameContinue_C();
 gameContinue_R.iniM();
 export { gameContinue_R, GameContinue_C };

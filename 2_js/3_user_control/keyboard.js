@@ -2,7 +2,7 @@
 /**
  * @module keyboard
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified 15.07.2018 - 18.03.2019 - 30.05.2019
  * @version Last_modified - 18.11.2019 - 01.04.2024 -
  */
@@ -15,71 +15,34 @@
 *https://learn.javascript.ru/keyboard-events
 */
 //alert("keyboard.js module start");
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 if (global_R.print_module_start_finish)
     console.log('keyboard.js -> module start');
 //==============================================================================
 import { html5CanvasText_R } from '../2_render/html5_canvas/html5_canvas_text.js';
 import { html5CanvasPrimitive_R } from '../2_render/html5_canvas/html5_canvas_primitive.js';
 import { userInputKeyboardEvent_R } from './keyboard_event_o.js';
-/**
- * Description placeholder
- *
- * @class UserInputKeyboard_C
- */
 class UserInputKeyboard_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     NAME = "UserInputKeyboard_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     isOk = "";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     command = "_"; //
     //alert("!");
     //i : 0;
     //i2 : 0;
     //=============================================================================
-    /**
-     * Creates an instance of UserInputKeyboard_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
-    //добавляем слушателей
     //==============================================================================
-    /** Description placeholder */
     iniM() {
         //console.log("V");
     }
     //==============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM() {
     }
     //=============================================================================
     //==============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {*} immortals
-     * @param {*} ground
-     */
     tick(immortals, ground) {
         //this.eventCode = 0;
         if (userInputKeyboardEvent_R.isKeyDown == 1) {
@@ -124,7 +87,6 @@ class UserInputKeyboard_C {
     }
     //==============================================================================
     //=============================================================================
-    /** Description placeholder */
     drow() {
         let X0 = 550;
         let Y0 = 600;
@@ -151,28 +113,12 @@ class UserInputKeyboard_C {
     }
     //=============================================================================
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {string} text
-     * @param {number} left
-     * @param {number} top
-     * @param {number} width
-     * @param {number} height
-     * @param {number} x0
-     * @param {number} y0
-     */
     printText(text, left, top, width, height, x0, y0) {
         //  clearRect(_left, _top, _width, _height);
         html5CanvasPrimitive_R.strokeRect(left, top, width, height);
         html5CanvasText_R.strokeText(text, x0, y0);
     }
 }
-/**
- * Description placeholder
- *
- * @type {UserInputKeyboard_C}
- */
 let userInputKeyboard_R = new UserInputKeyboard_C();
 userInputKeyboard_R.iniM();
 export { userInputKeyboard_R, UserInputKeyboard_C };

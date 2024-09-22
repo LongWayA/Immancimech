@@ -2,7 +2,7 @@
 /** 
  * @module drow_game_continue
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
 
@@ -10,7 +10,7 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('drow_game_go.js -> module start');
 
@@ -23,43 +23,17 @@ import { background_R } from '../local/background/background.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 import { drawTimerNumber_R } from './drow_timer_number.js';
 
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-// this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
-/**
- * Description placeholder
- *
- * @class DrawGameContinue_C
- */
 class DrawGameContinue_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+
     public NAME: string = "DrawGameContinue_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = "";
 
-
     //=============================================================================
-    /**
-     * Creates an instance of DrawGameContinue_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     iniM(): void {
 
         // console.log('Render_C->iniM()-> this.widthCanvas =' + this);
@@ -68,23 +42,16 @@ class DrawGameContinue_C {
     //=============================================================================
     //=============================================================================
     //
-    /** Description placeholder */
     startM(): void {
-
     }
     //=============================================================================
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {*} out_Game
-     */
+
     tick(out_Game: any): void {
         // console.log('Game.drawNuberTick');
 
         let left0 = 10;
         let top0 = 455;
-
 
         //console.log('this.drow-> ');
         html5Canvas_R.clearRect(0, 0, frames_R.editorFrame.width, frames_R.editorFrame.height);
@@ -108,20 +75,11 @@ class DrawGameContinue_C {
         userInputKeyboard_R.drow();
         immortals_R.drow();
         drawTimerNumber_R.drawNumberTick(left0, top0);
-
     }
     //=============================================================================
 
 } //
 
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-// this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
-/**
- * Description placeholder
- *
- * @type {DrawGameContinue_C}
- */
 let drawGameContinue_R = new DrawGameContinue_C();
 
 drawGameContinue_R.iniM();

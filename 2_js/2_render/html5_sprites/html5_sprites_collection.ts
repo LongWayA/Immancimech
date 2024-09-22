@@ -2,7 +2,7 @@
 /** 
  * @module html5_sprites_collection
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
  * @version Last_modified -24.02m.2024-18.03m.2024-
  */
@@ -23,7 +23,7 @@
 * _type = html5SpritesCollection_R.GROUNDS , _index = html5SpritesCollection_R.GroundsMapChars.get(html5SpritesCollection_R.GROUND_FLOOR)
 */
 
-import { global_R } from '../../global/global.js';
+import { global_R } from '../../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('html5_sprites_collection.js -> module start');
 
@@ -31,439 +31,84 @@ import { Sprite_С } from '../html5_sprites/sprite_c.js';
 
 
 //
-/**
- * Description placeholder
- *
- * @class Html5SpritesCollection_C
- */
 class Html5SpritesCollection_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+ 
     public NAME: string = "html5SpritesCollection_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = " ";
-
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public PATH_TO_IMAGES: string = "4_resource/images";
-
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public REZERV: number = 0;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ADVENTURES: number = 1;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUNDS: number = 2;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS: number = 3;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES: number = 4;
-
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public REZERV_MAX_COUNT: number = 1;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ADVENTURES_MAX_COUNT: number = 25;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUNDS_MAX_COUNT: number = 8;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_MAX_COUNT: number = 20;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_MAX_COUNT: number = 15;
 
     //GROUNDS
     // так кодируются тайлы для слоя земли
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_NOTHING: number = 0;      // пустая область
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_STONE: number = 1;        // непробиваемый камень
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_SEND: number = 2;         // копаемый песок
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_FLOOR: number = 3;        // проходимый пол
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_WALL: number = 4;         // стена подземелья
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_WALL_FORTIFED: number = 5;// укрепленная стена подземелья
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_VEIN_GOLD: number = 6;    // золотая жила
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public GROUND_VEIN_GEM: number = 7;     // драгоценный камень жила
 
     //ITEMS
     // так кодируются тайлы для слоя предметов
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_NOTHING: number = 0;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_RING: number = 1;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_SWORD_1: number = 2;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_SWORD_2: number = 3;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_SWORD_3: number = 4;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_SHIELD: number = 5;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_ARMOR_1: number = 6;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_ARMOR_2: number = 7;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_ARMOR_3: number = 8;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_ARMOR_4: number = 9;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_ARMOR_5: number = 10;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_ARMOR_6: number = 11;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_FLOWER_1: number = 12;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_FLOWER_2: number = 13;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_FLOWER_3: number = 14;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_FLOWER_4: number = 15;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_FLOWER_5: number = 16;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_FLOWER_6: number = 17;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_POTION: number = 18;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public ITEMS_DOOR: number = 19;
 
     //CREATURES
     // так кодируются тайлы для слоя монстров
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_NOTHING: number = 0;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_GHOST: number = 1;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_DRAGON: number = 2;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_GOBLIN: number = 3;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_HARPY: number = 4;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_DRUID: number = 5;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_VARNEY: number = 6;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_LICH: number = 7;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_MEDUSA: number = 8;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_MINOTAUR: number = 9;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_GENIE: number = 10;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_FIGHTER: number = 11;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_GARGOYLE: number = 12;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_SKELETON: number = 13;
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public CREATURES_TITAN: number = 14;
 
     //HTMLImageElement[] | HTMLCanvasElement[]
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {any[]}
-     */
     public sprites: any[] = new Array(5);
 
     //=============================================================================
-    /**
-     * Creates an instance of Html5SpritesCollection_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     // ini
     //============================================================================
-    /** Description placeholder */
     iniM(): void {
         // Массив содержит картинки-тайлы для отображения на карте
         //html5SpritesCollection_R.sprites = new Array(5);
@@ -482,7 +127,6 @@ class Html5SpritesCollection_C {
     //============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     startM(): void {
     }
     //=============================================================================
@@ -490,13 +134,6 @@ class Html5SpritesCollection_C {
     // get tile Sprite
     // this.getSprite(this.GROUNDS,2);
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} type
-     * @param {number} index
-     * @returns {(HTMLImageElement | HTMLCanvasElement)}
-     */
     getSprite(type: number, index: number): HTMLImageElement | HTMLCanvasElement {
         //
         return this.sprites[type][index].Image;
@@ -506,13 +143,6 @@ class Html5SpritesCollection_C {
     // get Sprite String
     // this.getTileString(this.GROUNDS,3);
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} type
-     * @param {number} index
-     * @returns {string}
-     */
     getSpriteString(type: number, index: number): string {
         return this.sprites[type][index].NameImage;
     }
@@ -520,13 +150,6 @@ class Html5SpritesCollection_C {
 
     // get Height Sprite
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} type
-     * @param {number} index
-     * @returns {number}
-     */
     getHeightSprite(type: number, index: number): number {
         return this.sprites[type][index].Image.height;
     }
@@ -534,13 +157,6 @@ class Html5SpritesCollection_C {
 
     // get Width Sprite
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} type
-     * @param {number} index
-     * @returns {number}
-     */
     getWidthSprite(type: number, index: number): number {
         return this.sprites[type][index].Image.width;
     }
@@ -548,14 +164,6 @@ class Html5SpritesCollection_C {
 
     // get Left Sprite
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} type
-     * @param {number} index
-     * @param {number} middle
-     * @returns {number}
-     */
     getLeftSprite(type: number, index: number, middle: number): number {
         let width = this.sprites[type][index].Image.width;
         let left = middle - width / 2;
@@ -565,12 +173,6 @@ class Html5SpritesCollection_C {
 
     // ini Image
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} type
-     * @param {string} path
-     */
     iniSprite(type: number, path: string): void {
         /*
         класс
@@ -601,7 +203,6 @@ class Html5SpritesCollection_C {
 
     //инициализируем массивы с картинками
     //============================================================================
-    /** Description placeholder */
     iniSpriteString() {
         ///////////////////////////////////////////////////////////////////
         //GROUNDS
@@ -661,13 +262,7 @@ class Html5SpritesCollection_C {
     //============================================================================
 } //SpritesMap_2D
 
-/**
- * Description placeholder
- *
- * @type {Html5SpritesCollection_C}
- */
 let html5SpritesCollection_R = new Html5SpritesCollection_C();
-
 
 html5SpritesCollection_R.iniM();
 

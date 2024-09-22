@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title> Immancimech </title>
-    <!-- Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved. -->
+    <!-- Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved. -->
     <!-- Last modified -24.02.2024-21.07.2024 -04.08.2024 -->
     <link rel='stylesheet' href='3_css/immancimech.css' />
     <link rel="icon" type="image/x-icon" href='4_resource/favicon/favicon.ico'>
@@ -19,7 +19,7 @@
 
     <!-- дата в виде  The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" 
         where: YYYY indicates the year. MM indicates the month. DD indicates the day.-->
-    <h4 class="w"> Last update <time datetime="2024-09-11">11.09m.24</time> </h4>
+    <h4 class="w"> Last update <time datetime="2024-09-22">22.09m.24</time> </h4>
 
     <!--The game canvas-1600-800 -->
     <canvas id='game-canvas' width='1200' height='730'>
@@ -43,7 +43,7 @@
 
         // если включен тестовый режим то печатаем старт и финиш модуля. так для всех модулей.
         // благодаря этому видим очередность прогонки модулей.
-        import { global_R } from './2_js/global/global.js';
+        import { global_R } from './2_js/1_loop/global.js';
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module start');
 
         // старт всех модулей. это пока. потом сделаю старт в виде дерева модулей.

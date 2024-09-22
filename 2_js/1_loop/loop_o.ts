@@ -3,7 +3,7 @@
  * 1_loop
  * @module loop_o
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024- 
  */
 
@@ -11,7 +11,7 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from './global.js';
 
 if (global_R.print_module_start_finish) console.log('loop.js -> module start');
 
@@ -19,70 +19,22 @@ import { gameState_R } from '../4_game_state/game_state.js';
 import { timer_R } from './timer.js';
 import { buttons_R } from '../3_user_control/buttons.js';
 
-//
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-//
-
-/**
- * Description placeholder
- *
- * @interface Loop_I
- */
 interface Loop_I {
 
-    /**
-     * Description placeholder
-     *
-     * @type {string}
-     */
     NAME: string;
-    /**
-     * Description placeholder
-     *
-     * @type {string}
-     */
     isOk: string;
-
-    /**
-     * Description placeholder
-     *
-     * @type {number}
-     */
     timerCount: number;
-    /**
-     * Description placeholder
-     *
-     * @type {number}
-     */
     timerCountStop: number;
-    /**
-     * Description placeholder
-     *
-     * @type {number}
-     */
     delayMs: number;
-    /**
-     * Description placeholder
-     *
-     * @type {boolean}
-     */
     isLoop: boolean;
-
-    /** Description placeholder */
     iniM(): void;
-
-    /** Description placeholder */
     startM(): void;
-
-    /** Description placeholder */
     loop(): void;
-
-}; //
+}
 
 
 /**
- *  this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.(callback)
+ * this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова(callback),
  * поэтому оставил объект без класса, но с интерфейсом
  */
 let loop_R: Loop_I = {
@@ -138,7 +90,7 @@ let loop_R: Loop_I = {
 
         }, loop_R.delayMs);
         console.log("loop_R->loop() timerCount = " + loop_R.timerCount);
-    }, //var loop = function() {
+    },
     //=============================================================================
 
 } //
@@ -151,12 +103,11 @@ if (global_R.print_module_start_finish) console.log('loop.js -> module finish');
 
 loop_R.isOk = "OK"; //
 
-/*
-Еще о ловушке с this при вызове в setTimeout:
-Вы можете подумать, что setTimeout вызовет myCat.logInfo(), которая запишет информацию об объекте myCat. 
-Но метод отделяется от объекта, когда передаётся в качестве параметра: setTimout(myCat.logInfo), и через 
-секунду происходит вызов функции. Когда logInfo вызывается как функция, this становится глобальным объектом или 
-undefined (но не объектом myCat), поэтому информация об объекте выводится некорректно.
-https://tproger.ru/translations/javascript-this-keyword
-
+/**
+* Еще о ловушке с this при вызове в setTimeout:
+* Вы можете подумать, что setTimeout вызовет myCat.logInfo(), которая запишет информацию об объекте myCat. 
+* Но метод отделяется от объекта, когда передаётся в качестве параметра: setTimout(myCat.logInfo), и через 
+* секунду происходит вызов функции. Когда logInfo вызывается как функция, this становится глобальным объектом или 
+* undefined (но не объектом myCat), поэтому информация об объекте выводится некорректно.
+* https://tproger.ru/translations/javascript-this-keyword
 */

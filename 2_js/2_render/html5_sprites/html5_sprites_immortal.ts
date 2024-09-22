@@ -2,7 +2,7 @@
 /** 
  * @module html5_sprites_immortal
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
  * @version Last_modified -24.02m.2024-18.03m.2024-
  */
@@ -23,7 +23,7 @@
 * _type = html5SpritesCollection_R.GROUNDS , _index = html5SpritesCollection_R.GroundsMapChars.get(html5SpritesCollection_R.GROUND_FLOOR)
 */
 
-import { global_R } from '../../global/global.js';
+import { global_R } from '../../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('html5_sprites_immortal.js -> module start');
 
@@ -33,75 +33,27 @@ import { Html5Canvas_C } from '../html5_canvas/html5_canvas_h.js';
 import { Sprite_Imm_C } from '../html5_sprites/sprite_i_c.js';
 
 //
-/**
- * Description placeholder
- *
- * @class Html5SpritesImmortal_C
- */
 class Html5SpritesImmortal_C {
 
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+
     public NAME: string = "html5SpritesImmortal_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = " ";
-
-    /**
-     * Description placeholder
-     *
-     * @public
-     
-     */
     public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
-
-
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public PATH_TO_IMAGES: string = "4_resource/images/immortals_img/";
 
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {number}
-     */
     public MAX_COUNT: number = 3;
 
     //
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {any[]}
-     */
     public sprites: any[] = new Array(1);
 
     //=============================================================================
-    /**
-     * Creates an instance of Html5SpritesImmortal_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     // ini
     //============================================================================
-    /** Description placeholder */
+    
     iniM(): void {
 
         this.sprites = new Array(this.MAX_COUNT),
@@ -114,7 +66,7 @@ class Html5SpritesImmortal_C {
     //============================================================================
 
     //=============================================================================
-    /** Description placeholder */
+    
     startM(): void {
     }
     //=============================================================================
@@ -122,12 +74,6 @@ class Html5SpritesImmortal_C {
     // get tile Sprite
     // this.getSprite(this.GROUNDS,2);
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} index
-     * @returns {(HTMLImageElement | HTMLCanvasElement)}
-     */
     getSprite(index: number): HTMLImageElement | HTMLCanvasElement {
         //
         return this.sprites[index].Image;
@@ -137,12 +83,6 @@ class Html5SpritesImmortal_C {
     // get Sprite String
     // this.getTileString(this.GROUNDS,3);
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} index
-     * @returns {string}
-     */
     getSpriteString(index: number): string {
         return this.sprites[index].NameImage;
     }
@@ -150,12 +90,6 @@ class Html5SpritesImmortal_C {
 
     // get Height Sprite
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} index
-     * @returns {number}
-     */
     getHeightSprite(index: number): number {
         return this.sprites[index].Image.height;
     }
@@ -163,12 +97,6 @@ class Html5SpritesImmortal_C {
 
     // get Width Sprite
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} index
-     * @returns {number}
-     */
     getWidthSprite(index: number): number {
         return this.sprites[index].Image.width;
     }
@@ -176,13 +104,6 @@ class Html5SpritesImmortal_C {
 
     // get Left Sprite
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} index
-     * @param {number} middle
-     * @returns {number}
-     */
     getLeftSprite(index: number, middle: number): number {
         let width = this.sprites[index].Image.width;
         let left = middle - width / 2;
@@ -192,11 +113,6 @@ class Html5SpritesImmortal_C {
 
     // ini Image
     //============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {string} path
-     */
     iniSprite(path: string): void {
         /*
         класс
@@ -227,7 +143,6 @@ class Html5SpritesImmortal_C {
 
     //инициализируем массивы с картинками
     //============================================================================
-    /** Description placeholder */
     iniSpriteString(): void {
         //
         this.sprites[0].NameImage = "nothing(пустая область)"; // пустая область
@@ -238,15 +153,6 @@ class Html5SpritesImmortal_C {
 
     //=============================================================================
     //
-    /**
-     * Description placeholder
-     *
-     * @param {number} index
-     * @param {number} imageLeft
-     * @param {number} imageTop
-     * @param {number} [imageWidth=0]
-     * @param {number} [imageHeight=0]
-     */
     drowSprite(index: number, imageLeft: number, imageTop: number,
         imageWidth: number = 0, imageHeight: number = 0): void {
 
@@ -260,11 +166,6 @@ class Html5SpritesImmortal_C {
 
 } //SpritesMap_2D
 
-/**
- * Description placeholder
- *
- * @type {Html5SpritesImmortal_C}
- */
 let html5SpritesImmortal_R = new Html5SpritesImmortal_C();
 
 html5SpritesImmortal_R.iniM();

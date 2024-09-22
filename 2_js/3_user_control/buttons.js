@@ -2,82 +2,30 @@
 /**
  * @module buttons
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024 -15.08m.2024-
  */
 /**
 * НАЗНАЧЕНИЕ
 */
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 if (global_R.print_module_start_finish)
     console.log('buttons.js ->module start');
 import { gameState_R } from '../4_game_state/game_state.js';
 import { loop_R } from '../1_loop/loop_o.js';
 //
-/**
- * Description placeholder
- *
- * @class Buttons_C
- */
 class Buttons_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     NAME = "buttons_R";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     isOk = "";
-    //buttonStart
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {*}
-     */
     elementbuttonStart = document.getElementById("buttonStart");
-    //buttonPause  HTMLElement | null
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {*}
-     */
     elementbuttonPause = document.getElementById("buttonPause");
-    //buttonEnd
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {*}
-     */
     elementbuttonEnd = document.getElementById("buttonEnd");
-    //buttonTest
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {*}
-     */
     elementbuttonTest = document.getElementById("buttonTest");
     //=============================================================================
-    /**
-     * Creates an instance of Buttons_C.
-     *
-     * @constructor
-     */
     constructor() {
-    } /** Description placeholder */
-    ;
+    }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     iniM() {
         //console.log('Buttons_C->iniM');
         this.elementbuttonStart.disabled = false;
@@ -93,14 +41,12 @@ class Buttons_C {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM() {
     }
     //=============================================================================
     //-----------------------------------------------------------------------------
     // методы установки состояния кнопок
     //=============================================================================
-    /** Description placeholder */
     startButtonAttribute() {
         console.log('Buttons_C->startButtonAttribute');
         this.elementbuttonStart.disabled = true;
@@ -112,7 +58,6 @@ class Buttons_C {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     pauseButtonAttribute() {
         console.log('Buttons_C->pauseButtonAttribute');
         this.elementbuttonStart.disabled = false;
@@ -125,7 +70,6 @@ class Buttons_C {
     }
     //=============================================================================    
     //=============================================================================
-    /** Description placeholder */
     endButtonAttribute() {
         console.log('Buttons_C->endButtonAttribute');
         this.elementbuttonStart.value = "Start Game!";
@@ -138,7 +82,6 @@ class Buttons_C {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startButton() {
         buttons_R.startButtonAttribute();
         gameState_R.setGoGame();
@@ -149,21 +92,18 @@ class Buttons_C {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     pauseButton() {
         buttons_R.pauseButtonAttribute();
         gameState_R.setPauseGame();
     }
     //=============================================================================  
     //=============================================================================
-    /** Description placeholder */
     endButton() {
         buttons_R.endButtonAttribute();
         gameState_R.setEndGame();
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     testButton() {
         console.log('Buttons_C->testButton');
     }
@@ -171,16 +111,10 @@ class Buttons_C {
     //-----------------------------------------------------------------------------
     // метод вызывается по событию. для эксперимента
     //=============================================================================
-    /** Description placeholder */
     click() {
         console.log('Buttons_C->click  Event');
     }
 }
-/**
- * Description placeholder
- *
- * @type {Buttons_C}
- */
 let buttons_R = new Buttons_C();
 buttons_R.iniM();
 buttons_R.elementbuttonTest.addEventListener("click", buttons_R.click, false); //click  input

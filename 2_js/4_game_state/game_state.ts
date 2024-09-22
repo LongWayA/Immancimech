@@ -2,14 +2,14 @@
 /** 
  * @module game_state
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -31.07.2022-18.03.2023-26.03.2023-09.07.2023-
  * @version Last_modified -24.02m.2024-15.08m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 if (global_R.print_module_start_finish) console.log('game_state.js -> module start');
 
 import { timer_R } from '../1_loop/timer.js';
@@ -18,103 +18,39 @@ import { gameContinue_R, GameContinue_C } from './game_continue.js';
 import { gamePause_R, GamePause_C } from './game_pause.js';
 import { gameEnd_R, GameEnd_C } from './game_end.js';
 import { mouse_R } from '../3_user_control/mouse.js';
-/**
- * Description placeholder
- *
- * @class GameState_C
- */
+
 class GameState_C {
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {string}
-   */
+
   public NAME: string = "GameState_C";
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {string}
-   */
   public isOk: string = "";
 
   // состояние игры. может быть старт игры, игра, пауза, конец игры.
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
   private START_GAME: number = 1;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
   private GO_GAME: number = 2;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
   private PAUSE_GAME: number = 3;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
   private END_GAME: number = 4;
 
   // нажатие на кнопку задает поле setGameState, а когда доходит очередь 
   // до начала очередной иттерации игры происходит задание gameState = setGameState.
   // сделал так чтобы в середине цикла не менялось состояние игры.
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
   private setGameState: number = 0;
-  /**
-   * Description placeholder
-   *
-   * @private
-   * @type {number}
-   */
   private gameState: number = 0;
 
   // количество прокруток цикла игры. почему назвал спрайт уже не помню :)
   // когда доходит до 10000 то сбрасывается в 1.
-  /**
-   * Description placeholder
-   *
-   * @public
-   * @type {number}
-   */
   public sprite: number = 0;
 
   //=============================================================================
-  /**
-   * Creates an instance of GameState_C.
-   *
-   * @constructor
-   */
   constructor() {
   }
   //============================================================================= 
 
   //=============================================================================
-  /** Description placeholder */
   iniM(): void {
     //console.log('GameState_C->iniM()');
   }
   //=============================================================================
   //=============================================================================
-  /** Description placeholder */
   startM(): void {
     //console.log('GameState_C->startM()');
     mouse_R.startM();
@@ -126,7 +62,6 @@ class GameState_C {
   //============================================================================= 
 
   //=============================================================================
-  /** Description placeholder */
   setStartGame(): void {
     this.setGameState = this.START_GAME;
     this.sprite = 0;
@@ -135,7 +70,6 @@ class GameState_C {
   //=============================================================================
 
   //=============================================================================
-  /** Description placeholder */
   setGoGame(): void {
     this.setGameState = this.GO_GAME;
     timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_15);
@@ -143,7 +77,6 @@ class GameState_C {
   //=============================================================================
 
   //=============================================================================
-  /** Description placeholder */
   setPauseGame(): void {
     this.setGameState = this.PAUSE_GAME;
     timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_02);
@@ -151,18 +84,12 @@ class GameState_C {
   //=============================================================================
 
   //=============================================================================
-  /** Description placeholder */
   setEndGame(): void {
     this.setGameState = this.END_GAME;
   }
   //=============================================================================
 
   //=============================================================================
-  /**
-   * Description placeholder
-   *
-   * @returns {boolean}
-   */
   isStartGame(): boolean {
     if (this.gameState == this.START_GAME) return true;
     return false;
@@ -170,11 +97,6 @@ class GameState_C {
   //=============================================================================
 
   //=============================================================================
-  /**
-   * Description placeholder
-   *
-   * @returns {boolean}
-   */
   isGoGame(): boolean {
     if (this.gameState == this.GO_GAME) return true;
     return false;
@@ -182,11 +104,6 @@ class GameState_C {
   //=============================================================================
 
   //=============================================================================
-  /**
-   * Description placeholder
-   *
-   * @returns {boolean}
-   */
   isPauseGame(): boolean {
     if (this.gameState == this.PAUSE_GAME) return true;
     return false;
@@ -194,11 +111,6 @@ class GameState_C {
   //=============================================================================
 
   //=============================================================================
-  /**
-   * Description placeholder
-   *
-   * @returns {boolean}
-   */
   isEndGame(): boolean {
     if (this.gameState == this.END_GAME) return true;
     return false;
@@ -206,7 +118,6 @@ class GameState_C {
   //=============================================================================
 
   //=============================================================================
-  /** Description placeholder */
   tickGame(): void {
 
     this.sprite = this.sprite + 1;
@@ -235,28 +146,24 @@ class GameState_C {
 
 
   //=============================================================================
-  /** Description placeholder */
   tickStartGame(): void {
     //console.log('GameState_C->tickStartGame = ' + this.sprite);
     gameStart_R.tick();
   }
   //=============================================================================
   //=============================================================================
-  /** Description placeholder */
   tickGoGame(): void {
     //console.log('GameState_C->tickGoGame = ' + this.sprite);
     gameContinue_R.tick();
   }
   //=============================================================================
   //=============================================================================
-  /** Description placeholder */
   tickPauseGame(): void {
     //console.log('GameState_C->tickPauseGame = ' + this.sprite);
     gamePause_R.tick();
   }
   //=============================================================================
   //=============================================================================
-  /** Description placeholder */
   tickEndGame(): void {
     //console.log('GameState_C->tickEndGame = ' + this.sprite);
     gameEnd_R.tick();
@@ -265,11 +172,6 @@ class GameState_C {
 
 } //GameState_С
 
-/**
- * Description placeholder
- *
- * @type {GameState_C}
- */
 let gameState_R = new GameState_C();
 
 gameState_R.iniM();

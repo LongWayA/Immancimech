@@ -2,68 +2,28 @@
 /**
  * @module immortals
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 if (global_R.print_module_start_finish)
     console.log('immortals.js -> module start');
 import { html5Canvas_R } from '../2_render/html5_canvas/html5_canvas_h.js';
 import { html5Sprites_R } from '../2_render/html5_sprites/html5_sprites.js';
 import { Immortal_C } from '../user_avatars/immortal_c.js';
-/**
- * Description placeholder
- *
- * @class Immortals_C
- */
 class Immortals_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     NAME = "Immortals_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     isOk = "";
-    // Внешние ссылки
-    /**
-     * Description placeholder
-     *
-     * @public
-     */
     out_html5Sprites_R = html5Sprites_R;
-    /**
-     * Description placeholder
-     *
-     * @public
-     */
     out_html5Canvas_R = html5Canvas_R;
-    /**
-     * Description placeholder
-     *
-     * @private
-     * @type {any[]}
-     */
     List = new Array(3);
     //=============================================================================
-    /**
-     * Creates an instance of Immortals_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     iniM() {
         /*
             for(let i = 0; i < this.List.length; i++ ){
@@ -82,26 +42,15 @@ class Immortals_C {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     startM() {
     }
     //=============================================================================
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} num
-     */
     getImmortal(num) {
         return this.List[num];
     }
     //============================================================================
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {*} ground
-     */
     update(ground) {
         this.List[2].pointViewAngle = this.List[2].pointViewAngle + (Math.PI / 2) / 20;
         // if (this.List[1].imageLeft < 3) {
@@ -121,7 +70,6 @@ class Immortals_C {
     }
     //=============================================================================
     //=============================================================================
-    /** Description placeholder */
     drow() {
         // this.out_html5Sprites_R.drowSprite(this.out_html5Sprites_R.GROUNDS,
         //     this.out_html5Sprites_R.GROUND_FLOOR, 10, 200);
@@ -148,11 +96,6 @@ class Immortals_C {
         //this.out_html5Canvas_R..drawSmile();
     } //drow () : void{
 } //Immortals
-/**
- * Description placeholder
- *
- * @type {Immortals_C}
- */
 let immortals_R = new Immortals_C();
 immortals_R.iniM();
 export { immortals_R, Immortals_C };

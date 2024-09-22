@@ -3,7 +3,7 @@
  * 1_loop
  * @module start_client
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -04.07.2024- 
  */
 
@@ -12,11 +12,9 @@
 */
 
 
-import { global_R } from '../global/global.js';
+import { global_R } from './global.js';
 
 if (global_R.print_module_start_finish) console.log('start_client.js -> module start');
-
-// Внешние ссылки
 
 import { gameState_R, GameState_C } from '../4_game_state/game_state.js';
 import { loop_R } from '../1_loop/loop_o.js';
@@ -41,46 +39,22 @@ import { test_R } from '../test/test.js';
 //user_avatars+
 import { immortals_R } from '../user_avatars/immortals.js';
 
-
-/**
- * @class StartClient_C
- * 
- */
-
 class StartClient_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+ 
     public NAME: string = "StartClient_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
     public isOk: string = "";
 
     //=============================================================================
-    /**
-     * Creates an instance of StartClient_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     iniM(): void {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     startGame(): void {
 
         gameState_R.startM();
@@ -98,9 +72,7 @@ class StartClient_C {
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     startModules(): void {
-
 
         //background+
         background_R.startM();
@@ -122,15 +94,8 @@ class StartClient_C {
 
     }
     //=============================================================================
-
-
 }
 
-/**
- * Description placeholder
- *
- * @type {StartClient_C}
- */
 let startClient_R = new StartClient_C();
 
 startClient_R.iniM();

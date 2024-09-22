@@ -2,7 +2,7 @@
 /** 
  * @module drow_timer_number
  * @author ABr75
- * @copyright Copyright (c) 2025, ABr75 and/or its affiliates. All rights reserved.
+ * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
 
@@ -10,7 +10,7 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global/global.js';
+import { global_R } from '../1_loop/global.js';
 
 if (global_R.print_module_start_finish) console.log('drow_timer_number.js -> module start');
 
@@ -18,60 +18,29 @@ import { timer_R } from '../1_loop/timer.js';
 import { html5Canvas_R } from './html5_canvas/html5_canvas_h.js';
 import { gameState_R, GameState_C } from '../4_game_state/game_state.js';
 
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-// this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
-/**
- * Description placeholder
- *
- * @class DrawTimerNumber_C
- */
 class DrawTimerNumber_C {
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+
     public NAME: string = "DrawTimerNumber_C";
-    /**
-     * Description placeholder
-     *
-     * @public
-     * @type {string}
-     */
+ 
     public isOk: string = "";
 
 
     //=============================================================================
-    /**
-     * Creates an instance of DrawTimerNumber_C.
-     *
-     * @constructor
-     */
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
-    /** Description placeholder */
     iniM(): void {
     }
     //=============================================================================
     //=============================================================================
     //
-    /** Description placeholder */
     startM(): void {
     }
     //=============================================================================
  
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} left
-     * @param {number} top
-     */
     drawNumberTick(left: number, top: number): void {
         // console.log('Game.drawNuberTick');
         let width = 500;
@@ -84,12 +53,6 @@ class DrawTimerNumber_C {
     //=============================================================================
 
     //=============================================================================
-    /**
-     * Description placeholder
-     *
-     * @param {number} left
-     * @param {number} top
-     */
     drawTimerTick(left: number, top: number): void {
         // console.log('Game.drawTimerTick');
 
@@ -135,14 +98,6 @@ class DrawTimerNumber_C {
 
 } //
 
-// здесь из за итераций внутри класса ссылаемся на созданный объект
-// изменение названия объекта все сломает
-// this теряет ссылку на контекст при использовании метода в качестве функции обратного вызова.
-/**
- * Description placeholder
- *
- * @type {DrawTimerNumber_C}
- */
 let drawTimerNumber_R = new DrawTimerNumber_C();
 
 drawTimerNumber_R.iniM();
