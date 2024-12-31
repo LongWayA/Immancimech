@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module mouse
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 3_user_control
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -10.09.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
@@ -16,14 +15,13 @@
 *https://learn.javascript.ru/keyboard-events
 */
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('mouse.js -> module start');
 
-import { html5CanvasText_R } from '../2_render/html5_canvas/html5_canvas_text.js';
-import { html5CanvasPrimitive_R } from '../2_render/html5_canvas/html5_canvas_primitive.js';
+import { html5Canvas_R } from '../2_render/html5_canvas/html5_canvas.js';
 
-import { html5CanvasMouseEvent_R } from '../3_user_control/html5_canvas_mouse_event.js';
+import { html5CanvasMouseEvent_R } from './html5_canvas_mouse_event.js';
 
 class Mouse_C {
 
@@ -112,12 +110,13 @@ class Mouse_C {
     printText(textEvent: string, offsetX: number, offsetY: number,
         left: number, top: number, width: number, height: number, X0: number, Y0: number): void  {
 
-        //  clearRect(_left, _top, _width, _height);
+        html5Canvas_R.clearRect(left, top, width, height);
 
-        html5CanvasPrimitive_R.strokeRect(left, top, width, height);
+        html5Canvas_R.drawRect(left, top, width, height, 1, 'red', 0);//'blue' 'red'
 
-        html5CanvasText_R.strokeText(textEvent + ": X = "
-            + offsetX + " Y = " + offsetY, X0, Y0);
+        html5Canvas_R.drawText(textEvent + ": X = "
+            + offsetX + " Y = " + offsetY, X0, Y0, 'italic 20px sans-serif', 'red', 1);//
+
     }
     //=============================================================================
 }

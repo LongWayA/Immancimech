@@ -1,42 +1,24 @@
-// @ts-check
-/**
- * @module creatures
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -24.02m.2024
-/**
-* НАЗНАЧЕНИЕ
-*/
-import { global_R } from '../../1_loop/global.js';
+import { global_R } from '../../global.js';
 if (global_R.print_module_start_finish)
     console.log('creatures.js -> module start');
 class Imps_C {
     NAME = "imps_R";
     isOk = "";
-    //=============================================================================
     constructor() {
     }
-    //=============================================================================
-    //=============================================================================
     iniM() {
     }
-    //=============================================================================
-    //=============================================================================
     startM() {
     }
-    //=============================================================================
-    //=============================================================================
     update() {
     }
-    //=============================================================================
-    //=============================================================================
     drow() {
     }
 }
-; //
+;
 let imps_R = new Imps_C();
 imps_R.iniM();
 export { imps_R, Imps_C };
 if (global_R.print_module_start_finish)
     console.log('creatures.js -> module finish');
-imps_R.isOk = "OK"; //
+imps_R.isOk = "OK";

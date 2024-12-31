@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module keyboard
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 3_user_control
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified 15.07.2018 - 18.03.2019 - 30.05.2019
  * @version Last_modified - 18.11.2019 - 01.04.2024 -
  */
@@ -18,14 +17,13 @@
 
 //alert("keyboard.js module start");
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('keyboard.js -> module start');
 
 //==============================================================================
 
-import { html5CanvasText_R } from '../2_render/html5_canvas/html5_canvas_text.js';
-import { html5CanvasPrimitive_R } from '../2_render/html5_canvas/html5_canvas_primitive.js';
+import { html5Canvas_R } from '../2_render/html5_canvas/html5_canvas.js';
 import { userInputKeyboardEvent_R } from './keyboard_event_o.js';
 
 
@@ -144,11 +142,12 @@ class UserInputKeyboard_C {
     //=============================================================================
     printText(text: string, left: number, top: number,
         width: number, height: number, x0: number, y0: number): void {
-        //  clearRect(_left, _top, _width, _height);
 
-        html5CanvasPrimitive_R.strokeRect(left, top, width, height);
+        html5Canvas_R.clearRect(left, top, width, height);
 
-        html5CanvasText_R.strokeText(text, x0, y0);
+        html5Canvas_R.drawRect(left, top, width, height, 1, 'blue', 0);
+
+        html5Canvas_R.drawText(text, x0, y0, 'italic 20px sans-serif', 'blue', 1);
     }
     //=============================================================================
 

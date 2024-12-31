@@ -1,15 +1,14 @@
-// @ts-check
 /** 
- * @module game_state
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 4_game_state
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -31.07.2022-18.03.2023-26.03.2023-09.07.2023-
  * @version Last_modified -24.02m.2024-15.08m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 if (global_R.print_module_start_finish) console.log('game_state.js -> module start');
 
 import { timer_R } from '../1_loop/timer.js';

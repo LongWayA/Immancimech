@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title> Immancimech </title>
-    <!-- Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved. -->
+    <!-- Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved. -->
     <!-- Last modified -24.02.2024-21.07.2024 -04.08.2024 -->
     <link rel='stylesheet' href='3_css/immancimech.css' />
     <link rel="icon" type="image/x-icon" href='4_resource/favicon/favicon.ico'>
@@ -39,49 +39,53 @@
     <!------------------------------------------------------------------------------------------->
     <!-- Scripts -->
 
-    <script type="module">
-
+    <script type = "module">
+        //console.log(navigator.userAgent)
         // если включен тестовый режим то печатаем старт и финиш модуля. так для всех модулей.
         // благодаря этому видим очередность прогонки модулей.
-        import { global_R } from './2_js/1_loop/global.js';
+        import { global_R } from './2_js/global.js';
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module start');
 
-        // старт всех модулей. это пока. потом сделаю старт в виде дерева модулей.
-        import { startClient_R } from './2_js/1_loop/start_client.js';
+        // 
+        import { Index_R } from './2_js/index.js';
 
-        // обработка нажатий кнопок старт, пауза, конец игры.
-        import { buttons_R } from './2_js/3_user_control/buttons.js';
+        // "2d" создаем объекта CanvasRenderingContext2D,
+        //  представляющий двумерный контекст.
+        let idCanvas = document.getElementById('game-canvas');
+        let contextCanvas = null;
+        if (idCanvas.getContext) {
+            contextCanvas = idCanvas.getContext('2d');
+        }
 
         //=============================================================================
         // загрузка всего документа(вместе с картинками, звуком и т.д.) закончена
         window.onload = function () {
             // console.log('Immancimech.html-> window.onload');
-            startClient_R.startGame();
-            buttons_R.startM();
+            Index_R.startGame(idCanvas, contextCanvas);
         };//window.onload = function() {
         //=============================================================================
 
         //=============================================================================
         window.startButton = function () {
-            buttons_R.startButton();
+            Index_R.startButton();
         };
         //=============================================================================
 
         //=============================================================================
         window.pauseButton = function () {
-            buttons_R.pauseButton();
+            Index_R.pauseButton();
         };
         //=============================================================================
 
         //=============================================================================
         window.endButton = function () {
-            buttons_R.endButton();
+            Index_R.endButton();
         };
         //=============================================================================
 
         //=============================================================================
         window.testButton = function () {
-            buttons_R.testButton();
+            Index_R.testButton();
         };
         //=============================================================================
 

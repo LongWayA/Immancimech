@@ -1,19 +1,18 @@
-// @ts-check
 /** 
- * @module background
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * background
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -12.09.2023-
  * @version Last_modified -24.02m.2024-07.07m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../../1_loop/global.js';
+import { global_R } from '../../global.js';
 
 if (global_R.print_module_start_finish) console.log('background.js -> module start');
 
-import { html5Canvas_R } from '../../2_render/html5_canvas/html5_canvas_h.js';
+import { html5Canvas_R, Html5Canvas_C } from '../../2_render/html5_canvas/html5_canvas.js';
 import { html5Sprites_R } from '../../2_render/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
 import { items_R } from '../items/items.js';
@@ -137,10 +136,10 @@ class Background_C {
           x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile,
           this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile);
         html5Canvas_R.drawText(this.Map_2d[y][x].char, //Ground.Map_2d[y][x].number
-          x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, html5Canvas_R.ITALIC_15PT_ARIAL,
-          html5Canvas_R.GREEN, 1);
+          x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, Html5Canvas_C.ITALIC_15PT_ARIAL,
+          Html5Canvas_C.GREEN, 1);
         html5Canvas_R.drawRect(x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile,
-          this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile, 1, html5Canvas_R.BLUE, 0);
+          this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile, 1, Html5Canvas_C.BLUE, 0);
       }
     }
   }

@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module sprite_i_c
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 2_render/html5_sprites
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024-18.03m.2024-13.04m.2024-
  */
 
@@ -22,7 +21,7 @@
 * _type = html5SpritesCollection_R.GROUNDS , _index = html5SpritesCollection_R.GroundsMapChars.get(html5SpritesCollection_R.GROUND_FLOOR)
 */
 
-import { global_R } from '../../1_loop/global.js';
+import { global_R } from '../../global.js';
 
 if (global_R.print_module_start_finish) console.log('sprite_i_c.js.js -> module start');
 

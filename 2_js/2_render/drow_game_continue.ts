@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module drow_game_continue
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 2_render
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
 
@@ -10,12 +9,12 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('drow_game_go.js -> module start');
 
 import { timer_R } from '../1_loop/timer.js';
-import { html5Canvas_R } from './html5_canvas/html5_canvas_h.js';
+import { html5Canvas_R } from './html5_canvas/html5_canvas.js';
 import { mouse_R } from '../3_user_control/mouse.js';
 import { userInputKeyboard_R } from '../3_user_control/keyboard.js';
 import { frames_R } from './frames/frames.js';
@@ -58,12 +57,9 @@ class DrawGameContinue_C {
 
         background_R.drow();
 
-        // html5Canvas_R.drawRect(left0, top0, width, height, html5Canvas_R.LINE_WIDTH_1,
-        //     html5Canvas_R.GREEN, 0);
         // html5Canvas_R.drawText("Game running", left0, top0, html5Canvas_R.ITALIC_30PT_ARIAL,
         //     html5Canvas_R.GREEN, 1);
 
-        //       this.drawNuberTick(left1, top1);
         frames_R.drowEditorFrame();
         frames_R.drowMapFrame();
         frames_R.drowTilesPanelFrame();

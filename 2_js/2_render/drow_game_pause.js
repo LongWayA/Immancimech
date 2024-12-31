@@ -1,39 +1,18 @@
-// @ts-check
-/**
- * @module drow_game_pause
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -17.08m.2024-
- */
-/**
-* НАЗНАЧЕНИЕ
-*/
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 if (global_R.print_module_start_finish)
     console.log('drow_game_pause.js -> module start');
-import { html5Canvas_R } from './html5_canvas/html5_canvas_h.js';
-import { drawTimerNumber_R } from '../2_render/drow_timer_number.js';
+import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
+import { drawTimerNumber_R } from './drow_timer_number.js';
 class DrawGamePause_C {
     NAME = "DrawGamePause_C";
     isOk = "";
-    //=============================================================================
     constructor() {
     }
-    //=============================================================================
-    //=============================================================================
     iniM() {
-        // console.log('Render_C->iniM()-> this.widthCanvas =' + this);
-        //console.log('Render_C->iniM()-> this.heightCanvas =' + this.heightCanvas);
     }
-    //=============================================================================
-    //=============================================================================
-    //
     startM() {
     }
-    //=============================================================================
-    //=============================================================================
     tick(out_Game, widthCanvas, heightCanvas) {
-        // console.log('Game.drawNuberTick');
         let left = 0;
         let top = 0;
         let width = 500;
@@ -44,14 +23,14 @@ class DrawGamePause_C {
         let top1 = 200;
         html5Canvas_R.clearRect(left, top, widthCanvas, heightCanvas);
         drawTimerNumber_R.drawNumberTick(left1, top1);
-        html5Canvas_R.drawRect(left0, top0, width, height, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.GREEN, 0);
-        html5Canvas_R.drawText("Game Paused ", left0, top0, html5Canvas_R.ITALIC_30PT_ARIAL, html5Canvas_R.GREEN, 1);
+        html5Canvas_R.drawRect(left0, top0, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
+        html5Canvas_R.drawText("Game Paused ", left0, top0, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
         drawTimerNumber_R.drawTimerTick(10, 510);
     }
-} //
+}
 let drawGamePause_R = new DrawGamePause_C();
 drawGamePause_R.iniM();
 export { drawGamePause_R, DrawGamePause_C };
 if (global_R.print_module_start_finish)
     console.log('drow_game_pause.js -> module finish');
-drawGamePause_R.isOk = "OK"; //
+drawGamePause_R.isOk = "OK";

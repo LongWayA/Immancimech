@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module drow_game_start
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 2_render
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
 
@@ -10,13 +9,13 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('drow_game_start.js -> module start');
 
-import { html5Canvas_R } from './html5_canvas/html5_canvas_h.js';
-import { html5SpritesImmortal_R } from '../2_render/html5_sprites/html5_sprites_immortal.js';
-import { drawTimerNumber_R } from '../2_render/drow_timer_number.js';
+import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
+import { html5SpritesImmortal_R } from './html5_sprites/html5_sprites_immortal.js';
+import { drawTimerNumber_R } from './drow_timer_number.js';
 
 class DrawGameStart_C {
  
@@ -58,18 +57,18 @@ class DrawGameStart_C {
         html5Canvas_R.clearRect(left, top, widthCanvas, heightCanvas);
 
         html5Canvas_R.drawRect(left, top, widthCanvas, heightCanvas,
-            html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.BLACK, 0);
+            Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLACK, 0);
         html5Canvas_R.drawRect(left0, top0, widthCanvas - 20, heightCanvas - 20,
-            html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.GREEN, 0);
+            Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
         drawTimerNumber_R.drawNumberTick(left0, top0);
-        html5Canvas_R.drawRect(100, 100, width, height, html5Canvas_R.LINE_WIDTH_1, html5Canvas_R.RED, 0);
-        html5Canvas_R.drawText("Game Start ", 100, 100, html5Canvas_R.ITALIC_30PT_ARIAL, html5Canvas_R.GREEN, 1);
-// @ts-ignore
-        html5Canvas_R.drawText(probaSaveLokal, 100, 200, html5Canvas_R.ITALIC_30PT_ARIAL,
-            html5Canvas_R.GREEN, 1);
-// @ts-ignore
-        html5Canvas_R.drawText(GROUND, 100, 300, html5Canvas_R.ITALIC_30PT_ARIAL,
-            html5Canvas_R.GREEN, 1);
+        html5Canvas_R.drawRect(100, 100, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.RED, 0);
+        html5Canvas_R.drawText("Game Start ", 100, 100, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
+
+        html5Canvas_R.drawText(probaSaveLokal, 100, 200, Html5Canvas_C.ITALIC_30PT_ARIAL,
+            Html5Canvas_C.GREEN, 1);
+
+        html5Canvas_R.drawText(GROUND, 100, 300, Html5Canvas_C.ITALIC_30PT_ARIAL,
+            Html5Canvas_C.GREEN, 1);
 
         drawTimerNumber_R.drawTimerTick(10, 510);
 

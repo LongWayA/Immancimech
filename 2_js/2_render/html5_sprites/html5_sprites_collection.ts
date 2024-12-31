@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module html5_sprites_collection
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 2_render/html5_sprites
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
  * @version Last_modified -24.02m.2024-18.03m.2024-
  */
@@ -23,11 +22,11 @@
 * _type = html5SpritesCollection_R.GROUNDS , _index = html5SpritesCollection_R.GroundsMapChars.get(html5SpritesCollection_R.GROUND_FLOOR)
 */
 
-import { global_R } from '../../1_loop/global.js';
+import { global_R } from '../../global.js';
 
 if (global_R.print_module_start_finish) console.log('html5_sprites_collection.js -> module start');
 
-import { Sprite_С } from '../html5_sprites/sprite_c.js';
+import { Sprite_С } from './sprite_c.js';
 
 
 //

@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module html5_canvas_mouse_event
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 3_user_control
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -10.09.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
@@ -17,7 +16,7 @@
 */
 
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('5_html5_canvas_mouse_event.js -> module start');
 
@@ -28,10 +27,10 @@ class Html5CanvasMouseEvent_C {
 
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
-    // @ts-ignore
+    
     public idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');//private 
 
-    // @ts-ignore
+    
     private contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');   
 
     public mouseMoveIsChange: number = 0;
@@ -61,27 +60,27 @@ class Html5CanvasMouseEvent_C {
 
     //=============================================================================
     iniM(): void {
-// @ts-ignore
+
         this.idCanvas.addEventListener('mousemove', (event: any) => {
-// @ts-ignore
+
             this.event = event;
             this.mouseMoveIsChange = 1;
             this.mouseMoveX = event.offsetX;
             this.mouseMoveY = event.offsetY;
 
         });
-// @ts-ignore
+
         this.idCanvas.addEventListener('mousedown', (event: any) => {
-// @ts-ignore
+
             this.event = event;
             this.mouseDownIsChange = 1;
             this.mouseDownX = event.offsetX;
             this.mouseDownY = event.offsetY;
 
         });
-// @ts-ignore
+
         this.idCanvas.addEventListener('mouseup', (event: any) => {
-// @ts-ignore
+
             this.event = event;
             this.mouseUpIsChange = 1;
             this.mouseUpX = event.offsetX;

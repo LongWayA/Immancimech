@@ -2,9 +2,8 @@
 "use strict";
 /** 
  * 1_loop
- * @module timer
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -08.08.2021-31.07.2022-06.03.2023-18.03.2023-26.03.2023-3.09.2023
  * @version Last_modified -24.02m.2024-
  */
@@ -13,7 +12,7 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from './global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('timer.js -> module start');
 

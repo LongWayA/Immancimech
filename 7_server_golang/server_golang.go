@@ -1,6 +1,6 @@
 /**
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -11.09m.2024-
  */
 
@@ -14,7 +14,7 @@ func main() {
 	muxer := http.NewServeMux()
 	//fileServerCss := http.FileServer(http.Dir("3_Immancimech"))
 	//fileServerJs := http.FileServer(http.Dir("src/js"))
-	fileServerHtml := http.FileServer(http.Dir("G:/1_2_Andrey_programming_All/localhost/3_Immancimech/"))
+	fileServerHtml := http.FileServer(http.Dir("C:/1_2_Andrey_programming_ssd/localhost/Immancimech/"))
 	muxer.Handle("/", fileServerHtml)
 	//muxer.Handle("/css", fileServerCss)
 	//muxer.Handle("/js", fileServerJs)

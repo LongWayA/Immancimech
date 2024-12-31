@@ -1,0 +1,5 @@
+tsc --removeComments -t ES2023 -m ES2022 Immancimech/2_js/start_client.ts
+
+node 3_Immancimech\6_server_node_js\start_node_js_server.js
+
+chrome://version/

@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module html5_canvas_text
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 2_render/html5_canvas
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -21.08.2021-31.07.2022-18.02.2023-08.03.2023-18.03.2023-26.03.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
@@ -16,7 +15,7 @@
 *  Из Википедии https://ru.wikipedia.org/wiki/Canvas_(HTML)
 */
 
-import { global_R } from '../../1_loop/global.js';
+import { global_R } from '../../global.js';
 
 if (global_R.print_module_start_finish) console.log('2_html5_canvas_text.js -> module start');
 
@@ -24,30 +23,27 @@ if (global_R.print_module_start_finish) console.log('2_html5_canvas_text.js -> m
 // 
 class Html5CanvasText_C {
 
-    public NAME: string = "html5CanvasText_R";
+    public static NAME: string = "html5CanvasText_R";
     public isOk: string = "";
 
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
-    //const idCanvas : HTMLElement = <HTMLElement>document.getElementById('game-canvas');
-    // @ts-ignore
-    public idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');//private 
-    // @ts-ignore
-    private contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');
+    public idCanvas : HTMLCanvasElement | null = null;
+    public contextCanvas : CanvasRenderingContext2D | null =  null;
 
-    public ITALIC_20PX_SANS_SERIF: string = 'italic 20px sans-serif';
-    public ITALIC_15PT_ARIAL: string = 'italic 15pt Arial';
-    public ITALIC_30PT_ARIAL: string = 'italic 30pt Arial';
-    public BOLD_30PX_SANS_SERIF: string = 'bold 30px sans-serif';
-    public WHITE: string = 'white';
-    public BLACK: string = 'black';
-    public RED: string = 'red';
-    public GREEN: string = 'green';
-    public BLUE: string = 'blue';
-    public LINE_WIDTH_1: number = 1;
-    public LINE_WIDTH_2: number = 2;
-    public LINE_WIDTH_3: number = 3;
-    public LINE_WIDTH_4: number = 4;
+    public static ITALIC_20PX_SANS_SERIF: string = 'italic 20px sans-serif';
+    public static ITALIC_15PT_ARIAL: string = 'italic 15pt Arial';
+    public static ITALIC_30PT_ARIAL: string = 'italic 30pt Arial';
+    public static BOLD_30PX_SANS_SERIF: string = 'bold 30px sans-serif';
+    public static WHITE: string = 'white';
+    public static BLACK: string = 'black';
+    public static RED: string = 'red';
+    public static GREEN: string = 'green';
+    public static BLUE: string = 'blue';
+    public static LINE_WIDTH_1: number = 1;
+    public static LINE_WIDTH_2: number = 2;
+    public static LINE_WIDTH_3: number = 3;
+    public static LINE_WIDTH_4: number = 4;
     public load: number = 0;
 
     //=============================================================================
@@ -57,75 +53,78 @@ class Html5CanvasText_C {
 
     //=============================================================================
     iniM(): void {
+    }
+    //=============================================================================
+    //=============================================================================
+    startM(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null): void {
+
+        this.idCanvas = idCanvas;
+        this.contextCanvas = contextCanvas;
+
         // определяем текст для тестового выода информации на экран, а также
         // когда надо напечатать до того как мы инициализровали текстовый объект
         this.set_fillStyle('#0000ff');
         this.set_strokeStyle('#0000ff');
         //set_font(this.ITALIC_30PT_ARIAL);
-        this.set_lineWidth(this.LINE_WIDTH_1);
+        this.set_lineWidth(Html5CanvasText_C.LINE_WIDTH_1);
         // шрифт для тестовой печати на экране
-        this.set_font(this.ITALIC_15PT_ARIAL);
+        this.set_font(Html5CanvasText_C.ITALIC_15PT_ARIAL);
         //fillText ('LOAD REC', 10, 10);
     }
     //=============================================================================
-    //=============================================================================
-    startM(): void {
-    }
-    //=============================================================================
     set_fillStyle(_color: string): void {
-        this.contextCanvas.fillStyle = _color;
+        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = _color;
     }
 
     get_fillStyle(): string {
-        // @ts-ignore
-        return <string>this.contextCanvas.fillStyle;
+        return <string>(<CanvasRenderingContext2D>this.contextCanvas).fillStyle;
     }
 
     set_strokeStyle(_color: string): void {
-        this.contextCanvas.strokeStyle = _color;
+        (<CanvasRenderingContext2D>this.contextCanvas).strokeStyle = _color;
     }
 
     set_lineWidth(_lineWidth: number): void {
-        this.contextCanvas.lineWidth = _lineWidth;
+        (<CanvasRenderingContext2D>this.contextCanvas).lineWidth = _lineWidth;
     }
 
     set_font(_font: string): void {
-        this.contextCanvas.font = _font;
+        (<CanvasRenderingContext2D>this.contextCanvas).font = _font;
     }
 
     get_font(): string {
-        return this.contextCanvas.font;
+        return (<CanvasRenderingContext2D>this.contextCanvas).font;
     }
 
     set_textBaseline(_textBaseline: CanvasTextBaseline): void {
-        this.contextCanvas.textBaseline = _textBaseline;
+        (<CanvasRenderingContext2D>this.contextCanvas).textBaseline = _textBaseline;
     }
 
     fillText(_text: string, _left: number, _top: number): void {
-        this.contextCanvas.fillText(_text, _left, _top);
+        (<CanvasRenderingContext2D>this.contextCanvas).fillText(_text, _left, _top);
     }
 
     strokeText(_text: string, _left: number, _top: number): void {
-        this.contextCanvas.strokeText(_text, _left, _top);
+        (<CanvasRenderingContext2D>this.contextCanvas).strokeText(_text, _left, _top);
     }
 
     //=============================================================================
     setColor(color: string): void {
         let style = '#ffffff';
         switch (color) {
-            case this.WHITE:
+            case Html5CanvasText_C.WHITE:
                 style = '#ffffff';
                 break;
-            case this.BLACK:
+            case Html5CanvasText_C.BLACK:
                 style = '#000000';
                 break;
-            case this.RED:
+            case Html5CanvasText_C.RED:
                 style = '#ff0000';
                 break;
-            case this.GREEN:
+            case Html5CanvasText_C.GREEN:
                 style = '#008000';
                 break;
-            case this.BLUE:
+            case Html5CanvasText_C.BLUE:
                 style = '#0000ff';
                 break;
         }
@@ -137,13 +136,13 @@ class Html5CanvasText_C {
     setFont(font: string): void {
         this.set_textBaseline('top');
         switch (font) {
-            case this.ITALIC_20PX_SANS_SERIF:
+            case Html5CanvasText_C.ITALIC_20PX_SANS_SERIF:
                 this.set_font(font);
                 break;
-            case this.ITALIC_30PT_ARIAL:
+            case Html5CanvasText_C.ITALIC_30PT_ARIAL:
                 this.set_font(font);
                 break;
-            case this.BOLD_30PX_SANS_SERIF:
+            case Html5CanvasText_C.BOLD_30PX_SANS_SERIF:
                 this.set_font(font);
                 break;
         }

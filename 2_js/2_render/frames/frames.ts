@@ -1,8 +1,7 @@
-// @ts-check
 /** 
- * @module frames
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 2_render/frames
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -15.08.2022-19.02.2023-18.03.2023-26.03.2023
  * @version Last_modified -24.02m.2024-
  */
@@ -12,11 +11,11 @@
 * Определяем рамки областей вывода на экран
 */
 
-import { global_R } from '../../1_loop/global.js';
+import { global_R } from '../../global.js';
 
 if (global_R.print_module_start_finish) console.log('frames.js -> module start');
 
-import { html5Canvas_R } from '../html5_canvas/html5_canvas_h.js';
+import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
 
 
 class Frames_C {

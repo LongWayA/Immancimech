@@ -1,9 +1,7 @@
-// @ts-check
 /** 
  * 1_loop
- * @module loop_o
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024- 
  */
 
@@ -11,7 +9,7 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from './global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('loop.js -> module start');
 

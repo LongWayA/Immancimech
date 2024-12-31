@@ -1,14 +1,4 @@
-// @ts-check
-/**
- * @module game_continue
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -15.08m.2024-
-
-/**
-* НАЗНАЧЕНИЕ
-*/
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 if (global_R.print_module_start_finish)
     console.log('game_go.js -> module start');
 import { requestAnimationFrame_R } from '../2_render/request_animation_o.js';
@@ -22,22 +12,12 @@ import { background_R } from '../local/background/background.js';
 class GameContinue_C {
     NAME = "GameContinue_C";
     isOk = "";
-    //=============================================================================
     constructor() {
     }
-    //============================================================================= 
-    //=============================================================================
     iniM() {
-        //console.log('this.ini->');
     }
-    //=============================================================================
-    //=============================================================================
     startM() {
-        //alert("!");
-        //console.log('this.start->');
     }
-    //============================================================================= 
-    //=============================================================================
     tick() {
         userInputKeyboard_R.tick(immortals_R, background_R);
         mouse_R.tick();
@@ -45,7 +25,6 @@ class GameContinue_C {
         fight_R.tick();
         ai_R.tick();
         requestAnimationFrame(requestAnimationFrame_R.drowGoGame);
-        //render_R.drowGoGame();
     }
 }
 let gameContinue_R = new GameContinue_C();
@@ -53,4 +32,4 @@ gameContinue_R.iniM();
 export { gameContinue_R, GameContinue_C };
 if (global_R.print_module_start_finish)
     console.log('game_go.js -> module finish');
-gameContinue_R.isOk = "OK"; //
+gameContinue_R.isOk = "OK";

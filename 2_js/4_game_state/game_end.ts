@@ -1,15 +1,14 @@
-// @ts-check
 /** 
- * @module game_end
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * 4_game_state
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -15.08m.2024-
 
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('game_end.js -> module start');
 

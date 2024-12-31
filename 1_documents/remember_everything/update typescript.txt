@@ -4,6 +4,8 @@ npm install npm@latest -g
 Update typescript
 npm -g upgrade typescript
 or
+
+
 npm install typescript@latest -g
 now you should see
 tsc --version

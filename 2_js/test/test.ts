@@ -1,14 +1,13 @@
-// @ts-check
 /** 
- * @module test
- * @author ABr75
- * @copyright Copyright (c) 2024, ABr75 and/or its affiliates. All rights reserved.
+ * test
+ * @author AnBr75
+ * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -12.11.2023-02.03m.2024-
 /**
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../1_loop/global.js';
+import { global_R } from '../global.js';
 
 if (global_R.print_module_start_finish) console.log('test.js -> module start');
 
@@ -40,7 +39,7 @@ import { html5CanvasText_R } from '../2_render/html5_canvas/html5_canvas_text.js
 import { html5CanvasPrimitive_R } from '../2_render/html5_canvas/html5_canvas_primitive.js';
 import { html5CanvasImage_R } from '../2_render/html5_canvas/html5_canvas_image.js';
 import { html5CanvasMouseEvent_R } from '../3_user_control/html5_canvas_mouse_event.js';
-import { html5Canvas_R } from '../2_render/html5_canvas/html5_canvas_h.js';
+import { html5Canvas_R } from '../2_render/html5_canvas/html5_canvas.js';
 
 //html5_sprites
 import { html5SpritesCollection_R } from '../2_render/html5_sprites/html5_sprites_collection.js';
@@ -60,7 +59,7 @@ import { buttons_R } from '../3_user_control/buttons.js';
 import { loop_R } from '../1_loop/loop_o.js';
 import { requestAnimationFrame_R } from '../2_render/request_animation_o.js';
 import { timer_R } from '../1_loop/timer.js';
-import { startClient_R } from '../1_loop/start_client.js';
+import { startClient_R } from '../0_start_client/start_client.js';
 
 //moove
 import { run_R } from '../moove/run.js';

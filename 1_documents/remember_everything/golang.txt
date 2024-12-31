@@ -1,0 +1,12 @@
+Поставить golang с официального сайта https://go.dev/dl/
+go1.23.4.windows-amd64 - последняя загрузка
+Поставить модуль go в Visual Studio Code
+
+
+
+Запуск
+cd C:\1_2_Andrey_programming_ssd\localhost
+go run Immancimech\7_server_golang\server_golang.go
+
+go mod init immancimech_go
+go mod tidy
