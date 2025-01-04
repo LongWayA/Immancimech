@@ -7,7 +7,7 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../../global.js';
+import { global_R } from '../../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('tile_for_background_c.js -> module start');
 

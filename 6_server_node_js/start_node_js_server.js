@@ -1,3 +1,4 @@
+//@ts-check
 /** 
  * start_server
  * @author AnBr75

@@ -1,7 +1,7 @@
-import { global_R } from '../global.js';
+import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_end.js -> module start');
-import { requestAnimationFrame_R } from '../2_render/request_animation_o.js';
+import { requestAnimationFrame_R } from '../2_graphics_2d/request_animation_o.js';
 class GameEnd_C {
     NAME = "GameEnd_C";
     isOk = "";

@@ -1,4 +1,4 @@
-import { global_R } from '../global.js';
+import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('immortal_c.js -> module start');
 class Immortal_C {

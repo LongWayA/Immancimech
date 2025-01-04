@@ -8,26 +8,26 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global.js';
+import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('game_state.js -> module start');
 
-import { timer_R } from '../1_loop/timer.js';
+import { timer_R, Timer_C } from '../3_loop/timer.js';
 import { gameStart_R, GameStart_C } from './game_start.js';
 import { gameContinue_R, GameContinue_C } from './game_continue.js';
 import { gamePause_R, GamePause_C } from './game_pause.js';
 import { gameEnd_R, GameEnd_C } from './game_end.js';
-import { mouse_R } from '../3_user_control/mouse.js';
+import { mouse_R } from '../5_user_control/mouse.js';
 
 class GameState_C {
 
-  public NAME: string = "GameState_C";
+  public static NAME: string = "GameState_C";
   public isOk: string = "";
 
   // состояние игры. может быть старт игры, игра, пауза, конец игры.
-  private START_GAME: number = 1;
-  private GO_GAME: number = 2;
-  private PAUSE_GAME: number = 3;
-  private END_GAME: number = 4;
+  private static START_GAME: number = 1;
+  private static GO_GAME: number = 2;
+  private static PAUSE_GAME: number = 3;
+  private static END_GAME: number = 4;
 
   // нажатие на кнопку задает поле setGameState, а когда доходит очередь 
   // до начала очередной иттерации игры происходит задание gameState = setGameState.
@@ -62,56 +62,56 @@ class GameState_C {
 
   //=============================================================================
   setStartGame(): void {
-    this.setGameState = this.START_GAME;
+    this.setGameState = GameState_C.START_GAME;
     this.sprite = 0;
-    timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_05);
+    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
   }
   //=============================================================================
 
   //=============================================================================
   setGoGame(): void {
-    this.setGameState = this.GO_GAME;
-    timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_15);
+    this.setGameState = GameState_C.GO_GAME;
+    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_15);
   }
   //=============================================================================
 
   //=============================================================================
   setPauseGame(): void {
-    this.setGameState = this.PAUSE_GAME;
-    timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_02);
+    this.setGameState = GameState_C.PAUSE_GAME;
+    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_02);
   }
   //=============================================================================
 
   //=============================================================================
   setEndGame(): void {
-    this.setGameState = this.END_GAME;
+    this.setGameState = GameState_C.END_GAME;
   }
   //=============================================================================
 
   //=============================================================================
   isStartGame(): boolean {
-    if (this.gameState == this.START_GAME) return true;
+    if (this.gameState == GameState_C.START_GAME) return true;
     return false;
   }
   //=============================================================================
 
   //=============================================================================
   isGoGame(): boolean {
-    if (this.gameState == this.GO_GAME) return true;
+    if (this.gameState == GameState_C.GO_GAME) return true;
     return false;
   }
   //=============================================================================
 
   //=============================================================================
   isPauseGame(): boolean {
-    if (this.gameState == this.PAUSE_GAME) return true;
+    if (this.gameState == GameState_C.PAUSE_GAME) return true;
     return false;
   }
   //=============================================================================
 
   //=============================================================================
   isEndGame(): boolean {
-    if (this.gameState == this.END_GAME) return true;
+    if (this.gameState == GameState_C.END_GAME) return true;
     return false;
   }
   //=============================================================================

@@ -1,8 +1,8 @@
-import { global_R } from '../../global.js';
+import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('background.js -> module start');
-import { html5Canvas_R, Html5Canvas_C } from '../../2_render/html5_canvas/html5_canvas.js';
-import { html5Sprites_R } from '../../2_render/html5_sprites/html5_sprites.js';
+import { html5Canvas_R, Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { html5Sprites_R } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
 class Background_C {
     NAME = "background_R";

@@ -7,12 +7,12 @@
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../global.js';
+import { global_R } from '../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('test.js -> module start');
 
 //ai
-import { ai_R } from '../5_ai_control/ai.js';
+import { ai_R } from '../6_ai_control/ai.js';
 
 //background
 import { background_R } from '../local/background/background.js';
@@ -25,7 +25,7 @@ import { imps_R } from '../local/creatures/creatures.js';
 import { fight_R } from '../fight/fight.js';
 
 //frames
-import { frames_R } from '../2_render/frames/frames.js';
+import { frames_R } from '../2_graphics_2d/frames/frames.js';
 
 //game
 import { gameState_R } from '../4_game_state/game_state.js';
@@ -35,18 +35,18 @@ import { gameState_R } from '../4_game_state/game_state.js';
 
 
 //html5_canvas
-import { html5CanvasText_R } from '../2_render/html5_canvas/html5_canvas_text.js';
-import { html5CanvasPrimitive_R } from '../2_render/html5_canvas/html5_canvas_primitive.js';
-import { html5CanvasImage_R } from '../2_render/html5_canvas/html5_canvas_image.js';
-import { html5CanvasMouseEvent_R } from '../3_user_control/html5_canvas_mouse_event.js';
-import { html5Canvas_R } from '../2_render/html5_canvas/html5_canvas.js';
+import { html5CanvasText_R } from '../2_graphics_2d/html5_canvas/html5_canvas_text.js';
+import { html5CanvasPrimitive_R } from '../2_graphics_2d/html5_canvas/html5_canvas_primitive.js';
+import { html5CanvasImage_R } from '../2_graphics_2d/html5_canvas/html5_canvas_image.js';
+import { html5CanvasMouseEvent_R } from '../5_user_control/html5_canvas_mouse_event.js';
+import { html5Canvas_R } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
 
 //html5_sprites
-import { html5SpritesCollection_R } from '../2_render/html5_sprites/html5_sprites_collection.js';
-import { html5SpritesImmortal_R } from '../2_render/html5_sprites/html5_sprites_immortal.js';
-import { html5Sprites_R } from '../2_render/html5_sprites/html5_sprites.js';
-import { Sprite_С, Sprite_С_isOk } from '../2_render/html5_sprites/sprite_c.js';
-import { Sprite_Imm_C, Sprite_I_C_isOk } from '../2_render/html5_sprites/sprite_i_c.js';
+import { html5SpritesCollection_R } from '../2_graphics_2d/html5_sprites/html5_sprites_collection.js';
+import { html5SpritesImmortal_R } from '../2_graphics_2d/html5_sprites/html5_sprites_immortal.js';
+import { html5Sprites_R } from '../2_graphics_2d/html5_sprites/html5_sprites.js';
+import { Sprite_С, Sprite_С_isOk } from '../2_graphics_2d/html5_sprites/sprite_c.js';
+import { Sprite_Imm_C, Sprite_I_C_isOk } from '../2_graphics_2d/html5_sprites/sprite_i_c.js';
 
 //items
 //-
@@ -55,17 +55,16 @@ import { Sprite_Imm_C, Sprite_I_C_isOk } from '../2_render/html5_sprites/sprite_
 import { local_R } from '../local/local.js';
 
 //loop
-import { buttons_R } from '../3_user_control/buttons.js';
-import { loop_R } from '../1_loop/loop_o.js';
-import { requestAnimationFrame_R } from '../2_render/request_animation_o.js';
-import { timer_R } from '../1_loop/timer.js';
-import { startClient_R } from '../0_start_client/start_client.js';
+import { buttons_R } from '../1_index/buttons.js';
+import { loop_R } from '../3_loop/loop_o.js';
+import { requestAnimationFrame_R } from '../2_graphics_2d/request_animation_o.js';
+import { timer_R } from '../3_loop/timer.js';
 
 //moove
 import { run_R } from '../moove/run.js';
 
 //render
-import { render_R } from '../2_render/render.js';
+import { drowGame_R } from '../2_graphics_2d/drow_game.js';
 
 //test 
 //import { test_R } from '../test/test.js';
@@ -75,13 +74,13 @@ import { Immortal_C, Immortal_C_isOk } from '../user_avatars/immortal_c.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 
 //user_control
-import { userInputKeyboardEvent_R } from '../3_user_control/keyboard_event_o.js';
-import { userInputKeyboard_R } from '../3_user_control/keyboard.js';
-import { mouse_R } from '../3_user_control/mouse.js';
+import { userInputKeyboardEvent_R } from '../5_user_control/keyboard_event_o.js';
+import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
+import { mouse_R } from '../5_user_control/mouse.js';
 
 class Test_C {
 
-    public NAME: string = "test_R";
+    public static NAME: string = "test_R";
     public isOk: string = "";
 
     //=============================================================================
@@ -208,17 +207,13 @@ class Test_C {
             console.log("test.js -> request_animation.js NOT OK!");
         }
 
-        if (startClient_R.isOk != "OK") {
-            console.log("test.js -> start_client.js NOT OK!");
-        }
-
         //moove
         if (run_R.isOk != "OK") {
             console.log("test.js -> run.js NOT OK!");
         }
 
         //render
-        if (render_R.isOk != "OK") {
+        if (drowGame_R.isOk != "OK") {
             console.log("test.js -> render.js NOT OK!");
         }
 

@@ -1,19 +1,19 @@
-import { global_R } from '../global.js';
+import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_state.js -> module start');
-import { timer_R } from '../1_loop/timer.js';
+import { timer_R, Timer_C } from '../3_loop/timer.js';
 import { gameStart_R } from './game_start.js';
 import { gameContinue_R } from './game_continue.js';
 import { gamePause_R } from './game_pause.js';
 import { gameEnd_R } from './game_end.js';
-import { mouse_R } from '../3_user_control/mouse.js';
+import { mouse_R } from '../5_user_control/mouse.js';
 class GameState_C {
-    NAME = "GameState_C";
+    static NAME = "GameState_C";
     isOk = "";
-    START_GAME = 1;
-    GO_GAME = 2;
-    PAUSE_GAME = 3;
-    END_GAME = 4;
+    static START_GAME = 1;
+    static GO_GAME = 2;
+    static PAUSE_GAME = 3;
+    static END_GAME = 4;
     setGameState = 0;
     gameState = 0;
     sprite = 0;
@@ -29,38 +29,38 @@ class GameState_C {
         gameEnd_R.startM();
     }
     setStartGame() {
-        this.setGameState = this.START_GAME;
+        this.setGameState = GameState_C.START_GAME;
         this.sprite = 0;
-        timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_05);
+        timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
     }
     setGoGame() {
-        this.setGameState = this.GO_GAME;
-        timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_15);
+        this.setGameState = GameState_C.GO_GAME;
+        timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_15);
     }
     setPauseGame() {
-        this.setGameState = this.PAUSE_GAME;
-        timer_R.iniTicksPerSecond(timer_R.TICKS_PER_SECOND_02);
+        this.setGameState = GameState_C.PAUSE_GAME;
+        timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_02);
     }
     setEndGame() {
-        this.setGameState = this.END_GAME;
+        this.setGameState = GameState_C.END_GAME;
     }
     isStartGame() {
-        if (this.gameState == this.START_GAME)
+        if (this.gameState == GameState_C.START_GAME)
             return true;
         return false;
     }
     isGoGame() {
-        if (this.gameState == this.GO_GAME)
+        if (this.gameState == GameState_C.GO_GAME)
             return true;
         return false;
     }
     isPauseGame() {
-        if (this.gameState == this.PAUSE_GAME)
+        if (this.gameState == GameState_C.PAUSE_GAME)
             return true;
         return false;
     }
     isEndGame() {
-        if (this.gameState == this.END_GAME)
+        if (this.gameState == GameState_C.END_GAME)
             return true;
         return false;
     }

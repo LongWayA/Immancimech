@@ -19,7 +19,7 @@
 
     <!-- дата в виде  The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" 
         where: YYYY indicates the year. MM indicates the month. DD indicates the day.-->
-    <h4 class="w"> Last update <time datetime="2024-12-31">31.12m.24</time> </h4>
+    <h4 class="w"> Last update <time datetime="2025-01-04">04.01m.25</time> </h4>
 
     <!--The game canvas-1600-800 -->
     <canvas id='game-canvas' width='1200' height='730'>
@@ -33,21 +33,29 @@
         <input type="button" id="buttonStart" value="Start Game" onclick="window.startButton()" />
         <input type="button" id="buttonPause" value="Pause Game" onclick="window.pauseButton()" />
         <input type="button" id="buttonEnd" value="End Game" onclick="window.endButton()" />
-        <input type="button" id="buttonTest" value="test" onclick="window.testButton()" />
+        <input type="button" id="buttonTest" value="test" onclick="testButton()" />
     </div>
 
     <!------------------------------------------------------------------------------------------->
     <!-- Scripts -->
+    <script>
+        let message = "Hello TypeScript!";
+
+        testButton = function () {
+            console.log('Hello testButton!');
+        };
+
+    </script>
 
     <script type = "module">
         //console.log(navigator.userAgent)
         // если включен тестовый режим то печатаем старт и финиш модуля. так для всех модулей.
         // благодаря этому видим очередность прогонки модулей.
-        import { global_R } from './2_js/global.js';
+        import { global_R } from './2_js/1_index/global.js';
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module start');
 
         // 
-        import { Index_R } from './2_js/index.js';
+        import { Index_R } from './2_js/1_index/index.js';
 
         // "2d" создаем объекта CanvasRenderingContext2D,
         //  представляющий двумерный контекст.
@@ -62,31 +70,37 @@
         window.onload = function () {
             // console.log('Immancimech.html-> window.onload');
             Index_R.startGame(idCanvas, contextCanvas);
-        };//window.onload = function() {
+        }//window.onload = function() {
+        //=============================================================================
+
+        //=============================================================================
+      //  window.onerror = function(message, url, line, col, error) {
+      //        alert(`${message}\n В ${line}:${col} на ${url}`);
+      //  };
         //=============================================================================
 
         //=============================================================================
         window.startButton = function () {
             Index_R.startButton();
-        };
+        }
         //=============================================================================
 
         //=============================================================================
         window.pauseButton = function () {
             Index_R.pauseButton();
-        };
+        }
         //=============================================================================
 
         //=============================================================================
         window.endButton = function () {
             Index_R.endButton();
-        };
+        }
         //=============================================================================
 
         //=============================================================================
-        window.testButton = function () {
-            Index_R.testButton();
-        };
+        // window.testButton = function () {
+        //     Index_R.testButton();
+        // }
         //=============================================================================
 
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module finish');
