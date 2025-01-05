@@ -1,3 +1,4 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('loop.js -> module start');
@@ -22,7 +23,7 @@ let loop_R = {
         loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
         loop_R.timerCount = setTimeout(function tick() {
             timer_R.updateTimeBeforeTick();
-            gameState_R.tickGame();
+            gameState_R.tick();
             timer_R.updateTimeAfterTick();
             loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
             if (gameState_R.isEndGame())

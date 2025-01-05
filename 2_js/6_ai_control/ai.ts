@@ -3,6 +3,9 @@
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024
+ */
+let Copyright_AnBr75 = 2024;
+ 
 /**
 * НАЗНАЧЕНИЕ
 */
@@ -13,7 +16,7 @@ if (global_R.print_module_start_finish) console.log('ai.js -> module start');
 
 class Ai_C {
 
-    public NAME: string = "ai_R";
+    public static NAME: string = "Ai_C";
     public isOk: string = "";
 
     //=============================================================================

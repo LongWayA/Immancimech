@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024-18.03m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ

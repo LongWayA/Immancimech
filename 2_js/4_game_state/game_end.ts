@@ -3,6 +3,8 @@
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -15.08m.2024-
+*/
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -11,9 +13,6 @@
 import { global_R } from '../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('game_end.js -> module start');
-
-import { requestAnimationFrame_R } from '../2_graphics_2d/request_animation_o.js';
-import { drowGame_R } from '../2_graphics_2d/drow_game.js';
 
 class GameEnd_C {
 
@@ -38,8 +37,7 @@ class GameEnd_C {
   //============================================================================= 
  //=============================================================================
  tick(): void {
-  requestAnimationFrame(requestAnimationFrame_R.drawGameEnd);
-  //render_R.drawGameEnd();
+ 
 }
 //============================================================================= 
 

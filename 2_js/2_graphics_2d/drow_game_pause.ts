@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -18,10 +19,12 @@ import { drawTimerNumber_R } from './drow_timer_number.js';
 
 class DrawGamePause_C {
  
-    public NAME: string = "DrawGamePause_C";
+    public static NAME: string = "DrawGamePause_C";
     public isOk: string = "";
 
-
+    widthCanvas: number = html5Canvas_R.widthCanvas;
+    heightCanvas: number = html5Canvas_R.heightCanvas;
+    
     //=============================================================================
     constructor() {
     }
@@ -40,7 +43,7 @@ class DrawGamePause_C {
     }
     //=============================================================================
     //=============================================================================
-    tick(out_Game: any, widthCanvas: number, heightCanvas: number): void {
+    tick(): void {
         // console.log('Game.drawNuberTick');
 
         let left = 0;
@@ -52,7 +55,7 @@ class DrawGamePause_C {
         let left1 = 100;
         let top1 = 200;
 
-        html5Canvas_R.clearRect(left, top, widthCanvas, heightCanvas);
+        html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
         drawTimerNumber_R.drawNumberTick(left1, top1);
         html5Canvas_R.drawRect(left0, top0, width, height, Html5Canvas_C.LINE_WIDTH_1,
             Html5Canvas_C.GREEN, 0);

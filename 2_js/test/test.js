@@ -1,3 +1,4 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('test.js -> module start');
@@ -21,10 +22,8 @@ import { Sprite_I_C_isOk } from '../2_graphics_2d/html5_sprites/sprite_i_c.js';
 import { local_R } from '../local/local.js';
 import { buttons_R } from '../1_index/buttons.js';
 import { loop_R } from '../3_loop/loop_o.js';
-import { requestAnimationFrame_R } from '../2_graphics_2d/request_animation_o.js';
 import { timer_R } from '../3_loop/timer.js';
 import { run_R } from '../moove/run.js';
-import { drowGame_R } from '../2_graphics_2d/drow_game.js';
 import { Immortal_C_isOk } from '../user_avatars/immortal_c.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 import { userInputKeyboardEvent_R } from '../5_user_control/keyboard_event_o.js';
@@ -106,14 +105,8 @@ class Test_C {
         if (timer_R.isOk != "OK") {
             console.log("test.js -> timer.js NOT OK!");
         }
-        if (requestAnimationFrame_R.isOk != "OK") {
-            console.log("test.js -> request_animation.js NOT OK!");
-        }
         if (run_R.isOk != "OK") {
             console.log("test.js -> run.js NOT OK!");
-        }
-        if (drowGame_R.isOk != "OK") {
-            console.log("test.js -> render.js NOT OK!");
         }
         if (immortals_R.isOk != "OK") {
             console.log("test.js -> immortals.js NOT OK!");

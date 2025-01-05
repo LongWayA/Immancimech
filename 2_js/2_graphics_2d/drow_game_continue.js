@@ -1,3 +1,4 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('drow_game_go.js -> module start');
@@ -9,7 +10,7 @@ import { background_R } from '../local/background/background.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 import { drawTimerNumber_R } from './drow_timer_number.js';
 class DrawGameContinue_C {
-    NAME = "DrawGameContinue_C";
+    static NAME = "DrawGameContinue_C";
     isOk = "";
     constructor() {
     }
@@ -17,7 +18,7 @@ class DrawGameContinue_C {
     }
     startM() {
     }
-    tick(out_Game) {
+    tick() {
         let left0 = 10;
         let top0 = 455;
         html5Canvas_R.clearRect(0, 0, frames_R.editorFrame.width, frames_R.editorFrame.height);

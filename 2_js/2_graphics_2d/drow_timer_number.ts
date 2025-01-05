@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -19,7 +20,7 @@ import { gameState_R, GameState_C } from '../4_game_state/game_state.js';
 
 class DrawTimerNumber_C {
 
-    public NAME: string = "DrawTimerNumber_C";
+    public static NAME: string = "DrawTimerNumber_C";
  
     public isOk: string = "";
 
@@ -49,7 +50,7 @@ class DrawTimerNumber_C {
 
         html5Canvas_R.drawRect(left, top, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
 
-        html5Canvas_R.drawText("Game.tick = " + gameState_R.sprite, left, top, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
+        html5Canvas_R.drawText("Game.tick = " + gameState_R.count, left, top, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
     }
     //=============================================================================
 

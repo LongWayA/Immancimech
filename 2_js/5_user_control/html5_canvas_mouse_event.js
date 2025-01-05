@@ -1,8 +1,9 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('5_html5_canvas_mouse_event.js -> module start');
 class Html5CanvasMouseEvent_C {
-    NAME = "html5CanvasMouse_R";
+    static NAME = "html5CanvasMouse_R";
     isOk = "";
     idCanvas = document.getElementById('game-canvas');
     contextCanvas = this.idCanvas.getContext('2d');

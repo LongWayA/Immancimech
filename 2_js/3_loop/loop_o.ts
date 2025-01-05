@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024- 
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -72,7 +73,7 @@ let loop_R: Loop_I = {
         loop_R.timerCount = setTimeout(function tick() {
 
             timer_R.updateTimeBeforeTick(); //
-            gameState_R.tickGame();
+            gameState_R.tick();
             timer_R.updateTimeAfterTick();
             loop_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
 

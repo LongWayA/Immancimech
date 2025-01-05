@@ -5,6 +5,7 @@
  * @version Last_modified -15.08.2022-19.02.2023-18.03.2023-26.03.2023
  * @version Last_modified -24.02m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -20,7 +21,7 @@ import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
 
 class Frames_C {
  
-    public NAME: string = "frames_R";
+    public static NAME: string = "frames_R";
     public isOk: string = "";
 
     // Внешние ссылки

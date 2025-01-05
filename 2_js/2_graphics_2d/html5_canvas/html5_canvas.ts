@@ -5,6 +5,7 @@
  * @version Last_modified -21.08.2021-31.07.2022-18.02.2023-08.03.2023-18.03.2023-26.03.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -14,6 +15,7 @@
 *  обычно на языке JavaScript[1].
 *  Из Википедии https://ru.wikipedia.org/wiki/Canvas_(HTML)
 */
+
 
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('6_html5_canvas.js -> module start');

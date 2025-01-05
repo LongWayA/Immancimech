@@ -5,6 +5,7 @@
  * @version Last_modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
  * @version Last_modified -24.02m.2024-18.03m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -21,6 +22,7 @@
 * html5SpritesCollection_R.sprites[_type, _index].Image;
 * _type = html5SpritesCollection_R.GROUNDS , _index = html5SpritesCollection_R.GroundsMapChars.get(html5SpritesCollection_R.GROUND_FLOOR)
 */
+
 
 import { global_R } from '../../1_index/global.js';
 

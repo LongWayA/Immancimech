@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -19,9 +20,12 @@ import { drawTimerNumber_R } from './drow_timer_number.js';
 
 class DrawGameStart_C {
  
-    public NAME: string = "DrawGameStart_C";
+    public static NAME: string = "DrawGameStart_C";
  
     public isOk: string = "";
+
+    widthCanvas: number = html5Canvas_R.widthCanvas;
+    heightCanvas: number = html5Canvas_R.heightCanvas;
 
 
     //=============================================================================
@@ -42,7 +46,7 @@ class DrawGameStart_C {
     }
     //=============================================================================
     //=============================================================================
-    tick(out_Game: any, widthCanvas: number, heightCanvas: number): void {
+    tick(): void {
         // console.log('Game.drawNuberTick');
 
         let left = 0;
@@ -54,11 +58,11 @@ class DrawGameStart_C {
         const probaSaveLokal = <string>localStorage.getItem("probaSaveLokal");
         const GROUND = <string>localStorage.getItem("GROUND");
 
-        html5Canvas_R.clearRect(left, top, widthCanvas, heightCanvas);
+        html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
 
-        html5Canvas_R.drawRect(left, top, widthCanvas, heightCanvas,
+        html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas,
             Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLACK, 0);
-        html5Canvas_R.drawRect(left0, top0, widthCanvas - 20, heightCanvas - 20,
+        html5Canvas_R.drawRect(left0, top0, this.widthCanvas - 20, this.heightCanvas - 20,
             Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
         drawTimerNumber_R.drawNumberTick(left0, top0);
         html5Canvas_R.drawRect(100, 100, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.RED, 0);

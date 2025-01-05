@@ -5,6 +5,7 @@
  * @version Last_modified -10.09.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -25,7 +26,7 @@ import { html5CanvasMouseEvent_R } from './html5_canvas_mouse_event.js';
 
 class Mouse_C {
 
-    public NAME: string = "Mouse_C";
+    public static NAME: string = "Mouse_C";
     public isOk: string = "";
 
     //=============================================================================

@@ -1,3 +1,4 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from './global.js';
 if (global_R.print_module_start_finish)
     console.log('start_client.js -> module start');
@@ -6,7 +7,6 @@ import { buttons_R } from './buttons.js';
 import { gameState_R } from '../4_game_state/game_state.js';
 import { loop_R } from '../3_loop/loop_o.js';
 import { test_R } from '../test/test.js';
-import { drowGame_R } from '../2_graphics_2d/drow_game.js';
 class Index_C {
     static NAME = "Index_C";
     isOk = "";
@@ -39,7 +39,6 @@ class Index_C {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
         html5Canvas_R.startM(idCanvas, contextCanvas);
-        drowGame_R.startM(gameState_R);
         gameState_R.startM();
         loop_R.startM();
         test_R.test();

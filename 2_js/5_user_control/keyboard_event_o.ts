@@ -5,6 +5,7 @@
  * @version Last_modified 15.07.2018 - 18.03.2019 - 30.05.2019
  * @version Last_modified - 18.11.2019 - 01.04.2024 -
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ

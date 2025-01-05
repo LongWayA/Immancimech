@@ -19,7 +19,7 @@
 
     <!-- дата в виде  The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" 
         where: YYYY indicates the year. MM indicates the month. DD indicates the day.-->
-    <h4 class="w"> Last update <time datetime="2025-01-04">04.01m.25</time> </h4>
+    <h4 class="w"> Last update <time datetime="2025-01-05">05.01m.25</time> </h4>
 
     <!--The game canvas-1600-800 -->
     <canvas id='game-canvas' width='1200' height='730'>
@@ -38,16 +38,9 @@
 
     <!------------------------------------------------------------------------------------------->
     <!-- Scripts -->
-    <script>
-        let message = "Hello TypeScript!";
-
-        testButton = function () {
-            console.log('Hello testButton!');
-        };
-
-    </script>
 
     <script type = "module">
+        let Copyright_AnBr75 = 2024;
         //console.log(navigator.userAgent)
         // если включен тестовый режим то печатаем старт и финиш модуля. так для всех модулей.
         // благодаря этому видим очередность прогонки модулей.
@@ -98,9 +91,9 @@
         //=============================================================================
 
         //=============================================================================
-        // window.testButton = function () {
-        //     Index_R.testButton();
-        // }
+         window.testButton = function () {
+             Index_R.testButton();
+         }
         //=============================================================================
 
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module finish');

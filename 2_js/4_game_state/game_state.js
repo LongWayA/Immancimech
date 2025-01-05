@@ -1,3 +1,4 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_state.js -> module start');
@@ -6,7 +7,10 @@ import { gameStart_R } from './game_start.js';
 import { gameContinue_R } from './game_continue.js';
 import { gamePause_R } from './game_pause.js';
 import { gameEnd_R } from './game_end.js';
-import { mouse_R } from '../5_user_control/mouse.js';
+import { drawGameStart_R } from '../2_graphics_2d/drow_game_start.js';
+import { drawGameContinue_R } from '../2_graphics_2d/drow_game_continue.js';
+import { drawGamePause_R } from '../2_graphics_2d/drow_game_pause.js';
+import { drawGameEnd_R } from '../2_graphics_2d/drow_game_end.js';
 class GameState_C {
     static NAME = "GameState_C";
     isOk = "";
@@ -14,63 +18,79 @@ class GameState_C {
     static GO_GAME = 2;
     static PAUSE_GAME = 3;
     static END_GAME = 4;
-    setGameState = 0;
     gameState = 0;
-    sprite = 0;
+    set_gameState = 0;
+    count = 0;
+    static MAX_COUNT = 10000;
     constructor() {
     }
     iniM() {
     }
     startM() {
-        mouse_R.startM();
         gameStart_R.startM();
         gameContinue_R.startM();
         gamePause_R.startM();
         gameEnd_R.startM();
+        drawGameStart_R.startM();
+        drawGameContinue_R.startM();
+        drawGamePause_R.startM();
+        drawGameEnd_R.startM();
     }
     setStartGame() {
-        this.setGameState = GameState_C.START_GAME;
-        this.sprite = 0;
+        this.set_gameState = GameState_C.START_GAME;
+        this.count = 0;
         timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
     }
     setGoGame() {
-        this.setGameState = GameState_C.GO_GAME;
+        this.set_gameState = GameState_C.GO_GAME;
         timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_15);
     }
     setPauseGame() {
-        this.setGameState = GameState_C.PAUSE_GAME;
+        this.set_gameState = GameState_C.PAUSE_GAME;
         timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_02);
     }
     setEndGame() {
-        this.setGameState = GameState_C.END_GAME;
+        this.set_gameState = GameState_C.END_GAME;
     }
     isStartGame() {
-        if (this.gameState == GameState_C.START_GAME)
+        if (this.gameState == GameState_C.START_GAME) {
             return true;
-        return false;
+        }
+        else {
+            return false;
+        }
     }
     isGoGame() {
-        if (this.gameState == GameState_C.GO_GAME)
+        if (this.gameState == GameState_C.GO_GAME) {
             return true;
-        return false;
+        }
+        else {
+            return false;
+        }
     }
     isPauseGame() {
-        if (this.gameState == GameState_C.PAUSE_GAME)
+        if (this.gameState == GameState_C.PAUSE_GAME) {
             return true;
-        return false;
+        }
+        else {
+            return false;
+        }
     }
     isEndGame() {
-        if (this.gameState == GameState_C.END_GAME)
+        if (this.gameState == GameState_C.END_GAME) {
             return true;
-        return false;
-    }
-    tickGame() {
-        this.sprite = this.sprite + 1;
-        if (this.sprite > 10000) {
-            this.sprite = 1;
         }
-        if (this.gameState != this.setGameState) {
-            this.gameState = this.setGameState;
+        else {
+            return false;
+        }
+    }
+    tick() {
+        this.count = this.count + 1;
+        if (this.count > GameState_C.MAX_COUNT) {
+            this.count = 1;
+        }
+        if (this.gameState != this.set_gameState) {
+            this.gameState = this.set_gameState;
         }
         if (this.isStartGame()) {
             this.tickStartGame();
@@ -87,15 +107,19 @@ class GameState_C {
     }
     tickStartGame() {
         gameStart_R.tick();
+        drawGameStart_R.tick();
     }
     tickGoGame() {
         gameContinue_R.tick();
+        drawGameContinue_R.tick();
     }
     tickPauseGame() {
         gamePause_R.tick();
+        drawGamePause_R.tick();
     }
     tickEndGame() {
         gameEnd_R.tick();
+        drawGameEnd_R.tick();
     }
 }
 let gameState_R = new GameState_C();

@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -24,7 +25,7 @@ import { drawTimerNumber_R } from './drow_timer_number.js';
 
 class DrawGameContinue_C {
 
-    public NAME: string = "DrawGameContinue_C";
+    public static NAME: string = "DrawGameContinue_C";
     public isOk: string = "";
 
     //=============================================================================
@@ -46,7 +47,7 @@ class DrawGameContinue_C {
     //=============================================================================
     //=============================================================================
 
-    tick(out_Game: any): void {
+    tick(): void {
         // console.log('Game.drawNuberTick');
 
         let left0 = 10;

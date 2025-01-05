@@ -4,6 +4,7 @@
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -01.01.2025- 
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -19,7 +20,6 @@ import { buttons_R } from './buttons.js';
 import { gameState_R } from '../4_game_state/game_state.js';
 import { loop_R } from '../3_loop/loop_o.js';
 import { test_R } from '../test/test.js';
-import { drowGame_R } from '../2_graphics_2d/drow_game.js';
 
 class Index_C {
  
@@ -80,7 +80,6 @@ class Index_C {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
         html5Canvas_R.startM(idCanvas, contextCanvas);
-        drowGame_R.startM(gameState_R);
         gameState_R.startM();
         loop_R.startM();
 

@@ -1,7 +1,7 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_go.js -> module start');
-import { requestAnimationFrame_R } from '../2_graphics_2d/request_animation_o.js';
 import { run_R } from '../moove/run.js';
 import { fight_R } from '../fight/fight.js';
 import { ai_R } from '../6_ai_control/ai.js';
@@ -24,7 +24,6 @@ class GameContinue_C {
         run_R.tick();
         fight_R.tick();
         ai_R.tick();
-        requestAnimationFrame(requestAnimationFrame_R.drowGoGame);
     }
 }
 let gameContinue_R = new GameContinue_C();

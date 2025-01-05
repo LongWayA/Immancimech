@@ -5,6 +5,7 @@
  * @version Last_modified -10.09.2023-25.11.2023
  * @version Last_modified -24.02m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -22,7 +23,7 @@ if (global_R.print_module_start_finish) console.log('5_html5_canvas_mouse_event.
 
 class Html5CanvasMouseEvent_C {
  
-    public NAME: string = "html5CanvasMouse_R";
+    public static NAME: string = "html5CanvasMouse_R";
     public isOk: string = "";
 
     // "2d" создаем объекта CanvasRenderingContext2D,

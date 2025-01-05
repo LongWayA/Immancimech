@@ -1,3 +1,4 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('drow_timer_number.js -> module start');
@@ -5,7 +6,7 @@ import { timer_R } from '../3_loop/timer.js';
 import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
 import { gameState_R } from '../4_game_state/game_state.js';
 class DrawTimerNumber_C {
-    NAME = "DrawTimerNumber_C";
+    static NAME = "DrawTimerNumber_C";
     isOk = "";
     constructor() {
     }
@@ -18,7 +19,7 @@ class DrawTimerNumber_C {
         let height = 35;
         html5Canvas_R.clearRect(left, top, width, height);
         html5Canvas_R.drawRect(left, top, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
-        html5Canvas_R.drawText("Game.tick = " + gameState_R.sprite, left, top, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
+        html5Canvas_R.drawText("Game.tick = " + gameState_R.count, left, top, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
     }
     drawTimerTick(left, top) {
         let top1 = top + 25;

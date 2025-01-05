@@ -3,6 +3,9 @@
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -12.11.2023-02.03m.2024-
+ */
+let Copyright_AnBr75 = 2024;
+ 
 /**
 * НАЗНАЧЕНИЕ
 */
@@ -57,14 +60,10 @@ import { local_R } from '../local/local.js';
 //loop
 import { buttons_R } from '../1_index/buttons.js';
 import { loop_R } from '../3_loop/loop_o.js';
-import { requestAnimationFrame_R } from '../2_graphics_2d/request_animation_o.js';
 import { timer_R } from '../3_loop/timer.js';
 
 //moove
 import { run_R } from '../moove/run.js';
-
-//render
-import { drowGame_R } from '../2_graphics_2d/drow_game.js';
 
 //test 
 //import { test_R } from '../test/test.js';
@@ -203,18 +202,9 @@ class Test_C {
             console.log("test.js -> timer.js NOT OK!");
         }
 
-        if (requestAnimationFrame_R.isOk != "OK") {
-            console.log("test.js -> request_animation.js NOT OK!");
-        }
-
         //moove
         if (run_R.isOk != "OK") {
             console.log("test.js -> run.js NOT OK!");
-        }
-
-        //render
-        if (drowGame_R.isOk != "OK") {
-            console.log("test.js -> render.js NOT OK!");
         }
 
         //test 

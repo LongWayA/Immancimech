@@ -1,7 +1,7 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_start.js -> module start');
-import { requestAnimationFrame_R } from '../2_graphics_2d/request_animation_o.js';
 class GameStart_C {
     NAME = "GameStart_C";
     isOk = "";
@@ -12,7 +12,6 @@ class GameStart_C {
     startM() {
     }
     tick() {
-        requestAnimationFrame(requestAnimationFrame_R.drawGameStart);
     }
 }
 let gameStart_R = new GameStart_C();

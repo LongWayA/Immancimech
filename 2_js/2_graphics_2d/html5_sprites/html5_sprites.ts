@@ -5,6 +5,7 @@
  * @version Last_modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
  * @version Last_modified -24.02m.2024-
  */
+let Copyright_AnBr75 = 2024;
 
 /**
 * НАЗНАЧЕНИЕ

@@ -1,9 +1,10 @@
+let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('frames.js -> module start');
 import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
 class Frames_C {
-    NAME = "frames_R";
+    static NAME = "frames_R";
     isOk = "";
     editorFrame = {
         x0: 0,
