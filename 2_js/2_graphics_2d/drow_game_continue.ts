@@ -1,5 +1,5 @@
 /** 
- * 2_render
+ * 2_graphics_2d
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
@@ -15,7 +15,7 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('drow_game_go.js -> module start');
 
 import { timer_R } from '../3_loop/timer.js';
-import { html5Canvas_R } from './html5_canvas/html5_canvas.js';
+import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
 import { mouse_R } from '../5_user_control/mouse.js';
 import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
 import { frames_R } from './frames/frames.js';
@@ -27,6 +27,9 @@ class DrawGameContinue_C {
 
     public static NAME: string = "DrawGameContinue_C";
     public isOk: string = "";
+
+    private widthCanvas: number = 0;
+    private heightCanvas: number = 0;
 
     //=============================================================================
     constructor() {
@@ -43,12 +46,20 @@ class DrawGameContinue_C {
     //=============================================================================
     //
     startM(): void {
+        this.widthCanvas = html5Canvas_R.widthCanvas;
+        this.heightCanvas = html5Canvas_R.heightCanvas;
     }
     //=============================================================================
     //=============================================================================
 
     tick(): void {
         // console.log('Game.drawNuberTick');
+        let left = 0;
+        let top = 0;
+
+        html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
+        html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas,
+            Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLUE, 0);
 
         let left0 = 10;
         let top0 = 455;

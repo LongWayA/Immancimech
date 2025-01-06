@@ -34,7 +34,7 @@ class GameState_C {
 
   // состояние игры. может быть старт игры, игра, пауза, конец игры.
   private static START_GAME: number = 1;
-  private static GO_GAME: number = 2;
+  private static CONTINUE_GAME: number = 2;
   private static PAUSE_GAME: number = 3;
   private static END_GAME: number = 4;
 
@@ -82,13 +82,13 @@ class GameState_C {
   setStartGame(): void {
     this.set_gameState = GameState_C.START_GAME;
     this.count = 0;
-    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
+    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_1);
   }
   //=============================================================================
 
   //=============================================================================
-  setGoGame(): void {
-    this.set_gameState = GameState_C.GO_GAME;
+  setContinueGame(): void {
+    this.set_gameState = GameState_C.CONTINUE_GAME;
     timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_15);
   }
   //=============================================================================
@@ -96,7 +96,7 @@ class GameState_C {
   //=============================================================================
   setPauseGame(): void {
     this.set_gameState = GameState_C.PAUSE_GAME;
-    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_02);
+    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
   }
   //=============================================================================
 
@@ -118,7 +118,7 @@ class GameState_C {
 
   //=============================================================================
   isGoGame(): boolean {
-    if (this.gameState == GameState_C.GO_GAME){ 
+    if (this.gameState == GameState_C.CONTINUE_GAME){ 
       return true;
     } else {
       return false;

@@ -3,17 +3,18 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('drow_game_pause.js -> module start');
 import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
-import { drawTimerNumber_R } from './drow_timer_number.js';
 class DrawGameEnd_C {
     static NAME = "DrawGameEnd_C";
     isOk = "";
-    widthCanvas = html5Canvas_R.widthCanvas;
-    heightCanvas = html5Canvas_R.heightCanvas;
+    widthCanvas = 0;
+    heightCanvas = 0;
     constructor() {
     }
     iniM() {
     }
     startM() {
+        this.widthCanvas = html5Canvas_R.widthCanvas;
+        this.heightCanvas = html5Canvas_R.heightCanvas;
     }
     tick() {
         let left = 0;
@@ -25,10 +26,9 @@ class DrawGameEnd_C {
         let left1 = 100;
         let top1 = 200;
         html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
-        drawTimerNumber_R.drawNumberTick(left1, top1);
+        html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLUE, 0);
         html5Canvas_R.drawRect(left0, top0, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
         html5Canvas_R.drawText("Game End ", left0, top0, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
-        drawTimerNumber_R.drawTimerTick(10, 510);
     }
 }
 let drawGameEnd_R = new DrawGameEnd_C();

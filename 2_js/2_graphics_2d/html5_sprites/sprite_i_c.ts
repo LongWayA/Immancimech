@@ -1,5 +1,5 @@
 /** 
- * 2_render/html5_sprites
+ * 2_graphics_2d/html5_sprites
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -24.02m.2024-18.03m.2024-13.04m.2024-

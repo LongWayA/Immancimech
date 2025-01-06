@@ -4,7 +4,7 @@ if (global_R.print_module_start_finish)
     console.log('html5_sprites_collection.js -> module start');
 import { Sprite_С } from './sprite_c.js';
 class Html5SpritesCollection_C {
-    NAME = "html5SpritesCollection_R";
+    NAME = "Html5SpritesCollection_C";
     isOk = " ";
     PATH_TO_IMAGES = "4_resource/images";
     REZERV = 0;

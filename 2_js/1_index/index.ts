@@ -1,5 +1,5 @@
 /** 
- * 
+ * 1_index
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -01.01.2025- 
@@ -45,7 +45,7 @@ class Index_C {
     //=============================================================================
     startButton() {
         buttons_R.startButtonAttribute();
-        gameState_R.setGoGame();
+        gameState_R.setContinueGame();
         if (!loop_R.isLoop){ 
             console.log('Index_C->startButton->call loop_R.loop()');
             loop_R.loop();
@@ -81,11 +81,8 @@ class Index_C {
         this.contextCanvas = contextCanvas;
         html5Canvas_R.startM(idCanvas, contextCanvas);
         gameState_R.startM();
-        loop_R.startM();
-
         test_R.test();
         gameState_R.setStartGame();
-
         if (!loop_R.isLoop) {
             console.log('Index_C->startGame->call loop_R.loop()');
             loop_R.loop();

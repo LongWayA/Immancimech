@@ -1,5 +1,5 @@
 /** 
- * 2_render
+ * 2_graphics_2d
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
@@ -22,8 +22,8 @@ class DrawGameEnd_C {
     public static NAME: string = "DrawGameEnd_C";
     public isOk: string = "";
 
-    widthCanvas: number = html5Canvas_R.widthCanvas;
-    heightCanvas: number = html5Canvas_R.heightCanvas;    
+    private widthCanvas: number = 0;
+    private heightCanvas: number = 0;
 
     //=============================================================================
     constructor() {
@@ -40,6 +40,8 @@ class DrawGameEnd_C {
     //=============================================================================
     //
     startM(): void {
+        this.widthCanvas = html5Canvas_R.widthCanvas;
+        this.heightCanvas = html5Canvas_R.heightCanvas;        
     }
     //=============================================================================
     //=============================================================================
@@ -55,14 +57,13 @@ class DrawGameEnd_C {
         let top1 = 200;
 
         html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
+        html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas,
+            Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLUE, 0);
 
-        drawTimerNumber_R.drawNumberTick(left1, top1);
         html5Canvas_R.drawRect(left0, top0, width, height, Html5Canvas_C.LINE_WIDTH_1,
             Html5Canvas_C.GREEN, 0);
         html5Canvas_R.drawText("Game End ", left0, top0, Html5Canvas_C.ITALIC_30PT_ARIAL,
             Html5Canvas_C.GREEN, 1);
-
-        drawTimerNumber_R.drawTimerTick(10, 510);
     }
     //=============================================================================
 

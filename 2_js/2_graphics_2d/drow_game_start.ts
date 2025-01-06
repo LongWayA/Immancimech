@@ -1,5 +1,5 @@
 /** 
- * 2_render
+ * 2_graphics_2d
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -17.08m.2024-
@@ -16,6 +16,8 @@ if (global_R.print_module_start_finish) console.log('drow_game_start.js -> modul
 
 import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
 import { html5SpritesImmortal_R } from './html5_sprites/html5_sprites_immortal.js';
+import { html5Sprites_R } from './html5_sprites/html5_sprites.js';
+
 import { drawTimerNumber_R } from './drow_timer_number.js';
 
 class DrawGameStart_C {
@@ -24,15 +26,14 @@ class DrawGameStart_C {
  
     public isOk: string = "";
 
-    widthCanvas: number = html5Canvas_R.widthCanvas;
-    heightCanvas: number = html5Canvas_R.heightCanvas;
+    private widthCanvas: number = 0;
+    private heightCanvas: number = 0;
 
 
     //=============================================================================
     constructor() {
     }
     //=============================================================================
-
     //=============================================================================
     iniM(): void {
 
@@ -43,6 +44,8 @@ class DrawGameStart_C {
     //=============================================================================
     //
     startM(): void {
+        this.widthCanvas = html5Canvas_R.widthCanvas;
+        this.heightCanvas = html5Canvas_R.heightCanvas;
     }
     //=============================================================================
     //=============================================================================
@@ -54,29 +57,36 @@ class DrawGameStart_C {
         let width = 500;
         let height = 35;
         let left0 = 10;
-        let top0 = 10;
-        const probaSaveLokal = <string>localStorage.getItem("probaSaveLokal");
-        const GROUND = <string>localStorage.getItem("GROUND");
+        let top0 = 450;
+        let left1 = 10;
+        let top1 = 10;
+        let left2 = 10;
+        let top2 = 510;
 
         html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
-
         html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas,
-            Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLACK, 0);
-        html5Canvas_R.drawRect(left0, top0, this.widthCanvas - 20, this.heightCanvas - 20,
-            Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
+            Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLUE, 0);
+
+        html5Canvas_R.drawRect(left1, top1, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.RED, 0);
+        html5Canvas_R.drawText("Game Start ", left1, top1, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
+
         drawTimerNumber_R.drawNumberTick(left0, top0);
-        html5Canvas_R.drawRect(100, 100, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.RED, 0);
-        html5Canvas_R.drawText("Game Start ", 100, 100, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);
 
-        html5Canvas_R.drawText(probaSaveLokal, 100, 200, Html5Canvas_C.ITALIC_30PT_ARIAL,
-            Html5Canvas_C.GREEN, 1);
+        drawTimerNumber_R.drawTimerTick(left2, top2);
 
-        html5Canvas_R.drawText(GROUND, 100, 300, Html5Canvas_C.ITALIC_30PT_ARIAL,
-            Html5Canvas_C.GREEN, 1);
+        let y = 200;
+        for( let i = 1; i < 20; i++) {
+            let x = 100 + i * 50;
+            html5Sprites_R.drowSprite(3, i, x, y);
+        }
 
-        drawTimerNumber_R.drawTimerTick(10, 510);
+        y = 300;
+        for( let i = 1; i < 15; i++) {
+            let x = 100 + i * 50;
+            html5Sprites_R.drowSprite(4, i, x, y);//html5SpritesImmortal_R.drowSprite(i, x, y)
+        }       
+        
 
-        html5SpritesImmortal_R.drowSprite(1, 400, 500);
 
     }
     //=============================================================================

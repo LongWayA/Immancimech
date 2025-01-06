@@ -1,7 +1,5 @@
-// @ts-check
-"use strict";
 /** 
- * 1_loop
+ * 3_loop
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -08.08.2021-31.07.2022-06.03.2023-18.03.2023-26.03.2023-3.09.2023

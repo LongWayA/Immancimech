@@ -1,5 +1,5 @@
 /** 
- * 2_render/html5_sprites
+ * 2_graphics_2d/html5_sprites
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
@@ -34,7 +34,7 @@ import { Sprite_С } from './sprite_c.js';
 //
 class Html5SpritesCollection_C {
  
-    public NAME: string = "html5SpritesCollection_R";
+    public NAME: string = "Html5SpritesCollection_C";
     public isOk: string = " ";
     public PATH_TO_IMAGES: string = "4_resource/images";
     public REZERV: number = 0;

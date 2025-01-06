@@ -1,5 +1,5 @@
 /** 
- * 2_render/html5_canvas
+ * 2_graphics_2d/html5_canvas
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -21.08.2021-31.07.2022-18.02.2023-08.03.2023-18.03.2023-26.03.2023-25.11.2023

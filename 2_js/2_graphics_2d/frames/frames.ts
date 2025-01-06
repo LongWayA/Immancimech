@@ -1,5 +1,5 @@
 /** 
- * 2_render/frames
+ * 2_graphics_2d/frames
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version Last_modified -15.08.2022-19.02.2023-18.03.2023-26.03.2023

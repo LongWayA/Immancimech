@@ -2,7 +2,7 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('drow_game_go.js -> module start');
-import { html5Canvas_R } from './html5_canvas/html5_canvas.js';
+import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
 import { mouse_R } from '../5_user_control/mouse.js';
 import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
 import { frames_R } from './frames/frames.js';
@@ -12,13 +12,21 @@ import { drawTimerNumber_R } from './drow_timer_number.js';
 class DrawGameContinue_C {
     static NAME = "DrawGameContinue_C";
     isOk = "";
+    widthCanvas = 0;
+    heightCanvas = 0;
     constructor() {
     }
     iniM() {
     }
     startM() {
+        this.widthCanvas = html5Canvas_R.widthCanvas;
+        this.heightCanvas = html5Canvas_R.heightCanvas;
     }
     tick() {
+        let left = 0;
+        let top = 0;
+        html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
+        html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLUE, 0);
         let left0 = 10;
         let top0 = 455;
         html5Canvas_R.clearRect(0, 0, frames_R.editorFrame.width, frames_R.editorFrame.height);

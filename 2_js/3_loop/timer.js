@@ -1,4 +1,3 @@
-"use strict";
 let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)

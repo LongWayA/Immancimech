@@ -7,13 +7,15 @@ import { drawTimerNumber_R } from './drow_timer_number.js';
 class DrawGamePause_C {
     static NAME = "DrawGamePause_C";
     isOk = "";
-    widthCanvas = html5Canvas_R.widthCanvas;
-    heightCanvas = html5Canvas_R.heightCanvas;
+    widthCanvas = 0;
+    heightCanvas = 0;
     constructor() {
     }
     iniM() {
     }
     startM() {
+        this.widthCanvas = html5Canvas_R.widthCanvas;
+        this.heightCanvas = html5Canvas_R.heightCanvas;
     }
     tick() {
         let left = 0;
@@ -25,6 +27,7 @@ class DrawGamePause_C {
         let left1 = 100;
         let top1 = 200;
         html5Canvas_R.clearRect(left, top, this.widthCanvas, this.heightCanvas);
+        html5Canvas_R.drawRect(left, top, this.widthCanvas, this.heightCanvas, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.BLUE, 0);
         drawTimerNumber_R.drawNumberTick(left1, top1);
         html5Canvas_R.drawRect(left0, top0, width, height, Html5Canvas_C.LINE_WIDTH_1, Html5Canvas_C.GREEN, 0);
         html5Canvas_R.drawText("Game Paused ", left0, top0, Html5Canvas_C.ITALIC_30PT_ARIAL, Html5Canvas_C.GREEN, 1);

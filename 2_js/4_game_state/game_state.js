@@ -15,7 +15,7 @@ class GameState_C {
     static NAME = "GameState_C";
     isOk = "";
     static START_GAME = 1;
-    static GO_GAME = 2;
+    static CONTINUE_GAME = 2;
     static PAUSE_GAME = 3;
     static END_GAME = 4;
     gameState = 0;
@@ -39,15 +39,15 @@ class GameState_C {
     setStartGame() {
         this.set_gameState = GameState_C.START_GAME;
         this.count = 0;
-        timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
+        timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_1);
     }
-    setGoGame() {
-        this.set_gameState = GameState_C.GO_GAME;
+    setContinueGame() {
+        this.set_gameState = GameState_C.CONTINUE_GAME;
         timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_15);
     }
     setPauseGame() {
         this.set_gameState = GameState_C.PAUSE_GAME;
-        timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_02);
+        timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
     }
     setEndGame() {
         this.set_gameState = GameState_C.END_GAME;
@@ -61,7 +61,7 @@ class GameState_C {
         }
     }
     isGoGame() {
-        if (this.gameState == GameState_C.GO_GAME) {
+        if (this.gameState == GameState_C.CONTINUE_GAME) {
             return true;
         }
         else {
