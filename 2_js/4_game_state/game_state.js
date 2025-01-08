@@ -51,38 +51,23 @@ class GameState_C {
     }
     setEndGame() {
         this.set_gameState = GameState_C.END_GAME;
+        this.count = 0;
     }
     isStartGame() {
-        if (this.gameState == GameState_C.START_GAME) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        let isStartGame = (this.gameState == GameState_C.START_GAME) ? true : false;
+        return isStartGame;
     }
     isGoGame() {
-        if (this.gameState == GameState_C.CONTINUE_GAME) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        let isGoGame = (this.gameState == GameState_C.CONTINUE_GAME) ? true : false;
+        return isGoGame;
     }
     isPauseGame() {
-        if (this.gameState == GameState_C.PAUSE_GAME) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        let isPauseGame = (this.gameState == GameState_C.PAUSE_GAME) ? true : false;
+        return isPauseGame;
     }
     isEndGame() {
-        if (this.gameState == GameState_C.END_GAME) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        let isEndGame = (this.gameState == GameState_C.END_GAME) ? true : false;
+        return isEndGame;
     }
     tick() {
         this.count = this.count + 1;

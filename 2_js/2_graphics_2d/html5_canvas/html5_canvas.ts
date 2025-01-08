@@ -38,6 +38,9 @@ class Html5Canvas_C {
     //  представляющий двумерный контекст.
     public idCanvas : HTMLCanvasElement | null = null;
     public contextCanvas : CanvasRenderingContext2D | null =  null;
+ //   public offscreenCanvas : OffscreenCanvas | null = null;
+ //   public contextOffscreenCanvas : OffscreenCanvasRenderingContext2D | null =  null;
+
     public widthCanvas: number = 0;
     public heightCanvas: number = 0;
     // Цвет(Color)
@@ -64,6 +67,8 @@ class Html5Canvas_C {
 
     //=============================================================================
     iniM(): void {
+        // this.offscreenCanvas = new OffscreenCanvas(1200, 730);//HTMLCanvasElement CanvasRenderingContext2D
+        // this.contextOffscreenCanvas = this.offscreenCanvas.getContext('2d');
     }
     //=============================================================================
     //=============================================================================
@@ -77,16 +82,30 @@ class Html5Canvas_C {
         html5CanvasImage_R.startM(idCanvas, contextCanvas);
     }
     //=============================================================================
+
+    //=============================================================================
+    // offscreenCanvasToidCanvas(): void {
+    //     this.offscreenCanvas = new OffscreenCanvas(1200, 730);//HTMLCanvasElement CanvasRenderingContext2D
+    //     this.contextOffscreenCanvas = this.offscreenCanvas.getContext('2d');
+
+    //     const bitmapIdCanvas = this.offscreenCanvas.transferToImageBitmap();
+    //     this.idCanvas.transferFromImageBitmap(bitmapIdCanvas);
+    // }
+    //=============================================================================
+
+    //=============================================================================
     get_widthCanvas(): number {
         //console.log("this.contextCanvas.width = " + idCanvas.width);
-        return (<HTMLCanvasElement>this.idCanvas).width;
+        return (this.idCanvas as HTMLCanvasElement).width;
     }
-
+    //=============================================================================
+    //=============================================================================      
     get_heightCanvas(): number {
         //console.log("this.contextCanvas.height = " + idCanvas.height);
-        return (<HTMLCanvasElement>this.idCanvas).height;
+        return (this.idCanvas as HTMLCanvasElement).height;
     }
-
+    //=============================================================================
+    
     // TEXT
     //=============================================================================
     // Устанавливаем два параметра fillStyle, strokeStyle
@@ -171,6 +190,7 @@ class Html5Canvas_C {
     drawSmile(): void {
         //drawSmile();
     }
+    //=============================================================================    
     //============================================================================ 
     // IMAGE
     // Рисуем прямоугольную картинку
@@ -178,7 +198,6 @@ class Html5Canvas_C {
     // _left, _top - координаты левого верхнего угла картинки
     // _width, _height - ширина и высота картинки
     // _mirror - следует ли отзеркалить картинку
-    //============================================================================
     drawImage(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number,
         width: number, height: number, mirror: boolean): void {
         html5CanvasImage_R.drawImage(image, left, top, width, height, mirror);

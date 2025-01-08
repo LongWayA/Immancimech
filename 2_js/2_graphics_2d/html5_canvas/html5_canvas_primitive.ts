@@ -60,45 +60,45 @@ class Html5CanvasPrimitive_C {
     //=============================================================================
 
     set_fillStyle(color: string): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = color;
+        (this.contextCanvas as CanvasRenderingContext2D).fillStyle = color;
     }
 
     get_fillStyle(): string {
         
-        return <string>(<CanvasRenderingContext2D>this.contextCanvas).fillStyle;
+        return <string>(this.contextCanvas as CanvasRenderingContext2D).fillStyle;
     }
 
     set_strokeStyle(_color: string): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).strokeStyle = _color;
+        (this.contextCanvas as CanvasRenderingContext2D).strokeStyle = _color;
     }
 
     set_lineWidth(_lineWidth: number): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).lineWidth = _lineWidth;
+        (this.contextCanvas as CanvasRenderingContext2D).lineWidth = _lineWidth;
     }
 
     get_lineWidth(): number {
-        return (<CanvasRenderingContext2D>this.contextCanvas).lineWidth;
+        return (this.contextCanvas as CanvasRenderingContext2D).lineWidth;
     }
 
     clearRect_(left: number, top: number, width: number, height: number): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).clearRect(left, top, width, height);
+        (this.contextCanvas as CanvasRenderingContext2D).clearRect(left, top, width, height);
     }
 
     fillRect(left: number, top: number, width: number, height: number): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).fillRect(left, top, width, height);
+        (this.contextCanvas as CanvasRenderingContext2D).fillRect(left, top, width, height);
     }
 
     strokeRect(left: number, top: number, width: number, height: number): void {
         //console.log("strokeRect " + " _left = " + _left + " _top = " + _top + " _width = " + _width + " _height = " + _height);
-        (<CanvasRenderingContext2D>this.contextCanvas).strokeRect(left, top, width, height);
+        (this.contextCanvas as CanvasRenderingContext2D).strokeRect(left, top, width, height);
     }
 
     circle(centerX: number, centerY: number, radius: number, startAngle: number
         , endAngle: number, clockwise: boolean): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).arc(centerX, centerY, radius, startAngle, endAngle, clockwise);
-        (<CanvasRenderingContext2D>this.contextCanvas).closePath();
-        (<CanvasRenderingContext2D>this.contextCanvas).stroke();
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).arc(centerX, centerY, radius, startAngle, endAngle, clockwise);
+        (this.contextCanvas as CanvasRenderingContext2D).closePath();
+        (this.contextCanvas as CanvasRenderingContext2D).stroke();
     }
 
     drawCreaturesCircle_(centerX: number, centerY: number, radius: number, angle: number): void{
@@ -109,53 +109,53 @@ class Html5CanvasPrimitive_C {
         y = y + centerY;
         //console.log("HTML5_Canvas_API_1.circle -> _centerX = " + _centerX + " _centerY = " + _centerY +
         //" _radius = " + _radius + " _angle = " + _angle + " x = " + x + " y = " + y);
-        (<CanvasRenderingContext2D>this.contextCanvas).strokeRect(centerX, centerY, p, p);
-        (<CanvasRenderingContext2D>this.contextCanvas).strokeRect(x, y, p, p);
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).moveTo(x, y);
-        (<CanvasRenderingContext2D>this.contextCanvas).lineTo(centerX, centerY);
-        (<CanvasRenderingContext2D>this.contextCanvas).closePath();
-        (<CanvasRenderingContext2D>this.contextCanvas).stroke();
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).arc(centerX, centerY, radius, 0, 2 * Math.PI, true);
-        (<CanvasRenderingContext2D>this.contextCanvas).closePath();
-        (<CanvasRenderingContext2D>this.contextCanvas).stroke();
+        (this.contextCanvas as CanvasRenderingContext2D).strokeRect(centerX, centerY, p, p);
+        (this.contextCanvas as CanvasRenderingContext2D).strokeRect(x, y, p, p);
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).moveTo(x, y);
+        (this.contextCanvas as CanvasRenderingContext2D).lineTo(centerX, centerY);
+        (this.contextCanvas as CanvasRenderingContext2D).closePath();
+        (this.contextCanvas as CanvasRenderingContext2D).stroke();
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).arc(centerX, centerY, radius, 0, 2 * Math.PI, true);
+        (this.contextCanvas as CanvasRenderingContext2D).closePath();
+        (this.contextCanvas as CanvasRenderingContext2D).stroke();
     }
 
     /** Description placeholder */
     drawSmile(): void {
         //-------------------------
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).fill();
-        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = "yellow";
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).arc(160, 130, 100, 0, 2 * Math.PI);
-        (<CanvasRenderingContext2D>this.contextCanvas).fill();
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).fill();
+        (this.contextCanvas as CanvasRenderingContext2D).fillStyle = "yellow";
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).arc(160, 130, 100, 0, 2 * Math.PI);
+        (this.contextCanvas as CanvasRenderingContext2D).fill();
         // рот
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).moveTo(100, 160);
-        (<CanvasRenderingContext2D>this.contextCanvas).quadraticCurveTo(160, 250, 220, 160);
-        (<CanvasRenderingContext2D>this.contextCanvas).closePath();
-        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = "red";
-        (<CanvasRenderingContext2D>this.contextCanvas).fill();
-        (<CanvasRenderingContext2D>this.contextCanvas).lineWidth = 2;
-        (<CanvasRenderingContext2D>this.contextCanvas).strokeStyle = "black";
-        (<CanvasRenderingContext2D>this.contextCanvas).stroke();
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).moveTo(100, 160);
+        (this.contextCanvas as CanvasRenderingContext2D).quadraticCurveTo(160, 250, 220, 160);
+        (this.contextCanvas as CanvasRenderingContext2D).closePath();
+        (this.contextCanvas as CanvasRenderingContext2D).fillStyle = "red";
+        (this.contextCanvas as CanvasRenderingContext2D).fill();
+        (this.contextCanvas as CanvasRenderingContext2D).lineWidth = 2;
+        (this.contextCanvas as CanvasRenderingContext2D).strokeStyle = "black";
+        (this.contextCanvas as CanvasRenderingContext2D).stroke();
         // зубы
-        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = "#FFFFFF";
-        (<CanvasRenderingContext2D>this.contextCanvas).fillRect(140, 160, 15, 15);
-        (<CanvasRenderingContext2D>this.contextCanvas).fillRect(170, 160, 15, 15);
+        (this.contextCanvas as CanvasRenderingContext2D).fillStyle = "#FFFFFF";
+        (this.contextCanvas as CanvasRenderingContext2D).fillRect(140, 160, 15, 15);
+        (this.contextCanvas as CanvasRenderingContext2D).fillRect(170, 160, 15, 15);
         //глаза
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).arc(130, 90, 20, 0, 2 * Math.PI);
-        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = "#333333";
-        (<CanvasRenderingContext2D>this.contextCanvas).fill();
-        (<CanvasRenderingContext2D>this.contextCanvas).closePath();
-        (<CanvasRenderingContext2D>this.contextCanvas).beginPath();
-        (<CanvasRenderingContext2D>this.contextCanvas).arc(190, 90, 20, 0, 2 * Math.PI);
-        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = "#333333";
-        (<CanvasRenderingContext2D>this.contextCanvas).fill();
-        (<CanvasRenderingContext2D>this.contextCanvas).closePath();
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).arc(130, 90, 20, 0, 2 * Math.PI);
+        (this.contextCanvas as CanvasRenderingContext2D).fillStyle = "#333333";
+        (this.contextCanvas as CanvasRenderingContext2D).fill();
+        (this.contextCanvas as CanvasRenderingContext2D).closePath();
+        (this.contextCanvas as CanvasRenderingContext2D).beginPath();
+        (this.contextCanvas as CanvasRenderingContext2D).arc(190, 90, 20, 0, 2 * Math.PI);
+        (this.contextCanvas as CanvasRenderingContext2D).fillStyle = "#333333";
+        (this.contextCanvas as CanvasRenderingContext2D).fill();
+        (this.contextCanvas as CanvasRenderingContext2D).closePath();
         //---------------------------------
     }
 

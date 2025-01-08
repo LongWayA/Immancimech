@@ -18,11 +18,11 @@ if (global_R.print_module_start_finish) console.log('test.js -> module start');
 import { ai_R } from '../6_ai_control/ai.js';
 
 //background
-import { background_R } from '../local/background/background.js';
-import { TileForBackground_C, TileForBackground_isOk } from '../local/background/tile_for_background_c.js';
+import { background_R } from '../7_local/background/background.js';
+import { TileForBackground_C, TileForBackground_isOk } from '../7_local/background/tile_for_background_c.js';
 
 //creatures
-import { imps_R } from '../local/creatures/creatures.js';
+import { imps_R } from '../7_local/creatures/creatures.js';
 
 //fight
 import { fight_R } from '../fight/fight.js';
@@ -55,7 +55,7 @@ import { Sprite_Imm_C, Sprite_I_C_isOk } from '../2_graphics_2d/html5_sprites/sp
 //-
 
 //local
-import { local_R } from '../local/local.js';
+import { local_R } from '../7_local/local.js';
 
 //loop
 import { buttons_R } from '../1_index/buttons.js';

@@ -83,7 +83,7 @@ let userInputKeyboardEvent_R = {
     // во время нажатия клавиши вызывается эта функция
     // на нажатие реагируем один раз. один раз записываем какую кнопку нажали
     //==============================================================================
-    keyDownE(event: any): void {
+    keyDownE(event): void {
 
         //   console.log("keyboard.js ->keyDownU  _event.key = " + _event.key);
         //   console.log("keyboard.js ->keyDownU  _event.code = " + _event.code);
@@ -108,7 +108,7 @@ let userInputKeyboardEvent_R = {
 
     // во время отпускания клавиши вызывается эта функция
     //==============================================================================
-    keyUpE(event: any): void {
+    keyUpE(event): void {
 
         if (userInputKeyboardEvent_R.eventCodeOneDown == 1) {
             userInputKeyboardEvent_R.eventCodeOneDown = 0; //

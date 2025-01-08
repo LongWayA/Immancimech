@@ -11,13 +11,12 @@ let Copyright_AnBr75 = 2024;
 */
 
 import { global_R } from '../1_index/global.js';
-
 if (global_R.print_module_start_finish) console.log('game_pause.js -> module start');
 
 
 class GamePause_C {
 
-  public NAME: string = "GamePause_C";
+  public static NAME: string = "GamePause_C";
 
   public isOk: string = "";
 

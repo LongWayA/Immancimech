@@ -6,12 +6,12 @@ import { html5Canvas_R, Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/h
 import { html5Sprites_R } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
 class Background_C {
-    NAME = "background_R";
+    static NAME = "Background_C";
     isOk = "";
     MAP_TILE_COUNT_WIDTH = 24;
     MAP_TILE_COUNT_HEIGHT = 9;
-    TILE_WIDTH = 50;
-    TILE_HEIGHT = 50;
+    static TILE_WIDTH = 50;
+    static TILE_HEIGHT = 50;
     Map_2d = new Array(1);
     savedGround = `111111111111111111111111
 122222222222222222222221
@@ -31,8 +31,8 @@ class Background_C {
     startM() {
     }
     isMoove(x, y) {
-        x = Math.floor(x / this.TILE_WIDTH);
-        y = Math.floor(y / this.TILE_HEIGHT);
+        x = Math.floor(x / Background_C.TILE_WIDTH);
+        y = Math.floor(y / Background_C.TILE_HEIGHT);
         if ((this.Map_2d[y][x].char == "1") || (this.Map_2d[y][x].char == "3")) {
             return false;
         }
@@ -41,8 +41,8 @@ class Background_C {
         }
     }
     iniMap_2d() {
-        let height = this.TILE_HEIGHT;
-        let width = this.TILE_WIDTH;
+        let height = Background_C.TILE_HEIGHT;
+        let width = Background_C.TILE_WIDTH;
         let number = 0;
         this.Map_2d = new Array(this.MAP_TILE_COUNT_HEIGHT);
         for (let y = 0; y < this.Map_2d.length; y++) {

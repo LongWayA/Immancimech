@@ -15,7 +15,7 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('run.js -> module start');
 
 import { immortals_R } from '../user_avatars/immortals.js';
-import { background_R, Background_C } from '../local/background/background.js';
+import { background_R, Background_C } from '../7_local/background/background.js';
 
 class Run_C {
  

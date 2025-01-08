@@ -101,7 +101,7 @@ class Html5SpritesCollection_C {
     public CREATURES_TITAN: number = 14;
 
     //HTMLImageElement[] | HTMLCanvasElement[]
-    public sprites: any[] = new Array(5);
+    public sprites = new Array(5);
 
     //=============================================================================
     constructor() {

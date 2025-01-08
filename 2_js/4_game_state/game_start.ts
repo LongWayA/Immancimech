@@ -15,7 +15,7 @@ if (global_R.print_module_start_finish) console.log('game_start.js -> module sta
 
 class GameStart_C {
 
-  public NAME: string = "GameStart_C";
+  public static NAME: string = "GameStart_C";
  
   public isOk: string = "";
 

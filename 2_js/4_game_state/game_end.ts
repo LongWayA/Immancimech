@@ -11,12 +11,11 @@ let Copyright_AnBr75 = 2024;
 */
 
 import { global_R } from '../1_index/global.js';
-
 if (global_R.print_module_start_finish) console.log('game_end.js -> module start');
 
 class GameEnd_C {
 
-  public NAME: string = "GameEnd_C";
+  public static NAME: string = "GameEnd_C";
   public isOk: string = "";
 
   //=============================================================================

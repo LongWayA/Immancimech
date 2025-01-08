@@ -17,13 +17,14 @@ if (global_R.print_module_start_finish) console.log('immortals.js -> module star
 import { html5Canvas_R, Html5Canvas_C } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { html5Sprites_R, Html5Sprites_C } from '../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { Immortal_C } from './immortal_c.js';
+import { background_R, Background_C } from '../7_local/background/background.js';
 
 class Immortals_C {
 
     public NAME: string = "Immortals_C";
     public isOk: string = "";
 
-    private List: any[] = new Array(3);
+    public List = new Array(3);
 
     //=============================================================================
     constructor() {
@@ -60,7 +61,7 @@ class Immortals_C {
     }
     //============================================================================
     //=============================================================================
-    update(ground: any): void {
+    update(ground: Background_C): void {
 
 
         this.List[2].pointViewAngle = this.List[2].pointViewAngle + (Math.PI / 2) / 20;

@@ -49,16 +49,16 @@ class Html5CanvasImage_C {
     }
     //=============================================================================
     drawImage_(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).drawImage(image, left, top);
+        (this.contextCanvas as CanvasRenderingContext2D).drawImage(image, left, top);
     }
 
     drawImage_w_h(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number,
         width: number, height: number): void {
-            (<CanvasRenderingContext2D>this.contextCanvas).drawImage(image, left, top, width, height);
+            (this.contextCanvas as CanvasRenderingContext2D).drawImage(image, left, top, width, height);
     }
 
     scale(): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).scale(-1, 1);
+        (this.contextCanvas as CanvasRenderingContext2D).scale(-1, 1);
     }
 
     //============================================================================

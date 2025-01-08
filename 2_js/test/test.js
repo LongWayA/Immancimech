@@ -3,9 +3,9 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('test.js -> module start');
 import { ai_R } from '../6_ai_control/ai.js';
-import { background_R } from '../local/background/background.js';
-import { TileForBackground_isOk } from '../local/background/tile_for_background_c.js';
-import { imps_R } from '../local/creatures/creatures.js';
+import { background_R } from '../7_local/background/background.js';
+import { TileForBackground_isOk } from '../7_local/background/tile_for_background_c.js';
+import { imps_R } from '../7_local/creatures/creatures.js';
 import { fight_R } from '../fight/fight.js';
 import { frames_R } from '../2_graphics_2d/frames/frames.js';
 import { gameState_R } from '../4_game_state/game_state.js';
@@ -19,7 +19,7 @@ import { html5SpritesImmortal_R } from '../2_graphics_2d/html5_sprites/html5_spr
 import { html5Sprites_R } from '../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { Sprite_С_isOk } from '../2_graphics_2d/html5_sprites/sprite_c.js';
 import { Sprite_I_C_isOk } from '../2_graphics_2d/html5_sprites/sprite_i_c.js';
-import { local_R } from '../local/local.js';
+import { local_R } from '../7_local/local.js';
 import { buttons_R } from '../1_index/buttons.js';
 import { loop_R } from '../3_loop/loop_o.js';
 import { timer_R } from '../3_loop/timer.js';

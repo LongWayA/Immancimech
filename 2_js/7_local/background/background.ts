@@ -27,13 +27,13 @@ import { items_R } from '../items/items.js';
 class Background_C {
 
   
-  public NAME: string = "background_R";
+  public static NAME: string = "Background_C";
   public isOk: string = "";
   private MAP_TILE_COUNT_WIDTH: number = 24;// считаем вместе с 0
   private MAP_TILE_COUNT_HEIGHT: number = 9;
 
-  private TILE_WIDTH: number = 50;
-  private TILE_HEIGHT: number = 50;
+  public static TILE_WIDTH: number = 50;
+  public static TILE_HEIGHT: number = 50;
 
   private Map_2d: TileForBackground_C[][] = new Array(1);
 
@@ -55,7 +55,6 @@ class Background_C {
 
   //=============================================================================
   constructor() {
-
   }
   //=============================================================================
   //=============================================================================
@@ -68,18 +67,20 @@ class Background_C {
   startM(): void {
   }
   //=============================================================================
-
   //=============================================================================
   isMoove(x: number, y: number): boolean {
+    // console.log(" background.js-> isMoove in x = " +  x );
+    // console.log(" background.js-> isMoove in y = " +  y );
 
-    x = Math.floor(x / this.TILE_WIDTH);// Math.ceil
-    y = Math.floor(y / this.TILE_HEIGHT);
+    x = Math.floor(x / Background_C.TILE_WIDTH);// Math.ceil
+    y = Math.floor(y / Background_C.TILE_HEIGHT);
 
-    //    console.log(" background.js-> isMoove _x = " +  _x );
-    //    console.log(" background.js-> isMoove _y = " +  _y );  
-    //    console.log(" background.js-> isMoove x = " +  x );
-    //    console.log(" background.js-> isMoove y = " +  y );
-    //    console.log(" background.js-> isMoove char = " +  Ground.Map_2d[y][x].char );
+      //  console.log(" background.js-> isMoove x = " +  x );
+      //  console.log(" background.js-> isMoove y = " +  y );
+      //  console.log(" background.js-> isMoove char = " +  this.Map_2d[y][x].char );
+
+      //  console.log(" background.js-> isMoove -> TILE_WIDTH = " +  Background_C.TILE_WIDTH );
+      //  console.log(" background.js-> isMoove  -> TILE_HEIGHT = " +  Background_C.TILE_HEIGHT );
 
     if ((this.Map_2d[y][x].char == "1") || (this.Map_2d[y][x].char == "3")) {
       return false;//false
@@ -88,13 +89,11 @@ class Background_C {
     }
   }
   //=============================================================================
-
   //=============================================================================
   //
   iniMap_2d(): void {
-
-    let height = this.TILE_HEIGHT; //
-    let width = this.TILE_WIDTH; //
+    let height = Background_C.TILE_HEIGHT; //
+    let width = Background_C.TILE_WIDTH; //
     let number = 0;
 
 
@@ -130,7 +129,6 @@ class Background_C {
     }
   }
   //=============================================================================
-
   //=============================================================================
   drow(): void {
     for (let y = 0; y < this.Map_2d.length; y++) {
@@ -147,7 +145,6 @@ class Background_C {
     }
   }
   //=============================================================================
-
   //=============================================================================
   loadMapFromScripts(): void {
     let pozChar = 0;
@@ -160,7 +157,6 @@ class Background_C {
     }
   }
   //=============================================================================
-
   //=============================================================================
   numToChar(num: number): string {
 
@@ -172,12 +168,11 @@ class Background_C {
     return char;
   }
   //=============================================================================
-
   //=============================================================================
   charToNum(char: string): number {
 
     // это тоже объект, только поля в виде строк. На само деле они всегда строки только неявно заданные
-    let charToNumS: any = {
+    let charToNumS = {
       '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
       '7': 7, '8': 8, '9': 9,
       'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15

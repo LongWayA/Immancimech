@@ -29,10 +29,10 @@ class Html5CanvasMouseEvent_C {
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
     
-    public idCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('game-canvas');//private 
+    public idCanvas: HTMLCanvasElement = document.getElementById('game-canvas') as HTMLCanvasElement;//private 
 
     
-    private contextCanvas: CanvasRenderingContext2D = <CanvasRenderingContext2D>this.idCanvas.getContext('2d');   
+    private contextCanvas: CanvasRenderingContext2D = this.idCanvas.getContext('2d') as CanvasRenderingContext2D;   
 
     public mouseMoveIsChange: number = 0;
  
@@ -52,7 +52,7 @@ class Html5CanvasMouseEvent_C {
  
     public mouseUpY: number = 0;
 
-    public event: any = null;
+    public event = null;
 
     //=============================================================================
     constructor() {
@@ -62,7 +62,7 @@ class Html5CanvasMouseEvent_C {
     //=============================================================================
     iniM(): void {
 
-        this.idCanvas.addEventListener('mousemove', (event: any) => {
+        this.idCanvas.addEventListener('mousemove', (event) => {
 
             this.event = event;
             this.mouseMoveIsChange = 1;
@@ -71,7 +71,7 @@ class Html5CanvasMouseEvent_C {
 
         });
 
-        this.idCanvas.addEventListener('mousedown', (event: any) => {
+        this.idCanvas.addEventListener('mousedown', (event) => {
 
             this.event = event;
             this.mouseDownIsChange = 1;
@@ -80,7 +80,7 @@ class Html5CanvasMouseEvent_C {
 
         });
 
-        this.idCanvas.addEventListener('mouseup', (event: any) => {
+        this.idCanvas.addEventListener('mouseup', (event) => {
 
             this.event = event;
             this.mouseUpIsChange = 1;

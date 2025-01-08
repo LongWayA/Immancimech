@@ -13,8 +13,6 @@ class Local_C {
     }
     tick() {
     }
-    update() {
-    }
     drow() {
     }
 }

@@ -14,6 +14,8 @@ import { global_R } from '../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('immortal_c.js -> module start');
 
+import { background_R, Background_C } from '../7_local/background/background.js';
+
 class Immortal_C {
 
     private number: number;// номер существа в списке
@@ -111,7 +113,7 @@ class Immortal_C {
 
     }
 
-    runUp(ground: any): void {
+    runUp(ground: Background_C): void {
         //  console.log(" class Immortal-> runUp this.imageLeft = " +  this.imageLeft );
         //  console.log(" class Immortal-> runUp this.imageTop = " +  this.imageTop );
 
@@ -119,13 +121,12 @@ class Immortal_C {
             && (this.imageLeft % this.imageWidth == 0)) { // округление до наибольшего целого)
             //    console.log(" class Immortal-> runUp ");
             //this.pointTop = this.pointTop - this.velocity; // позиция центра слева
-            this.pointTop = this.pointTop - ground.TILE_HEIGHT; // позиция центра слева
+            this.pointTop = this.pointTop - Background_C.TILE_HEIGHT; // позиция центра слева
             this.imageTop = this.pointTop - (this.imageHeight / 2); //
         }
     }
 
-    runDown(ground: any): void {
-
+    runDown(ground: Background_C): void {
         //    console.log(" class Immortal-> runDown this.imageLeft = " +  this.imageLeft );
         //    console.log(" class Immortal-> runDown this.imageTop = " +  this.imageTop );
 
@@ -133,12 +134,12 @@ class Immortal_C {
             && (this.imageLeft % this.imageWidth == 0)) { // округление до наибольшего целого)
             //      console.log(" class Immortal-> runDown ");
             //this.pointTop = this.pointTop + this.velocity; // позиция центра слева
-            this.pointTop = this.pointTop + ground.TILE_HEIGHT; // позиция центра слева
+            this.pointTop = this.pointTop + Background_C.TILE_HEIGHT; // позиция центра слева
             this.imageTop = this.pointTop - (this.imageHeight / 2); //
         }
     }
 
-    runLeft(ground: any): void {
+    runLeft(ground: Background_C): void {
         //  console.log(" class Immortal-> runLeft this.imageLeft = " +  this.imageLeft );
         //  console.log(" class Immortal-> runLeft this.imageTop = " +  this.imageTop );
 
@@ -146,12 +147,13 @@ class Immortal_C {
             && (this.imageTop % this.imageHeight == 0)) { // округление до наибольшего целого)
             //   console.log(" class Immortal-> runLeft ");
             //this.pointLeft = this.pointLeft - this.velocity; // позиция центра слева
-            this.pointLeft = this.pointLeft - ground.TILE_WIDTH; // позиция центра слева
-            this.imageLeft = this.pointLeft - (this.imageWidth / 2); //
+            this.pointLeft = this.pointLeft - Background_C.TILE_WIDTH; // позиция центра слева 
+            this.imageLeft = this.pointLeft - (this.imageWidth / 2); //     
+ 
         }
     }
 
-    runRight(ground: any): void {
+    runRight(ground: Background_C): void {
         //  console.log(" class Immortal-> runRight this.imageLeft = " +  this.imageLeft );
         //  console.log(" class Immortal-> runRight this.imageTop = " +  this.imageTop );
 
@@ -159,12 +161,12 @@ class Immortal_C {
             && (this.imageTop % this.imageHeight == 0)) { // округление до наибольшего целого)
             //   console.log(" class Immortal-> runRight ");
             //this.pointLeft = this.pointLeft + this.velocity; // позиция центра слева
-            this.pointLeft = this.pointLeft + ground.TILE_WIDTH; // позиция центра слева
+            this.pointLeft = this.pointLeft + Background_C.TILE_WIDTH; // позиция центра слева
             this.imageLeft = this.pointLeft - (this.imageWidth / 2); //
         }
     }
 
-    run(ground: any): void {
+    run(ground: Background_C): void {
 
         // console.log(" Immortals.run()-> number = " +  this.number + " directionMovement =" + this.directionMovement );
         // 0-стоим, 1-вверх, 2-движение вправо, 3-вниз, 4-влево

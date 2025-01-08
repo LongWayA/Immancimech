@@ -103,46 +103,35 @@ class GameState_C {
   //=============================================================================
   setEndGame(): void {
     this.set_gameState = GameState_C.END_GAME;
+    this.count = 0;
   }
   //=============================================================================
 
   //=============================================================================
   isStartGame(): boolean {
-    if (this.gameState == GameState_C.START_GAME){ 
-      return true;
-    } else {
-      return false;
-    }
+    let isStartGame : boolean = (this.gameState == GameState_C.START_GAME) ? true : false;
+      return isStartGame;
   }
   //=============================================================================
 
   //=============================================================================
   isGoGame(): boolean {
-    if (this.gameState == GameState_C.CONTINUE_GAME){ 
-      return true;
-    } else {
-      return false;
-    }
+    let isGoGame : boolean = (this.gameState == GameState_C.CONTINUE_GAME) ? true : false;
+    return isGoGame;
   }
   //=============================================================================
 
   //=============================================================================
   isPauseGame(): boolean {
-    if (this.gameState == GameState_C.PAUSE_GAME){ 
-      return true;
-    } else {
-      return false;
-    }
+    let isPauseGame : boolean = (this.gameState == GameState_C.PAUSE_GAME) ? true : false;
+    return isPauseGame;
   }
   //=============================================================================
 
   //=============================================================================
   isEndGame(): boolean {
-    if (this.gameState == GameState_C.END_GAME){ 
-      return true;
-    } else {
-      return false;
-    }
+    let isEndGame : boolean = (this.gameState == GameState_C.END_GAME) ? true : false;
+    return isEndGame;
   }
   //=============================================================================
 

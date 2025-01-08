@@ -3,7 +3,7 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_pause.js -> module start');
 class GamePause_C {
-    NAME = "GamePause_C";
+    static NAME = "GamePause_C";
     isOk = "";
     constructor() {
     }

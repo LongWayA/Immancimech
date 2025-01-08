@@ -75,39 +75,39 @@ class Html5CanvasText_C {
     }
     //=============================================================================
     set_fillStyle(_color: string): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).fillStyle = _color;
+        (this.contextCanvas as CanvasRenderingContext2D).fillStyle = _color;
     }
 
     get_fillStyle(): string {
-        return <string>(<CanvasRenderingContext2D>this.contextCanvas).fillStyle;
+        return (this.contextCanvas as CanvasRenderingContext2D).fillStyle as string;
     }
 
     set_strokeStyle(_color: string): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).strokeStyle = _color;
+        (this.contextCanvas as CanvasRenderingContext2D).strokeStyle = _color;
     }
 
     set_lineWidth(_lineWidth: number): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).lineWidth = _lineWidth;
+        (this.contextCanvas as CanvasRenderingContext2D).lineWidth = _lineWidth;
     }
 
     set_font(_font: string): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).font = _font;
+        (this.contextCanvas as CanvasRenderingContext2D).font = _font;
     }
 
     get_font(): string {
-        return (<CanvasRenderingContext2D>this.contextCanvas).font;
+        return (this.contextCanvas as CanvasRenderingContext2D).font;
     }
 
     set_textBaseline(_textBaseline: CanvasTextBaseline): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).textBaseline = _textBaseline;
+        (this.contextCanvas as CanvasRenderingContext2D).textBaseline = _textBaseline;
     }
 
     fillText(_text: string, _left: number, _top: number): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).fillText(_text, _left, _top);
+        (this.contextCanvas as CanvasRenderingContext2D).fillText(_text, _left, _top);
     }
 
     strokeText(_text: string, _left: number, _top: number): void {
-        (<CanvasRenderingContext2D>this.contextCanvas).strokeText(_text, _left, _top);
+        (this.contextCanvas as CanvasRenderingContext2D).strokeText(_text, _left, _top);
     }
 
     //=============================================================================

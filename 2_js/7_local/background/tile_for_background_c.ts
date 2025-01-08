@@ -19,7 +19,7 @@ if (global_R.print_module_start_finish) console.log('tile_for_background_c.js ->
 
 class TileForBackground_C {
 
-  private charToIndex: any;
+  private charToIndex;
  
   public char: string;
 

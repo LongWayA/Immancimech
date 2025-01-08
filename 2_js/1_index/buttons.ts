@@ -20,13 +20,13 @@ class Buttons_C {
  
     public isOk: string = "";
 
-    private elementbuttonStart: any = document.getElementById("buttonStart");
+    private elementbuttonStart: HTMLButtonElement = document.getElementById("buttonStart") as HTMLButtonElement;
   
-    private elementbuttonPause: any = document.getElementById("buttonPause");
+    private elementbuttonPause: HTMLButtonElement = document.getElementById("buttonPause") as HTMLButtonElement;
 
-    private elementbuttonEnd: any = document.getElementById("buttonEnd");
+    private elementbuttonEnd: HTMLButtonElement = document.getElementById("buttonEnd") as HTMLButtonElement;
  
-    public elementbuttonTest: any = document.getElementById("buttonTest");
+    public elementbuttonTest: HTMLButtonElement = document.getElementById("buttonTest") as HTMLButtonElement;
 
     //=============================================================================
  

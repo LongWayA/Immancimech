@@ -11,7 +11,6 @@ let Copyright_AnBr75 = 2024;
 */
 
 import { global_R } from '../1_index/global.js';
-
 if (global_R.print_module_start_finish) console.log('game_go.js -> module start');
 
 import { run_R } from '../moove/run.js';
@@ -20,11 +19,11 @@ import { ai_R } from '../6_ai_control/ai.js';
 import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
 import { mouse_R } from '../5_user_control/mouse.js';
 import { immortals_R } from '../user_avatars/immortals.js';
-import { background_R } from '../local/background/background.js';
+import { background_R } from '../7_local/background/background.js';
 
 class GameContinue_C {
  
-  public NAME: string = "GameContinue_C";
+  public static NAME: string = "GameContinue_C";
   public isOk: string = "";
 
   //=============================================================================
@@ -46,12 +45,23 @@ class GameContinue_C {
   //=============================================================================
   tick(): void {
 
+    // Удивительно, что тут пока нет логики игры. Но именно тут она должна быть.
+    // тут будут не просто вызовы модулей, а игровая логика.
+
+    // Обработка команд игрока. Команды как с клавиатуры так и с мыши.
     userInputKeyboard_R.tick(immortals_R, background_R);
     mouse_R.tick();
 
-    run_R.tick();
-    fight_R.tick();
+    // Обработка команд ai. 
     ai_R.tick();
+
+    // Реализация перемещений
+    run_R.tick();
+
+    //Реализация боев
+    fight_R.tick();
+  
+    // Обновление состояния локации
 
   }
   //============================================================================= 

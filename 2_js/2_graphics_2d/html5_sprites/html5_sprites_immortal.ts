@@ -44,7 +44,7 @@ class Html5SpritesImmortal_C {
     public MAX_COUNT: number = 3;
 
     //
-    public sprites: any[] = new Array(1);
+    public sprites = new Array(1);
 
     //=============================================================================
     constructor() {

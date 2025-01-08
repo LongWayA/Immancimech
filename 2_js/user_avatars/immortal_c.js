@@ -2,6 +2,7 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('immortal_c.js -> module start');
+import { Background_C } from '../7_local/background/background.js';
 class Immortal_C {
     number;
     type;
@@ -42,28 +43,28 @@ class Immortal_C {
     runUp(ground) {
         if ((ground.isMoove(this.imageLeft, this.imageTop - this.velocity) == true)
             && (this.imageLeft % this.imageWidth == 0)) {
-            this.pointTop = this.pointTop - ground.TILE_HEIGHT;
+            this.pointTop = this.pointTop - Background_C.TILE_HEIGHT;
             this.imageTop = this.pointTop - (this.imageHeight / 2);
         }
     }
     runDown(ground) {
         if ((ground.isMoove(this.imageLeft, this.imageTop + this.imageHeight) == true)
             && (this.imageLeft % this.imageWidth == 0)) {
-            this.pointTop = this.pointTop + ground.TILE_HEIGHT;
+            this.pointTop = this.pointTop + Background_C.TILE_HEIGHT;
             this.imageTop = this.pointTop - (this.imageHeight / 2);
         }
     }
     runLeft(ground) {
         if ((ground.isMoove(this.imageLeft - this.velocity, this.imageTop) == true)
             && (this.imageTop % this.imageHeight == 0)) {
-            this.pointLeft = this.pointLeft - ground.TILE_WIDTH;
+            this.pointLeft = this.pointLeft - Background_C.TILE_WIDTH;
             this.imageLeft = this.pointLeft - (this.imageWidth / 2);
         }
     }
     runRight(ground) {
         if ((ground.isMoove(this.imageLeft + this.imageWidth, this.imageTop) == true)
             && (this.imageTop % this.imageHeight == 0)) {
-            this.pointLeft = this.pointLeft + ground.TILE_WIDTH;
+            this.pointLeft = this.pointLeft + Background_C.TILE_WIDTH;
             this.imageLeft = this.pointLeft - (this.imageWidth / 2);
         }
     }
