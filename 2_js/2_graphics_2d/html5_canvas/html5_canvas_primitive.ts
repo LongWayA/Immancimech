@@ -240,12 +240,6 @@ class Html5CanvasPrimitive_C {
     //============================================================================
 } //HTML5_Canvas_primitive
 
-let html5CanvasPrimitive_R = new Html5CanvasPrimitive_C()
-
-html5CanvasPrimitive_R.iniM();
-
-export { html5CanvasPrimitive_R, Html5CanvasPrimitive_C};
+export { Html5CanvasPrimitive_C};
 
 if (global_R.print_module_start_finish) console.log('3_html5_canvas_primitive.js -> module finish');
-
-html5CanvasPrimitive_R.isOk = "OK"; //

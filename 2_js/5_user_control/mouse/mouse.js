@@ -1,8 +1,8 @@
 let Copyright_AnBr75 = 2024;
-import { global_R } from '../1_index/global.js';
+import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('mouse.js -> module start');
-import { html5Canvas_R } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { html5Canvas_R } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { html5CanvasMouseEvent_R } from './html5_canvas_mouse_event.js';
 class Mouse_C {
     static NAME = "Mouse_C";
@@ -51,8 +51,8 @@ class Mouse_C {
     printText(textEvent, offsetX, offsetY, left, top, width, height, X0, Y0) {
         html5Canvas_R.clearRect(left, top, width, height);
         html5Canvas_R.drawRect(left, top, width, height, 1, 'red', 0);
-        html5Canvas_R.drawText(textEvent + ": X = "
-            + offsetX + " Y = " + offsetY, X0, Y0, 'italic 20px sans-serif', 'red', 1);
+        html5Canvas_R.drawText(textEvent + ": x = "
+            + offsetX + " y = " + offsetY, X0, Y0, 'italic 20px sans-serif', 'red', 1);
     }
 }
 let mouse_R = new Mouse_C();

@@ -9,10 +9,7 @@ import { imps_R } from '../7_local/creatures/creatures.js';
 import { fight_R } from '../fight/fight.js';
 import { frames_R } from '../2_graphics_2d/frames/frames.js';
 import { gameState_R } from '../4_game_state/game_state.js';
-import { html5CanvasText_R } from '../2_graphics_2d/html5_canvas/html5_canvas_text.js';
-import { html5CanvasPrimitive_R } from '../2_graphics_2d/html5_canvas/html5_canvas_primitive.js';
-import { html5CanvasImage_R } from '../2_graphics_2d/html5_canvas/html5_canvas_image.js';
-import { html5CanvasMouseEvent_R } from '../5_user_control/html5_canvas_mouse_event.js';
+import { html5CanvasMouseEvent_R } from '../5_user_control/mouse/html5_canvas_mouse_event.js';
 import { html5Canvas_R } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { html5SpritesCollection_R } from '../2_graphics_2d/html5_sprites/html5_sprites_collection.js';
 import { html5SpritesImmortal_R } from '../2_graphics_2d/html5_sprites/html5_sprites_immortal.js';
@@ -28,7 +25,7 @@ import { Immortal_C_isOk } from '../user_avatars/immortal_c.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 import { userInputKeyboardEvent_R } from '../5_user_control/keyboard_event_o.js';
 import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
-import { mouse_R } from '../5_user_control/mouse.js';
+import { mouse_R } from '../5_user_control/mouse/mouse.js';
 class Test_C {
     static NAME = "test_R";
     isOk = "";
@@ -63,13 +60,13 @@ class Test_C {
         if (global_R.isOk != "OK") {
             console.log("test.js -> global.js NOT OK!");
         }
-        if (html5CanvasText_R.isOk != "OK") {
+        if (html5Canvas_R.html5CanvasText_R.isOk != "OK") {
             console.log("test.js -> 2_html5_canvas_text.js NOT OK!");
         }
-        if (html5CanvasPrimitive_R.isOk != "OK") {
+        if (html5Canvas_R.html5CanvasPrimitive_R.isOk != "OK") {
             console.log("test.js -> 3_html5_canvas_primitive.js NOT OK!");
         }
-        if (html5CanvasImage_R.isOk != "OK") {
+        if (html5Canvas_R.html5CanvasImage_R.isOk != "OK") {
             console.log("test.js -> 4_html5_canvas_image.js NOT OK!");
         }
         if (html5CanvasMouseEvent_R.isOk != "OK") {

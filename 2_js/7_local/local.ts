@@ -11,8 +11,9 @@ let Copyright_AnBr75 = 2024;
 */
 
 import { global_R } from '../1_index/global.js';
-
 if (global_R.print_module_start_finish) console.log('local_c.js -> module start');
+
+import { background_R } from '../7_local/background/background.js';
 
 class Local_C {
 
@@ -30,6 +31,8 @@ class Local_C {
     //=============================================================================
     //=============================================================================
     startM(): void {
+        background_R.startM();
+        
     }
     //=============================================================================
     //=============================================================================

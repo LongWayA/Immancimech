@@ -51,9 +51,6 @@ class Html5CanvasImage_C {
         }
     }
 }
-let html5CanvasImage_R = new Html5CanvasImage_C();
-html5CanvasImage_R.iniM();
-export { html5CanvasImage_R, Html5CanvasImage_C };
+export { Html5CanvasImage_C };
 if (global_R.print_module_start_finish)
     console.log('4_html5_canvas_image.js -> module finish');
-html5CanvasImage_R.isOk = "OK";

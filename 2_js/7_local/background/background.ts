@@ -16,7 +16,7 @@ import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('background.js -> module start');
 
 import { html5Canvas_R, Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
-import { html5Sprites_R } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
+import { html5Sprites_R, Html5Sprites_C } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
 import { items_R } from '../items/items.js';
 
@@ -29,8 +29,8 @@ class Background_C {
   
   public static NAME: string = "Background_C";
   public isOk: string = "";
-  private MAP_TILE_COUNT_WIDTH: number = 24;// считаем вместе с 0
-  private MAP_TILE_COUNT_HEIGHT: number = 9;
+  private static MAP_TILE_COUNT_WIDTH: number = 24;// считаем вместе с 0
+  private static MAP_TILE_COUNT_HEIGHT: number = 9;
 
   public static TILE_WIDTH: number = 50;
   public static TILE_HEIGHT: number = 50;
@@ -41,7 +41,7 @@ class Background_C {
   //2 - пустое пространство, 3 - непроходимый камень, 4 - лестница
 
   //************************************************
-  private savedGround: string =
+  private static savedGround: string =
     `111111111111111111111111
 122222222222222222222221
 133334333333333343333331
@@ -99,14 +99,14 @@ class Background_C {
 
     // так как мы бежим по х т.е. по горизонтали когда отрисовываем карту, то первый массив это по у т.е. по вертикали
     // это вертикаль
-    this.Map_2d = new Array(this.MAP_TILE_COUNT_HEIGHT);
+    this.Map_2d = new Array(Background_C.MAP_TILE_COUNT_HEIGHT);
 
     // 
     for (let y = 0; y < this.Map_2d.length; y++) {
-      this.Map_2d[y] = new Array(this.MAP_TILE_COUNT_WIDTH);
-      for (let x = 0; x < this.MAP_TILE_COUNT_WIDTH; x++) {
+      this.Map_2d[y] = new Array(Background_C.MAP_TILE_COUNT_WIDTH);
+      for (let x = 0; x < Background_C.MAP_TILE_COUNT_WIDTH; x++) {
         number = number + 1;
-        this.Map_2d[y][x] = new TileForBackground_C(this.numToChar(0), number, width, height, html5Sprites_R.GROUNDS);
+        this.Map_2d[y][x] = new TileForBackground_C(this.numToChar(0), number, width, height, Html5Sprites_C.GROUNDS);
       }
     }
   }
@@ -121,7 +121,7 @@ class Background_C {
   print(): void {
     let line = "";
     for (let y = 0; y < this.Map_2d.length; y++) {
-      for (let x = 0; x < this.MAP_TILE_COUNT_WIDTH; x++) {
+      for (let x = 0; x < Background_C.MAP_TILE_COUNT_WIDTH; x++) {
         line = line + this.Map_2d[y][x].char + "(" + y + "," + x + ") ";
       }
       console.log("Sector-> " + line);
@@ -132,7 +132,7 @@ class Background_C {
   //=============================================================================
   drow(): void {
     for (let y = 0; y < this.Map_2d.length; y++) {
-      for (let x = 0; x < this.MAP_TILE_COUNT_WIDTH; x++) {
+      for (let x = 0; x < Background_C.MAP_TILE_COUNT_WIDTH; x++) {
         html5Sprites_R.drowSprite(this.Map_2d[y][x].type, this.Map_2d[y][x].index,
           x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile,
           this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile);
@@ -149,8 +149,8 @@ class Background_C {
   loadMapFromScripts(): void {
     let pozChar = 0;
     for (let y = 0; y < this.Map_2d.length; y++) {
-      for (let x = 0; x < this.MAP_TILE_COUNT_WIDTH; x++) {
-        this.Map_2d[y][x].setCharTypeIndex(this.savedGround[pozChar], html5Sprites_R.GROUNDS);
+      for (let x = 0; x < Background_C.MAP_TILE_COUNT_WIDTH; x++) {
+        this.Map_2d[y][x].setCharTypeIndex(Background_C.savedGround[pozChar], Html5Sprites_C.GROUNDS);
         pozChar = pozChar + 1;
       }
       pozChar = pozChar + 1;
@@ -163,7 +163,7 @@ class Background_C {
     let numToCharA = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
       'a', 'b', 'c', 'd', 'e', 'f'];
 
-    let char = numToCharA[num];
+    let char: string = numToCharA[num];
 
     return char;
   }
@@ -171,16 +171,29 @@ class Background_C {
   //=============================================================================
   charToNum(char: string): number {
 
-    // это тоже объект, только поля в виде строк. На само деле они всегда строки только неявно заданные
-    let charToNumS = {
-      '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
-      '7': 7, '8': 8, '9': 9,
-      'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15
-    };
+    let map = new Map();
 
-    let num: number = charToNumS[char];
+    map.set('0', 0); map.set('1', 1); map.set('2', 2); map.set('3', 3); map.set('4', 4);
+    map.set('5', 5); map.set('6', 6); map.set('7', 7); map.set('8', 8); map.set('9', 9);
 
-    return num;
+    map.set('a', 10); map.set('b', 11); map.set('c', 12);
+    map.set('d', 13); map.set('e', 14); map.set('f', 15);
+
+    let charToNum: number = map.get(char);
+    return charToNum;
+    
+    
+    // это тоже объект, только поля в виде строк. На самом деле они всегда строки только неявно заданные
+    // let charToNumS = {
+    //   '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
+    //   '7': 7, '8': 8, '9': 9,
+    //   'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15
+    // };
+    // ts не понимает, что это не массив, а доступ к объекту.
+    // Поэтому переписал через мапу.
+    // let num: number = charToNumS[char];
+    //return num;
+
   }
   //=============================================================================
 }; //

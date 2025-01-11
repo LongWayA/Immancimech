@@ -16,7 +16,7 @@ if (global_R.print_module_start_finish) console.log('drow_game_go.js -> module s
 
 import { timer_R } from '../3_loop/timer.js';
 import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
-import { mouse_R } from '../5_user_control/mouse.js';
+import { mouse_R } from '../5_user_control/mouse/mouse.js';
 import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
 import { frames_R } from './frames/frames.js';
 import { background_R } from '../7_local/background/background.js';

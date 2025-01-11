@@ -3,7 +3,7 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('immortals.js -> module start');
 import { html5Canvas_R, Html5Canvas_C } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
-import { html5Sprites_R } from '../2_graphics_2d/html5_sprites/html5_sprites.js';
+import { html5Sprites_R, Html5Sprites_C } from '../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { Immortal_C } from './immortal_c.js';
 class Immortals_C {
     NAME = "Immortals_C";
@@ -12,9 +12,9 @@ class Immortals_C {
     constructor() {
     }
     iniM() {
-        let type = html5Sprites_R.CREATURES;
-        let index = html5Sprites_R.CREATURES_MINOTAUR;
-        let index2 = html5Sprites_R.CREATURES_DRAGON;
+        let type = Html5Sprites_C.CREATURES;
+        let index = Html5Sprites_C.CREATURES_MINOTAUR;
+        let index2 = Html5Sprites_C.CREATURES_DRAGON;
         this.List[1] = new Immortal_C(1, type, index, 450, 150, 50, 50, 100, 100, 0, 2);
         this.List[2] = new Immortal_C(2, type, index2, 200, 250, 50, 50, 100, 100, 0, 1);
     }

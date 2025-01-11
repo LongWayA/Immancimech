@@ -33,71 +33,71 @@ import { html5SpritesCollection_R, Html5SpritesCollection_C } from './html5_spri
 //
 class Html5Sprites_C {
 
-  public NAME: string = "html5Sprites_R";
+  public static NAME: string = "html5Sprites_R";
   public isOk: string = " ";
 
   public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
 
   public out_html5SpritesCollection_R: Html5SpritesCollection_C = html5SpritesCollection_R;
 
-  public REZERV: number = html5SpritesCollection_R.REZERV;
-  public ADVENTURES: number = html5SpritesCollection_R.ADVENTURES;
-  public GROUNDS: number = html5SpritesCollection_R.GROUNDS;
-  public ITEMS: number = html5SpritesCollection_R.ITEMS;
-  public CREATURES: number = html5SpritesCollection_R.CREATURES;
+  public static REZERV: number = Html5SpritesCollection_C.REZERV;
+  public static ADVENTURES: number = Html5SpritesCollection_C.ADVENTURES;
+  public static GROUNDS: number = Html5SpritesCollection_C.GROUNDS;
+  public static ITEMS: number = Html5SpritesCollection_C.ITEMS;
+  public static CREATURES: number = Html5SpritesCollection_C.CREATURES;
 
   //GROUNDS
   // так кодируются тайлы для слоя земли
 
-  public GROUND_NOTHING: number = html5SpritesCollection_R.GROUND_NOTHING;      // пустая область
-  public GROUND_STONE: number = html5SpritesCollection_R.GROUND_STONE;        // непробиваемый камень
-  public GROUND_SEND: number = html5SpritesCollection_R.GROUND_SEND;         // копаемый песок
-  public GROUND_FLOOR: number = html5SpritesCollection_R.GROUND_FLOOR;        // проходимый пол
-  public GROUND_WALL: number = html5SpritesCollection_R.GROUND_WALL;         // стена подземелья
-  public GROUND_WALL_FORTIFED: number = html5SpritesCollection_R.GROUND_WALL_FORTIFED;// укрепленная стена подземелья
-  public GROUND_VEIN_GOLD: number = html5SpritesCollection_R.GROUND_VEIN_GOLD;    // золотая жила
-  public GROUND_VEIN_GEM: number = html5SpritesCollection_R.GROUND_VEIN_GEM;     // драгоценный камень жила
+  public static GROUND_NOTHING: number = Html5SpritesCollection_C.GROUND_NOTHING;      // пустая область
+  public static GROUND_STONE: number = Html5SpritesCollection_C.GROUND_STONE;        // непробиваемый камень
+  public static GROUND_SEND: number = Html5SpritesCollection_C.GROUND_SEND;         // копаемый песок
+  public static GROUND_FLOOR: number = Html5SpritesCollection_C.GROUND_FLOOR;        // проходимый пол
+  public static GROUND_WALL: number = Html5SpritesCollection_C.GROUND_WALL;         // стена подземелья
+  public static GROUND_WALL_FORTIFED: number = Html5SpritesCollection_C.GROUND_WALL_FORTIFED;// укрепленная стена подземелья
+  public static GROUND_VEIN_GOLD: number = Html5SpritesCollection_C.GROUND_VEIN_GOLD;    // золотая жила
+  public static GROUND_VEIN_GEM: number = Html5SpritesCollection_C.GROUND_VEIN_GEM;     // драгоценный камень жила
 
   //ITEMS
   // так кодируются тайлы для слоя предметов
-  public ITEMS_NOTHING: number = html5SpritesCollection_R.ITEMS_NOTHING;
-  public ITEMS_RING: number = html5SpritesCollection_R.ITEMS_RING;
-  public ITEMS_SWORD_1: number = html5SpritesCollection_R.ITEMS_SWORD_1;
-  public ITEMS_SWORD_2: number = html5SpritesCollection_R.ITEMS_SWORD_2;
-  public ITEMS_SWORD_3: number = html5SpritesCollection_R.ITEMS_SWORD_3;
-  public ITEMS_SHIELD: number = html5SpritesCollection_R.ITEMS_SHIELD;
-  public ITEMS_ARMOR_1: number = html5SpritesCollection_R.ITEMS_ARMOR_1;
-  public ITEMS_ARMOR_2: number = html5SpritesCollection_R.ITEMS_ARMOR_2;
-  public ITEMS_ARMOR_3: number = html5SpritesCollection_R.ITEMS_ARMOR_3;
-  public ITEMS_ARMOR_4: number = html5SpritesCollection_R.ITEMS_ARMOR_4;
-  public ITEMS_ARMOR_5: number = html5SpritesCollection_R.ITEMS_ARMOR_5;
-  public ITEMS_ARMOR_6: number = html5SpritesCollection_R.ITEMS_ARMOR_6;
-  public ITEMS_FLOWER_1: number = html5SpritesCollection_R.ITEMS_FLOWER_1;
-  public ITEMS_FLOWER_2: number = html5SpritesCollection_R.ITEMS_FLOWER_2;
-  public ITEMS_FLOWER_3: number = html5SpritesCollection_R.ITEMS_FLOWER_3;
-  public ITEMS_FLOWER_4: number = html5SpritesCollection_R.ITEMS_FLOWER_4;
-  public ITEMS_FLOWER_5: number = html5SpritesCollection_R.ITEMS_FLOWER_5;
-  public ITEMS_FLOWER_6: number = html5SpritesCollection_R.ITEMS_FLOWER_6;
-  public ITEMS_POTION: number = html5SpritesCollection_R.ITEMS_POTION;
-  public ITEMS_DOOR: number = html5SpritesCollection_R.ITEMS_DOOR;
+  public static ITEMS_NOTHING: number = Html5SpritesCollection_C.ITEMS_NOTHING;
+  public static ITEMS_RING: number = Html5SpritesCollection_C.ITEMS_RING;
+  public static ITEMS_SWORD_1: number = Html5SpritesCollection_C.ITEMS_SWORD_1;
+  public static ITEMS_SWORD_2: number = Html5SpritesCollection_C.ITEMS_SWORD_2;
+  public static ITEMS_SWORD_3: number = Html5SpritesCollection_C.ITEMS_SWORD_3;
+  public static ITEMS_SHIELD: number = Html5SpritesCollection_C.ITEMS_SHIELD;
+  public static ITEMS_ARMOR_1: number = Html5SpritesCollection_C.ITEMS_ARMOR_1;
+  public static ITEMS_ARMOR_2: number = Html5SpritesCollection_C.ITEMS_ARMOR_2;
+  public static ITEMS_ARMOR_3: number = Html5SpritesCollection_C.ITEMS_ARMOR_3;
+  public static ITEMS_ARMOR_4: number = Html5SpritesCollection_C.ITEMS_ARMOR_4;
+  public static ITEMS_ARMOR_5: number = Html5SpritesCollection_C.ITEMS_ARMOR_5;
+  public static ITEMS_ARMOR_6: number = Html5SpritesCollection_C.ITEMS_ARMOR_6;
+  public static ITEMS_FLOWER_1: number = Html5SpritesCollection_C.ITEMS_FLOWER_1;
+  public static ITEMS_FLOWER_2: number = Html5SpritesCollection_C.ITEMS_FLOWER_2;
+  public static ITEMS_FLOWER_3: number = Html5SpritesCollection_C.ITEMS_FLOWER_3;
+  public static ITEMS_FLOWER_4: number = Html5SpritesCollection_C.ITEMS_FLOWER_4;
+  public static ITEMS_FLOWER_5: number = Html5SpritesCollection_C.ITEMS_FLOWER_5;
+  public static ITEMS_FLOWER_6: number = Html5SpritesCollection_C.ITEMS_FLOWER_6;
+  public static ITEMS_POTION: number = Html5SpritesCollection_C.ITEMS_POTION;
+  public static ITEMS_DOOR: number = Html5SpritesCollection_C.ITEMS_DOOR;
 
   //CREATURES
   // так кодируются тайлы для слоя монстров
-  public CREATURES_NOTHING: number = html5SpritesCollection_R.CREATURES_NOTHING;
-  public CREATURES_GHOST: number = html5SpritesCollection_R.CREATURES_GHOST;
-  public CREATURES_DRAGON: number = html5SpritesCollection_R.CREATURES_DRAGON;
-  public CREATURES_GOBLIN: number = html5SpritesCollection_R.CREATURES_GOBLIN;
-  public CREATURES_HARPY: number = html5SpritesCollection_R.CREATURES_HARPY;
-  public CREATURES_DRUID: number = html5SpritesCollection_R.CREATURES_DRUID;
-  public CREATURES_VARNEY: number = html5SpritesCollection_R.CREATURES_VARNEY;
-  public CREATURES_LICH: number = html5SpritesCollection_R.CREATURES_LICH;
-  public CREATURES_MEDUSA: number = html5SpritesCollection_R.CREATURES_MEDUSA;
-  public CREATURES_MINOTAUR: number = html5SpritesCollection_R.CREATURES_MINOTAUR;
-  public CREATURES_GENIE: number = html5SpritesCollection_R.CREATURES_GENIE;
-  public CREATURES_FIGHTER: number = html5SpritesCollection_R.CREATURES_FIGHTER;
-  public CREATURES_GARGOYLE: number = html5SpritesCollection_R.CREATURES_GARGOYLE;
-  public CREATURES_SKELETON: number = html5SpritesCollection_R.CREATURES_SKELETON;
-  public CREATURES_TITAN: number = html5SpritesCollection_R.CREATURES_TITAN;
+  public static CREATURES_NOTHING: number = Html5SpritesCollection_C.CREATURES_NOTHING;
+  public static CREATURES_GHOST: number = Html5SpritesCollection_C.CREATURES_GHOST;
+  public static CREATURES_DRAGON: number = Html5SpritesCollection_C.CREATURES_DRAGON;
+  public static CREATURES_GOBLIN: number = Html5SpritesCollection_C.CREATURES_GOBLIN;
+  public static CREATURES_HARPY: number = Html5SpritesCollection_C.CREATURES_HARPY;
+  public static CREATURES_DRUID: number = Html5SpritesCollection_C.CREATURES_DRUID;
+  public static CREATURES_VARNEY: number = Html5SpritesCollection_C.CREATURES_VARNEY;
+  public static CREATURES_LICH: number = Html5SpritesCollection_C.CREATURES_LICH;
+  public static CREATURES_MEDUSA: number = Html5SpritesCollection_C.CREATURES_MEDUSA;
+  public static CREATURES_MINOTAUR: number = Html5SpritesCollection_C.CREATURES_MINOTAUR;
+  public static CREATURES_GENIE: number = Html5SpritesCollection_C.CREATURES_GENIE;
+  public static CREATURES_FIGHTER: number = Html5SpritesCollection_C.CREATURES_FIGHTER;
+  public static CREATURES_GARGOYLE: number = Html5SpritesCollection_C.CREATURES_GARGOYLE;
+  public static CREATURES_SKELETON: number = Html5SpritesCollection_C.CREATURES_SKELETON;
+  public static CREATURES_TITAN: number = Html5SpritesCollection_C.CREATURES_TITAN;
 
    //=============================================================================
    constructor() {

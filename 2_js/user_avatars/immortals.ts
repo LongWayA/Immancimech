@@ -42,9 +42,9 @@ class Immortals_C {
         */
         //_point_left, _point_top, _image_width, _image_height, _point_view_radius, _point_view_angle
 
-        let type = html5Sprites_R.CREATURES;
-        let index = html5Sprites_R.CREATURES_MINOTAUR;
-        let index2 = html5Sprites_R.CREATURES_DRAGON;
+        let type = Html5Sprites_C.CREATURES;
+        let index = Html5Sprites_C.CREATURES_MINOTAUR;
+        let index2 = Html5Sprites_C.CREATURES_DRAGON;
 
         //console.log(" this.ini-> new Immortal_C ");
         this.List[1] = new Immortal_C(1, type, index, 450, 150, 50, 50, 100, 100, 0, 2);//4

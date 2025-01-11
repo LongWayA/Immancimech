@@ -20,9 +20,9 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('6_html5_canvas.js -> module start');
 
-import { html5CanvasText_R, Html5CanvasText_C } from './html5_canvas_text.js';
-import { html5CanvasPrimitive_R } from './html5_canvas_primitive.js';
-import { html5CanvasImage_R } from './html5_canvas_image.js';
+import { Html5CanvasText_C } from './html5_canvas_text.js';
+import { Html5CanvasPrimitive_C } from './html5_canvas_primitive.js';
+import { Html5CanvasImage_C } from './html5_canvas_image.js';
 // 
 /**
  * Description placeholder
@@ -31,6 +31,10 @@ import { html5CanvasImage_R } from './html5_canvas_image.js';
  */
 class Html5Canvas_C {
 
+    public  html5CanvasText_R = new Html5CanvasText_C();
+    public  html5CanvasPrimitive_R = new Html5CanvasPrimitive_C()
+    public  html5CanvasImage_R = new Html5CanvasImage_C();
+ 
     public static NAME: string = "html5Canvas_R";
     public isOk: string = "";
 
@@ -69,6 +73,12 @@ class Html5Canvas_C {
     iniM(): void {
         // this.offscreenCanvas = new OffscreenCanvas(1200, 730);//HTMLCanvasElement CanvasRenderingContext2D
         // this.contextOffscreenCanvas = this.offscreenCanvas.getContext('2d');
+        this.html5CanvasText_R.iniM();
+        this.html5CanvasText_R.isOk = "OK"; //
+        this.html5CanvasPrimitive_R.iniM();
+        this.html5CanvasPrimitive_R.isOk = "OK"; //
+        this.html5CanvasImage_R.iniM();
+        this.html5CanvasImage_R.isOk = "OK"; //
     }
     //=============================================================================
     //=============================================================================
@@ -77,9 +87,9 @@ class Html5Canvas_C {
         this.contextCanvas = contextCanvas;
         this.widthCanvas = this.get_widthCanvas();
         this.heightCanvas = this.get_heightCanvas();
-        html5CanvasText_R.startM(idCanvas, contextCanvas);
-        html5CanvasPrimitive_R.startM(idCanvas, contextCanvas);
-        html5CanvasImage_R.startM(idCanvas, contextCanvas);
+        this.html5CanvasText_R.startM(idCanvas, contextCanvas);
+        this.html5CanvasPrimitive_R.startM(idCanvas, contextCanvas);
+        this.html5CanvasImage_R.startM(idCanvas, contextCanvas);
     }
     //=============================================================================
 
@@ -114,7 +124,7 @@ class Html5Canvas_C {
     // Пример задаем черный цвет
     // this.setColor(this.BLACK);
     setColor(color: string): void {
-        html5CanvasText_R.setColor(color);
+        this.html5CanvasText_R.setColor(color);
     }
     //============================================================================
     //============================================================================
@@ -125,7 +135,7 @@ class Html5Canvas_C {
     // Пример задаем italic 15pt Arial
     // this.setFont(this.ITALIC_15PT_ARIAL);
     setFont(font: string): void {
-        html5CanvasText_R.setFont(font);
+        this.html5CanvasText_R.setFont(font);
     }
     //============================================================================
     //============================================================================
@@ -143,7 +153,7 @@ class Html5Canvas_C {
     // this.drawText ("Это тестовый вывод", 100, 200, this.ITALIC_20PX_SANS_SERIF,
     // this.WHITE, 1);
     drawText(text: string, left: number, top: number, font: string, color: string, fillYes: number): void {
-        html5CanvasText_R.drawText(text, left, top, font, color, fillYes);
+        this.html5CanvasText_R.drawText(text, left, top, font, color, fillYes);
     }
     //============================================================================
     //=============================================================================  
@@ -152,7 +162,7 @@ class Html5Canvas_C {
     // _left, _top - координаты левого верхнего угла прямоугольника
     // _width, _height - ширина и высота очищаемого прямоугольника
     clearRect(left: number, top: number, width: number, height: number): void {
-        html5CanvasPrimitive_R.clearRect(left, top, width, height);
+        this.html5CanvasPrimitive_R.clearRect(left, top, width, height);
     }
     //============================================================================
     //============================================================================
@@ -164,7 +174,7 @@ class Html5Canvas_C {
     // _fillYes - закрашиваем ли прямоугольник
     drawRect(left: number, top: number, width: number, height: number,
         lineWidth: number, color: string, fillYes: number): void {
-        html5CanvasPrimitive_R.drawRect(left, top, width, height, lineWidth, color, fillYes);
+        this.html5CanvasPrimitive_R.drawRect(left, top, width, height, lineWidth, color, fillYes);
     }
     //============================================================================   
     //============================================================================
@@ -177,13 +187,13 @@ class Html5Canvas_C {
     drawCircle(centerX: number, centerY: number, radius: number, sAngle: number,
         eAngle: number, clockwise: boolean, lineWidth: number, color: string): void {
         //console.log("this.drawCircle -> _centerX = " + _centerX);
-        html5CanvasPrimitive_R.drawCircle(centerX, centerY, radius, sAngle, eAngle, clockwise, lineWidth, color);
+        this.html5CanvasPrimitive_R.drawCircle(centerX, centerY, radius, sAngle, eAngle, clockwise, lineWidth, color);
     }
     //============================================================================   
     //============================================================================
     drawCreaturesCircle(centerX: number, centerY: number, radius: number,
         angle: number, lineWidth: number, color: string): void {
-        html5CanvasPrimitive_R.drawCreaturesCircle(centerX, centerY, radius, angle, lineWidth, color);
+        this.html5CanvasPrimitive_R.drawCreaturesCircle(centerX, centerY, radius, angle, lineWidth, color);
     }
     //============================================================================
     //============================================================================
@@ -200,7 +210,7 @@ class Html5Canvas_C {
     // _mirror - следует ли отзеркалить картинку
     drawImage(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number,
         width: number, height: number, mirror: boolean): void {
-        html5CanvasImage_R.drawImage(image, left, top, width, height, mirror);
+            this.html5CanvasImage_R.drawImage(image, left, top, width, height, mirror);
     }
     //============================================================================   
 } //HTML5_Canvas

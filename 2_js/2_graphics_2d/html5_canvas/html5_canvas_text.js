@@ -112,9 +112,6 @@ class Html5CanvasText_C {
         this.set_font(font_r);
     }
 }
-let html5CanvasText_R = new Html5CanvasText_C();
-html5CanvasText_R.iniM();
-export { html5CanvasText_R, Html5CanvasText_C };
+export { Html5CanvasText_C };
 if (global_R.print_module_start_finish)
     console.log('2_html5_canvas_text.js -> module finish');
-html5CanvasText_R.isOk = "OK";
