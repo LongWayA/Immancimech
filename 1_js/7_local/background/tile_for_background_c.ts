@@ -20,29 +20,20 @@ if (global_R.print_module_start_finish) console.log('tile_for_background_c.js ->
 class TileForBackground_C {
 
   private charToIndex;
- 
   public char: string;
-
   private number: number;
-
   public type: number;
-
   public index: number;
-
   public heightTile: number;
- 
   public widthTile: number;
-
   private immortals: number;
-
   private creatures: number;
- 
   private items: number;
 
   constructor(char: string, number: number, widthTile: number,
     heightTile: number, type: number) {
 
-    this.charToIndex = { '1': 4, '2': 3, '3': 5, '4': 7 };
+    this.charToIndex = {'1': 4, '2': 3, '3': 5, '4': 7};
     this.char = char; //  кодировка тайла в виде буквы: 0 - не задано, 1 - конец карты, 
     //2 - пустое пространство, 3 - непроходимый камень, 4 - лестница
     this.number = number; // номер тайла на карте

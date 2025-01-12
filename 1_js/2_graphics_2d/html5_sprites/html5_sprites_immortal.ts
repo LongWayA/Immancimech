@@ -39,7 +39,7 @@ class Html5SpritesImmortal_C {
     public NAME: string = "html5SpritesImmortal_R";
     public isOk: string = " ";
     public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
-    public PATH_TO_IMAGES: string = "4_resource/images/immortals_img/";
+    public PATH_TO_IMAGES: string = "3_resource/images/immortals_img/";
 
     public MAX_COUNT: number = 3;
 

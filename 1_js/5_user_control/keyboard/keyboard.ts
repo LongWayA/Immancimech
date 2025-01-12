@@ -18,16 +18,16 @@ let Copyright_AnBr75 = 2024;
 
 //alert("keyboard.js module start");
 
-import { global_R } from '../1_index/global.js';
+import { global_R } from '../../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('keyboard.js -> module start');
 
 //==============================================================================
 
-import { html5Canvas_R } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { html5Canvas_R } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { userInputKeyboardEvent_R } from './keyboard_event_o.js';
-import { background_R, Background_C } from '../7_local/background/background.js';
-import { immortals_R, Immortals_C } from '../user_avatars/immortals.js';
+import { background_R, Background_C } from '../../7_local/background/background.js';
+import { immortals_R, Immortals_C } from '../../user_avatars/immortals.js';
 
 class UserInputKeyboard_C {
 

@@ -10,7 +10,7 @@ let Copyright_AnBr75 = 2024;
 * НАЗНАЧЕНИЕ
 */
 
-import { global_R } from '../1_index/global.js';
+import { global_R } from './global.js';
 if (global_R.print_module_start_finish) console.log('buttons.js ->module start');
 
 //

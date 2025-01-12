@@ -16,7 +16,7 @@ if (global_R.print_module_start_finish) console.log('game_go.js -> module start'
 import { run_R } from '../moove/run.js';
 import { fight_R } from '../fight/fight.js';
 import { ai_R } from '../6_ai_control/ai.js';
-import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
+import { userInputKeyboard_R } from '../5_user_control/keyboard/keyboard.js';
 import { mouse_R } from '../5_user_control/mouse/mouse.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 import { background_R } from '../7_local/background/background.js';

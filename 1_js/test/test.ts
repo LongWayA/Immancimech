@@ -70,8 +70,8 @@ import { Immortal_C, Immortal_C_isOk } from '../user_avatars/immortal_c.js';
 import { immortals_R } from '../user_avatars/immortals.js';
 
 //user_control
-import { userInputKeyboardEvent_R } from '../5_user_control/keyboard_event_o.js';
-import { userInputKeyboard_R } from '../5_user_control/keyboard.js';
+import { userInputKeyboardEvent_R } from '../5_user_control/keyboard/keyboard_event_o.js';
+import { userInputKeyboard_R } from '../5_user_control/keyboard/keyboard.js';
 import { mouse_R } from '../5_user_control/mouse/mouse.js';
 
 class Test_C {

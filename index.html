@@ -6,20 +6,20 @@
     <title> Immancimech </title>
     <!-- Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved. -->
     <!-- Last modified -24.02.2024-21.07.2024 -04.08.2024 -->
-    <link rel='stylesheet' href='3_css/immancimech.css' />
-    <link rel="icon" type="image/x-icon" href='4_resource/favicon/favicon.ico'>
+    <link rel='stylesheet' href='2_css/immancimech.css' />
+    <link rel="icon" type="image/x-icon" href='3_resource/favicon/favicon.ico'>
 </head>
 
 <body>
 
-    <h2 class="w"> <img src="4_resource/images/creatures/mons_1.png" alt="g" title="Игра в разработке">
+    <h2 class="w"> <img src="3_resource/images/creatures/mons_1.png" alt="g" title="Игра в разработке">
         Immancimech(Immortal Ancient Mechanism) [in development]
-        <img src="4_resource/images/creatures/mons_1.png" alt="g">
+        <img src="3_resource/images/creatures/mons_1.png" alt="g">
     </h2>
 
     <!-- дата в виде  The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" 
         where: YYYY indicates the year. MM indicates the month. DD indicates the day.-->
-    <h4 class="w"> Last update <time datetime="2025-01-11">11.01m.25</time> </h4>
+    <h4 class="w"> Last update <time datetime="2025-01-12">12.01m.25</time> </h4>
 
     <!--The game canvas-1600-800 -->
     <canvas id='game-canvas' width='1200' height='730'>
@@ -44,11 +44,11 @@
         //console.log(navigator.userAgent)
         // если включен тестовый режим то печатаем старт и финиш модуля. так для всех модулей.
         // благодаря этому видим очередность прогонки модулей.
-        import { global_R } from './2_js/1_index/global.js';
+        import { global_R } from './1_js/1_index/global.js';
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module start');
 
         // 
-        import { Index_R } from './2_js/1_index/index.js';
+        import { Index_R } from './1_js/1_index/index.js';
 
         // "2d" создаем объекта CanvasRenderingContext2D,
         //  представляющий двумерный контекст.

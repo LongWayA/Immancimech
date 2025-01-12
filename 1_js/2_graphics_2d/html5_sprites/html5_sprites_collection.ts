@@ -36,7 +36,7 @@ class Html5SpritesCollection_C {
  
     public static NAME: string = "Html5SpritesCollection_C";
     public isOk: string = " ";
-    public static PATH_TO_IMAGES: string = "4_resource/images";
+    public static PATH_TO_IMAGES: string = "3_resource/images";
     public static REZERV: number = 0;
     public static ADVENTURES: number = 1;
     public static GROUNDS: number = 2;

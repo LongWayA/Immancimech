@@ -18,7 +18,7 @@ let Copyright_AnBr75 = 2024;
 
 //alert("keyboard.js module start");
 
-import { global_R } from '../1_index/global.js';
+import { global_R } from '../../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('keyboard.js -> module start');
 
@@ -83,7 +83,7 @@ let userInputKeyboardEvent_R = {
     // во время нажатия клавиши вызывается эта функция
     // на нажатие реагируем один раз. один раз записываем какую кнопку нажали
     //==============================================================================
-    keyDownE(event): void {
+    keyDownE(event: KeyboardEvent): void {
 
         //   console.log("keyboard.js ->keyDownU  _event.key = " + _event.key);
         //   console.log("keyboard.js ->keyDownU  _event.code = " + _event.code);
@@ -108,7 +108,7 @@ let userInputKeyboardEvent_R = {
 
     // во время отпускания клавиши вызывается эта функция
     //==============================================================================
-    keyUpE(event): void {
+    keyUpE(event: KeyboardEvent): void {
 
         if (userInputKeyboardEvent_R.eventCodeOneDown == 1) {
             userInputKeyboardEvent_R.eventCodeOneDown = 0; //

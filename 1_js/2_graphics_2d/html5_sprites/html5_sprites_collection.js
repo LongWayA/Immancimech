@@ -6,7 +6,7 @@ import { Sprite_С } from './sprite_c.js';
 class Html5SpritesCollection_C {
     static NAME = "Html5SpritesCollection_C";
     isOk = " ";
-    static PATH_TO_IMAGES = "4_resource/images";
+    static PATH_TO_IMAGES = "3_resource/images";
     static REZERV = 0;
     static ADVENTURES = 1;
     static GROUNDS = 2;
