@@ -15,7 +15,7 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('game_state.js -> module start');
 
 // в разных состояниях(старт, пауза, ..) игры задаем разный fps
-import { timer_R, Timer_C } from '../3_loop/timer.js';
+import { timer_R, Timer_C } from '../1_index/timer.js';
 
 import { gameStart_R, GameStart_C } from './game_start.js';
 import { gameContinue_R, GameContinue_C } from './game_continue.js';

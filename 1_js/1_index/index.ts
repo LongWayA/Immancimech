@@ -1,10 +1,10 @@
 /** 
  * 1_index
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -01.01.2025- 
+ * @copyright Copyright (c) 2025, AnBr75 and/or its affiliates. All rights reserved.
+ * @version Last_modified -01.01m.2025-18.01m.2025- 
  */
-let Copyright_AnBr75 = 2024;
+let Copyright_AnBr75 = 2025;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -15,88 +15,143 @@ if (global_R.print_module_start_finish) console.log('start_client.js -> module s
 
 import { html5Canvas_R } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
 
-import { buttons_R } from './buttons.js';
+import { Buttons_C} from './buttons.js';
 
 import { gameState_R } from '../4_game_state/game_state.js';
-import { loop_R } from '../3_loop/loop_o.js';
 import { test_R } from '../test/test.js';
+import { timer_R } from './timer.js';
 
-class Index_C {
+type Index_I = {
+    NAME: string;
+    isOk: string;
+    buttons_R : Buttons_C;
+    idCanvas : HTMLCanvasElement | null;
+    contextCanvas : CanvasRenderingContext2D | null;
+    timerCount: number;
+    timerCountStop: number;
+    delayMs: number;
+    isLoop: boolean;
+    STOP_LOOP: number;
+    iniM(): void;
+    startM(Index_R: Index_I): void;
+    startButton(): void; 
+    pauseButton(): void;
+    endButton(): void;
+    testButton(): void;
+    startGame(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null): void;        
+    loop(): void;
+}
+
+let Index_R: Index_I = {
  
-    public static NAME: string = "Index_C";
-    public isOk: string = "";
-    public idCanvas : HTMLCanvasElement | null = null;
-    public contextCanvas : CanvasRenderingContext2D | null =  null;
+    NAME: "Index_R",
+    isOk: "",
+    buttons_R: new Buttons_C(),
+    idCanvas: null,//HTMLCanvasElement | null
+    contextCanvas: null,//CanvasRenderingContext2D | null
+    timerCount: -1,
+    timerCountStop: 0,
+    delayMs: 0,
+    isLoop: false,
+    STOP_LOOP: 30000,
 
     //=============================================================================
-    constructor() {
-    }
+    iniM(){
+        Index_R.buttons_R.iniM();
+        Index_R.buttons_R.elementbuttonTest.addEventListener("click", this.buttons_R.click, false); //click  input
+        Index_R.buttons_R.isOk = "OK"; //
+    },
     //=============================================================================
 
     //=============================================================================
-    iniM(): void {
-    }
+    startM(){
+    },
     //=============================================================================
-
+ 
     // HTML5 графика---------------------------------------------------------------
-
 
     // Кнопки----------------------------------------------------------------------
     //=============================================================================
     startButton() {
-        buttons_R.startButtonAttribute();
+        Index_R.buttons_R.startButtonAttribute();
         gameState_R.setContinueGame();
-        if (!loop_R.isLoop){ 
-            console.log('Index_C->startButton->call loop_R.loop()');
-            loop_R.loop();
+        if (!Index_R.isLoop){ 
+            console.log('Index_R->startButton->call Index_R.loop()');
+            Index_R .loop();
         }
-    }
+    },
     //=============================================================================
 
     //=============================================================================
-    pauseButton(): void {
-        buttons_R.pauseButtonAttribute();
+    pauseButton(){
+        Index_R.buttons_R.pauseButtonAttribute();
         gameState_R.setPauseGame();
-    }
+    },
     //=============================================================================
 
     //=============================================================================
-    endButton(): void {
-        buttons_R.endButtonAttribute();
+    endButton(){
+        Index_R.buttons_R.endButtonAttribute();
         gameState_R.setEndGame();
-    }
+    },
     //=============================================================================
 
     //=============================================================================
-    testButton(): void {
-        console.log('Index_C->testButton');
-    }
+    testButton(){
+        console.log('Index_R->testButton');
+    },
     //=============================================================================
     //Запуск игры------------------------------------------------------------------
 
     //=============================================================================
-    startGame(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null): void {
-
-        this.idCanvas = idCanvas;
-        this.contextCanvas = contextCanvas;
+    startGame(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null){
+        Index_R.idCanvas = idCanvas;
+        Index_R.contextCanvas = contextCanvas;
         html5Canvas_R.startM(idCanvas, contextCanvas);
         gameState_R.startM();
         test_R.test();
         gameState_R.setStartGame();
-        if (!loop_R.isLoop) {
-            console.log('Index_C->startGame->call loop_R.loop()');
-            loop_R.loop();
+        if (!Index_R.isLoop) {
+            console.log('Index_R->startGame->call Index_R.loop()');
+            Index_R.loop();
         }
-    }
+    },
+    //=============================================================================
+
+    //=============================================================================
+    // setTimeout позволяет вызвать функцию один раз через определённый интервал времени
+    loop(){
+        Index_R.isLoop = true;
+        Index_R.timerCount = -1;
+
+        //Задержка перед запуском в миллисекундах (1000 мс = 1 с). Значение по умолчанию – 0.
+        Index_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
+
+        Index_R.timerCount = setTimeout(function tick() {
+
+            timer_R.updateTimeBeforeTick(); //
+            gameState_R.tick();
+            timer_R.updateTimeAfterTick();
+            Index_R.delayMs = timer_R.getTickTimeThreadSleepGameMs();
+
+            if (gameState_R.isEndGame()) Index_R.isLoop = false;
+            if (Index_R.isLoop) Index_R.timerCount = setTimeout(tick, Index_R.delayMs);
+
+            if ((Index_R.timerCount - Index_R.timerCountStop) > Index_R.STOP_LOOP) {
+                gameState_R.setEndGame();
+                Index_R.buttons_R.endButtonAttribute();
+            }
+
+        }, Index_R.delayMs);
+        console.log("Index_R->loop() timerCount = " + Index_R.timerCount);
+    },
     //=============================================================================
 }
 
-let Index_R = new Index_C();
-
 Index_R.iniM();
 
-export { Index_R, Index_C };
+export { Index_R };
 
 if (global_R.print_module_start_finish) console.log('index.js -> module finish');
 
-Index_R.isOk = "OK"; //
+Index_R.isOk = "OK";//

@@ -14,7 +14,7 @@ import { global_R } from '../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('drow_timer_number.js -> module start');
 
-import { timer_R } from '../3_loop/timer.js';
+import { timer_R } from '../1_index/timer.js';
 import { html5Canvas_R, Html5Canvas_C } from './html5_canvas/html5_canvas.js';
 import { gameState_R, GameState_C } from '../4_game_state/game_state.js';
 

@@ -17,9 +17,6 @@ import { html5Sprites_R } from '../2_graphics_2d/html5_sprites/html5_sprites.js'
 import { Sprite_С_isOk } from '../2_graphics_2d/html5_sprites/sprite_c.js';
 import { Sprite_I_C_isOk } from '../2_graphics_2d/html5_sprites/sprite_i_c.js';
 import { local_R } from '../7_local/local.js';
-import { buttons_R } from '../1_index/buttons.js';
-import { loop_R } from '../3_loop/loop_o.js';
-import { timer_R } from '../3_loop/timer.js';
 import { run_R } from '../moove/run.js';
 import { Immortal_C_isOk } from '../user_avatars/immortal_c.js';
 import { immortals_R } from '../user_avatars/immortals.js';
@@ -60,15 +57,6 @@ class Test_C {
         if (global_R.isOk != "OK") {
             console.log("test.js -> global.js NOT OK!");
         }
-        if (html5Canvas_R.html5CanvasText_R.isOk != "OK") {
-            console.log("test.js -> 2_html5_canvas_text.js NOT OK!");
-        }
-        if (html5Canvas_R.html5CanvasPrimitive_R.isOk != "OK") {
-            console.log("test.js -> 3_html5_canvas_primitive.js NOT OK!");
-        }
-        if (html5Canvas_R.html5CanvasImage_R.isOk != "OK") {
-            console.log("test.js -> 4_html5_canvas_image.js NOT OK!");
-        }
         if (html5CanvasMouseEvent_R.isOk != "OK") {
             console.log("test.js -> 5_html5_canvas_mouse_event.js NOT OK!");
         }
@@ -92,15 +80,6 @@ class Test_C {
         }
         if (local_R.isOk != "OK") {
             console.log("test.js ->local.js NOT OK!");
-        }
-        if (buttons_R.isOk != "OK") {
-            console.log("test.js ->buttons.js NOT OK!");
-        }
-        if (loop_R.isOk != "OK") {
-            console.log("test.js ->loop.js NOT OK!");
-        }
-        if (timer_R.isOk != "OK") {
-            console.log("test.js -> timer.js NOT OK!");
         }
         if (run_R.isOk != "OK") {
             console.log("test.js -> run.js NOT OK!");

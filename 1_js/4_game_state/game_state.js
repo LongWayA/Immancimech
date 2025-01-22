@@ -2,7 +2,7 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('game_state.js -> module start');
-import { timer_R, Timer_C } from '../3_loop/timer.js';
+import { timer_R, Timer_C } from '../1_index/timer.js';
 import { gameStart_R } from './game_start.js';
 import { gameContinue_R } from './game_continue.js';
 import { gamePause_R } from './game_pause.js';

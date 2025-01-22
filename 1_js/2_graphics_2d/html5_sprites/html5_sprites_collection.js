@@ -68,10 +68,10 @@ class Html5SpritesCollection_C {
         this.sprites[Html5SpritesCollection_C.GROUNDS] = new Array(Html5SpritesCollection_C.GROUNDS_MAX_COUNT);
         this.sprites[Html5SpritesCollection_C.ITEMS] = new Array(Html5SpritesCollection_C.ITEMS_MAX_COUNT);
         this.sprites[Html5SpritesCollection_C.CREATURES] = new Array(Html5SpritesCollection_C.CREATURES_MAX_COUNT);
-        this.iniSprite(Html5SpritesCollection_C.ADVENTURES, Html5SpritesCollection_C.PATH_TO_IMAGES + "/adventures/advans_");
+        this.iniSprite(Html5SpritesCollection_C.ADVENTURES, Html5SpritesCollection_C.PATH_TO_IMAGES + "/adventures/ad_");
         this.iniSprite(Html5SpritesCollection_C.GROUNDS, Html5SpritesCollection_C.PATH_TO_IMAGES + "/grounds/gr_");
         this.iniSprite(Html5SpritesCollection_C.ITEMS, Html5SpritesCollection_C.PATH_TO_IMAGES + "/items/it_");
-        this.iniSprite(Html5SpritesCollection_C.CREATURES, Html5SpritesCollection_C.PATH_TO_IMAGES + "/creatures/mons_");
+        this.iniSprite(Html5SpritesCollection_C.CREATURES, Html5SpritesCollection_C.PATH_TO_IMAGES + "/creatures/cr_");
         this.iniSpriteString();
     }
     startM() {

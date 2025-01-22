@@ -56,10 +56,6 @@ class Buttons_C {
         console.log('Buttons_C->click  Event');
     }
 }
-let buttons_R = new Buttons_C();
-buttons_R.iniM();
-buttons_R.elementbuttonTest.addEventListener("click", buttons_R.click, false);
-export { buttons_R, Buttons_C };
+export { Buttons_C };
 if (global_R.print_module_start_finish)
     console.log('buttons.js ->module finish');
-buttons_R.isOk = "OK";

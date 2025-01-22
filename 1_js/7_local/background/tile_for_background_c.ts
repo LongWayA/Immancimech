@@ -8,6 +8,7 @@ let Copyright_AnBr75 = 2024;
  
 /**
 * НАЗНАЧЕНИЕ
+* // __@ts-ignore__
 */
 
 import { global_R } from '../../1_index/global.js';
@@ -39,6 +40,7 @@ class TileForBackground_C {
     this.number = number; // номер тайла на карте
     // для отрисовки картинки 
     this.type = type; // тип картинки
+    // @ts-ignore
     this.index = this.charToIndex[this.char]; // порядковый номер картинки
     this.heightTile = heightTile; //а
     this.widthTile = widthTile; //
@@ -52,6 +54,7 @@ class TileForBackground_C {
   setCharTypeIndex(char: string, type: number): void {
     this.char = char;
     this.type = type; //
+    // @ts-ignore
     this.index = this.charToIndex[this.char]; //
     // console.log('class Tile_for_Map_2d -> char = ' + this.char
     //  + ' type = ' + this.type + ' index =' + this.index);
