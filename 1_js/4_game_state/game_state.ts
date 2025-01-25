@@ -1,11 +1,11 @@
 /** 
  * 4_game_state
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -31.07.2022-18.03.2023-26.03.2023-09.07.2023-
- * @version Last_modified -24.02m.2024-15.08m.2024-05.01m.2025-
+ * @copyright Copyright (c) 2022, AnBr75 and/or its affiliates. All rights reserved.
+ * @version created 31.07.2022
  */
-let Copyright_AnBr75 = 2024; 
+
+let Copyright_AnBr75 = 2022; 
 
 /**
 * НАЗНАЧЕНИЕ

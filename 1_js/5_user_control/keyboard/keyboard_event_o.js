@@ -1,7 +1,7 @@
-let Copyright_AnBr75 = 2024;
+let Copyright_AnBr75 = 2018;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
-    console.log('keyboard.js -> module start');
+    console.log('keyboard_event_o.js -> module start');
 let userInputKeyboardEvent_R = {
     NAME: "userInputKeyboardEvent_R",
     isOk: "",
@@ -46,5 +46,5 @@ let userInputKeyboardEvent_R = {
 userInputKeyboardEvent_R.iniM();
 export { userInputKeyboardEvent_R };
 if (global_R.print_module_start_finish)
-    console.log('keyboard.js -> module finish');
+    console.log('keyboard_event_o.js -> module finish');
 userInputKeyboardEvent_R.isOk = "OK";

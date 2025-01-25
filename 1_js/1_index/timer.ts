@@ -1,11 +1,11 @@
 /** 
  * 3_loop
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -08.08.2021-31.07.2022-06.03.2023-18.03.2023-26.03.2023-3.09.2023
- * @version Last_modified -24.02m.2024-
+ * @copyright Copyright (c) 2021, AnBr75 and/or its affiliates. All rights reserved.
+ * @version  created 08.08.2021
  */
-let Copyright_AnBr75 = 2024;
+
+let Copyright_AnBr75 = 2021;
 
 /**
 * НАЗНАЧЕНИЕ

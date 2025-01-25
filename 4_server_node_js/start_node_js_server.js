@@ -2,10 +2,11 @@
 /** 
  * start_server
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -02.12.2023-23.06.2024-01.09.2024-
+ * @copyright Copyright (c) 2023, AnBr75 and/or its affiliates. All rights reserved.
+ * @version created 02.12.2023
  */
-let Copyright_AnBr75 = 2024;
+
+let Copyright_AnBr75 = 2023;
 
 /**
  * НАЗНАЧЕНИЕ
@@ -15,7 +16,7 @@ let Copyright_AnBr75 = 2024;
  * игра должна находиться по адресу G:/1_2_Andrey_programming_All/localhost/
  * либо надо менять переменную ROOT
  * Когда сервер запущен игру запускаем 
- * http://127.0.0.1/Immancimech.html
+ * http://127.0.0.1/index.html
  */
 
    

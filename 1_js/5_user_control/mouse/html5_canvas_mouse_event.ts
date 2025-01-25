@@ -1,11 +1,11 @@
 /** 
  * 5_user_control
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -10.09.2023-25.11.2023
- * @version Last_modified -24.02m.2024-09.01m.2025
+ * @copyright Copyright (c) 2023, AnBr75 and/or its affiliates. All rights reserved.
+ * @version created 10.09.2023
  */
-let Copyright_AnBr75 = 2024;
+
+let Copyright_AnBr75 = 2023;
 
 /**
 * НАЗНАЧЕНИЕ

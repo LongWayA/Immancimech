@@ -1,4 +1,4 @@
-let Copyright_AnBr75 = 2024;
+let Copyright_AnBr75 = 2023;
 let print_module_start_finish = false;
 if (print_module_start_finish)
     console.log('global.js -> module start');

@@ -2,7 +2,7 @@
  * 1_index
  * @author AnBr75
  * @copyright Copyright (c) 2025, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -01.01m.2025-18.01m.2025- 
+ * @version created 01.01m.2025
  */
 let Copyright_AnBr75 = 2025;
 
@@ -11,20 +11,18 @@ let Copyright_AnBr75 = 2025;
 */
 
 import { global_R } from './global.js';
-if (global_R.print_module_start_finish) console.log('start_client.js -> module start');
+if (global_R.print_module_start_finish) console.log('index.js -> module start');
 
 import { Buttons_C} from './buttons.js';
 import { GameState_C } from '../4_game_state/game_state.js';
-
 import { Timer_C } from './timer.js';
-import { test_R } from '../test/test.js';
 
 type Index_I = {
-    NAME: string;
-    isOk: string;
     buttons_R : Buttons_C;
     gameState_R : GameState_C,
     timer_R : Timer_C,
+
+    NAME: string;
     idCanvas : HTMLCanvasElement | null;
     contextCanvas : CanvasRenderingContext2D | null;
     timerCount: number;
@@ -43,12 +41,11 @@ type Index_I = {
 }
 
 let Index_R: Index_I = {
- 
-    NAME: "Index_R",
-    isOk: "",
     buttons_R: new Buttons_C(),
     gameState_R: new GameState_C(),
     timer_R: new Timer_C(),
+
+    NAME: "Index_R",
     idCanvas: null,//HTMLCanvasElement | null
     contextCanvas: null,//CanvasRenderingContext2D | null
     timerCount: -1,
@@ -56,7 +53,6 @@ let Index_R: Index_I = {
     delayMs: 0,
     isLoop: false,
     STOP_LOOP: 30000,
-
     //=============================================================================
     iniM(){
         Index_R.buttons_R.iniM();
@@ -66,11 +62,10 @@ let Index_R: Index_I = {
         Index_R.gameState_R.isOk = "OK";
 
         Index_R.timer_R.iniM();
-        console.log('Index_R.timer_R -> currentTimeMs = ' + Index_R.timer_R.getCurrentTimeMs());
+        console.log('Index_R -> iniM(): currentTimeMs = ' + Index_R.timer_R.getCurrentTimeMs());
         Index_R.timer_R.isOk = "OK"; //
     },
     //=============================================================================
-
     //=============================================================================
     startM(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null){
         Index_R.idCanvas = idCanvas;
@@ -79,9 +74,6 @@ let Index_R: Index_I = {
 
     },
     //=============================================================================
- 
-    // HTML5 графика---------------------------------------------------------------
-
     // Кнопки----------------------------------------------------------------------
     //=============================================================================
     startButton() {
@@ -93,31 +85,26 @@ let Index_R: Index_I = {
         }
     },
     //=============================================================================
-
     //=============================================================================
     pauseButton(){
         Index_R.buttons_R.pauseButtonAttribute();
         Index_R.gameState_R.setPauseGame();
     },
     //=============================================================================
-
     //=============================================================================
     endButton(){
         Index_R.buttons_R.endButtonAttribute();
         Index_R.gameState_R.setEndGame();
     },
     //=============================================================================
-
     //=============================================================================
     testButton(){
         console.log('Index_R->testButton');
     },
     //=============================================================================
     //Запуск игры------------------------------------------------------------------
-
     //=============================================================================
     startGame(){
-        test_R.test();
         Index_R.gameState_R.setStartGame();
         if (!Index_R.isLoop) {
             console.log('Index_R->startGame->call Index_R.loop()');
@@ -125,7 +112,6 @@ let Index_R: Index_I = {
         }
     },
     //=============================================================================
-
     //=============================================================================
     // setTimeout позволяет вызвать функцию один раз через определённый интервал времени
     loop(){
@@ -156,10 +142,5 @@ let Index_R: Index_I = {
     //=============================================================================
 }
 
-Index_R.iniM();
-
 export { Index_R };
-
 if (global_R.print_module_start_finish) console.log('index.js -> module finish');
-
-Index_R.isOk = "OK";//

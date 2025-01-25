@@ -1,16 +1,19 @@
 /**
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -11.09m.2024-
+ * @version created 11.09m.2024
  */
 
 package main
 
 import (
+	"fmt"
 	"net/http"
 )
 
 func main() {
+	var Copyright_AnBr75 int = 2024
+	fmt.Println(Copyright_AnBr75)
 	muxer := http.NewServeMux()
 	//fileServerCss := http.FileServer(http.Dir("3_Immancimech"))
 	//fileServerJs := http.FileServer(http.Dir("src/js"))

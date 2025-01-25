@@ -1,7 +1,7 @@
 let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
-    console.log('drow_game_pause.js -> module start');
+    console.log('drow_game_end.ts -> module start');
 import { Html5Canvas_C } from './html5_canvas/html5_canvas.js';
 class DrawGameEnd_C {
     html5Canvas_R = null;
@@ -37,4 +37,4 @@ class DrawGameEnd_C {
 }
 export { DrawGameEnd_C };
 if (global_R.print_module_start_finish)
-    console.log('drow_game_pause.js -> module finish');
+    console.log('drow_game_end.ts -> module finish');

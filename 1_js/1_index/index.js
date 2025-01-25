@@ -1,17 +1,15 @@
 let Copyright_AnBr75 = 2025;
 import { global_R } from './global.js';
 if (global_R.print_module_start_finish)
-    console.log('start_client.js -> module start');
+    console.log('index.js -> module start');
 import { Buttons_C } from './buttons.js';
 import { GameState_C } from '../4_game_state/game_state.js';
 import { Timer_C } from './timer.js';
-import { test_R } from '../test/test.js';
 let Index_R = {
-    NAME: "Index_R",
-    isOk: "",
     buttons_R: new Buttons_C(),
     gameState_R: new GameState_C(),
     timer_R: new Timer_C(),
+    NAME: "Index_R",
     idCanvas: null,
     contextCanvas: null,
     timerCount: -1,
@@ -26,7 +24,7 @@ let Index_R = {
         Index_R.gameState_R.iniM();
         Index_R.gameState_R.isOk = "OK";
         Index_R.timer_R.iniM();
-        console.log('Index_R.timer_R -> currentTimeMs = ' + Index_R.timer_R.getCurrentTimeMs());
+        console.log('Index_R -> iniM(): currentTimeMs = ' + Index_R.timer_R.getCurrentTimeMs());
         Index_R.timer_R.isOk = "OK";
     },
     startM(idCanvas, contextCanvas) {
@@ -54,7 +52,6 @@ let Index_R = {
         console.log('Index_R->testButton');
     },
     startGame() {
-        test_R.test();
         Index_R.gameState_R.setStartGame();
         if (!Index_R.isLoop) {
             console.log('Index_R->startGame->call Index_R.loop()');
@@ -82,8 +79,6 @@ let Index_R = {
         console.log("Index_R->loop() timerCount = " + Index_R.timerCount);
     },
 };
-Index_R.iniM();
 export { Index_R };
 if (global_R.print_module_start_finish)
     console.log('index.js -> module finish');
-Index_R.isOk = "OK";

@@ -1,7 +1,7 @@
 let Copyright_AnBr75 = 2024;
 import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
-    console.log('game_go.js -> module start');
+    console.log('game_continue.ts -> module start');
 import { Run_C } from '../moove/run.js';
 import { fight_R } from '../fight/fight.js';
 import { ai_R } from '../6_ai_control/ai.js';
@@ -48,4 +48,4 @@ class GameContinue_C {
 }
 export { GameContinue_C };
 if (global_R.print_module_start_finish)
-    console.log('game_go.js -> module finish');
+    console.log('game_continue.ts -> module finish');

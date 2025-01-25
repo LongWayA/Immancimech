@@ -2,8 +2,9 @@
  * 4_game_state
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -15.08m.2024-
+ * @version created 15.08m.2024
 */
+
 let Copyright_AnBr75 = 2024;
 
 /**
@@ -11,7 +12,7 @@ let Copyright_AnBr75 = 2024;
 */
 
 import { global_R } from '../1_index/global.js';
-if (global_R.print_module_start_finish) console.log('game_go.js -> module start');
+if (global_R.print_module_start_finish) console.log('game_continue.ts -> module start');
 
 import { Run_C } from '../moove/run.js';
 import { fight_R } from '../fight/fight.js';
@@ -101,4 +102,4 @@ class GameContinue_C {
 
 export { GameContinue_C};
 
-if (global_R.print_module_start_finish) console.log('game_go.js -> module finish');
+if (global_R.print_module_start_finish) console.log('game_continue.ts -> module finish');

@@ -1,11 +1,11 @@
 /** 
  * 2_graphics_2d/html5_sprites
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -02.08.2022-02.01.2023-18.02.2023-1.04m.2023-
- * @version Last_modified -24.02m.2024-
+ * @copyright Copyright (c) 2022, AnBr75 and/or its affiliates. All rights reserved.
+ * @version created 02.08.2022
  */
-let Copyright_AnBr75 = 2024;
+
+let Copyright_AnBr75 = 2022;
 
 /**
 * НАЗНАЧЕНИЕ

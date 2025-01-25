@@ -1,4 +1,11 @@
 //@ts-check
+/** 
+ * immortals
+ * @author AnBr75
+ * @copyright Copyright (c) 2025, AnBr75 and/or its affiliates. All rights reserved.
+ * @version created 23.01m.2025
+ */
+
 let Copyright_AnBr75 = 2025;
 
 console.log('Test is OK');

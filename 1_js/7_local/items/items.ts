@@ -2,8 +2,9 @@
  * items
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -24.02m.2024-
+ * @version created 24.02m.2024
  */
+
 let Copyright_AnBr75 = 2024;
  
 /**

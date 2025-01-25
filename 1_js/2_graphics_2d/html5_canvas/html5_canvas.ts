@@ -1,11 +1,11 @@
 /** 
  * 2_graphics_2d/html5_canvas
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -21.08.2021-31.07.2022-18.02.2023-08.03.2023-18.03.2023-26.03.2023-25.11.2023
- * @version Last_modified -24.02m.2024-
+ * @copyright Copyright (c) 2021, AnBr75 and/or its affiliates. All rights reserved.
+ * @version created 21.08.2021
  */
-let Copyright_AnBr75 = 2024;
+
+let Copyright_AnBr75 = 2021;
 
 /**
 * НАЗНАЧЕНИЕ

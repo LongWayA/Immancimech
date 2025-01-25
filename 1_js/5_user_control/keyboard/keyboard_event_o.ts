@@ -1,11 +1,11 @@
 /** 
  * 5_user_control
  * @author AnBr75
- * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified 15.07.2018 - 18.03.2019 - 30.05.2019
- * @version Last_modified - 18.11.2019 - 01.04.2024 -
+ * @copyright Copyright (c) 2018, AnBr75 and/or its affiliates. All rights reserved.
+ * @version created 15.07.2018
  */
-let Copyright_AnBr75 = 2024;
+
+let Copyright_AnBr75 = 2018;
 
 /**
 * НАЗНАЧЕНИЕ
@@ -20,7 +20,7 @@ let Copyright_AnBr75 = 2024;
 
 import { global_R } from '../../1_index/global.js';
 
-if (global_R.print_module_start_finish) console.log('keyboard.js -> module start');
+if (global_R.print_module_start_finish) console.log('keyboard_event_o.js -> module start');
 
 //==============================================================================
 
@@ -122,6 +122,6 @@ userInputKeyboardEvent_R.iniM();
 
 export { userInputKeyboardEvent_R };
 
-if (global_R.print_module_start_finish) console.log('keyboard.js -> module finish');
+if (global_R.print_module_start_finish) console.log('keyboard_event_o.js -> module finish');
 
 userInputKeyboardEvent_R.isOk = "OK"; //

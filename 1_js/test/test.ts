@@ -2,9 +2,10 @@
  * test
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -12.11.2023-02.03m.2024-
+ * @version created 12.11.2023
  */
-let Copyright_AnBr75 = 2024;
+
+let Copyright_AnBr75 = 2023;
  
 /**
 * НАЗНАЧЕНИЕ
@@ -142,10 +143,6 @@ class Test_C {
 
 }
 
-let test_R = new Test_C();
-
-test_R.iniM();
-
-export { test_R, Test_C };
+export { Test_C };
 
 if (global_R.print_module_start_finish) console.log('test.js -> module finish');

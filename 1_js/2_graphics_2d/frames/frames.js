@@ -1,4 +1,4 @@
-let Copyright_AnBr75 = 2024;
+let Copyright_AnBr75 = 2022;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('frames.js -> module start');

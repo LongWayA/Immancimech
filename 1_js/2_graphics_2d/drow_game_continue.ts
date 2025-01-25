@@ -2,8 +2,9 @@
  * 2_graphics_2d
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
- * @version Last_modified -17.08m.2024-
+ * @version created 17.08m.2024
  */
+
 let Copyright_AnBr75 = 2024;
 
 /**
@@ -12,7 +13,7 @@ let Copyright_AnBr75 = 2024;
 
 import { global_R } from '../1_index/global.js';
 
-if (global_R.print_module_start_finish) console.log('drow_game_go.js -> module start');
+if (global_R.print_module_start_finish) console.log('drow_game_continue -> module start');
 
 import { Timer_C } from '../1_index/timer.js';
 import { Html5Canvas_C } from './html5_canvas/html5_canvas.js';
@@ -109,4 +110,4 @@ class DrawGameContinue_C {
 } //
 
 export { DrawGameContinue_C };
-if (global_R.print_module_start_finish) console.log('drow_game_go.js -> module finish');
+if (global_R.print_module_start_finish) console.log('drow_game_continue -> module finish');
