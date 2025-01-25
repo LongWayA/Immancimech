@@ -24,13 +24,16 @@ if (global_R.print_module_start_finish) console.log('keyboard.js -> module start
 
 //==============================================================================
 
-import { html5Canvas_R } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { userInputKeyboardEvent_R } from './keyboard_event_o.js';
-import { background_R, Background_C } from '../../7_local/background/background.js';
-import { immortals_R, Immortals_C } from '../../user_avatars/immortals.js';
+import { Background_C } from '../../7_local/background/background.js';
+import { Immortals_C } from '../../user_avatars/immortals.js';
+import { Html5Sprites_C } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
 
 class UserInputKeyboard_C {
 
+    html5Canvas_R:  Html5Canvas_C | null = null;
+    html5Sprites_R: Html5Sprites_C | null = null;
  
     public static NAME: string = "UserInputKeyboard_C";
 
@@ -53,7 +56,9 @@ class UserInputKeyboard_C {
     //==============================================================================
 
     //=============================================================================
-    startM(): void {
+    startM(html5Canvas_R: Html5Canvas_C, html5Sprites_R: Html5Sprites_C): void {
+        this.html5Canvas_R = html5Canvas_R;// 
+        this.html5Sprites_R = html5Sprites_R;    
     }
     //=============================================================================
 
@@ -145,22 +150,15 @@ class UserInputKeyboard_C {
     printText(text: string, left: number, top: number,
         width: number, height: number, x0: number, y0: number): void {
 
-        html5Canvas_R.clearRect(left, top, width, height);
+        (this.html5Canvas_R as Html5Canvas_C).clearRect(left, top, width, height);
 
-        html5Canvas_R.drawRect(left, top, width, height, 1, 'blue', 0);
+        (this.html5Canvas_R as Html5Canvas_C).drawRect(left, top, width, height, 1, 'blue', 0);
 
-        html5Canvas_R.drawText(text, x0, y0, 'italic 20px sans-serif', 'blue', 1);
+        (this.html5Canvas_R as Html5Canvas_C).drawText(text, x0, y0, 'italic 20px sans-serif', 'blue', 1);
     }
     //=============================================================================
 
 }
 
-let userInputKeyboard_R = new UserInputKeyboard_C();
-
-userInputKeyboard_R.iniM();
-
-export { userInputKeyboard_R, UserInputKeyboard_C };
-
+export { UserInputKeyboard_C };
 if (global_R.print_module_start_finish) console.log('keyboard.js -> module finish');
-
-userInputKeyboard_R.isOk = "OK"; //

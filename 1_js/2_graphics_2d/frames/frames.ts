@@ -16,11 +16,13 @@ import { global_R } from '../../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('frames.js -> module start');
 
-import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
+import { Html5Canvas_C } from '../html5_canvas/html5_canvas.js';
 
 
 class Frames_C {
  
+    html5Canvas_R:  Html5Canvas_C | null = null;
+
     public static NAME: string = "frames_R";
     public isOk: string = "";
 
@@ -86,15 +88,19 @@ class Frames_C {
    constructor() {
    }
    //============================================================================= 
+   //=============================================================================
+   iniM(): void {}
+  //=============================================================================
 
+  
     //=============================================================================
-    iniM(): void {
+    iniFrame(): void {
         //------------------------------------------------------------------------
         // Общая рамка экрана вывода графики>>>>>>>>>>>>>>>>>>>>>>
         this.editorFrame.x0 = 0; // нулевая координата по горизонтали общего окна. т.е. самая левая точка.
         this.editorFrame.y0 = 0; // нулевая координата по вертикали общего окна. т.е. самая верхняя точка. Влево вверх.
-        this.editorFrame.width = html5Canvas_R.widthCanvas; // ширина окна берется из канвы сайта
-        this.editorFrame.height = html5Canvas_R.heightCanvas; // высота окна берется из канвы сайта
+        this.editorFrame.width = (this.html5Canvas_R as Html5Canvas_C).widthCanvas; // ширина окна берется из канвы сайта
+        this.editorFrame.height = (this.html5Canvas_R as Html5Canvas_C).heightCanvas; // высота окна берется из канвы сайта
         this.editorFrame.X_Max = this.editorFrame.x0 + this.editorFrame.width; // максимальная координата по горизонтали.
         this.editorFrame.Y_Max = this.editorFrame.y0 + this.editorFrame.height; // максимальная координата по вертикали. Вправо вниз
         // console.log('DDME_this.js: this.editorFrame.x0 = ' + this.editorFrame.x0);
@@ -165,45 +171,40 @@ class Frames_C {
     }
     //=============================================================================
     //=============================================================================
-    startM(): void {
+    startM(html5Canvas_R:  Html5Canvas_C): void {
+        this.html5Canvas_R = html5Canvas_R;// 
+        this.iniFrame();
     }
     //=============================================================================
     //=============================================================================
     // editorFrame
     drowEditorFrame(): void {
-        html5Canvas_R.drawRect(this.editorFrame.x0, this.editorFrame.y0, this.editorFrame.width,
+        (this.html5Canvas_R as Html5Canvas_C).drawRect(this.editorFrame.x0, this.editorFrame.y0, this.editorFrame.width,
             this.editorFrame.height, 2, 'blue', 0);
     }
     //=============================================================================
     //=============================================================================
     // MapFrame
     drowMapFrame(): void {
-        html5Canvas_R.drawRect(this.mapFrame.x0, this.mapFrame.y0, this.mapFrame.width,
+        (this.html5Canvas_R as Html5Canvas_C).drawRect(this.mapFrame.x0, this.mapFrame.y0, this.mapFrame.width,
             this.mapFrame.height, 2, 'blue', 0);
     }
     //=============================================================================  
     //=============================================================================
     // TilesPanelFrame
     drowTilesPanelFrame(): void {
-        html5Canvas_R.drawRect(this.tilesPanelFrame.x0, this.tilesPanelFrame.y0,
+        (this.html5Canvas_R as Html5Canvas_C).drawRect(this.tilesPanelFrame.x0, this.tilesPanelFrame.y0,
             this.tilesPanelFrame.width, this.tilesPanelFrame.height, 2, 'blue', 0);
     }
     //=============================================================================  
     //=============================================================================
     // PrintFrame
     drowPrintFrameFrame(): void {
-        html5Canvas_R.drawRect(this.printFrame.x0, this.printFrame.y0, this.printFrame.width,
+        (this.html5Canvas_R as Html5Canvas_C).drawRect(this.printFrame.x0, this.printFrame.y0, this.printFrame.width,
             this.printFrame.height, 2, 'blue', 0);
     }
     //=============================================================================  
 } //Frames
 
-let frames_R = new Frames_C();
-
-frames_R.iniM();
-
-export { frames_R, Frames_C };
-
+export { Frames_C };
 if (global_R.print_module_start_finish) console.log('frames.js -> module finish');
-
-frames_R.isOk = "OK"; //

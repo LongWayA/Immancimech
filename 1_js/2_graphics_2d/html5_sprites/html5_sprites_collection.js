@@ -149,9 +149,6 @@ class Html5SpritesCollection_C {
         this.sprites[Html5SpritesCollection_C.CREATURES][14].NameImage = "titan(титан)";
     }
 }
-let html5SpritesCollection_R = new Html5SpritesCollection_C();
-html5SpritesCollection_R.iniM();
-export { html5SpritesCollection_R, Html5SpritesCollection_C };
+export { Html5SpritesCollection_C };
 if (global_R.print_module_start_finish)
     console.log('html5_sprites_collection.js -> module finish');
-html5SpritesCollection_R.isOk = "OK";

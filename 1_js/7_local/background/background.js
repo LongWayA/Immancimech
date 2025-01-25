@@ -2,10 +2,12 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('background.js -> module start');
-import { html5Canvas_R, Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
-import { html5Sprites_R, Html5Sprites_C } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
+import { Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { Html5Sprites_C } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
 class Background_C {
+    html5Canvas_R = null;
+    html5Sprites_R = null;
     static NAME = "Background_C";
     isOk = "";
     static MAP_TILE_COUNT_WIDTH = 24;
@@ -28,7 +30,9 @@ class Background_C {
         this.iniMap_2d();
         this.loadMapFromScripts();
     }
-    startM() {
+    startM(html5Canvas_R, html5Sprites_R) {
+        this.html5Canvas_R = html5Canvas_R;
+        this.html5Sprites_R = html5Sprites_R;
     }
     isMoove(x, y) {
         x = Math.floor(x / Background_C.TILE_WIDTH);
@@ -69,9 +73,9 @@ class Background_C {
     drow() {
         for (let y = 0; y < this.Map_2d.length; y++) {
             for (let x = 0; x < Background_C.MAP_TILE_COUNT_WIDTH; x++) {
-                html5Sprites_R.drowSprite(this.Map_2d[y][x].type, this.Map_2d[y][x].index, x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile);
-                html5Canvas_R.drawText(this.Map_2d[y][x].char, x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, Html5Canvas_C.ITALIC_15PT_ARIAL, Html5Canvas_C.GREEN, 1);
-                html5Canvas_R.drawRect(x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile, 1, Html5Canvas_C.BLUE, 0);
+                this.html5Sprites_R.drowSprite(this.Map_2d[y][x].type, this.Map_2d[y][x].index, x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile);
+                this.html5Canvas_R.drawText(this.Map_2d[y][x].char, x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, Html5Canvas_C.ITALIC_15PT_ARIAL, Html5Canvas_C.GREEN, 1);
+                this.html5Canvas_R.drawRect(x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile, 1, Html5Canvas_C.BLUE, 0);
             }
         }
     }
@@ -114,9 +118,6 @@ class Background_C {
     }
 }
 ;
-let background_R = new Background_C();
-background_R.iniM();
-background_R.isOk = "OK";
-export { background_R, Background_C };
+export { Background_C };
 if (global_R.print_module_start_finish)
     console.log('background.js -> module finish');

@@ -19,7 +19,7 @@
 
     <!-- дата в виде  The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" 
         where: YYYY indicates the year. MM indicates the month. DD indicates the day.-->
-    <h4 class="w"> Last update <time datetime="2025-01-18">18.01m.25</time> </h4>
+    <h4 class="w"> Last update <time datetime="2025-01-25">25.01m.25</time> </h4>
 
     <!--The game canvas-1600-800 -->
     <canvas id='game-canvas' width='1200' height='730'>
@@ -61,8 +61,8 @@
         // загрузка всего документа(вместе с картинками, звуком и т.д.) закончена
         window.onload = function () {
             // console.log('Immancimech.html-> window.onload');
-            Index_R.startM();
-            Index_R.startGame(idCanvas, contextCanvas);
+            Index_R.startM(idCanvas, contextCanvas);
+            Index_R.startGame();
         }//window.onload = function() {
         //=============================================================================
 

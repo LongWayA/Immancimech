@@ -15,19 +15,32 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('game_state.js -> module start');
 
 // в разных состояниях(старт, пауза, ..) игры задаем разный fps
-import { timer_R, Timer_C } from '../1_index/timer.js';
+import { Timer_C } from '../1_index/timer.js';
+import { Html5Canvas_C } from '../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { Html5Sprites_C } from '../2_graphics_2d/html5_sprites/html5_sprites.js';
 
-import { gameStart_R, GameStart_C } from './game_start.js';
-import { gameContinue_R, GameContinue_C } from './game_continue.js';
-import { gamePause_R, GamePause_C } from './game_pause.js';
-import { gameEnd_R, GameEnd_C } from './game_end.js';
+import { GameStart_C } from './game_start.js';
+import { GameContinue_C } from './game_continue.js';
+import { GamePause_C } from './game_pause.js';
+import { GameEnd_C } from './game_end.js';
 
-import { drawGameStart_R } from '../2_graphics_2d/drow_game_start.js';
-import { drawGameContinue_R } from '../2_graphics_2d/drow_game_continue.js';
-import { drawGamePause_R } from '../2_graphics_2d/drow_game_pause.js';
-import { drawGameEnd_R } from '../2_graphics_2d/drow_game_end.js';
+import { UserInputKeyboard_C } from '../5_user_control/keyboard/keyboard.js';
+import { Mouse_C } from '../5_user_control/mouse/mouse.js';
 
 class GameState_C {
+
+  timer_R: Timer_C | null = null; 
+
+  html5Canvas_R: Html5Canvas_C = new Html5Canvas_C();
+  html5Sprites_R: Html5Sprites_C = new Html5Sprites_C;
+  userInputKeyboard_R: UserInputKeyboard_C  = new UserInputKeyboard_C();
+  mouse_R: Mouse_C  = new Mouse_C();
+
+  gameStart_R: GameStart_C = new GameStart_C();
+  gameContinue_R: GameContinue_C = new GameContinue_C();
+  gamePause_R: GamePause_C = new GamePause_C();
+  gameEnd_R: GameEnd_C = new GameEnd_C();
+
 
   public static NAME: string = "GameState_C";
   public isOk: string = "";
@@ -37,6 +50,8 @@ class GameState_C {
   private static CONTINUE_GAME: number = 2;
   private static PAUSE_GAME: number = 3;
   private static END_GAME: number = 4;
+
+
 
   // нажатие на кнопку задает поле set_gameState, а когда доходит очередь 
   // до начала очередной иттерации игры происходит задание gameState = setGameState.
@@ -59,22 +74,40 @@ class GameState_C {
   //=============================================================================
   iniM(): void {
     //console.log('GameState_C->iniM()');
+
+    this.html5Canvas_R.iniM();
+    this.html5Canvas_R.isOk = "OK"; //
+    this.html5Sprites_R.iniM();
+    this.html5Sprites_R.isOk = "OK"; //
+    this.userInputKeyboard_R.iniM();
+    this.userInputKeyboard_R.isOk = "OK"; //
+    this.mouse_R.iniM();
+    this.mouse_R.isOk = "OK"; //
+    this.gameStart_R.iniM();
+    this.gameContinue_R.iniM();
+    this.gamePause_R.iniM();
+    this.gameEnd_R.iniM();
+
   }
   //=============================================================================
   //=============================================================================
-  startM(): void {
+  startM(timer_R: Timer_C, idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null): void {
     //console.log('GameState_C->startM()');
-   
-    gameStart_R.startM();
-    gameContinue_R.startM();
-    gamePause_R.startM();
-    gameEnd_R.startM();
+    this.timer_R = timer_R;
 
-    drawGameStart_R.startM();
-    drawGameContinue_R.startM();
-    drawGamePause_R.startM();
-    drawGameEnd_R.startM();
+    this.html5Canvas_R.startM(idCanvas as HTMLCanvasElement, contextCanvas);
+    this.html5Sprites_R.startM(this.html5Canvas_R);
 
+    this.gameStart_R.startM(this.html5Canvas_R, this.html5Sprites_R, timer_R);
+    this.gameStart_R.isOk = "OK"; //
+    this.gameContinue_R.startM(this.html5Canvas_R, this.html5Sprites_R, this.userInputKeyboard_R, this.mouse_R);
+    this.gameContinue_R.isOk = "OK"; //
+    this.gamePause_R.startM(this.html5Canvas_R, this.html5Sprites_R);
+    this.gamePause_R.isOk = "OK"; //
+    this.gameEnd_R.startM(this.html5Canvas_R, this.html5Sprites_R);
+    this.gameEnd_R.isOk = "OK"; //
+    this.userInputKeyboard_R.startM(this.html5Canvas_R, this.html5Sprites_R);
+    this.mouse_R.startM(this.html5Canvas_R);
   }
   //============================================================================= 
 
@@ -82,21 +115,21 @@ class GameState_C {
   setStartGame(): void {
     this.set_gameState = GameState_C.START_GAME;
     this.count = 0;
-    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_1);
+    (this.timer_R as Timer_C).iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_1);
   }
   //=============================================================================
 
   //=============================================================================
   setContinueGame(): void {
     this.set_gameState = GameState_C.CONTINUE_GAME;
-    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_15);
+    (this.timer_R as Timer_C).iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_15);
   }
   //=============================================================================
 
   //=============================================================================
   setPauseGame(): void {
     this.set_gameState = GameState_C.PAUSE_GAME;
-    timer_R.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
+    (this.timer_R as Timer_C).iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
   }
   //=============================================================================
 
@@ -165,40 +198,30 @@ class GameState_C {
   //=============================================================================
   tickStartGame(): void {
     //console.log('GameState_C->tickStartGame = ' + this.sprite);
-    gameStart_R.tick();
-    drawGameStart_R.tick();
+    this.gameStart_R.tick(this.count);
   }
   //=============================================================================
   //=============================================================================
   tickGoGame(): void {
     //console.log('GameState_C->tickGoGame = ' + this.sprite);
-    gameContinue_R.tick();
-    drawGameContinue_R.tick();
+    this.gameContinue_R.tick(this.count);
   }
   //=============================================================================
   //=============================================================================
   tickPauseGame(): void {
     //console.log('GameState_C->tickPauseGame = ' + this.sprite);
-    gamePause_R.tick();
-    drawGamePause_R.tick();
+    this.gamePause_R.tick(this.count);
   }
   //=============================================================================
   //=============================================================================
   tickEndGame(): void {
     //console.log('GameState_C->tickEndGame = ' + this.sprite);
-    gameEnd_R.tick();
-    drawGameEnd_R.tick();
+    this.gameEnd_R.tick();
   }
   //=============================================================================
 
 } //GameState_С
 
-let gameState_R = new GameState_C();
-
-gameState_R.iniM();
-
-export { gameState_R, GameState_C };
+export { GameState_C };
 
 if (global_R.print_module_start_finish) console.log('game_state.js -> module finish');
-
-gameState_R.isOk = "OK"; //

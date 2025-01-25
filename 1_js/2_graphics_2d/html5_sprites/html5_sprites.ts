@@ -27,18 +27,20 @@ import { global_R } from '../../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('html5_sprites.js -> module start');
 
-import { html5Canvas_R, Html5Canvas_C } from '../html5_canvas/html5_canvas.js';
-import { html5SpritesCollection_R, Html5SpritesCollection_C } from './html5_sprites_collection.js';
+import { Html5Canvas_C } from '../html5_canvas/html5_canvas.js';
+import { Html5SpritesCollection_C } from './html5_sprites_collection.js';
+import { Html5SpritesImmortal_C } from './html5_sprites_immortal.js';
+
 
 //
 class Html5Sprites_C {
 
+  public html5Canvas_R: Html5Canvas_C | null = null;
+  public html5SpritesCollection_R: Html5SpritesCollection_C = new Html5SpritesCollection_C();
+  public html5SpritesImmortal_R: Html5SpritesImmortal_C = new Html5SpritesImmortal_C();
+
   public static NAME: string = "html5Sprites_R";
   public isOk: string = " ";
-
-  public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
-
-  public out_html5SpritesCollection_R: Html5SpritesCollection_C = html5SpritesCollection_R;
 
   public static REZERV: number = Html5SpritesCollection_C.REZERV;
   public static ADVENTURES: number = Html5SpritesCollection_C.ADVENTURES;
@@ -106,11 +108,18 @@ class Html5Sprites_C {
 
   //============================================================================
   iniM():void {
+    this.html5SpritesCollection_R.iniM();
+    this.html5SpritesCollection_R.isOk = "OK"; //
+    this.html5SpritesImmortal_R.iniM();
+    this.html5SpritesImmortal_R.isOk = "OK"; //
   }
   //============================================================================    
 
   //=============================================================================
-  startM():void {
+  startM(html5Canvas_R: Html5Canvas_C):void {
+    this.html5Canvas_R = html5Canvas_R;//
+    this.html5SpritesCollection_R.startM();
+    this.html5SpritesImmortal_R.startM(html5Canvas_R);
   }
   //=============================================================================
 
@@ -120,22 +129,15 @@ class Html5Sprites_C {
   drowSprite(type: number, index: number, imageLeft: number,
     imageTop: number, imageWidth: number = 0, imageHeight: number = 0):void {
 
-    let image = this.out_html5SpritesCollection_R.getSprite(type, index);
+    let image = this.html5SpritesCollection_R.getSprite(type, index);
 
     // (_image, _left, _top, _width, _height, _mirror)
-    this.out_html5Canvas_R.drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
+    (this.html5Canvas_R as Html5Canvas_C).drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
   }
   //=============================================================================
 
 
 } //SpritesMap_2D
 
-let html5Sprites_R = new Html5Sprites_C;
-
-html5Sprites_R.iniM();
-
-export { html5Sprites_R, Html5Sprites_C };
-
+export { Html5Sprites_C };
 if (global_R.print_module_start_finish) console.log('html5_sprites.js -> module finish');
-
-html5Sprites_R.isOk = "OK"; //

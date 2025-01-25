@@ -83,10 +83,6 @@ class Timer_C {
         return this.currentTimeMs;
     }
 }
-let timer_R = new Timer_C();
-timer_R.iniM();
-console.log('timer.js -> currentTimeMs = ' + timer_R.getCurrentTimeMs());
-export { timer_R, Timer_C };
+export { Timer_C };
 if (global_R.print_module_start_finish)
     console.log('timer.js -> module finish');
-timer_R.isOk = "OK";

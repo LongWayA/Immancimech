@@ -25,7 +25,6 @@ let Copyright_AnBr75 = 2024;
 
 
 import { global_R } from '../../1_index/global.js';
-
 if (global_R.print_module_start_finish) console.log('html5_sprites_collection.js -> module start');
 
 import { Sprite_С } from './sprite_c.js';
@@ -264,12 +263,5 @@ class Html5SpritesCollection_C {
     //============================================================================
 } //SpritesMap_2D
 
-let html5SpritesCollection_R = new Html5SpritesCollection_C();
-
-html5SpritesCollection_R.iniM();
-
-export { html5SpritesCollection_R, Html5SpritesCollection_C };
-
+export { Html5SpritesCollection_C };
 if (global_R.print_module_start_finish) console.log('html5_sprites_collection.js -> module finish');
-
-html5SpritesCollection_R.isOk = "OK"; //

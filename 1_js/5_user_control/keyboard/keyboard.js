@@ -2,9 +2,10 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('keyboard.js -> module start');
-import { html5Canvas_R } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { userInputKeyboardEvent_R } from './keyboard_event_o.js';
 class UserInputKeyboard_C {
+    html5Canvas_R = null;
+    html5Sprites_R = null;
     static NAME = "UserInputKeyboard_C";
     isOk = "";
     command = "_";
@@ -12,7 +13,9 @@ class UserInputKeyboard_C {
     }
     iniM() {
     }
-    startM() {
+    startM(html5Canvas_R, html5Sprites_R) {
+        this.html5Canvas_R = html5Canvas_R;
+        this.html5Sprites_R = html5Sprites_R;
     }
     tick(immortals, ground) {
         if (userInputKeyboardEvent_R.isKeyDown == 1) {
@@ -63,14 +66,11 @@ class UserInputKeyboard_C {
         this.printText(this.command, left_3, top_3, width_3, height_3, X0_3, Y0_3);
     }
     printText(text, left, top, width, height, x0, y0) {
-        html5Canvas_R.clearRect(left, top, width, height);
-        html5Canvas_R.drawRect(left, top, width, height, 1, 'blue', 0);
-        html5Canvas_R.drawText(text, x0, y0, 'italic 20px sans-serif', 'blue', 1);
+        this.html5Canvas_R.clearRect(left, top, width, height);
+        this.html5Canvas_R.drawRect(left, top, width, height, 1, 'blue', 0);
+        this.html5Canvas_R.drawText(text, x0, y0, 'italic 20px sans-serif', 'blue', 1);
     }
 }
-let userInputKeyboard_R = new UserInputKeyboard_C();
-userInputKeyboard_R.iniM();
-export { userInputKeyboard_R, UserInputKeyboard_C };
+export { UserInputKeyboard_C };
 if (global_R.print_module_start_finish)
     console.log('keyboard.js -> module finish');
-userInputKeyboard_R.isOk = "OK";

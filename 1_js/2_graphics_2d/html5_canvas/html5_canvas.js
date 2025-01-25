@@ -80,9 +80,6 @@ class Html5Canvas_C {
         this.html5CanvasImage_R.drawImage(image, left, top, width, height, mirror);
     }
 }
-let html5Canvas_R = new Html5Canvas_C();
-html5Canvas_R.iniM();
-export { html5Canvas_R, Html5Canvas_C };
+export { Html5Canvas_C };
 if (global_R.print_module_start_finish)
     console.log('6_html5_canvas.js -> module finish');
-html5Canvas_R.isOk = "OK";

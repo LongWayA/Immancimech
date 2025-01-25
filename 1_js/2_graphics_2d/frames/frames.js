@@ -2,8 +2,8 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('frames.js -> module start');
-import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
 class Frames_C {
+    html5Canvas_R = null;
     static NAME = "frames_R";
     isOk = "";
     editorFrame = {
@@ -56,11 +56,12 @@ class Frames_C {
     };
     constructor() {
     }
-    iniM() {
+    iniM() { }
+    iniFrame() {
         this.editorFrame.x0 = 0;
         this.editorFrame.y0 = 0;
-        this.editorFrame.width = html5Canvas_R.widthCanvas;
-        this.editorFrame.height = html5Canvas_R.heightCanvas;
+        this.editorFrame.width = this.html5Canvas_R.widthCanvas;
+        this.editorFrame.height = this.html5Canvas_R.heightCanvas;
         this.editorFrame.X_Max = this.editorFrame.x0 + this.editorFrame.width;
         this.editorFrame.Y_Max = this.editorFrame.y0 + this.editorFrame.height;
         this.mapFrame.x0 = this.editorFrame.x0;
@@ -98,24 +99,23 @@ class Frames_C {
         this.printFrame.X_Max = this.printFrame.x0 + this.printFrame.width;
         this.printFrame.Y_Max = this.printFrame.y0 + this.printFrame.height;
     }
-    startM() {
+    startM(html5Canvas_R) {
+        this.html5Canvas_R = html5Canvas_R;
+        this.iniFrame();
     }
     drowEditorFrame() {
-        html5Canvas_R.drawRect(this.editorFrame.x0, this.editorFrame.y0, this.editorFrame.width, this.editorFrame.height, 2, 'blue', 0);
+        this.html5Canvas_R.drawRect(this.editorFrame.x0, this.editorFrame.y0, this.editorFrame.width, this.editorFrame.height, 2, 'blue', 0);
     }
     drowMapFrame() {
-        html5Canvas_R.drawRect(this.mapFrame.x0, this.mapFrame.y0, this.mapFrame.width, this.mapFrame.height, 2, 'blue', 0);
+        this.html5Canvas_R.drawRect(this.mapFrame.x0, this.mapFrame.y0, this.mapFrame.width, this.mapFrame.height, 2, 'blue', 0);
     }
     drowTilesPanelFrame() {
-        html5Canvas_R.drawRect(this.tilesPanelFrame.x0, this.tilesPanelFrame.y0, this.tilesPanelFrame.width, this.tilesPanelFrame.height, 2, 'blue', 0);
+        this.html5Canvas_R.drawRect(this.tilesPanelFrame.x0, this.tilesPanelFrame.y0, this.tilesPanelFrame.width, this.tilesPanelFrame.height, 2, 'blue', 0);
     }
     drowPrintFrameFrame() {
-        html5Canvas_R.drawRect(this.printFrame.x0, this.printFrame.y0, this.printFrame.width, this.printFrame.height, 2, 'blue', 0);
+        this.html5Canvas_R.drawRect(this.printFrame.x0, this.printFrame.y0, this.printFrame.width, this.printFrame.height, 2, 'blue', 0);
     }
 }
-let frames_R = new Frames_C();
-frames_R.iniM();
-export { frames_R, Frames_C };
+export { Frames_C };
 if (global_R.print_module_start_finish)
     console.log('frames.js -> module finish');
-frames_R.isOk = "OK";

@@ -2,13 +2,14 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('html5_sprites.js -> module start');
-import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
-import { html5SpritesCollection_R, Html5SpritesCollection_C } from './html5_sprites_collection.js';
+import { Html5SpritesCollection_C } from './html5_sprites_collection.js';
+import { Html5SpritesImmortal_C } from './html5_sprites_immortal.js';
 class Html5Sprites_C {
+    html5Canvas_R = null;
+    html5SpritesCollection_R = new Html5SpritesCollection_C();
+    html5SpritesImmortal_R = new Html5SpritesImmortal_C();
     static NAME = "html5Sprites_R";
     isOk = " ";
-    out_html5Canvas_R = html5Canvas_R;
-    out_html5SpritesCollection_R = html5SpritesCollection_R;
     static REZERV = Html5SpritesCollection_C.REZERV;
     static ADVENTURES = Html5SpritesCollection_C.ADVENTURES;
     static GROUNDS = Html5SpritesCollection_C.GROUNDS;
@@ -60,17 +61,21 @@ class Html5Sprites_C {
     constructor() {
     }
     iniM() {
+        this.html5SpritesCollection_R.iniM();
+        this.html5SpritesCollection_R.isOk = "OK";
+        this.html5SpritesImmortal_R.iniM();
+        this.html5SpritesImmortal_R.isOk = "OK";
     }
-    startM() {
+    startM(html5Canvas_R) {
+        this.html5Canvas_R = html5Canvas_R;
+        this.html5SpritesCollection_R.startM();
+        this.html5SpritesImmortal_R.startM(html5Canvas_R);
     }
     drowSprite(type, index, imageLeft, imageTop, imageWidth = 0, imageHeight = 0) {
-        let image = this.out_html5SpritesCollection_R.getSprite(type, index);
-        this.out_html5Canvas_R.drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
+        let image = this.html5SpritesCollection_R.getSprite(type, index);
+        this.html5Canvas_R.drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
     }
 }
-let html5Sprites_R = new Html5Sprites_C;
-html5Sprites_R.iniM();
-export { html5Sprites_R, Html5Sprites_C };
+export { Html5Sprites_C };
 if (global_R.print_module_start_finish)
     console.log('html5_sprites.js -> module finish');
-html5Sprites_R.isOk = "OK";

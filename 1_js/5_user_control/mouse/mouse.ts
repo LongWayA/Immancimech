@@ -19,10 +19,12 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish) console.log('mouse.js -> module start');
 
-import { html5Canvas_R } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { html5CanvasMouseEvent_R } from './html5_canvas_mouse_event.js';
 
 class Mouse_C {
+
+    html5Canvas_R:  Html5Canvas_C | null = null;
 
     public static NAME: string = "Mouse_C";
     public isOk: string = "";
@@ -37,7 +39,8 @@ class Mouse_C {
     }
     //=============================================================================
     //=============================================================================
-    startM(): void  {
+    startM(html5Canvas_R: Html5Canvas_C): void  {
+        this.html5Canvas_R = html5Canvas_R;//
         html5CanvasMouseEvent_R.startM();
     }
     //=============================================================================
@@ -109,23 +112,16 @@ class Mouse_C {
     printText(textEvent: string, offsetX: number, offsetY: number,
         left: number, top: number, width: number, height: number, X0: number, Y0: number): void  {
 
-        html5Canvas_R.clearRect(left, top, width, height);
+        (this.html5Canvas_R as Html5Canvas_C).clearRect(left, top, width, height);
 
-        html5Canvas_R.drawRect(left, top, width, height, 1, 'red', 0);//'blue' 'red'
+        (this.html5Canvas_R as Html5Canvas_C).drawRect(left, top, width, height, 1, 'red', 0);//'blue' 'red'
 
-        html5Canvas_R.drawText(textEvent + ": x = "
+        (this.html5Canvas_R as Html5Canvas_C).drawText(textEvent + ": x = "
             + offsetX + " y = " + offsetY, X0, Y0, 'italic 20px sans-serif', 'red', 1);//
 
     }
     //=============================================================================
 }
-
-let mouse_R = new Mouse_C();
-
-mouse_R.iniM();
-
-export { mouse_R, Mouse_C };
-
+ 
+export { Mouse_C };
 if (global_R.print_module_start_finish) console.log('mouse.js -> module finish');
-
-mouse_R.isOk = "OK"; //

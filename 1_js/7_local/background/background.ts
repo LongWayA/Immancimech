@@ -15,8 +15,8 @@ import { global_R } from '../../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('background.js -> module start');
 
-import { html5Canvas_R, Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
-import { html5Sprites_R, Html5Sprites_C } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
+import { Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
+import { Html5Sprites_C } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
 import { items_R } from '../items/items.js';
 
@@ -26,7 +26,9 @@ import { items_R } from '../items/items.js';
 // 
 class Background_C {
 
-  
+  html5Canvas_R:  Html5Canvas_C | null = null;
+  html5Sprites_R: Html5Sprites_C | null = null;
+
   public static NAME: string = "Background_C";
   public isOk: string = "";
   private static MAP_TILE_COUNT_WIDTH: number = 24;// считаем вместе с 0
@@ -64,7 +66,9 @@ class Background_C {
   }
   //=============================================================================
   //=============================================================================
-  startM(): void {
+  startM(html5Canvas_R: Html5Canvas_C, html5Sprites_R: Html5Sprites_C): void {
+    this.html5Canvas_R = html5Canvas_R;// 
+    this.html5Sprites_R = html5Sprites_R;  
   }
   //=============================================================================
   //=============================================================================
@@ -133,13 +137,13 @@ class Background_C {
   drow(): void {
     for (let y = 0; y < this.Map_2d.length; y++) {
       for (let x = 0; x < Background_C.MAP_TILE_COUNT_WIDTH; x++) {
-        html5Sprites_R.drowSprite(this.Map_2d[y][x].type, this.Map_2d[y][x].index,
+        (this.html5Sprites_R as Html5Sprites_C).drowSprite(this.Map_2d[y][x].type, this.Map_2d[y][x].index,
           x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile,
           this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile);
-        html5Canvas_R.drawText(this.Map_2d[y][x].char, //Ground.Map_2d[y][x].number
+        (this.html5Canvas_R as Html5Canvas_C).drawText(this.Map_2d[y][x].char, //Ground.Map_2d[y][x].number
           x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile, Html5Canvas_C.ITALIC_15PT_ARIAL,
           Html5Canvas_C.GREEN, 1);
-        html5Canvas_R.drawRect(x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile,
+        (this.html5Canvas_R as Html5Canvas_C).drawRect(x * this.Map_2d[y][x].widthTile, y * this.Map_2d[y][x].heightTile,
           this.Map_2d[y][x].widthTile, this.Map_2d[y][x].heightTile, 1, Html5Canvas_C.BLUE, 0);
       }
     }
@@ -198,12 +202,5 @@ class Background_C {
   //=============================================================================
 }; //
 
-let background_R = new Background_C()
-
-background_R.iniM();
-
-background_R.isOk = "OK"; //
-
-export { background_R, Background_C };
-
+export { Background_C };
 if (global_R.print_module_start_finish) console.log('background.js -> module finish');

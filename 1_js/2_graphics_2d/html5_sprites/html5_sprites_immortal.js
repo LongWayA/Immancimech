@@ -2,12 +2,11 @@ let Copyright_AnBr75 = 2024;
 import { global_R } from '../../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('html5_sprites_immortal.js -> module start');
-import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
 import { Sprite_Imm_C } from './sprite_i_c.js';
 class Html5SpritesImmortal_C {
     NAME = "html5SpritesImmortal_R";
     isOk = " ";
-    out_html5Canvas_R = html5Canvas_R;
+    html5Canvas_R = null;
     PATH_TO_IMAGES = "3_resource/images/immortals_img/";
     MAX_COUNT = 3;
     sprites = new Array(1);
@@ -18,7 +17,8 @@ class Html5SpritesImmortal_C {
             this.iniSprite(this.PATH_TO_IMAGES);
         this.iniSpriteString();
     }
-    startM() {
+    startM(html5Canvas_R) {
+        this.html5Canvas_R = html5Canvas_R;
     }
     getSprite(index) {
         return this.sprites[index].Image;
@@ -54,12 +54,9 @@ class Html5SpritesImmortal_C {
     }
     drowSprite(index, imageLeft, imageTop, imageWidth = 0, imageHeight = 0) {
         let image = this.sprites[index].Image;
-        this.out_html5Canvas_R.drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
+        this.html5Canvas_R.drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
     }
 }
-let html5SpritesImmortal_R = new Html5SpritesImmortal_C();
-html5SpritesImmortal_R.iniM();
-export { html5SpritesImmortal_R, Html5SpritesImmortal_C };
+export { Html5SpritesImmortal_C };
 if (global_R.print_module_start_finish)
     console.log('html5_sprites_immortal.js -> module finish');
-html5SpritesImmortal_R.isOk = "OK";

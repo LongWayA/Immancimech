@@ -27,7 +27,6 @@ import { global_R } from '../../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('html5_sprites_immortal.js -> module start');
 
-import { html5Canvas_R } from '../html5_canvas/html5_canvas.js';
 import { Html5Canvas_C } from '../html5_canvas/html5_canvas.js';
 
 import { Sprite_Imm_C } from './sprite_i_c.js';
@@ -38,7 +37,7 @@ class Html5SpritesImmortal_C {
 
     public NAME: string = "html5SpritesImmortal_R";
     public isOk: string = " ";
-    public out_html5Canvas_R: Html5Canvas_C = html5Canvas_R;
+    public html5Canvas_R: Html5Canvas_C | null = null;
     public PATH_TO_IMAGES: string = "3_resource/images/immortals_img/";
 
     public MAX_COUNT: number = 3;
@@ -67,7 +66,8 @@ class Html5SpritesImmortal_C {
 
     //=============================================================================
     
-    startM(): void {
+    startM(html5Canvas_R: Html5Canvas_C): void {
+        this.html5Canvas_R = html5Canvas_R;
     }
     //=============================================================================
 
@@ -159,19 +159,10 @@ class Html5SpritesImmortal_C {
         let image = this.sprites[index].Image;
 
         // (_image, _left, _top, _width, _height, _mirror)
-        this.out_html5Canvas_R.drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
+        (this.html5Canvas_R as Html5Canvas_C).drawImage(image, imageLeft, imageTop, imageWidth, imageHeight, false);
     }
     //=============================================================================
-
-
 } //SpritesMap_2D
 
-let html5SpritesImmortal_R = new Html5SpritesImmortal_C();
-
-html5SpritesImmortal_R.iniM();
-
-export { html5SpritesImmortal_R,Html5SpritesImmortal_C };
-
+export { Html5SpritesImmortal_C };
 if (global_R.print_module_start_finish) console.log('html5_sprites_immortal.js -> module finish');
-
-html5SpritesImmortal_R.isOk = "OK"; //

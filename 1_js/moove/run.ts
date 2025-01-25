@@ -14,17 +14,17 @@ import { global_R } from '../1_index/global.js';
 
 if (global_R.print_module_start_finish) console.log('run.js -> module start');
 
-import { immortals_R } from '../user_avatars/immortals.js';
-import { background_R, Background_C } from '../7_local/background/background.js';
+import { Immortals_C } from '../user_avatars/immortals.js';
+import { Background_C } from '../7_local/background/background.js';
 
 class Run_C {
  
     public NAME: string = "run_R";
     public isOk: string = "";
 
-    public out_immortals_R = immortals_R;//, Immortals_C
+    public immortals_R: Immortals_C | null = null;
 
-    public out_background_R: Background_C = background_R;
+    background_R: Background_C | null = null;
 
     //=============================================================================
     constructor() {
@@ -33,15 +33,20 @@ class Run_C {
 
     //=============================================================================
     iniM():void {
+       // console.log(" Run_C-> iniM() ");
     }
     //=============================================================================
     //=============================================================================
-    startM():void {
+    startM( immortals_R: Immortals_C, background_R: Background_C):void {
+       // console.log(" Run_C-> startM() ");
+
+        this.immortals_R = immortals_R;
+        this.background_R = background_R;
     }
     //=============================================================================
     //=============================================================================
     tick():void {
-        this.out_immortals_R.update(run_R.out_background_R);
+        (this.immortals_R as Immortals_C).update(this.background_R as Background_C);
     }
     //=============================================================================   
     //=============================================================================
@@ -55,12 +60,5 @@ class Run_C {
     //=============================================================================
 }
 
-let run_R = new Run_C();
-
-run_R.iniM();
-
-export { run_R };
-
+export { Run_C };
 if (global_R.print_module_start_finish) console.log('run.js -> module finish');
-
-run_R.isOk = "OK"; //
