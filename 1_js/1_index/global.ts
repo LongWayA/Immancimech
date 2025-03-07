@@ -1,5 +1,4 @@
 /** 
- * 1_index
  * @author AnBr75
  * @copyright Copyright (c) 2023, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 09.07.2023
@@ -19,7 +18,6 @@ if (print_module_start_finish) console.log('global.js -> module start');
 class Global_C {
  
     public static NAME: string = "Global_C";
-    public isOk: string = "";
     public test_count: number = 1;
     public print_module_start_finish: boolean = print_module_start_finish;//true
     private isTestLoading: boolean = false; 
@@ -34,10 +32,7 @@ class Global_C {
         //console.log("Global.ini -> инициализация пройдена ");
     }
     //=============================================================================
-    //=============================================================================
-    startM(): void {
-    }
-    //=============================================================================
+ 
     //============================================================================
     // сообщаем что модуль был прочитан до конца
     testLoading(nameScript: string): void {
@@ -50,11 +45,7 @@ class Global_C {
 } //Global
 
 let global_R = new Global_C();
-
 global_R.iniM();
 
 export { global_R, Global_C };
-
 if (print_module_start_finish) console.log('global.js -> module finish');
-
-global_R.isOk = "OK"; //

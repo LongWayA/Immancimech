@@ -5,7 +5,6 @@ if (global_R.print_module_start_finish)
 import { Sprite_С } from './sprite_c.js';
 class Html5SpritesCollection_C {
     static NAME = "Html5SpritesCollection_C";
-    isOk = " ";
     static PATH_TO_IMAGES = "3_resource/images";
     static REZERV = 0;
     static ADVENTURES = 1;
@@ -73,8 +72,6 @@ class Html5SpritesCollection_C {
         this.iniSprite(Html5SpritesCollection_C.ITEMS, Html5SpritesCollection_C.PATH_TO_IMAGES + "/items/it_");
         this.iniSprite(Html5SpritesCollection_C.CREATURES, Html5SpritesCollection_C.PATH_TO_IMAGES + "/creatures/cr_");
         this.iniSpriteString();
-    }
-    startM() {
     }
     getSprite(type, index) {
         return this.sprites[type][index].Image;

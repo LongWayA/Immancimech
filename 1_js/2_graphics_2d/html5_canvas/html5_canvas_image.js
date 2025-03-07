@@ -4,15 +4,12 @@ if (global_R.print_module_start_finish)
     console.log('4_html5_canvas_image.js -> module start');
 class Html5CanvasImage_C {
     static NAME = "Html5CanvasImage_C";
-    isOk = "";
     idCanvas = null;
     contextCanvas = null;
     static DRAW_MIRROR = true;
     constructor() {
     }
-    iniM() {
-    }
-    startM(idCanvas, contextCanvas) {
+    iniM(idCanvas, contextCanvas) {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
     }

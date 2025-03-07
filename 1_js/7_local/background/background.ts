@@ -1,5 +1,4 @@
 /** 
- * background
  * @author AnBr75
  * @copyright Copyright (c) 2023, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 12.09.2023
@@ -18,7 +17,7 @@ if (global_R.print_module_start_finish) console.log('background.js -> module sta
 import { Html5Canvas_C } from '../../2_graphics_2d/html5_canvas/html5_canvas.js';
 import { Html5Sprites_C } from '../../2_graphics_2d/html5_sprites/html5_sprites.js';
 import { TileForBackground_C } from './tile_for_background_c.js';
-import { items_R } from '../items/items.js';
+import { Items_C } from '../items/items.js';
 
 // можно кодировать карту при записи продвинутой системой типа 16 ричной
 // 0 до 9 и латинские буквы от A до F. Буквы A, B, C, D, E, F=15
@@ -30,7 +29,7 @@ class Background_C {
   html5Sprites_R: Html5Sprites_C | null = null;
 
   public static NAME: string = "Background_C";
-  public isOk: string = "";
+  
   private static MAP_TILE_COUNT_WIDTH: number = 24;// считаем вместе с 0
   private static MAP_TILE_COUNT_HEIGHT: number = 9;
 
@@ -60,15 +59,11 @@ class Background_C {
   }
   //=============================================================================
   //=============================================================================
-  iniM(): void {
+  iniM(html5Canvas_R: Html5Canvas_C, html5Sprites_R: Html5Sprites_C): void {
     this.iniMap_2d();
     this.loadMapFromScripts();
-  }
-  //=============================================================================
-  //=============================================================================
-  startM(html5Canvas_R: Html5Canvas_C, html5Sprites_R: Html5Sprites_C): void {
     this.html5Canvas_R = html5Canvas_R;// 
-    this.html5Sprites_R = html5Sprites_R;  
+    this.html5Sprites_R = html5Sprites_R; 
   }
   //=============================================================================
   //=============================================================================

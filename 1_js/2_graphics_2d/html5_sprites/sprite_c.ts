@@ -1,5 +1,4 @@
 /** 
- * 2_graphics_2d/html5_sprites
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -45,8 +44,7 @@ class Sprite_С {
 
 } //class Sprite_С
 
-let Sprite_С_isOk = "OK"; //
 
-export { Sprite_С, Sprite_С_isOk };
+export { Sprite_С };
 
 if (global_R.print_module_start_finish) console.log('sprite_c.js -> module finish');

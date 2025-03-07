@@ -9,7 +9,6 @@ class Background_C {
     html5Canvas_R = null;
     html5Sprites_R = null;
     static NAME = "Background_C";
-    isOk = "";
     static MAP_TILE_COUNT_WIDTH = 24;
     static MAP_TILE_COUNT_HEIGHT = 9;
     static TILE_WIDTH = 50;
@@ -26,11 +25,9 @@ class Background_C {
 111111111111111111111111`;
     constructor() {
     }
-    iniM() {
+    iniM(html5Canvas_R, html5Sprites_R) {
         this.iniMap_2d();
         this.loadMapFromScripts();
-    }
-    startM(html5Canvas_R, html5Sprites_R) {
         this.html5Canvas_R = html5Canvas_R;
         this.html5Sprites_R = html5Sprites_R;
     }

@@ -1,5 +1,4 @@
 /** 
- * immortal_c
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -106,6 +105,10 @@ class Immortal_C {
     } //constructor() {
 
 
+    iniM(): void {
+
+    }
+
     // 0-стоим, 1-вверх, 2-движение вправо, 3-вниз, 4-влево
     runSet(directionMovement: number): void {
         this.directionMovement = directionMovement;
@@ -191,8 +194,6 @@ class Immortal_C {
     }
 } //class Immortal
 
-let Immortal_C_isOk = "OK"; //
-
-export { Immortal_C, Immortal_C_isOk };
+export { Immortal_C};
 
 if (global_R.print_module_start_finish) console.log('immortal_c.js -> module finish');

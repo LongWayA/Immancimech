@@ -1,5 +1,4 @@
 /** 
- * 2_graphics_2d/html5_sprites
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -24,7 +23,6 @@ let Copyright_AnBr75 = 2024;
 */
 
 import { global_R } from '../../1_index/global.js';
-
 if (global_R.print_module_start_finish) console.log('sprite_i_c.js.js -> module start');
 
 class Sprite_Imm_C {
@@ -44,8 +42,6 @@ class Sprite_Imm_C {
 
 } //class Sprite_I
 
-let Sprite_I_C_isOk = "OK"; //
-
-export { Sprite_Imm_C, Sprite_I_C_isOk };
+export { Sprite_Imm_C };
 
 if (global_R.print_module_start_finish) console.log('sprite_i_c.js -> module finish');

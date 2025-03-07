@@ -5,19 +5,16 @@ if (global_R.print_module_start_finish)
 import { Sprite_Imm_C } from './sprite_i_c.js';
 class Html5SpritesImmortal_C {
     NAME = "html5SpritesImmortal_R";
-    isOk = " ";
     html5Canvas_R = null;
     PATH_TO_IMAGES = "3_resource/images/immortals_img/";
     MAX_COUNT = 3;
     sprites = new Array(1);
     constructor() {
     }
-    iniM() {
+    iniM(html5Canvas_R) {
         this.sprites = new Array(this.MAX_COUNT),
             this.iniSprite(this.PATH_TO_IMAGES);
         this.iniSpriteString();
-    }
-    startM(html5Canvas_R) {
         this.html5Canvas_R = html5Canvas_R;
     }
     getSprite(index) {

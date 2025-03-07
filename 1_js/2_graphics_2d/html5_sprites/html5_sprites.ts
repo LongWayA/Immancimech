@@ -1,5 +1,4 @@
 /** 
- * 2_graphics_2d/html5_sprites
  * @author AnBr75
  * @copyright Copyright (c) 2022, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 02.08.2022
@@ -40,7 +39,6 @@ class Html5Sprites_C {
   public html5SpritesImmortal_R: Html5SpritesImmortal_C = new Html5SpritesImmortal_C();
 
   public static NAME: string = "html5Sprites_R";
-  public isOk: string = " ";
 
   public static REZERV: number = Html5SpritesCollection_C.REZERV;
   public static ADVENTURES: number = Html5SpritesCollection_C.ADVENTURES;
@@ -107,21 +105,13 @@ class Html5Sprites_C {
    //=============================================================================
 
   //============================================================================
-  iniM():void {
+  iniM(html5Canvas_R: Html5Canvas_C):void {
+    this.html5Canvas_R = html5Canvas_R;//
+
     this.html5SpritesCollection_R.iniM();
-    this.html5SpritesCollection_R.isOk = "OK"; //
-    this.html5SpritesImmortal_R.iniM();
-    this.html5SpritesImmortal_R.isOk = "OK"; //
+    this.html5SpritesImmortal_R.iniM(html5Canvas_R);
   }
   //============================================================================    
-
-  //=============================================================================
-  startM(html5Canvas_R: Html5Canvas_C):void {
-    this.html5Canvas_R = html5Canvas_R;//
-    this.html5SpritesCollection_R.startM();
-    this.html5SpritesImmortal_R.startM(html5Canvas_R);
-  }
-  //=============================================================================
 
   //=============================================================================
   // Sprites.drowSprite(Sprites.Out_html5SpritesCollection_R.GROUNDS,Sprites.Out_html5SpritesCollection_R.GROUND_FLOOR,

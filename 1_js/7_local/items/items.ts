@@ -1,5 +1,4 @@
 /** 
- * items
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -18,7 +17,6 @@ if (global_R.print_module_start_finish) console.log('items.js -> module start');
 class Items_C {
  
     public NAME: string = "imps_R";
-    public isOk: string = "";
 
     //=============================================================================
     iniM(): void {
@@ -39,12 +37,6 @@ class Items_C {
     //=============================================================================
 }
 
-let items_R = new Items_C();
-
-items_R.iniM();
-
-export { items_R, Items_C };
+export { Items_C };
 
 if (global_R.print_module_start_finish) console.log('items.js -> module finish');
-
-items_R.isOk = "OK"; //

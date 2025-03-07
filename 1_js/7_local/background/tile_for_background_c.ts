@@ -1,5 +1,4 @@
 /** 
- * tile_for_background_c
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -62,8 +61,6 @@ class TileForBackground_C {
   }
 }
 
-let TileForBackground_isOk = "OK"; //
-
-export { TileForBackground_C, TileForBackground_isOk };
+export { TileForBackground_C };
 
 if (global_R.print_module_start_finish) console.log('tile_for_background_c.js -> module finish');

@@ -12,7 +12,6 @@ class Sprite_Imm_C {
         this.NameImage = " ";
     }
 }
-let Sprite_I_C_isOk = "OK";
-export { Sprite_Imm_C, Sprite_I_C_isOk };
+export { Sprite_Imm_C };
 if (global_R.print_module_start_finish)
     console.log('sprite_i_c.js -> module finish');

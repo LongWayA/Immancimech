@@ -1,5 +1,4 @@
 /** 
- * 2_graphics_2d/html5_canvas
  * @author AnBr75
  * @copyright Copyright (c) 2021, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 21.08.2021
@@ -24,12 +23,11 @@ if (global_R.print_module_start_finish) console.log('2_html5_canvas_text.js -> m
 class Html5CanvasText_C {
 
     public static NAME: string = "html5CanvasText_R";
-    public isOk: string = "";
 
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
-    public idCanvas : HTMLCanvasElement | null = null;
-    public contextCanvas : CanvasRenderingContext2D | null =  null;
+    public idCanvas: HTMLCanvasElement | null = null;
+    public contextCanvas: CanvasRenderingContext2D | null = null;
     //Цвет
     public static WHITE: string = 'white';
     public static BLACK: string = 'black';
@@ -54,12 +52,7 @@ class Html5CanvasText_C {
     //=============================================================================
 
     //=============================================================================
-    iniM(): void {
-    }
-    //=============================================================================
-    //=============================================================================
-    startM(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null): void {
-
+    iniM(idCanvas: HTMLCanvasElement, contextCanvas: CanvasRenderingContext2D | null): void {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
 
@@ -74,42 +67,51 @@ class Html5CanvasText_C {
         //fillText ('LOAD REC', 10, 10);
     }
     //=============================================================================
+    //=============================================================================
     set_fillStyle(_color: string): void {
         (this.contextCanvas as CanvasRenderingContext2D).fillStyle = _color;
     }
-
+    //=============================================================================
+    //=============================================================================
     get_fillStyle(): string {
         return (this.contextCanvas as CanvasRenderingContext2D).fillStyle as string;
     }
-
+    //=============================================================================
+    //=============================================================================
     set_strokeStyle(_color: string): void {
         (this.contextCanvas as CanvasRenderingContext2D).strokeStyle = _color;
     }
-
+    //=============================================================================
+    //=============================================================================
     set_lineWidth(_lineWidth: number): void {
         (this.contextCanvas as CanvasRenderingContext2D).lineWidth = _lineWidth;
     }
-
+    //=============================================================================
+    //=============================================================================
     set_font(_font: string): void {
         (this.contextCanvas as CanvasRenderingContext2D).font = _font;
     }
-
+    //=============================================================================
+    //=============================================================================
     get_font(): string {
         return (this.contextCanvas as CanvasRenderingContext2D).font;
     }
-
+    //=============================================================================
+    //=============================================================================
     set_textBaseline(_textBaseline: CanvasTextBaseline): void {
         (this.contextCanvas as CanvasRenderingContext2D).textBaseline = _textBaseline;
     }
-
+    //=============================================================================
+    //=============================================================================
     fillText(_text: string, _left: number, _top: number): void {
         (this.contextCanvas as CanvasRenderingContext2D).fillText(_text, _left, _top);
     }
-
+    //=============================================================================
+    //=============================================================================
     strokeText(_text: string, _left: number, _top: number): void {
         (this.contextCanvas as CanvasRenderingContext2D).strokeText(_text, _left, _top);
     }
-
+    //=============================================================================
     //=============================================================================
     setColor(color: string): void {
         let style = '#ffffff';

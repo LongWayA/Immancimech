@@ -1,5 +1,4 @@
 /** 
- * 3_loop
  * @author AnBr75
  * @copyright Copyright (c) 2021, AnBr75 and/or its affiliates. All rights reserved.
  * @version  created 08.08.2021
@@ -17,9 +16,8 @@ if (global_R.print_module_start_finish) console.log('timer.js -> module start');
 
 class Timer_C {
     
-    public static NAME: string = "timer_R";
-    public isOk: string = "";
-
+    public static NAME: string = "Timer_C";
+    
     // пустой тик выполняется не быстрее 5 мс, т.е. максимальный фпс выдаваемый браузером это 200
     public static TICKS_PER_SECOND_02: number = 0.2;// 1 ticks per 5 sec
     public static TICKS_PER_SECOND_05: number = 0.5;// 1 ticks per 2 sec
@@ -70,10 +68,6 @@ class Timer_C {
         this.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
     }
     //=============================================================================
-    //=============================================================================
-    startM(): void {
-    }
-
     //=============================================================================
     /**
      * обновляется только в одном месте цикла игры

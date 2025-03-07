@@ -3,8 +3,10 @@ import { global_R } from './global.js';
 if (global_R.print_module_start_finish)
     console.log('buttons.js ->module start');
 class Buttons_C {
-    static NAME = "buttons_C";
-    isOk = "";
+    static NAME = "Buttons_C";
+    startButtonName = "";
+    START = "Start Game";
+    CONTINUE = "Continue Game";
     elementbuttonStart = document.getElementById("buttonStart");
     elementbuttonPause = document.getElementById("buttonPause");
     elementbuttonEnd = document.getElementById("buttonEnd");
@@ -20,8 +22,7 @@ class Buttons_C {
         this.elementbuttonEnd.setAttribute("class", "");
         this.elementbuttonTest.setAttribute("class", "styled");
         this.elementbuttonTest.setAttribute("value", "PROBE");
-    }
-    startM() {
+        this.startButtonName = this.START;
     }
     startButtonAttribute() {
         console.log('Buttons_C->startButtonAttribute');
@@ -34,9 +35,10 @@ class Buttons_C {
     }
     pauseButtonAttribute() {
         console.log('Buttons_C->pauseButtonAttribute');
+        this.startButtonName = this.CONTINUE;
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
-        this.elementbuttonStart.value = "Continue Game";
+        this.elementbuttonStart.value = this.CONTINUE;
         this.elementbuttonPause.disabled = true;
         this.elementbuttonPause.setAttribute("class", "");
         this.elementbuttonEnd.disabled = false;
@@ -44,7 +46,8 @@ class Buttons_C {
     }
     endButtonAttribute() {
         console.log('Buttons_C->endButtonAttribute');
-        this.elementbuttonStart.value = "Start Game!";
+        this.startButtonName = this.START;
+        this.elementbuttonStart.value = this.START;
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
         this.elementbuttonPause.disabled = true;

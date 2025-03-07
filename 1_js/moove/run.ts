@@ -1,5 +1,4 @@
 /** 
- * run
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -20,8 +19,7 @@ import { Background_C } from '../7_local/background/background.js';
 
 class Run_C {
  
-    public NAME: string = "run_R";
-    public isOk: string = "";
+    public NAME: string = "run_C";
 
     public immortals_R: Immortals_C | null = null;
 
@@ -33,18 +31,13 @@ class Run_C {
     //=============================================================================
 
     //=============================================================================
-    iniM():void {
+    iniM(immortals_R: Immortals_C, background_R: Background_C):void {
        // console.log(" Run_C-> iniM() ");
+       this.immortals_R = immortals_R;
+       this.background_R = background_R;
     }
     //=============================================================================
-    //=============================================================================
-    startM( immortals_R: Immortals_C, background_R: Background_C):void {
-       // console.log(" Run_C-> startM() ");
 
-        this.immortals_R = immortals_R;
-        this.background_R = background_R;
-    }
-    //=============================================================================
     //=============================================================================
     tick():void {
         (this.immortals_R as Immortals_C).update(this.background_R as Background_C);

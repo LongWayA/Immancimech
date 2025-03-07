@@ -9,7 +9,6 @@ class Html5Sprites_C {
     html5SpritesCollection_R = new Html5SpritesCollection_C();
     html5SpritesImmortal_R = new Html5SpritesImmortal_C();
     static NAME = "html5Sprites_R";
-    isOk = " ";
     static REZERV = Html5SpritesCollection_C.REZERV;
     static ADVENTURES = Html5SpritesCollection_C.ADVENTURES;
     static GROUNDS = Html5SpritesCollection_C.GROUNDS;
@@ -60,16 +59,10 @@ class Html5Sprites_C {
     static CREATURES_TITAN = Html5SpritesCollection_C.CREATURES_TITAN;
     constructor() {
     }
-    iniM() {
-        this.html5SpritesCollection_R.iniM();
-        this.html5SpritesCollection_R.isOk = "OK";
-        this.html5SpritesImmortal_R.iniM();
-        this.html5SpritesImmortal_R.isOk = "OK";
-    }
-    startM(html5Canvas_R) {
+    iniM(html5Canvas_R) {
         this.html5Canvas_R = html5Canvas_R;
-        this.html5SpritesCollection_R.startM();
-        this.html5SpritesImmortal_R.startM(html5Canvas_R);
+        this.html5SpritesCollection_R.iniM();
+        this.html5SpritesImmortal_R.iniM(html5Canvas_R);
     }
     drowSprite(type, index, imageLeft, imageTop, imageWidth = 0, imageHeight = 0) {
         let image = this.html5SpritesCollection_R.getSprite(type, index);

@@ -1,5 +1,4 @@
 /** 
- * 2_graphics_2d/html5_canvas
  * @author AnBr75
  * @copyright Copyright (c) 2021, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 21.08.2021
@@ -36,7 +35,6 @@ class Html5Canvas_C {
     public  html5CanvasImage_R = new Html5CanvasImage_C();
  
     public static NAME: string = "html5Canvas_R";
-    public isOk: string = "";
 
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
@@ -70,29 +68,19 @@ class Html5Canvas_C {
     //=============================================================================
 
     //=============================================================================
-    iniM(): void {
+    iniM(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null): void {
         // this.offscreenCanvas = new OffscreenCanvas(1200, 730);//HTMLCanvasElement CanvasRenderingContext2D
         // this.contextOffscreenCanvas = this.offscreenCanvas.getContext('2d');
-        this.html5CanvasText_R.iniM();
-        this.html5CanvasText_R.isOk = "OK"; //
-        this.html5CanvasPrimitive_R.iniM();
-        this.html5CanvasPrimitive_R.isOk = "OK"; //
-        this.html5CanvasImage_R.iniM();
-        this.html5CanvasImage_R.isOk = "OK"; //
-    }
-    //=============================================================================
-    //=============================================================================
-    startM(idCanvas : HTMLCanvasElement, contextCanvas : CanvasRenderingContext2D | null): void {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
         this.widthCanvas = this.get_widthCanvas();
         this.heightCanvas = this.get_heightCanvas();
-        this.html5CanvasText_R.startM(idCanvas, contextCanvas);
-        this.html5CanvasPrimitive_R.startM(idCanvas, contextCanvas);
-        this.html5CanvasImage_R.startM(idCanvas, contextCanvas);
+
+        this.html5CanvasText_R.iniM(idCanvas, contextCanvas);
+        this.html5CanvasPrimitive_R.iniM(idCanvas, contextCanvas);
+        this.html5CanvasImage_R.iniM(idCanvas, contextCanvas);
     }
     //=============================================================================
-
     //=============================================================================
     // offscreenCanvasToidCanvas(): void {
     //     this.offscreenCanvas = new OffscreenCanvas(1200, 730);//HTMLCanvasElement CanvasRenderingContext2D

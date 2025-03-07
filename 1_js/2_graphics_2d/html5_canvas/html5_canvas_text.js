@@ -4,7 +4,6 @@ if (global_R.print_module_start_finish)
     console.log('2_html5_canvas_text.js -> module start');
 class Html5CanvasText_C {
     static NAME = "html5CanvasText_R";
-    isOk = "";
     idCanvas = null;
     contextCanvas = null;
     static WHITE = 'white';
@@ -23,9 +22,7 @@ class Html5CanvasText_C {
     load = 0;
     constructor() {
     }
-    iniM() {
-    }
-    startM(idCanvas, contextCanvas) {
+    iniM(idCanvas, contextCanvas) {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
         this.set_fillStyle('#0000ff');

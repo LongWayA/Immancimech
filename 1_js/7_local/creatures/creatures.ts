@@ -18,7 +18,6 @@ if (global_R.print_module_start_finish) console.log('creatures.js -> module star
 class Imps_C {
 
     public NAME: string = "imps_R";
-    public isOk: string = "";
 
     //=============================================================================
     constructor() {
@@ -43,12 +42,7 @@ class Imps_C {
     //=============================================================================
 }; //
 
-let imps_R = new Imps_C();
 
-imps_R.iniM();
-
-export { imps_R, Imps_C };
+export { Imps_C };
 
 if (global_R.print_module_start_finish) console.log('creatures.js -> module finish');
-
-imps_R.isOk = "OK"; //

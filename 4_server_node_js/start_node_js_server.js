@@ -65,11 +65,13 @@ let requestUrl = async function (ROOT, request, response) {
 
     /** @type {string} */
     let split_1 = "";
+
     /** @type {string} */
     let split_2 = "";
 
     /** @type {string} */
     let split_err_1 = "";
+
     /** @type {string} */
     let split_err_2 = "";
 
@@ -79,6 +81,7 @@ let requestUrl = async function (ROOT, request, response) {
     try {
         /** @type {string} */
         let type = "";
+        
         /** @type {BufferEncoding} */
         let encoding = "binary";
 

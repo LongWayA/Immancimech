@@ -1,5 +1,4 @@
 /** 
- * fight
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -11,13 +10,11 @@ let Copyright_AnBr75 = 2024;
 * НАЗНАЧЕНИЕ
 */
 import { global_R } from '../1_index/global.js';
-
 if (global_R.print_module_start_finish) console.log('fight.js -> module start');
 
 class Fight_C {
 
     public static NAME: string = "Fight_C";
-    public isOk: string = "";
 
     //=============================================================================
     constructor() {
@@ -46,12 +43,6 @@ class Fight_C {
     //=============================================================================
 } //
 
-let fight_R = new Fight_C();
-
-fight_R.iniM();
-
-export { fight_R, Fight_C };
+export {Fight_C };
 
 if (global_R.print_module_start_finish) console.log('fight.js -> module finish');
-
-fight_R.isOk = "OK"; //

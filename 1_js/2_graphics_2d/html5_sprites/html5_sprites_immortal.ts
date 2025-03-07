@@ -1,5 +1,4 @@
 /** 
- * 2_graphics_2d/html5_sprites
  * @author AnBr75
  * @copyright Copyright (c) 2022, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 02.08.2022
@@ -36,7 +35,7 @@ class Html5SpritesImmortal_C {
 
 
     public NAME: string = "html5SpritesImmortal_R";
-    public isOk: string = " ";
+
     public html5Canvas_R: Html5Canvas_C | null = null;
     public PATH_TO_IMAGES: string = "3_resource/images/immortals_img/";
 
@@ -53,23 +52,18 @@ class Html5SpritesImmortal_C {
     // ini
     //============================================================================
     
-    iniM(): void {
+    iniM(html5Canvas_R: Html5Canvas_C): void {
 
         this.sprites = new Array(this.MAX_COUNT),
 
-            //инициализируем массивы с картинками
-            this.iniSprite(this.PATH_TO_IMAGES);
+        //инициализируем массивы с картинками
+        this.iniSprite(this.PATH_TO_IMAGES);
 
         this.iniSpriteString();
-    }
-    //============================================================================
 
-    //=============================================================================
-    
-    startM(html5Canvas_R: Html5Canvas_C): void {
         this.html5Canvas_R = html5Canvas_R;
     }
-    //=============================================================================
+    //============================================================================
 
     // get tile Sprite
     // this.getSprite(this.GROUNDS,2);

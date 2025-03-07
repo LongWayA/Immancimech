@@ -1,5 +1,4 @@
 /** 
- * 2_graphics_2d/html5_canvas
  * @author AnBr75
  * @copyright Copyright (c) 2021, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 21.08.2021
@@ -24,12 +23,11 @@ if (global_R.print_module_start_finish) console.log('4_html5_canvas_image.js -> 
 class Html5CanvasImage_C {
 
     public static NAME: string = "Html5CanvasImage_C";
-    public isOk: string = "";
 
     // "2d" создаем объекта CanvasRenderingContext2D,
     //  представляющий двумерный контекст.
-    public idCanvas : HTMLCanvasElement | null = null;
-    public contextCanvas : CanvasRenderingContext2D | null =  null;
+    public idCanvas: HTMLCanvasElement | null = null;
+    public contextCanvas: CanvasRenderingContext2D | null = null;
 
     public static DRAW_MIRROR: boolean = true;
 
@@ -39,28 +37,27 @@ class Html5CanvasImage_C {
     //=============================================================================
 
     //=============================================================================
-    iniM(): void {
-    }
-    //=============================================================================
-    //=============================================================================
-    startM(idCanvas: HTMLCanvasElement, contextCanvas: CanvasRenderingContext2D | null): void {
+    iniM(idCanvas: HTMLCanvasElement, contextCanvas: CanvasRenderingContext2D | null): void {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
     }
     //=============================================================================
+    //=============================================================================
     drawImage_(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number): void {
         (this.contextCanvas as CanvasRenderingContext2D).drawImage(image, left, top);
     }
-
+    //=============================================================================
+    //=============================================================================   
     drawImage_w_h(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number,
         width: number, height: number): void {
-            (this.contextCanvas as CanvasRenderingContext2D).drawImage(image, left, top, width, height);
+        (this.contextCanvas as CanvasRenderingContext2D).drawImage(image, left, top, width, height);
     }
-
+    //=============================================================================
+    //=============================================================================   
     scale(): void {
         (this.contextCanvas as CanvasRenderingContext2D).scale(-1, 1);
     }
-
+    //=============================================================================
     //============================================================================
     drawImage(image: HTMLImageElement | HTMLCanvasElement, left: number, top: number,
         width: number, height: number, mirror: boolean): void {
@@ -94,8 +91,9 @@ class Html5CanvasImage_C {
             }
         }
     }
+    //=============================================================================
 } //HTML5_Canvas_image
 
-export {Html5CanvasImage_C };
+export { Html5CanvasImage_C };
 
 if (global_R.print_module_start_finish) console.log('4_html5_canvas_image.js -> module finish');

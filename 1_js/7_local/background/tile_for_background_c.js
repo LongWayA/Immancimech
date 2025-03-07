@@ -31,7 +31,6 @@ class TileForBackground_C {
         this.index = this.charToIndex[this.char];
     }
 }
-let TileForBackground_isOk = "OK";
-export { TileForBackground_C, TileForBackground_isOk };
+export { TileForBackground_C };
 if (global_R.print_module_start_finish)
     console.log('tile_for_background_c.js -> module finish');

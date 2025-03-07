@@ -6,7 +6,7 @@
     <title> Immancimech </title>
     <!-- Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved. -->
     <!-- created 24.02.2024 -->
-     
+
     <link rel='stylesheet' href='2_css/immancimech.css' />
     <link rel="icon" type="image/x-icon" href='3_resource/favicon/favicon.ico'>
 </head>
@@ -20,7 +20,7 @@
 
     <!-- дата в виде  The dateTime is specified in the following form "YYYY-MM-DDThh:mm:ss" 
         where: YYYY indicates the year. MM indicates the month. DD indicates the day.-->
-    <h4 class="w"> Last update <time datetime="2025-01-25">25.01m.25</time> </h4>
+    <h4 class="w"> Last update <time datetime="2025-03-07">07.03m.25</time> </h4>
 
     <!--The game canvas-1600-800 -->
     <canvas id='game-canvas' width='1200' height='730'>
@@ -31,15 +31,36 @@
     <!--блок с кнопками -->
     <div id="container">
         <!-- кнопка -->
-        <input type="button" id="buttonStart" value="Start Game" onclick="window.startButton()" />
-        <input type="button" id="buttonPause" value="Pause Game" onclick="window.pauseButton()" />
-        <input type="button" id="buttonEnd" value="End Game" onclick="window.endButton()" />
+        <input type="button" id="buttonStart" value="Start Game" onclick="window.startGameButton()" />
+        <input type="button" id="buttonPause" value="Pause Game" onclick="window.pauseGameButton()" />
+        <input type="button" id="buttonEnd" value="End Game" onclick="window.endGameButton()" />
         <input type="button" id="buttonTest" value="test" onclick="testButton()" />
     </div>
 
-    <!------------------------------------------------------------------------------------------->  
+
+
+    <!------------------------------------------------------------------------------------------->
     <!-- Scripts -->
-    <script type = "module">
+    <script>
+        // let userName = prompt("Кто там?", '');
+        // if (userName == 'админ') {
+        //     let pass = prompt('Пароль?', '');
+        //     if (pass == 'главный') {
+        //         alert('Здравствуйте!');
+        //     } else if (pass == '' || pass == null) {
+        //         alert('Отменено');
+        //     } else {
+        //         alert('Неверный пароль');
+        //     }
+        // } else if (userName == '' || userName == null) {
+        //     alert('Отменено');
+        // } else {
+        //     alert("Я вас не знаю");
+        // }
+
+    </script>
+
+    <script type="module">
         let Copyright_AnBr75 = 2024;
         //console.log(navigator.userAgent)
         // если включен тестовый режим то печатаем старт и финиш модуля. так для всех модулей.
@@ -47,55 +68,40 @@
         import { global_R } from './1_js/1_index/global.js';
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module start');
 
-        // 
+        // подключаем стартовый js модуль
         import { Index_R } from './1_js/1_index/index.js';
-        Index_R.iniM();
-
-        // "2d" создаем объекта CanvasRenderingContext2D,
-        //  представляющий двумерный контекст.
-        let idCanvas = document.getElementById('game-canvas');
-        let contextCanvas = null;
-        if (idCanvas.getContext) {
-            contextCanvas = idCanvas.getContext('2d');
-        }
+        Index_R.iniM();// инициализация модуля и по цепочки остальных модулей
 
         //=============================================================================
         // загрузка всего документа(вместе с картинками, звуком и т.д.) закончена
         window.onload = function () {
             // console.log('Immancimech.html-> window.onload');
-            Index_R.startM(idCanvas, contextCanvas);
-            Index_R.startGame();
+            Index_R.startMenu();// запуск игры
         }//window.onload = function() {
         //=============================================================================
 
         //=============================================================================
-      //  window.onerror = function(message, url, line, col, error) {
-      //        alert(`${message}\n В ${line}:${col} на ${url}`);
-      //  };
-        //=============================================================================
-
-        //=============================================================================
-        window.startButton = function () {
-            Index_R.startButton();
+        window.startGameButton = function () {
+            Index_R.startGameButton();
         }
         //=============================================================================
 
         //=============================================================================
-        window.pauseButton = function () {
-            Index_R.pauseButton();
+        window.pauseGameButton = function () {
+            Index_R.pauseGameButton();
         }
         //=============================================================================
 
         //=============================================================================
-        window.endButton = function () {
-            Index_R.endButton();
+        window.endGameButton = function () {
+            Index_R.endGameButton();
         }
         //=============================================================================
 
         //=============================================================================
-         window.testButton = function () {
-             Index_R.testButton();
-         }
+        window.testButton = function () {
+            Index_R.testButton();
+        }
         //=============================================================================
 
         if (global_R.print_module_start_finish) console.log('Immancimech.html -> module finish');

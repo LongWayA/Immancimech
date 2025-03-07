@@ -3,8 +3,7 @@ import { global_R } from '../1_index/global.js';
 if (global_R.print_module_start_finish)
     console.log('timer.js -> module start');
 class Timer_C {
-    static NAME = "timer_R";
-    isOk = "";
+    static NAME = "Timer_C";
     static TICKS_PER_SECOND_02 = 0.2;
     static TICKS_PER_SECOND_05 = 0.5;
     static TICKS_PER_SECOND_1 = 1;
@@ -38,8 +37,6 @@ class Timer_C {
     }
     iniM() {
         this.iniTicksPerSecond(Timer_C.TICKS_PER_SECOND_05);
-    }
-    startM() {
     }
     updateTimeBeforeTick() {
         this.tick_OldTimeStartMs = this.tick_timeStartMs;

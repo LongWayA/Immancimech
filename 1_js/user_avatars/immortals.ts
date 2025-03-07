@@ -1,5 +1,4 @@
 /** 
- * immortals
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -27,7 +26,6 @@ class Immortals_C {
     html5Sprites_R: Html5Sprites_C | null = null;
 
     public NAME: string = "Immortals_C";
-    public isOk: string = "";
 
     public List = new Array(3);
 
@@ -37,7 +35,7 @@ class Immortals_C {
     //=============================================================================
 
     //=============================================================================
-    iniM(): void {
+    iniM(html5Canvas_R: Html5Canvas_C, html5Sprites_R: Html5Sprites_C): void {
        // console.log(" Immortals_C-> iniM() ");
         /*
             for(let i = 0; i < this.List.length; i++ ){
@@ -55,15 +53,15 @@ class Immortals_C {
         //console.log(" this.ini-> new Immortal_C ");
         this.List[1] = new Immortal_C(1, type, index, 450, 150, 50, 50, 100, 100, 0, 2);//4
         this.List[2] = new Immortal_C(2, type, index2, 200, 250, 50, 50, 100, 100, 0, 1);//1
-    }
-    //=============================================================================
-    //=============================================================================
-    startM(html5Canvas_R: Html5Canvas_C, html5Sprites_R: Html5Sprites_C): void {
-        //console.log(" Immortals_C-> startM() ");        
+
         this.html5Canvas_R = html5Canvas_R;// 
         this.html5Sprites_R = html5Sprites_R; 
+
+        this.List[1].iniM();
+        this.List[2].iniM();       
     }
     //=============================================================================
+
     //=============================================================================
     getImmortal(num: number): void {
         return this.List[num];
@@ -121,6 +119,10 @@ class Immortals_C {
 
             (this.html5Sprites_R as Html5Sprites_C).drowSprite(this.List[i].type, this.List[i].index,
                 this.List[i].imageLeft, this.List[i].imageTop);
+
+            // if (this.html5Sprites_R != null){ 
+            //     this.html5Sprites_R.drowSprite(this.List[i].type, this.List[i].index,this.List[i].imageLeft, this.List[i].imageTop);   
+            // }
 
 
             (this.html5Canvas_R as Html5Canvas_C).drawRect(this.List[i].imageLeft, this.List[i].imageTop,

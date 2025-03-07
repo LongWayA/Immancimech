@@ -10,7 +10,6 @@ class Html5Canvas_C {
     html5CanvasPrimitive_R = new Html5CanvasPrimitive_C();
     html5CanvasImage_R = new Html5CanvasImage_C();
     static NAME = "html5Canvas_R";
-    isOk = "";
     idCanvas = null;
     contextCanvas = null;
     widthCanvas = 0;
@@ -30,22 +29,14 @@ class Html5Canvas_C {
     static LINE_WIDTH_4 = 4;
     constructor() {
     }
-    iniM() {
-        this.html5CanvasText_R.iniM();
-        this.html5CanvasText_R.isOk = "OK";
-        this.html5CanvasPrimitive_R.iniM();
-        this.html5CanvasPrimitive_R.isOk = "OK";
-        this.html5CanvasImage_R.iniM();
-        this.html5CanvasImage_R.isOk = "OK";
-    }
-    startM(idCanvas, contextCanvas) {
+    iniM(idCanvas, contextCanvas) {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
         this.widthCanvas = this.get_widthCanvas();
         this.heightCanvas = this.get_heightCanvas();
-        this.html5CanvasText_R.startM(idCanvas, contextCanvas);
-        this.html5CanvasPrimitive_R.startM(idCanvas, contextCanvas);
-        this.html5CanvasImage_R.startM(idCanvas, contextCanvas);
+        this.html5CanvasText_R.iniM(idCanvas, contextCanvas);
+        this.html5CanvasPrimitive_R.iniM(idCanvas, contextCanvas);
+        this.html5CanvasImage_R.iniM(idCanvas, contextCanvas);
     }
     get_widthCanvas() {
         return this.idCanvas.width;

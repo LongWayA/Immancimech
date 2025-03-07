@@ -1,5 +1,4 @@
 /** 
- * 1_index
  * @author AnBr75
  * @copyright Copyright (c) 2024, AnBr75 and/or its affiliates. All rights reserved.
  * @version created 24.02m.2024
@@ -15,28 +14,26 @@ if (global_R.print_module_start_finish) console.log('buttons.js ->module start')
 
 //
 class Buttons_C {
- 
-    public static NAME: string = "buttons_C";
- 
-    public isOk: string = "";
+
+    public static NAME: string = "Buttons_C";
+
+    public startButtonName = "";
+
+    public START = "Start Game";
+    public CONTINUE = "Continue Game";   
 
     private elementbuttonStart: HTMLButtonElement = document.getElementById("buttonStart") as HTMLButtonElement;
-  
     private elementbuttonPause: HTMLButtonElement = document.getElementById("buttonPause") as HTMLButtonElement;
-
     private elementbuttonEnd: HTMLButtonElement = document.getElementById("buttonEnd") as HTMLButtonElement;
- 
     public elementbuttonTest: HTMLButtonElement = document.getElementById("buttonTest") as HTMLButtonElement;
 
     //=============================================================================
- 
     constructor() {
     }
     //=============================================================================
 
     //=============================================================================
     iniM(): void {
-
         //console.log('Buttons_C->iniM');
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
@@ -48,11 +45,8 @@ class Buttons_C {
         //
         this.elementbuttonTest.setAttribute("class", "styled");
         this.elementbuttonTest.setAttribute("value", "PROBE");
-    }
-    //=============================================================================
 
-    //=============================================================================
-    startM(): void {
+        this.startButtonName = this.START;
     }
     //=============================================================================
 
@@ -74,9 +68,10 @@ class Buttons_C {
     //=============================================================================
     pauseButtonAttribute(): void {
         console.log('Buttons_C->pauseButtonAttribute');
+        this.startButtonName = this.CONTINUE;  
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
-        this.elementbuttonStart.value = "Continue Game";
+        this.elementbuttonStart.value = this.CONTINUE;
         this.elementbuttonPause.disabled = true;
         this.elementbuttonPause.setAttribute("class", "");
         this.elementbuttonEnd.disabled = false;
@@ -87,7 +82,8 @@ class Buttons_C {
     //=============================================================================
     endButtonAttribute(): void {
         console.log('Buttons_C->endButtonAttribute');
-        this.elementbuttonStart.value = "Start Game!";
+        this.startButtonName = this.START;              
+        this.elementbuttonStart.value = this.START;
         this.elementbuttonStart.disabled = false;
         this.elementbuttonStart.setAttribute("class", "styled");
         this.elementbuttonPause.disabled = true;

@@ -4,7 +4,6 @@ if (global_R.print_module_start_finish)
     console.log('3_html5_canvas_primitive.js -> module start');
 class Html5CanvasPrimitive_C {
     static NAME = "html5CanvasPrimitive_R";
-    isOk = "";
     idCanvas = null;
     contextCanvas = null;
     static WHITE = 'white';
@@ -18,9 +17,7 @@ class Html5CanvasPrimitive_C {
     static LINE_WIDTH_4 = 4;
     constructor() {
     }
-    iniM() {
-    }
-    startM(idCanvas, contextCanvas) {
+    iniM(idCanvas, contextCanvas) {
         this.idCanvas = idCanvas;
         this.contextCanvas = contextCanvas;
     }

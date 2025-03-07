@@ -36,6 +36,8 @@ class Immortal_C {
         this.velocity = velocity;
         this.directionMovementAngle = [0, 3 * Math.PI / 2, 0, Math.PI / 2, Math.PI];
     }
+    iniM() {
+    }
     runSet(directionMovement) {
         this.directionMovement = directionMovement;
         this.pointViewAngle = this.directionMovementAngle[this.directionMovement];
@@ -88,7 +90,6 @@ class Immortal_C {
     print() {
     }
 }
-let Immortal_C_isOk = "OK";
-export { Immortal_C, Immortal_C_isOk };
+export { Immortal_C };
 if (global_R.print_module_start_finish)
     console.log('immortal_c.js -> module finish');

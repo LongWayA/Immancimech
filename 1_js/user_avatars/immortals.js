@@ -9,20 +9,19 @@ class Immortals_C {
     html5Canvas_R = null;
     html5Sprites_R = null;
     NAME = "Immortals_C";
-    isOk = "";
     List = new Array(3);
     constructor() {
     }
-    iniM() {
+    iniM(html5Canvas_R, html5Sprites_R) {
         let type = Html5Sprites_C.CREATURES;
         let index = Html5Sprites_C.CREATURES_MINOTAUR;
         let index2 = Html5Sprites_C.CREATURES_DRAGON;
         this.List[1] = new Immortal_C(1, type, index, 450, 150, 50, 50, 100, 100, 0, 2);
         this.List[2] = new Immortal_C(2, type, index2, 200, 250, 50, 50, 100, 100, 0, 1);
-    }
-    startM(html5Canvas_R, html5Sprites_R) {
         this.html5Canvas_R = html5Canvas_R;
         this.html5Sprites_R = html5Sprites_R;
+        this.List[1].iniM();
+        this.List[2].iniM();
     }
     getImmortal(num) {
         return this.List[num];
