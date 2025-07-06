@@ -1,4 +1,5 @@
 //@ts-check
+
 /** 
  * immortals
  * @author AnBr75
